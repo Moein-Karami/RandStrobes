@@ -5,7 +5,8 @@
 #include <chrono>
 
 #define DEFAULT_SEED 0
-#define DEFALUT_P 1e9 + 7
 
+const uint64_t DEFALUT_P = 799333555511111LL;
+const uint64_t DEFAULT_MASK = -1;
 
 #endif
