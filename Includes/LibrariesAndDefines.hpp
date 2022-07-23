@@ -5,5 +5,7 @@
 #include <chrono>
 
 #define DEFAULT_SEED 0
+#define DEFALUT_P 1e9 + 7
+
 
 #endif
