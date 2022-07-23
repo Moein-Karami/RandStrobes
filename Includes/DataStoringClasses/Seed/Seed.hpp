@@ -6,12 +6,8 @@
 class Seed
 {
 	public:
-		Seed(uint64_t construction_time);
-		uint64_t get_construction_time();
 		virtual std::string get_seed() = 0;
-
-	protected:
-		uint64_t construction_time;
+		virtual std::string to_string() = 0;
 };
 
 #endif
