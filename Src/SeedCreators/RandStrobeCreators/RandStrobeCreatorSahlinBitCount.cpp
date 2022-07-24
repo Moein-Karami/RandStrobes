@@ -24,14 +24,14 @@ std::vector<Seed*> RandStrobeCreatorSahlinBitCount::creat_seeds(const std::strin
 		for (int j = 1; j < n; j++)
 		{
 			best_choose = i + j * w_min;
-			best_value = curr_hash ^ hashes[best_choose];
+			best_value = __builtin_popcount(curr_hash ^ hashes[best_choose]);
 
 			for (size_t q = i + j * w_min + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
-				if (comparator->is_first_better(curr_hash ^ hashes[j], best_value))
+				if (comparator->is_first_better(__builtin_popcount(curr_hash ^ hashes[j]), best_value))
 				{
 					best_choose = j;
-					best_value = curr_hash ^ hashes[best_choose];
+					best_value = __builtin_popcount(curr_hash ^ hashes[best_choose]);
 				}
 			}
 
