@@ -14,7 +14,8 @@ class RandStrobeCreator : private SeedCreator
 				uint8_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 		std::vector<Seed*> creat_seeds(const std::string& seq);
 		uint8_t get_char_code(char c);
-		virtual std::vector<Seed*> creat_seeds(const std::string& seq, const std::vector<uint64_t> hashes) = 0;
+		virtual std::vector<Seed*> creat_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
+				const std::vector<uint64_t> hashes) = 0;
 
 	protected:
 		size_t kmer_len;

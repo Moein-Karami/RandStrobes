@@ -7,6 +7,7 @@ class Hasher
 {
 	public:
 		virtual uint64_t hash(const void* key, size_t len) = 0;
+		virtual uint64_t hash(uint64_t key);
 };
 
 #endif

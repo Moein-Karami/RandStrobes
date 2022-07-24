@@ -35,6 +35,8 @@ uint8_t RandStrobeCreator::get_char_code(char c)
 std::vector<Seed*> RandStrobeCreator::creat_seeds(const std::string& seq)
 {
 	std::vector<uint64_t> hashes;
+	std::vector<uint64_t> kmers;
+
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 
@@ -44,7 +46,8 @@ std::vector<Seed*> RandStrobeCreator::creat_seeds(const std::string& seq)
 	{
 		curr_kmer = (curr_kmer << 1) | get_char_code(seq[i]);
 		tmp = curr_kmer & mask;
-		hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));	
+		hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
+		kmers.push_back(tmp);
 	}
-	return creat_seeds(seq, hashes);
+	return creat_seeds(seq, kmers, hashes);
 }
