@@ -1,11 +1,13 @@
 #include "RandStrobeCreator.hpp"
 
-RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size_t kmer_len, size_t w_min, size_t w_max, uint64_t mask)
+RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size_t kmer_len, size_t w_min, size_t w_max,
+		uint8_t n, uint64_t mask)
 : SeedCreator(hasher)
 , comparator(comparator)
 , kmer_len(kmer_len)
 , w_min(w_min)
 , w_max(w_max)
+, n(n)
 , mask(mask)
 {
 }
