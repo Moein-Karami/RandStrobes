@@ -16,17 +16,17 @@ std::vector<Seed*> RandStrobeCreatorShen::creat_seeds(const std::string& seq, co
 	uint64_t curr_hash;
 	uint64_t best_value;
 
-	for (size_t i = 0; i < seq.size() - kmer_len - n * w_min; i++)
+	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		strobe = new Strobe();
 		strobe->add_kmer(i, hashes[i]);
 		curr_hash = hashes[i];
 		for (int j = 1; j < n; j++)
 		{
-			best_choose = i + j * w_min;
+			best_choose = i + w_min + (j - 1) * w_max;
 			best_value = (curr_hash + hashes[best_choose]) & p;
 
-			for (size_t q = i + j * w_min + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
+			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
 				if (comparator->is_first_better((curr_hash + hashes[j]) & p, best_value))
 				{
