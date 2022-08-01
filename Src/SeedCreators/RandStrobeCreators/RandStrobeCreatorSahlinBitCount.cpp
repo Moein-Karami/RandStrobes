@@ -6,7 +6,7 @@ RandStrobeCreatorSahlinBitCount::RandStrobeCreatorSahlinBitCount(Hasher* hasher,
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorSahlinBitCount::creat_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
+std::vector<Seed*> RandStrobeCreatorSahlinBitCount::create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
 		const std::vector<uint64_t> hashes)
 {
 	std::vector<Seed*> seeds;

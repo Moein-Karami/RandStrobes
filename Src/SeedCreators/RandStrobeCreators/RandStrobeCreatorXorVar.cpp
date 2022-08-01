@@ -6,7 +6,7 @@ RandStrobeCreatorXorVar::RandStrobeCreatorXorVar(Hasher* hasher, Comparator* com
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorXorVar::creat_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
+std::vector<Seed*> RandStrobeCreatorXorVar::create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
 		const std::vector<uint64_t> hashes)
 {
 

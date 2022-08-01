@@ -7,7 +7,7 @@ RandStrobeCreatorShen::RandStrobeCreatorShen(Hasher* hasher, Comparator* compara
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorShen::creat_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
+std::vector<Seed*> RandStrobeCreatorShen::create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
 		const std::vector<uint64_t> hashes)
 {
 	std::vector<Seed*> seeds;

@@ -26,6 +26,6 @@ class BenchMark
 	public:
 
 		
-}
+};
 
 #endif
