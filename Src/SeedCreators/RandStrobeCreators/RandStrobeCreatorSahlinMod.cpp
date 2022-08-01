@@ -7,7 +7,7 @@ RandStrobeCreatorSahlinMod::RandStrobeCreatorSahlinMod(Hasher* hasher, Comparato
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorSahlinMod::creat_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
+std::vector<Seed*> RandStrobeCreatorSahlinMod::create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
 		const std::vector<uint64_t> hashes)
 {
 	std::vector<Seed*> seeds;

@@ -6,7 +6,7 @@ RandStrobeCreatorGuoPibri::RandStrobeCreatorGuoPibri(Hasher* hasher, Comparator*
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorGuoPibri::creat_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
+std::vector<Seed*> RandStrobeCreatorGuoPibri::create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
 		const std::vector<uint64_t> hashes)
 {
 	std::vector<Seed*> seeds;
