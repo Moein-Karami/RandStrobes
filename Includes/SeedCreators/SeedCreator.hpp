@@ -11,7 +11,7 @@
 class SeedCreator
 {
 	public:
-		virtual std::vector<Seed*> creat_seeds(const std::string& seq) = 0;
+		virtual std::vector<Seed*> create_seeds(const std::string& seq) = 0;
 		SeedCreator(Hasher* hasher);
 	protected:
 		Hasher* hasher;

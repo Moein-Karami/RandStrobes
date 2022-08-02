@@ -33,8 +33,6 @@ class BenchMark
 		Hasher* creat_hasher(Json::Reader config);
 		RandStrobeCreator* creat_randstrobe_creator(Json::Reader config);
 		DataGenerator* creat_data_generator(Json::Reader config);
-		
-
-}
+};
 
 #endif
