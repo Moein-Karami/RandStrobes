@@ -81,7 +81,7 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 	return NULL;
 }
 
-void BenchMark::run(Json::Value config)
+void BenchMark::run(Json::Value config, std::string output_path)
 {
 	DataGenerator* data_generator = create_data_generator(config);
 	SeedCreator* seed_creator = create_seed_creator(config);
@@ -95,12 +95,12 @@ void BenchMark::run(Json::Value config)
 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(start_time - finish_time);
 
 	ResultPrinter result_printer;
-	result_printer.print(duration.count(), seeds);
+	result_printer.print(duration.count(), seeds, output_path);
 }
 
 int32_t main(int argc, char* argv[])
 {
-	if (argc != 2)
+	if (argc != 3)
 	{
 		std::cerr << "Wrong Inputs" << std::endl;
 		return 0;
@@ -117,5 +117,6 @@ int32_t main(int argc, char* argv[])
 	}
 	
 	BenchMark benchmark;
-	benchmark.run(vals);
+	std::string output_path(argv[2]);
+	benchmark.run(vals, output_path);
 }

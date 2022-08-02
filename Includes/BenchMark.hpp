@@ -29,7 +29,7 @@
 class BenchMark
 {
 	public:
-		void run(Json::Value config);
+		void run(Json::Value config, std::string output_path);
 		Comparator* create_comparator(Json::Value config);
 		Hasher* create_hasher(Json::Value config);
 		SeedCreator* create_seed_creator(Json::Value config);
