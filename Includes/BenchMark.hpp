@@ -20,19 +20,20 @@
 #include "RandStrobeCreatorSahlinMod.hpp"
 #include "RandStrobeCreatorShen.hpp"
 #include "RandStrobeCreatorXorVar.hpp"
+#include "RandStrobeCreatorLiuPatroLi.hpp"
 
 
-#include <json\value.h>
-#include <json\json.h>
+#include "json-forwards.h"
+#include "json.h"
 
 class BenchMark
 {
 	public:
-		void run(std::string config_file_name);
-		Comparator* creat_comparator(Json::Reader config);
-		Hasher* creat_hasher(Json::Reader config);
-		RandStrobeCreator* creat_randstrobe_creator(Json::Reader config);
-		DataGenerator* creat_data_generator(Json::Reader config);
+		void run(Json::Value config);
+		Comparator* create_comparator(Json::Value config);
+		Hasher* create_hasher(Json::Value config);
+		SeedCreator* create_seed_creator(Json::Value config);
+		DataGenerator* create_data_generator(Json::Value config);
 };
 
 #endif
