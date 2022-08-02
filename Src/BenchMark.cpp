@@ -96,6 +96,11 @@ void BenchMark::run(Json::Value config, std::string output_path)
 
 	ResultPrinter result_printer;
 	result_printer.print(duration.count(), seeds, output_path);
+	
+	for (auto seed : seeds)
+		delete(seed);
+	delete(data_generator);
+	delete(seed_creator);
 }
 
 int32_t main(int argc, char* argv[])

@@ -15,6 +15,12 @@ RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size
 	mask &= tmp_mask;
 }
 
+RandStrobeCreator::~RandStrobeCreator()
+{
+	delete(hasher);
+	delete(comparator);
+}
+
 uint8_t RandStrobeCreator::get_char_code(char c)
 {
 	switch (c)
