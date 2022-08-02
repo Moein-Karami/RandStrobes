@@ -1,0 +1,127 @@
+#include "BenchMark.hpp"
+
+DataGenerator* BenchMark::create_data_generator(Json::Value config)
+{
+	if (config["DataGenerator"].asString() == "RandomDataGenerator")
+	{
+		size_t seq_len = std::stoull(config["DataGeneratorConfig"]["seq_len"].asString());
+		uint64_t seed = DEFAULT_SEED;
+		if (!config["DataGeneratorConfig"]["seed"].isNull())
+			seed = config["DataGeneratorConfig"]["seed"].asUInt64();
+		return new RandomDataGenerator(seq_len, seed);
+	}
+	return NULL;
+}
+
+Hasher* BenchMark::create_hasher(Json::Value config)
+{
+	if (config["Hasher"].asString() == "SimpleHashers")
+	{
+		if (config["HasherConfig"]["method"].asString() == "NoHash")
+			return new NoHash();
+		else if (config["HasherConfig"]["method"].asString() == "ThomasWangHash")
+		{
+			uint64_t mask = DEFAULT_MASK;
+			if (!config["HasherConfig"]["mask"].isNull())
+				mask = config["HasherConfig"]["mask"].asUInt64();
+			return new ThomasWangHash(mask);
+		}
+	}
+	else if (config["Hasher"].asString() == "SeedBasedHasher")
+	{
+		uint64_t seed = DEFAULT_SEED;
+		if (!config["HasherConfig"]["seed"].isNull())
+				seed = config["HasherConfig"]["seed"].asUInt64();
+		
+		if (config["HasherConfig"]["method"].asString() == "WyHash")
+			return new WyHash(seed);
+		else if (config["HasherConfig"]["method"].asString() == "XXHash")
+			return new XXHash(seed);
+	}
+	return NULL;
+}
+
+Comparator* BenchMark::create_comparator(Json::Value config)
+{
+	if (config["Comparator"].asString() == "min")
+		return new Minimizer();
+	else if (config["Comparator"].asString() == "max")
+		return new Maximizer();
+	return NULL;
+}
+
+SeedCreator* BenchMark::create_seed_creator(Json::Value config)
+{
+	if (config["SeedCreator"].asString() == "RandStrobeCreator")
+	{
+		size_t kmer_len = config["SeedCreatorConfig"]["kmer_len"].asUInt64();
+		uint64_t w_min = config["SeedCreatorConfig"]["w_min"].asUInt64();
+		uint64_t w_max = config["SeedCreatorConfig"]["w_max"].asUInt64();
+		uint8_t n = config["SeedCreatorConfig"]["n"].asUInt();
+		uint64_t mask = -1;
+		if (!config["SeedCreatorConfig"]["mask"].isNull())
+			mask = config["SeedCreatorConfig"]["mask"].asUInt64();
+		
+		Hasher* hasher = create_hasher(config);
+		Comparator* comparator = create_comparator(config);
+
+		if (config["SeedCreatorConfig"]["method"].asString() == "GuoPibri")
+			return new RandStrobeCreatorGuoPibri(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "LiuPatroLi")
+			return new RandStrobeCreatorLiuPatroLi(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "SahlinBitCount")
+			return new RandStrobeCreatorSahlinBitCount(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "SahlinMod")
+			return new RandStrobeCreatorSahlinMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "Shen")
+			return new RandStrobeCreatorShen(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "XorVar")
+			return new RandStrobeCreatorXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+	}
+	return NULL;
+}
+
+void BenchMark::run(Json::Value config, std::string output_path)
+{
+	DataGenerator* data_generator = create_data_generator(config);
+	SeedCreator* seed_creator = create_seed_creator(config);
+
+	std::string seq = data_generator->get_data();
+	std::vector<Seed*> seeds;
+
+	auto start_time = std::chrono::high_resolution_clock::now();
+	seeds = seed_creator->create_seeds(seq);
+	auto finish_time = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(start_time - finish_time);
+
+	ResultPrinter result_printer;
+	result_printer.print(duration.count(), seeds, output_path);
+	
+	for (auto seed : seeds)
+		delete(seed);
+	delete(data_generator);
+	delete(seed_creator);
+}
+
+int32_t main(int argc, char* argv[])
+{
+	if (argc != 3)
+	{
+		std::cerr << "Wrong Inputs" << std::endl;
+		return 0;
+	}
+
+	Json::Reader reader;
+	std::ifstream config_file(argv[1]);
+	Json::Value vals;
+
+	if (!reader.parse(config_file, vals))
+	{
+		std::cerr << reader.getFormatedErrorMessages();
+		return 0;
+	}
+	
+	BenchMark benchmark;
+	std::string output_path(argv[2]);
+	benchmark.run(vals, output_path);
+}

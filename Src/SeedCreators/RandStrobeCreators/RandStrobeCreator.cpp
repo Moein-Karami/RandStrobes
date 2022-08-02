@@ -10,6 +10,15 @@ RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size
 , n(n)
 , mask(mask)
 {
+	uint64_t tmp_mask = -1;
+	tmp_mask = tmp_mask >> (64 - kmer_len * 2);
+	mask &= tmp_mask;
+}
+
+RandStrobeCreator::~RandStrobeCreator()
+{
+	delete(hasher);
+	delete(comparator);
 }
 
 uint8_t RandStrobeCreator::get_char_code(char c)

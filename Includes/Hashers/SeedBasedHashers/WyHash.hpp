@@ -5,7 +5,7 @@
 #include "wyhash.h"
 
 
-class WyHash : private SeedBasedHasher
+class WyHash : public SeedBasedHasher
 {
 	public:
 		WyHash(uint64_t seed = DEFAULT_SEED);
