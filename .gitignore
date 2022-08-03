@@ -2,3 +2,6 @@
 *.o
 tmp/*
 .vscode
+cmake_install.cmake
+CMakeCache.txt
+CMakeLists.txt

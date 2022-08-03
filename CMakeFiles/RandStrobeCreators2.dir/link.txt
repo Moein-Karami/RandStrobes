@@ -1,0 +1,2 @@
+/usr/bin/ar qc build/libRandStrobeCreators2.a  CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp.o CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Strobe.cpp.o CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/SeedCreator.cpp.o
+/usr/bin/ranlib build/libRandStrobeCreators2.a

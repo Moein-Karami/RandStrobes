@@ -1,0 +1,2 @@
+/usr/bin/ar qc build/libHasherSimple2.a  CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o
+/usr/bin/ranlib build/libHasherSimple2.a
