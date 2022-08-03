@@ -86,19 +86,30 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	DataGenerator* data_generator = create_data_generator(config);
 	SeedCreator* seed_creator = create_seed_creator(config);
 
-	std::string seq = data_generator->get_data();
-	std::vector<Seed*> seeds;
+	std::vector<uint64_t> durations;
+	std::vector<std::vector<Seed*>> seeds_collection;
 
-	auto start_time = std::chrono::high_resolution_clock::now();
-	seeds = seed_creator->create_seeds(seq);
-	auto finish_time = std::chrono::high_resolution_clock::now();
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(start_time - finish_time);
+	for (int i = 0; i < config["NumberOfSamples"].asUInt64())
+	{
+		std::string seq = data_generator->get_data();
+		std::vector<Seed*> seeds;
+		
+		auto start_time = std::chrono::high_resolution_clock::now();
+		seeds = seed_creator->create_seeds(seq);
+		auto finish_time = std::chrono::high_resolution_clock::now();
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(start_time - finish_time);
+
+		durations.push_back(duration.count());
+		seeds_collection.push_back(seeds);
+	}
+	
 
 	ResultPrinter result_printer;
-	result_printer.print(duration.count(), seeds, output_path);
+	result_printer.print(durations, seeds_collection, output_path);
 	
-	for (auto seed : seeds)
-		delete(seed);
+	for (auto seeds : seeds_collection)
+		for (auto seed : seeds)
+			delete(seed);
 	delete(data_generator);
 	delete(seed_creator);
 }
