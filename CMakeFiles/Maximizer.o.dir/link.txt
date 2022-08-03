@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMaximizer.o.a  CMakeFiles/Maximizer.o.dir/Src/Comparators/Maximizer.cpp.o
+/usr/bin/ranlib libMaximizer.o.a
