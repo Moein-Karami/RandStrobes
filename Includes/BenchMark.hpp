@@ -20,12 +20,20 @@
 #include "RandStrobeCreatorSahlinMod.hpp"
 #include "RandStrobeCreatorShen.hpp"
 #include "RandStrobeCreatorXorVar.hpp"
+#include "RandStrobeCreatorLiuPatroLi.hpp"
+
+
+#include "json-forwards.h"
+#include "json.h"
 
 class BenchMark
 {
 	public:
-
-		
+		void run(Json::Value config, std::string output_path);
+		Comparator* create_comparator(Json::Value config);
+		Hasher* create_hasher(Json::Value config);
+		SeedCreator* create_seed_creator(Json::Value config);
+		DataGenerator* create_data_generator(Json::Value config);
 };
 
 #endif
