@@ -1,0 +1,2 @@
+/usr/bin/ar qc build/libHashersMet2.a  CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o
+/usr/bin/ranlib build/libHashersMet2.a
