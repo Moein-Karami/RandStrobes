@@ -15,7 +15,7 @@ DataGenerator* BenchMark::create_data_generator(Json::Value config)
 
 Hasher* BenchMark::create_hasher(Json::Value config)
 {
-	if (config["Hasher"].asString() == "SimpleHashers")
+	if (config["Hasher"].asString() == "SimpleHasher")
 	{
 		if (config["HasherConfig"]["method"].asString() == "NoHash")
 			return new NoHash();
