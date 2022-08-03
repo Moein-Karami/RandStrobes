@@ -7,7 +7,8 @@
 class ResultPrinter
 {
 	public:
-		void print(uint64_t construction_time, std::vector<Seed*> seeds, std::string output_path);
+		void print(std::vector<uint64_t> construction_times, std::vector<std::vector<Seed*>> seeds_collection,
+				std::string output_path);
 };
 
 #endif

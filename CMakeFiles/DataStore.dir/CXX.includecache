@@ -6,3 +6,21 @@
 
 #IncludeRegexTransform: 
 
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.cpp
+Strobe.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+
+Includes/DataStoringClasses/Seed/Seed.hpp
+LibrariesAndDefines.hpp
+Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
+
+Includes/DataStoringClasses/Seed/Strobe.hpp
+Seed.hpp
+Includes/DataStoringClasses/Seed/Seed.hpp
+
+Includes/LibrariesAndDefines.hpp
+bits/stdc++.h
+-
+chrono
+-
+

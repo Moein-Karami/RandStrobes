@@ -6,13 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.cpp
+Strobe.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
+RandStrobeCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
+RandStrobeCreatorXorVar.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
+
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+
+Includes/Comparators/Comparaotr.hpp
+LibrariesAndDefines.hpp
+Includes/Comparators/LibrariesAndDefines.hpp
+
+Includes/Comparators/Maximizer.hpp
+Comparaotr.hpp
+Includes/Comparators/Comparaotr.hpp
+
+Includes/Comparators/Minimizer.hpp
+Comparaotr.hpp
+Includes/Comparators/Comparaotr.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
+
+Includes/DataStoringClasses/Seed/Strobe.hpp
+Seed.hpp
+Includes/DataStoringClasses/Seed/Seed.hpp
 
 Includes/Hashers/HashMethodes/wyhash.h
 stdint.h
@@ -99,6 +127,22 @@ bits/stdc++.h
 -
 chrono
 -
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+LibrariesAndDefines.hpp
+Includes/SeedCreators/RandStrobeCreators/LibrariesAndDefines.hpp
+SeedCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/SeedCreator.hpp
+Strobe.hpp
+Includes/SeedCreators/RandStrobeCreators/Strobe.hpp
+Maximizer.hpp
+Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
+Minimizer.hpp
+Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp
