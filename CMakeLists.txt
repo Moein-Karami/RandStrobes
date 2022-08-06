@@ -21,6 +21,8 @@ include_directories(Includes/SeedCreators/RandStrobeCreators)
 
 include_directories(Includes/DataStoringClasses/Seed)
 
+include_directories(Includes/ConfigGenerator)
+
 project(${NAME_PROJECT}
     LANGUAGES CXX C)
 
@@ -51,6 +53,7 @@ target_link_libraries(${NAME_PROJECT}
     HasherSimple1
     HasherSimple2 
     ResultPrinter
+    ConfigGen
     )
 
 set (LIBRARY_OUTPUT_PATH ./build)
@@ -119,3 +122,7 @@ add_library(HasherSimple2 STATIC ./Src/Hashers/SimpleHashers/ThomasWangHash.cpp)
 add_library(ResultPrinter STATIC ./Src/ResultPrinter.cpp)
 
 #******************************************************
+
+add_library(ConfigGen STATIC ./Src/ConfigGenerator/ConfigGenerator.cpp)
+
+#*********************************************************

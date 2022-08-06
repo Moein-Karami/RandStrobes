@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
 Strobe.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp
 RandStrobeCreatorGuoPibri.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
