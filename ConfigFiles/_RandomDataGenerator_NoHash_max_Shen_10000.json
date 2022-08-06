@@ -1,0 +1,20 @@
+{
+   "Comparator" : "max",
+   "DataGenerator" : "RandomDataGenerator",
+   "DataGeneratorConfig" : {
+      "seq_len" : 200
+   },
+   "Hasher" : "SimpleHasher",
+   "HasherConfig" : {
+      "method" : "NoHash"
+   },
+   "SeedCreator" : "RandStrobeCreator",
+   "SeedCreatorConfig" : {
+      "kmer_len" : 4,
+      "mask" : 15,
+      "method" : "Shen",
+      "n" : 50,
+      "w_max" : 20,
+      "w_min" : 10
+   }
+}

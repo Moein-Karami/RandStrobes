@@ -11,7 +11,7 @@ const uint64_t SEQ_LEN = 200;
 class ConfigGenerator
 {
 	public:
-		ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint8_t n, uint64_t mask);
+		ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask);
 		void add_data_generator_config(std::string output_path);
 		void add_hasher_config(std::string output_path, Json::Value config);
 		void add_comparator_config(std::string output_path, Json::Value config);
@@ -22,7 +22,7 @@ class ConfigGenerator
 		size_t kmer_len;
 		uint64_t w_min;
 		uint64_t w_max;
-		uint8_t n;
+		uint32_t n;
 		uint64_t mask;
 };
 

@@ -1,6 +1,6 @@
 #include "ConfigGenerator.hpp"
 
-ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint8_t n, uint64_t mask)
+ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask)
 : kmer_len(kmer_len)
 , w_min(w_min)
 , w_max(w_max)
@@ -65,11 +65,15 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	seed_creator_config["kmer_len"] = kmer_len;
 	seed_creator_config["w_min"] = w_min;
 	seed_creator_config["w_max"] = w_max;
-	seed_creator_config["n"] = n;
+	std::cerr << "N : " << (int32_t) n << std::endl;
+	seed_creator_config["n"] = (int32_t) n;
+	std::cerr << "JSON N : " << seed_creator_config["n"].asInt() << std::endl;
 	seed_creator_config["mask"] = mask;
 
 	for (auto seed_creator : seed_creators)
 	{
+		if (seed_creator == "LiuPatroLi" && config["HasherConfig"]["method"] == "NoHash")
+			continue;
 		seed_creator_config["method"] = seed_creator;
 		config["SeedCreatorConfig"] = seed_creator_config;
 		add_number_of_samples_config(output_path + "_" + seed_creator, config);
@@ -93,7 +97,7 @@ int32_t main()
 	size_t kmer_len;
 	uint64_t w_min;
 	uint64_t w_max;
-	uint8_t n;
+	uint32_t n;
 	uint64_t mask;
 
 	std::cin >> output_path >> kmer_len >> w_min >> w_max >> n >> mask;

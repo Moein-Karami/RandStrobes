@@ -1,7 +1,7 @@
 #include "RandStrobeCreator.hpp"
 
 RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size_t kmer_len, size_t w_min, size_t w_max,
-		uint8_t n, uint64_t mask)
+		uint32_t n, uint64_t mask)
 : SeedCreator(hasher)
 , comparator(comparator)
 , kmer_len(kmer_len)
@@ -21,7 +21,7 @@ RandStrobeCreator::~RandStrobeCreator()
 	delete(comparator);
 }
 
-uint8_t RandStrobeCreator::get_char_code(char c)
+uint32_t RandStrobeCreator::get_char_code(char c)
 {
 	switch (c)
 	{
