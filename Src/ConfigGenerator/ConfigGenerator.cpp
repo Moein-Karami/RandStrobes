@@ -65,9 +65,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	seed_creator_config["kmer_len"] = kmer_len;
 	seed_creator_config["w_min"] = w_min;
 	seed_creator_config["w_max"] = w_max;
-	std::cerr << "N : " << (int32_t) n << std::endl;
 	seed_creator_config["n"] = (int32_t) n;
-	std::cerr << "JSON N : " << seed_creator_config["n"].asInt() << std::endl;
 	seed_creator_config["mask"] = mask;
 
 	for (auto seed_creator : seed_creators)
@@ -83,6 +81,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 void ConfigGenerator::add_number_of_samples_config(std::string output_path, Json::Value config)
 {
 	output_path += "_" + std::to_string(NUMBER_OF_SAMPLES) + ".json";
+	config["NumberOfSamples"] = NUMBER_OF_SAMPLES;
 	Json::StyledWriter writer;
 
 	std::ofstream file(output_path);

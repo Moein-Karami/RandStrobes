@@ -8,12 +8,13 @@
    "HasherConfig" : {
       "method" : "XXHash"
    },
+   "NumberOfSamples" : 10000,
    "SeedCreator" : "RandStrobeCreator",
    "SeedCreatorConfig" : {
       "kmer_len" : 4,
       "mask" : 15,
       "method" : "LiuPatroLi",
-      "n" : 50,
+      "n" : 2,
       "w_max" : 20,
       "w_min" : 10
    }

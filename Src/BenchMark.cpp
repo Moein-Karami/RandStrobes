@@ -64,6 +64,9 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 		
 		Hasher* hasher = create_hasher(config);
 		Comparator* comparator = create_comparator(config);
+		std::cerr << "testing comparator: " << std::endl;
+		std::cerr << comparator->is_first_better(1, 5) << std::endl;
+		std::cerr << "answer should be true" << std::endl << std::endl;
 
 		if (config["SeedCreatorConfig"]["method"].asString() == "GuoPibri")
 			return new RandStrobeCreatorGuoPibri(hasher, comparator, kmer_len, w_min, w_max, n, mask);
@@ -83,35 +86,45 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 
 void BenchMark::run(Json::Value config, std::string output_path)
 {
+	std::cerr << "Start Run" << std::endl << std::endl;
 	DataGenerator* data_generator = create_data_generator(config);
+	std::cerr << "Data Generator created" << std::endl << std::endl;
 	SeedCreator* seed_creator = create_seed_creator(config);
-
+	std::cerr << "Seed Creator created" << std::endl << std::endl;
 	std::vector<uint64_t> durations;
 	std::vector<std::vector<Seed*>> seeds_collection;
 
 	for (int i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
 	{
+		std::cerr << "start sampling" << std::endl;
+
 		std::string seq = data_generator->get_data();
 		std::vector<Seed*> seeds;
 		
+		std::cerr << "data generated : " << seq << std::endl << std::endl;
+
 		auto start_time = std::chrono::high_resolution_clock::now();
 		seeds = seed_creator->create_seeds(seq);
 		auto finish_time = std::chrono::high_resolution_clock::now();
-		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(start_time - finish_time);
+		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
 
 		durations.push_back(duration.count());
 		seeds_collection.push_back(seeds);
 	}
-	
+	std::cerr << "creating seeds is done " << std::endl;
 
 	ResultPrinter result_printer;
 	result_printer.print(durations, seeds_collection, output_path);
 	
+	std::cerr << "job done " << std::endl;
+
 	for (auto seeds : seeds_collection)
 		for (auto seed : seeds)
 			delete(seed);
 	delete(data_generator);
 	delete(seed_creator);
+
+	std::cerr << "memmory fixed" << std::endl;
 }
 
 int32_t main(int argc, char* argv[])

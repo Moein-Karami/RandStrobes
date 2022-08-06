@@ -1,6 +1,6 @@
 #include "RandStrobeCreator.hpp"
 
-RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size_t kmer_len, size_t w_min, size_t w_max,
+RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
 		uint32_t n, uint64_t mask)
 : SeedCreator(hasher)
 , comparator(comparator)
@@ -12,7 +12,7 @@ RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* omparator, size
 {
 	uint64_t tmp_mask = -1;
 	tmp_mask = tmp_mask >> (64 - kmer_len * 2);
-	mask &= tmp_mask;
+	this->mask &= tmp_mask;
 }
 
 RandStrobeCreator::~RandStrobeCreator()
@@ -49,14 +49,20 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq)
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 
+	std::cerr << "befor create kmers" << std::endl;
+	
 	for (int i = 0; i < kmer_len - 1; i++)
-		curr_kmer = (curr_kmer << 1) | get_char_code(seq[i]);
-	for (int i = kmer_len - 1; i < seq.size() - kmer_len; i++)
+		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
+	// std::cerr << "first uncomplete kmer: "
+	for (int i = kmer_len - 1; i < seq.size(); i++)
 	{
-		curr_kmer = (curr_kmer << 1) | get_char_code(seq[i]);
+		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 		tmp = curr_kmer & mask;
 		hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
 		kmers.push_back(tmp);
 	}
+
+	std::cerr << "before specialize create_seeds" << std::endl;
+
 	return create_seeds(seq, kmers, hashes);
 }
