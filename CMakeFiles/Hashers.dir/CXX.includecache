@@ -6,17 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/Hasher.cpp
-Hasher.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/Hasher.hpp
-
-Includes/Hashers/Hasher.hpp
-LibrariesAndDefines.hpp
-Includes/Hashers/LibrariesAndDefines.hpp
-
-Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
--
-chrono
--
-
