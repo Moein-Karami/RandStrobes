@@ -1,0 +1,21 @@
+{
+   "Comparator" : "max",
+   "DataGenerator" : "RandomDataGenerator",
+   "DataGeneratorConfig" : {
+      "seq_len" : 200
+   },
+   "Hasher" : "SeedBasedHasher",
+   "HasherConfig" : {
+      "method" : "WyHash"
+   },
+   "NumberOfSamples" : 10000,
+   "SeedCreator" : "RandStrobeCreator",
+   "SeedCreatorConfig" : {
+      "kmer_len" : 4,
+      "mask" : 15,
+      "method" : "XorVar",
+      "n" : 2,
+      "w_max" : 20,
+      "w_min" : 10
+   }
+}
