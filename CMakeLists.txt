@@ -26,6 +26,33 @@ include_directories(Includes/ConfigGenerator)
 project(${NAME_PROJECT}
     LANGUAGES CXX C)
 
+add_executable(config.out)
+target_sources(config.out PRIVATE ./Src/ConfigGenerator/ConfigGenerator.cpp ./Includes/ConfigGenerator/ConfigGenerator.hpp)
+link_directories(./build)
+target_link_libraries( config.out
+    Maximizer
+    Minimizer
+    DataGen
+    DataStore
+    SeedCreators
+    RandStrobeCreators
+    RandStrobeCreators1
+    RandStrobeCreators2
+    RandStrobeCreators3
+    RandStrobeCreators4
+    RandStrobeCreators5
+    RandStrobeCreators6
+    Json
+    Hashers 
+    HashersMet1
+    HashersMet2
+    HashersSeed1
+    HashersSeed2
+    HashersSeed3
+    HasherSimple1
+    HasherSimple2 
+    ResultPrinter
+)
 
 add_executable(${NAME_PROJECT})
 target_sources(${NAME_PROJECT} PRIVATE ./Src/BenchMark.cpp ./Includes/BenchMark.hpp )

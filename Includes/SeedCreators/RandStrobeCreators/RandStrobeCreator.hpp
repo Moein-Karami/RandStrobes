@@ -11,10 +11,10 @@ class RandStrobeCreator : public SeedCreator
 {
 	public:
 		RandStrobeCreator(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
-				uint8_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
+				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 		~RandStrobeCreator();
 		std::vector<Seed*> create_seeds(const std::string& seq);
-		uint8_t get_char_code(char c);
+		uint32_t get_char_code(char c);
 		virtual std::vector<Seed*> create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
 				const std::vector<uint64_t> hashes) = 0;
 
@@ -23,7 +23,7 @@ class RandStrobeCreator : public SeedCreator
 		size_t w_min;
 		size_t w_max;
 		uint64_t mask;
-		uint8_t n;
+		uint32_t n;
 		Comparator* comparator;
 };
 
