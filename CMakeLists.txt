@@ -108,7 +108,7 @@ add_library(RandStrobeCreators STATIC ./Src/SeedCreators/RandStrobeCreators/Rand
 
 add_library(RandStrobeCreators1 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
-    ./Src/SeedCreators/SeedCreator.cpp)
+    ./Src/SeedCreators/SeedCreator.cpp) 
 add_library(RandStrobeCreators2 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
