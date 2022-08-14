@@ -16,8 +16,7 @@ class RandStrobeCreator : public SeedCreator
 		std::vector<Seed*> create_seeds(const std::string& seq);
 		uint32_t get_char_code(char c);
 		virtual std::vector<Seed*> create_seeds(const std::string& seq, const std::vector<uint64_t>& kmers,
-				const std::vector<uint64_t> hashes) = 0;
-
+				const std::vector<uint64_t> hashes);
 	protected:
 		size_t kmer_len;
 		size_t w_min;
@@ -25,6 +24,8 @@ class RandStrobeCreator : public SeedCreator
 		uint64_t mask;
 		uint32_t n;
 		Comparator* comparator;
+		virtual uint64_t get_score(const std::string& seq, const std::vector<uint64_t>& kmers,
+			const std::vector<uint64_t> hashes, uint64_t curr_hash, uint64_t ind1, uint64_t ind2) = 0;
 };
 
 #endif
