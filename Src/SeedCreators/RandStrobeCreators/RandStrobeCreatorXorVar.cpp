@@ -28,10 +28,10 @@ std::vector<Seed*> RandStrobeCreatorXorVar::create_seeds()
 
 			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
-				if (comparator->is_first_better(hasher->hash(curr_kmer ^ kmers[j]), best_value))
+				if (comparator->is_first_better(hasher->hash(curr_kmer ^ kmers[q]), best_value))
 				{
-					best_choose = j;
-					best_value = hasher->hash(curr_kmer ^ kmers[j]);
+					best_choose = q;
+					best_value = hasher->hash(curr_kmer ^ kmers[q]);
 				}
 			}
 

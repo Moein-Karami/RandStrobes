@@ -99,7 +99,21 @@ int32_t main()
 	uint32_t n;
 	uint64_t mask;
 
-	std::cin >> output_path >> kmer_len >> w_min >> w_max >> n >> mask;
+	std::cout << "Directory: ";
+	std::cin >> output_path; 
+	
+	std::cout << "kmer len: ";
+	std::cin >> kmer_len;
+
+	std::cout << "w_min and w_max: ";
+	std::cin >> w_min >> w_max;
+
+	std::cout << "n: ";
+	std::cin >> n;
+
+	std::cout << "mask: ";
+	std::cin >> mask;
+
 	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask);
 	config_generator.add_data_generator_config(output_path);
 }
