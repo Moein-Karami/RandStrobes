@@ -18,7 +18,7 @@ class RandStrobeCreator : public SeedCreator
 		virtual std::vector<Seed*> create_seeds();
 	protected:
 		std::string seq;
-		std::vector<uint64_t>& kmers;
+		std::vector<uint64_t> kmers;
 		std::vector<uint64_t> hashes;
 		size_t kmer_len;
 		size_t w_min;
