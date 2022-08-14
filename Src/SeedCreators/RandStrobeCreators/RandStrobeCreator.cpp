@@ -41,15 +41,16 @@ uint32_t RandStrobeCreator::get_char_code(char c)
 	return 0;
 }
 
-std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq)
+std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 {
-	std::vector<uint64_t> hashes;
-	std::vector<uint64_t> kmers;
+	seq = sequence;
+	hashes.clear();
+	kmers.clear();
 
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 
-	std::cerr << "before create kmers" << std::endl;
+	// std::cerr << "before create kmers" << std::endl;
 	
 	for (int i = 0; i < kmer_len - 1; i++)
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
@@ -64,11 +65,10 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq)
 
 	std::cerr << "before specialize create_seeds" << std::endl;
 
-	return create_seeds(seq, kmers, hashes);
+	return create_seeds();
 }
 
-std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq, 
-	const std::vector<uint64_t>& kmers, const std::vector<uint64_t> hashes)
+std::vector<Seed*> RandStrobeCreator::create_seeds()
 {
 	// std::cerr << "Start sahlin mode create seeds: " << std::endl;
 	// std::cerr << "testing seed creator comparator: " << comparator->is_first_better(1, 2) << " sould be true" <<
@@ -89,17 +89,17 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq,
 		for (int j = 1; j < n; j++)
 		{
 			best_choose = i + w_min + (j - 1) * w_max;
-			best_value = get_score(seq, kmers, hashes, curr_hash, i, best_choose);
+			best_value = get_score(curr_hash, i, best_choose);
 			// std::cerr << "before choose " << j + 1 << "kmer, best choose is: " << best_choose << std::endl;
 			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
 				// std::cerr << "checking " << q << "th kmer in seq " << std::endl;
 				// std::cerr << "curr value to be hash : " << (curr_hash + hashes[q]) % p << std::endl;
-				if (comparator->is_first_better(get_score(seq, kmers, hashes, curr_hash, i, q), best_value))
+				if (comparator->is_first_better(get_score(curr_hash, i, q), best_value))
 				{
 					// std::cerr << "checking results positive" << std::endl;
 					best_choose = q;
-					best_value = get_score(seq, kmers, hashes, curr_hash, i, q);
+					best_value = get_score(curr_hash, i, q);
 					// std::cerr << "best choose changes to " << best_choose << std::endl;
 				}
 				// std::cerr << "checking " << q << "th kmer in seq is done " << std::endl;
