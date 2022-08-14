@@ -9,8 +9,7 @@ RandStrobeCreatorSahlinMod::RandStrobeCreatorSahlinMod(Hasher* hasher, Comparato
 			" should be true" << std::endl << std::endl;
 }
 
-uint64_t RandStrobeCreatorSahlinMod::get_score(const std::string& seq, const std::vector<uint64_t>& kmers,
-			const std::vector<uint64_t> hashes, uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorSahlinMod::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
 	return (curr_hash + hashes[ind2]) % p;
 }

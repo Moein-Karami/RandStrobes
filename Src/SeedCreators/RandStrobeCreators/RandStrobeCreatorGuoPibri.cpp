@@ -6,8 +6,7 @@ RandStrobeCreatorGuoPibri::RandStrobeCreatorGuoPibri(Hasher* hasher, Comparator*
 {
 }
 
-uint64_t RandStrobeCreatorGuoPibri::get_score(const std::string& seq, const std::vector<uint64_t>& kmers,
-			const std::vector<uint64_t> hashes, uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorGuoPibri::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
 	return (curr_hash ^ hashes[ind2]);
 }
