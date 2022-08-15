@@ -10,8 +10,7 @@ class RandStrobeCreatorGuoPibri : public RandStrobeCreator
 				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 
 	protected:
-		uint64_t get_score(const std::string& seq, const std::vector<uint64_t>& kmers,
-			const std::vector<uint64_t> hashes, uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
+		uint64_t get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
 };
 
 #endif

@@ -64,9 +64,6 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 		
 		Hasher* hasher = create_hasher(config);
 		Comparator* comparator = create_comparator(config);
-		std::cerr << "testing comparator: " << std::endl;
-		std::cerr << comparator->is_first_better(1, 5) << std::endl;
-		std::cerr << "answer should be true" << std::endl << std::endl;
 
 		if (config["SeedCreatorConfig"]["method"].asString() == "GuoPibri")
 			return new RandStrobeCreatorGuoPibri(hasher, comparator, kmer_len, w_min, w_max, n, mask);

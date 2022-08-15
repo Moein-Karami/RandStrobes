@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
 RandStrobeCreatorXorVar.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
