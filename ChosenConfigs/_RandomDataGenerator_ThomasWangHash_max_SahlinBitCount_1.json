@@ -1,0 +1,21 @@
+{
+   "Comparator" : "max",
+   "DataGenerator" : "RandomDataGenerator",
+   "DataGeneratorConfig" : {
+      "seq_len" : 30
+   },
+   "Hasher" : "SimpleHasher",
+   "HasherConfig" : {
+      "method" : "ThomasWangHash"
+   },
+   "NumberOfSamples" : 1,
+   "SeedCreator" : "RandStrobeCreator",
+   "SeedCreatorConfig" : {
+      "kmer_len" : 4,
+      "mask" : 255,
+      "method" : "SahlinBitCount",
+      "n" : 2,
+      "w_max" : 20,
+      "w_min" : 10
+   }
+}
