@@ -1,19 +1,41 @@
 #include "ResultPrinter.hpp"
 
 void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<std::vector<Seed*>> seeds_collection,
-				std::string output_path)
+				std::string output_path, uint32_t n, uint64_t kmer_len, uint64_t w_min, uint64_t w_max,
+				uint64_t mask, std::string seed_method)
 {
-	std::ofstream output;
-	output.open(output_path);
-	output << construction_times.size() << std::endl;
-
+	std::ofstream output_csv;
+	std::ofstream output_csv2;
+	output_csv.open(output_path + ".csv");
+	output_csv2.open(output_path + "header.csv");
+	// output_txt << construction_times.size() << std::endl;
+	for(int i = 1; i <= n; i++)
+	{
+		std::stringstream string_to_int;
+		string_to_int << i;
+		std::string i_string;
+		string_to_int >> i_string;
+		output_csv << "kmer_" << i_string << "," << "hash_" << i_string;
+		if(i != n)
+			output_csv << ",";
+		else 
+		{
+			output_csv << "," << "Sample";
+			output_csv << std::endl;
+		}
+	}
+	output_csv2 << "TimeExecution,NumberofSeeds,n,kmer_len,w_min,w_max,mask,seed_generator_method,Sample" << std::endl;
 	for (int i = 0; i < construction_times.size(); i++)
 	{
-		output << construction_times[i] << std::endl << seeds_collection[i].size() << std::endl;
+		output_csv2 << construction_times[i] << "," << seeds_collection[i].size() << "," << n << "," <<
+			kmer_len << "," << w_min << "," << w_max << "," << mask << "," << seed_method << "," << 
+			i + 1 << std::endl;
 		for (auto seed : seeds_collection[i])
-			output << seed->to_string() << std::endl;
-		output << std::endl;
+			output_csv << seed->to_string() << i + 1 << std::endl;
+		output_csv << std::endl;
 	}
 	
-	output.close();
+	output_csv.close();
+	output_csv2.close();
 }
+

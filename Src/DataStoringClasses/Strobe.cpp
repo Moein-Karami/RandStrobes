@@ -17,12 +17,13 @@ std::string Strobe::get_seed()
 std::string Strobe::to_string()
 {
 	std::string res;
-	for (auto i : positions)
-		res += std::to_string(i) + ' ';
-	res += '\n';
-	for (auto i : kmers_hash)
-		res += std::to_string(i) + " ";
+
+	for(int i = 0; i < positions.size(); i++)
+	{
+		res += std::to_string(positions[i]) + ',' + std::to_string(kmers_hash[i]);
+		res += ",";
+	}
 	
-	
-	return res +'\n';
+	return res;
 }
+
