@@ -6,8 +6,12 @@ void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<
 {
 	std::ofstream output_csv;
 	std::ofstream output_csv2;
-	output_csv.open(output_path + ".csv");
-	output_csv2.open(output_path + "header.csv");
+	
+	std::string output_path_result = "BenchMarkResults/Results/" + output_path;
+	std::string output_path_header = "BenchMarkResults/Headers/" + output_path;
+
+	output_csv.open(output_path_result);
+	output_csv2.open(output_path_header);
 	// output_txt << construction_times.size() << std::endl;
 	for(int i = 1; i <= n; i++)
 	{
