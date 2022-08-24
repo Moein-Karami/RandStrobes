@@ -111,7 +111,11 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	std::cerr << "creating seeds is done " << std::endl;
 
 	ResultPrinter result_printer;
-	result_printer.print(durations, seeds_collection, output_path);
+	result_printer.print(durations, seeds_collection, output_path, 
+		config["SeedCreatorConfig"]["n"].asUInt(), config["SeedCreatorConfig"]["kmer_len"].asUInt64()
+		, config["SeedCreatorConfig"]["w_min"].asUInt64(), config["SeedCreatorConfig"]["w_max"].asUInt64()
+		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
+		);
 	
 	std::cerr << "job done " << std::endl;
 
