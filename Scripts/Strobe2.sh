@@ -8,6 +8,7 @@ do
 	name="${name/$configs_dir/}"
 	./RandStrobes.out "$config" "./BenchMarkResults/$name"
 	sleep 2
+	input_name = "$name"
 	name+=".csv"
-	Rscript EvaluationWithR/MetricsEvaluation.Rmd "$name" "$name"
+	R -e "\"input_name=\'$input_name\'; output_name=\'$name\'; rmarkdown::render(\'EvaluationWithR/MetricsEvaluation.Rmd\')\""
 done

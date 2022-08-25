@@ -1,14 +1,17 @@
 ---
 title: "Strobmers' Evaluation"
-output:
-  pdf_document: default
-  html_notebook: default
+#output:
+#  pdf_document: default
+#  html_notebook: default
+path_kmer_file: "`r path_kmer_file`"
+path_output_file: "`r path_output_file`"
 ---
 
 
 
-```{r}
-path_kmer_file <- readline(prompt = "Please Enter kmers file path for evaluation: ")
+```{r read_arg, include=FALSE}
+## path_kmer_file <- readline(prompt = "Please Enter kmers file path for evaluation: ")
+
 path_header_file <- path_kmer_file
 path_kmer_file <- paste(path_kmer_file, ".csv", sep = "")
 strobmers_data <- read.csv(path_kmer_file)
@@ -21,8 +24,7 @@ columns = c("TimeofExecution","E-hits_metric","UniqueKmers_2", "UniqueHashes", "
 output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(output_evaluation) = columns
 
-path_output_file <- readline(prompt = "Please Enter output file path for results: ")
-
+##path_output_file <- readline(prompt = "Please Enter output file path for results: ")
 
 #Evaluation 
 for(i in 1:nrow(header_data))
