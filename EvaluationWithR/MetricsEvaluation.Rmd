@@ -10,9 +10,12 @@ output:
 ```{r}
 path_kmer_file <- readline(prompt = "Please Enter kmers file path for evaluation: ")
 path_header_file <- path_kmer_file
-path_kmer_file <- paste(path_kmer_file, ".csv", sep = "")
+path_kmer_file <- paste("../BenchMarkResults/Results/", path_kmer_file, sep = "")
+path_header_file <- paste("../BenchMarkResults/Headers/", path_header_file, sep = "")
+
+#Reading csv files
+
 strobmers_data <- read.csv(path_kmer_file)
-path_header_file <- paste(path_header_file, "header.csv", sep = "")
 header_data <- read.csv(path_header_file)
 
 #Constructing a dataframe for output 
@@ -20,20 +23,31 @@ header_data <- read.csv(path_header_file)
 columns = c("TimeofExecution","E-hits_metric","UniqueKmers_2", "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
 output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(output_evaluation) = columns
+output_median <- output_evaluation
 
 path_output_file <- readline(prompt = "Please Enter output file path for results: ")
 
+path_output_all_samples <- paste("../EvaluationResults/AllSamples/", path_output_file, sep = "")
+path_output_median_samples <- paste("../EvaluationResults/MedianSamples/", path_output_file, sep = "")
+
 
 #Evaluation 
+
 for(i in 1:nrow(header_data))
 {
   #header_data
   #header_data[header_data['Sample']== 1, ]
   output_evaluation <- evaluate_sample(strobmers_data[strobmers_data['Sample'] == i, ], 
-                                       header_data[header_data['Sample']== i, ], output_evaluation)
+                                       header_data[header_data['Sample'] == i, ], output_evaluation)
 }
 
-  write.csv(output_evaluation, path_output_file, row.names = FALSE)
+  write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
+  median_output <- apply(output_evaluation, 2, median)
+  median_output <- as.vector(median_output)
+  output_median[1, ] <- median_output
+  print(output_median)
+  write.csv(output_median, path_output_median_samples, row.names = FALSE)
+
 
 ```
 
@@ -45,7 +59,7 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation)
    if(header_data$Sample == 1)
    {
     hist(strobmers_data$kmer_2, xlab = "Second Kmer Position", main = "Histogram Second Kmer", ylab = "Count", 
-         breaks = 100)
+         breaks = 1000)
    }
    
    time_execution <- header_data$TimeExecution
