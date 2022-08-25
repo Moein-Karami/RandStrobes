@@ -7,114 +7,6 @@ path_kmer_file: "`r path_kmer_file`"
 path_output_file: "`r path_output_file`"
 ---
 
-
-
-```{r read_arg, include=FALSE}
-## path_kmer_file <- readline(prompt = "Please Enter kmers file path for evaluation: ")
-
-path_header_file <- path_kmer_file
-path_kmer_file <- paste(path_kmer_file, ".csv", sep = "")
-strobmers_data <- read.csv(path_kmer_file)
-path_header_file <- paste(path_header_file, "header.csv", sep = "")
-header_data <- read.csv(path_header_file)
-
-#Constructing a dataframe for output 
-
-columns = c("TimeofExecution","E-hits_metric","UniqueKmers_2", "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
-output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
-colnames(output_evaluation) = columns
-
-##path_output_file <- readline(prompt = "Please Enter output file path for results: ")
-
-#Evaluation 
-for(i in 1:nrow(header_data))
-{
-  #header_data
-  #header_data[header_data['Sample']== 1, ]
-  output_evaluation <- evaluate_sample(strobmers_data[strobmers_data['Sample'] == i, ], 
-                                       header_data[header_data['Sample']== i, ], output_evaluation)
-}
-
-  write.csv(output_evaluation, path_output_file, row.names = FALSE)
-
-```
-
-
-```{r}
-evaluate_sample <- function(strobmers_data, header_data, output_evaluation)
-{
-   #print(paste("Time execution is: ", header_data$TimeExecution))
-   if(header_data$Sample == 1)
-   {
-    hist(strobmers_data$kmer_2, xlab = "Second Kmer Position", main = "Histogram Second Kmer", ylab = "Count", 
-         breaks = 100)
-   }
-   
-   time_execution <- header_data$TimeExecution
-   ehits <- calculate_ehits(strobmers_data)
-   unique_k2 <- calculate_unique_k2(strobmers_data)
-   unique_hashes <- calculate_unique_hashes(strobmers_data)
-   p_val_diff <- calculate_ks_test_diff(strobmers_data, header_data)
-   p_val_kmer2 <- calculate_ks_test_k2(strobmers_data, header_data)
-
-   output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits, unique_k2, unique_hashes,
-                                                        p_val_diff, p_val_kmer2, header_data$Sample)
-   return(output_evaluation)
-}
-```
-
-```{r}
-calculate_ehits <- function(strobmers_data)
-{
-  table_kmer2 <- table(strobmers_data$kmer_2)
-  count_vector <- as.vector(table_kmer2)
-  count_vector <- count_vector ^ 2;
-  return(mean(count_vector))
-  #print(paste("The E-hits metric value is: ", mean(count_vector)))
-}
-```
-
-```{r}
-calculate_unique_k2 <- function(strobmers_data)
-{
-  table_kmer2 <- table(strobmers_data$kmer_2)
-  return(length(names(table_kmer2)))
-  #print(paste("Number of unique k2 is: ", length(names(table_kmer2))))
-}
-```
-
-```{r}
-calculate_unique_hashes <- function(strobmers_data)
-{
-  hash_df <- strobmers_data[, c("hash_1", "hash_2")]
-  hash_df <- unique(hash_df)
-  return(nrow(hash_df))
-}
-```
-
-```{r}
-calculate_ks_test_diff <- function(strobmbers_data, header_data)
-{
-  rand_seeds <- build_random_seeds(strobmers_data, header_data)
-  diff_base_strobe <- strobmbers_data$kmer_2 - strobmers_data$kmer_1
-  diff_rand <- rand_seeds - 1:nrow(strobmers_data)
- # print(rand_seeds)
-  p_val_diff <- ks.test(diff_base_strobe, diff_rand)
-  #print(p_val_diff)
-  return(p_val_diff$p.value)
-}
-```
-
-```{r}
-calculate_ks_test_k2 <- function(strobmbers_data, header_data)
-{
-  rand_seeds <- build_random_seeds(strobmers_data, header_data)
-  p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_2)
-  return(p_val_diff$p.value)
-}
-```
-
-
 ```{r}
 build_random_seeds <- function(strobmers_data, header_data)
 {
@@ -132,7 +24,138 @@ build_random_seeds <- function(strobmers_data, header_data)
 }
 ```
 
+```{r}
+calculate_ks_test_k2 <- function(strobmbers_data, header_data)
+{
+  rand_seeds <- build_random_seeds(strobmers_data, header_data)
+  p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  return(p_val_diff$p.value)
+}
+```
+
+```{r}
+calculate_ks_test_diff <- function(strobmbers_data, header_data)
+{
+  rand_seeds <- build_random_seeds(strobmers_data, header_data)
+  diff_base_strobe <- strobmbers_data$kmer_2 - strobmers_data$kmer_1
+  diff_rand <- rand_seeds - 1:nrow(strobmers_data)
+ # print(rand_seeds)
+  p_val_diff <- ks.test(diff_base_strobe, diff_rand)
+  #print(p_val_diff)
+  return(p_val_diff$p.value)
+}
+```
 
 
+```{r}
+calculate_unique_hashes <- function(strobmers_data)
+{
+  hash_df <- strobmers_data[, c("hash_1", "hash_2")]
+  hash_df <- unique(hash_df)
+  return(nrow(hash_df))
+}
+```
+
+
+```{r}
+calculate_unique_k2 <- function(strobmers_data)
+{
+  table_kmer2 <- table(strobmers_data$kmer_2)
+  return(length(names(table_kmer2)))
+  #print(paste("Number of unique k2 is: ", length(names(table_kmer2))))
+}
+```
+
+```{r}
+calculate_ehits <- function(strobmers_data)
+{
+  table_kmer2 <- table(strobmers_data$kmer_2)
+  count_vector <- as.vector(table_kmer2)
+  count_vector <- count_vector ^ 2;
+  return(mean(count_vector))
+  #print(paste("The E-hits metric value is: ", mean(count_vector)))
+}
+```
+
+
+```{r}
+calculate_ehits <- function(strobmers_data)
+{
+  table_kmer2 <- table(strobmers_data$kmer_2)
+  count_vector <- as.vector(table_kmer2)
+  count_vector <- count_vector ^ 2;
+  return(mean(count_vector))
+  #print(paste("The E-hits metric value is: ", mean(count_vector)))
+}
+```
+
+
+```{r}
+evaluate_sample <- function(strobmers_data, header_data, output_evaluation)
+{
+   #print(paste("Time execution is: ", header_data$TimeExecution))
+   if(header_data$Sample == 1)
+   {
+    hist(strobmers_data$kmer_2, xlab = "Second Kmer Position", main = "Histogram Second Kmer", ylab = "Count", 
+         breaks = 1000)
+   }
+   
+   time_execution <- header_data$TimeExecution
+   ehits <- calculate_ehits(strobmers_data)
+   unique_k2 <- calculate_unique_k2(strobmers_data)
+   unique_hashes <- calculate_unique_hashes(strobmers_data)
+   p_val_diff <- calculate_ks_test_diff(strobmers_data, header_data)
+   p_val_kmer2 <- calculate_ks_test_k2(strobmers_data, header_data)
+
+   output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits, unique_k2, unique_hashes,
+                                                        p_val_diff, p_val_kmer2, header_data$Sample)
+   return(output_evaluation)
+}
+```
+
+```{r read_arg, include=FALSE}
+## path_kmer_file <- readline(prompt = "Please Enter kmers file path for evaluation: ")
+
+path_header_file <- path_kmer_file
+path_kmer_file <- paste("../BenchMarkResults/Results/", path_kmer_file, sep = "")
+path_header_file <- paste("../BenchMarkResults/Headers/", path_header_file, sep = "")
+
+#Reading csv files
+
+strobmers_data <- read.csv(path_kmer_file)
+header_data <- read.csv(path_header_file)
+
+#Constructing a dataframe for output 
+
+columns = c("TimeofExecution","E-hits_metric","UniqueKmers_2", "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
+output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
+colnames(output_evaluation) = columns
+output_median <- output_evaluation
+
+#path_output_file <- readline(prompt = "Please Enter output file path for results: ")
+
+path_output_all_samples <- paste("../EvaluationResults/AllSamples/", path_output_file, sep = "")
+path_output_median_samples <- paste("../EvaluationResults/MedianSamples/", path_output_file, sep = "")
+
+
+#Evaluation 
+
+for(i in 1:nrow(header_data))
+{
+  #header_data
+  #header_data[header_data['Sample']== 1, ]
+  output_evaluation <- evaluate_sample(strobmers_data[strobmers_data['Sample'] == i, ], 
+                                       header_data[header_data['Sample'] == i, ], output_evaluation)
+}
+
+  write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
+  median_output <- apply(output_evaluation, 2, median)
+  median_output <- as.vector(median_output)
+  output_median[1, ] <- median_output
+  print(output_median)
+  write.csv(output_median, path_output_median_samples, row.names = FALSE)
+
+
+```
 
 

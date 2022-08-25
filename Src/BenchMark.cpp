@@ -96,6 +96,9 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		std::cerr << "start sampling" << std::endl;
 
 		std::string seq = data_generator->get_data();
+
+		std::cerr << "Seq: " << seq << std::endl;
+
 		std::vector<Seed*> seeds;
 		
 		std::cerr << "data generated : " << seq << std::endl << std::endl;
@@ -130,6 +133,8 @@ void BenchMark::run(Json::Value config, std::string output_path)
 
 int32_t main(int argc, char* argv[])
 {
+	std::cerr << "Start" << std::endl;
+
 	if (argc != 3)
 	{
 		std::cerr << "Wrong Inputs" << std::endl;
@@ -148,5 +153,8 @@ int32_t main(int argc, char* argv[])
 	
 	BenchMark benchmark;
 	std::string output_path(argv[2]);
+
+	std::cerr << "Benchmark started" << std::endl;
+
 	benchmark.run(vals, output_path);
 }

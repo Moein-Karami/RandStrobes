@@ -1,0 +1,21 @@
+{
+   "Comparator" : "max",
+   "DataGenerator" : "RandomDataGenerator",
+   "DataGeneratorConfig" : {
+      "seq_len" : 100
+   },
+   "Hasher" : "SeedBasedHasher",
+   "HasherConfig" : {
+      "method" : "XXHash"
+   },
+   "NumberOfSamples" : 100,
+   "SeedCreator" : "RandStrobeCreator",
+   "SeedCreatorConfig" : {
+      "kmer_len" : 15,
+      "mask" : 18446744073709551615,
+      "method" : "SahlinMod",
+      "n" : 2,
+      "w_max" : 50,
+      "w_min" : 25
+   }
+}

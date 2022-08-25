@@ -6,21 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.cpp
-Strobe.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.hpp
-
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp
-RandStrobeCreatorLiuPatroLi.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
@@ -139,10 +127,6 @@ Maximizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
-RandStrobeCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp
