@@ -5,8 +5,8 @@
 #include "json.h"
 #include "json-forwards.h"
 
-const uint64_t NUMBER_OF_SAMPLES = 1;
-const uint64_t SEQ_LEN = 30;
+const uint64_t NUMBER_OF_SAMPLES = 100;
+const uint64_t SEQ_LEN = 100;
 
 class ConfigGenerator
 {
