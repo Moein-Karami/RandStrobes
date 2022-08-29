@@ -12,6 +12,7 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 		std::vector<Seed*> create_seeds();
 		std::vector<Seed*> create_seeds_min();
 		std::vector<Seed*> create_seeds_max();
+		
 	protected:
 		uint64_t get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
 		uint64_t p;

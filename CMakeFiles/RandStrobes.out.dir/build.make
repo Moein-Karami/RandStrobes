@@ -91,6 +91,7 @@ RandStrobes.out: build/libRandStrobeCreators3.a
 RandStrobes.out: build/libRandStrobeCreators4.a
 RandStrobes.out: build/libRandStrobeCreators5.a
 RandStrobes.out: build/libRandStrobeCreators6.a
+RandStrobes.out: build/libRandStrobeCreators7.a
 RandStrobes.out: build/libJson.a
 RandStrobes.out: build/libHashers.a
 RandStrobes.out: build/libHashersMet1.a

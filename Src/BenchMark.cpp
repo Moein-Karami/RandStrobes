@@ -77,31 +77,33 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 			return new RandStrobeCreatorShen(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "XorVar")
 			return new RandStrobeCreatorXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "MAMod")
+			return new RandStrobeCreatorMAMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 	}
 	return NULL;
 }
 
 void BenchMark::run(Json::Value config, std::string output_path)
 {
-	std::cerr << "Start Run" << std::endl << std::endl;
+	// std::cerr << "Start Run" << std::endl << std::endl;
 	DataGenerator* data_generator = create_data_generator(config);
-	std::cerr << "Data Generator created" << std::endl << std::endl;
+	// std::cerr << "Data Generator created" << std::endl << std::endl;
 	SeedCreator* seed_creator = create_seed_creator(config);
-	std::cerr << "Seed Creator created" << std::endl << std::endl;
+	// std::cerr << "Seed Creator created" << std::endl << std::endl;
 	std::vector<uint64_t> durations;
 	std::vector<std::vector<Seed*>> seeds_collection;
 
 	for (int i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
 	{
-		std::cerr << "start sampling" << std::endl;
+		//std::cerr << "start sampling" << std::endl;
 
 		std::string seq = data_generator->get_data();
 
-		std::cerr << "Seq: " << seq << std::endl;
+		//std::cerr << "Seq: " << seq << std::endl;
 
 		std::vector<Seed*> seeds;
 		
-		std::cerr << "data generated : " << seq << std::endl << std::endl;
+		//std::cerr << "data generated : " << seq << std::endl << std::endl;
 
 		auto start_time = std::chrono::high_resolution_clock::now();
 		seeds = seed_creator->create_seeds(seq);
@@ -111,7 +113,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		durations.push_back(duration.count());
 		seeds_collection.push_back(seeds);
 	}
-	std::cerr << "creating seeds is done " << std::endl;
+	// std::cerr << "creating seeds is done " << std::endl;
 
 	ResultPrinter result_printer;
 	result_printer.print(durations, seeds_collection, output_path, 
@@ -120,7 +122,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
 		);
 	
-	std::cerr << "job done " << std::endl;
+	// std::cerr << "job done " << std::endl;
 
 	for (auto seeds : seeds_collection)
 		for (auto seed : seeds)
@@ -128,16 +130,16 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	delete(data_generator);
 	delete(seed_creator);
 
-	std::cerr << "memmory fixed" << std::endl;
+	// std::cerr << "memmory fixed" << std::endl;
 }
 
 int32_t main(int argc, char* argv[])
 {
-	std::cerr << "Start" << std::endl;
+	// std::cerr << "Start" << std::endl;
 
 	if (argc != 3)
 	{
-		std::cerr << "Wrong Inputs" << std::endl;
+		// std::cerr << "Wrong Inputs" << std::endl;
 		return 0;
 	}
 
@@ -154,7 +156,7 @@ int32_t main(int argc, char* argv[])
 	BenchMark benchmark;
 	std::string output_path(argv[2]);
 
-	std::cerr << "Benchmark started" << std::endl;
+	// std::cerr << "Benchmark started" << std::endl;
 
 	benchmark.run(vals, output_path);
 }

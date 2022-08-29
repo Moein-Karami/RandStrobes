@@ -43,6 +43,8 @@ RandStrobeCreatorXorVar.hpp
 Includes/RandStrobeCreatorXorVar.hpp
 RandStrobeCreatorLiuPatroLi.hpp
 Includes/RandStrobeCreatorLiuPatroLi.hpp
+RandStrobeCreatorMAMod.hpp
+Includes/RandStrobeCreatorMAMod.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -285,6 +287,10 @@ RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
