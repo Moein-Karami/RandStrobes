@@ -25,6 +25,7 @@ CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/ResultPrinter.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
+CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp

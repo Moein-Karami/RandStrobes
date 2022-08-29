@@ -21,6 +21,7 @@
 #include "RandStrobeCreatorShen.hpp"
 #include "RandStrobeCreatorXorVar.hpp"
 #include "RandStrobeCreatorLiuPatroLi.hpp"
+#include "RandStrobeCreatorMAMod.hpp"
 
 
 #include "json-forwards.h"

@@ -63,7 +63,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 		kmers.push_back(tmp);
 	}
 
-	std::cerr << "before specialize create_seeds" << std::endl;
+	// std::cerr << "before specialize create_seeds" << std::endl;
 
 	return create_seeds();
 }
@@ -78,7 +78,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		std::cerr << "creating the " << i << "th strobe" << std::endl;
+		// std::cerr << "creating the " << i << "th strobe" << std::endl;
 		strobe = new Strobe();
 		strobe->add_kmer(i, hashes[i]);
 		curr_hash = hashes[i];

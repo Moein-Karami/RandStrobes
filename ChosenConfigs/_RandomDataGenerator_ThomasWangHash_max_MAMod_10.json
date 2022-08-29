@@ -1,0 +1,21 @@
+{
+   "Comparator" : "max",
+   "DataGenerator" : "RandomDataGenerator",
+   "DataGeneratorConfig" : {
+      "seq_len" : 10000
+   },
+   "Hasher" : "SimpleHasher",
+   "HasherConfig" : {
+      "method" : "ThomasWangHash"
+   },
+   "NumberOfSamples" : 10,
+   "SeedCreator" : "RandStrobeCreator",
+   "SeedCreatorConfig" : {
+      "kmer_len" : 15,
+      "mask" : 18446744073709551615,
+      "method" : "MAMod",
+      "n" : 2,
+      "w_max" : 1000,
+      "w_min" : 25
+   }
+}
