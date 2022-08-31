@@ -79,13 +79,21 @@ calculate_ehits <- function(strobmers_data)
 
 
 ```{r}
-calculate_ehits <- function(strobmers_data)
+calculate_ehits_diff <- function(strobmers_data)
 {
-  table_kmer2 <- table(strobmers_data$kmer_2)
-  count_vector <- as.vector(table_kmer2)
-  count_vector <- count_vector ^ 2;
-  return(mean(count_vector))
-  #print(paste("The E-hits metric value is: ", mean(count_vector)))
+   if(type_kmer == 2)
+  {
+    diff_vec <- strobmers_data$kmer_2 - strobmers_data$kmer_1
+  }
+  else 
+  {
+    diff_vec <- strobmers_data$kmer_3 - strobmers_data$kmer_2
+  }
+  table_diff <- table(diff_vec)
+  print(table_diff)
+  vec_table_dif <- as.vector(table_diff)
+  vec_table_dif <- vec_table_dif ^ 2
+  return(mean(vec_table_dif))
 }
 ```
 
@@ -93,22 +101,45 @@ calculate_ehits <- function(strobmers_data)
 ```{r}
 evaluate_sample <- function(strobmers_data, header_data, output_evaluation)
 {
-   #print(paste("Time execution is: ", header_data$TimeExecution))
+    #print(paste("Time execution is: ", header_data$TimeExecution))
    if(header_data$Sample == 1)
    {
     hist(strobmers_data$kmer_2, xlab = "Second Kmer Position", main = "Histogram Second Kmer", ylab = "Count", 
          breaks = 1000)
    }
-   
-   time_execution <- header_data$TimeExecution
-   ehits <- calculate_ehits(strobmers_data)
-   unique_k2 <- calculate_unique_k2(strobmers_data)
-   unique_hashes <- calculate_unique_hashes(strobmers_data)
-   p_val_diff <- calculate_ks_test_diff(strobmers_data, header_data)
-   p_val_kmer2 <- calculate_ks_test_k2(strobmers_data, header_data)
-
-   output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits, unique_k2, unique_hashes,
-                                                        p_val_diff, p_val_kmer2, header_data$Sample)
+   print(type_kmer)
+   if(type_kmer == 2)
+   {
+     time_execution <- header_data$TimeExecution
+     ehits <- calculate_ehits(strobmers_data, 2)
+     unique_k2 <- calculate_unique_k2(strobmers_data, 2)
+     unique_hashes <- calculate_unique_hashes(strobmers_data, 2)
+     p_val_diff <- calculate_ks_test_diff(strobmers_data, header_data, 2)
+     p_val_kmer2 <- calculate_ks_test_k2(strobmers_data, header_data, 2)
+     diff_ehits <- calculate_ehits_diff(strobmers_data, 2)
+  
+     output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
+                                                          p_val_diff, p_val_kmer2, header_data$Sample)
+   }else 
+   {
+     time_execution <- header_data$TimeExecution
+     ehits2 <- calculate_ehits(strobmers_data, 2)
+     ehits3 <- calculate_ehits(strobmers_data, 3)
+     unique_k2 <- calculate_unique_k2(strobmers_data, 2)
+     unique_k3 <- calculate_unique_k2(strobmers_data, 3)
+     unique_hashes <- calculate_unique_hashes(strobmers_data, 3)
+     p_val_diff2 <- calculate_ks_test_diff(strobmers_data, header_data, 2)
+     p_val_diff3 <- calculate_ks_test_diff(strobmers_data, header_data, 3)
+     p_val_kmer2 <- calculate_ks_test_k2(strobmers_data, header_data, 2)
+     p_val_kmer3 <- calculate_ks_test_k2(strobmers_data, header_data, 3)
+     diff_ehits2 <- calculate_ehits_diff(strobmers_data, 2)
+     diff_ehits3 <- calculate_ehits_diff(strobmers_data, 3)
+  
+     output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits2, ehits3, 
+                                                          diff_ehits2, diff_ehits3, unique_k2, unique_k3, 
+                                                          unique_hashes, p_val_diff2, p_val_diff3,
+                                                          p_val_kmer2, p_val_kmer3, header_data$Sample)
+   }
    return(output_evaluation)
 }
 ```
