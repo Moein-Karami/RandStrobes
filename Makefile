@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+CMAKE_SOURCE_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+CMAKE_BINARY_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -187,6 +187,19 @@ Json: cmake_check_build_system
 Json/fast:
 	$(MAKE) -f CMakeFiles/Json.dir/build.make CMakeFiles/Json.dir/build
 .PHONY : Json/fast
+
+#=============================================================================
+# Target rules for targets named RandStrobeCreators7
+
+# Build rule for target.
+RandStrobeCreators7: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators7
+.PHONY : RandStrobeCreators7
+
+# fast build rule for target.
+RandStrobeCreators7/fast:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/build
+.PHONY : RandStrobeCreators7/fast
 
 #=============================================================================
 # Target rules for targets named ResultPrinter
@@ -579,6 +592,7 @@ Src/DataStoringClasses/Strobe.o: Src/DataStoringClasses/Strobe.cpp.o
 
 # target to build an object file
 Src/DataStoringClasses/Strobe.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Strobe.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Strobe.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Strobe.cpp.o
 	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o
@@ -594,6 +608,7 @@ Src/DataStoringClasses/Strobe.i: Src/DataStoringClasses/Strobe.cpp.i
 
 # target to preprocess a source file
 Src/DataStoringClasses/Strobe.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Strobe.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Strobe.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Strobe.cpp.i
 	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.i
@@ -609,6 +624,7 @@ Src/DataStoringClasses/Strobe.s: Src/DataStoringClasses/Strobe.cpp.s
 
 # target to generate assembly for a file
 Src/DataStoringClasses/Strobe.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Strobe.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Strobe.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Strobe.cpp.s
 	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.s
@@ -900,6 +916,7 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.o: Src/SeedCreators/RandSt
 
 # target to build an object file
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
@@ -915,6 +932,7 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.i: Src/SeedCreators/RandSt
 
 # target to preprocess a source file
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
@@ -930,6 +948,7 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.s: Src/SeedCreators/RandSt
 
 # target to generate assembly for a file
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
@@ -992,6 +1011,33 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.s: Src/SeedCreat
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp.s
 .PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp.s
+
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.o: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.o
+
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.o
+
+# target to build an object file
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.o
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.o
+
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.i: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.i
+
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.i
+
+# target to preprocess a source file
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.i
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.i
+
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.s: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.s
+
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.s
+
+# target to generate assembly for a file
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.s
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp.s
 
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.o: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp.o
 
@@ -1107,6 +1153,7 @@ Src/SeedCreators/SeedCreator.o: Src/SeedCreators/SeedCreator.cpp.o
 
 # target to build an object file
 Src/SeedCreators/SeedCreator.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
@@ -1123,6 +1170,7 @@ Src/SeedCreators/SeedCreator.i: Src/SeedCreators/SeedCreator.cpp.i
 
 # target to preprocess a source file
 Src/SeedCreators/SeedCreator.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.i
@@ -1139,6 +1187,7 @@ Src/SeedCreators/SeedCreator.s: Src/SeedCreators/SeedCreator.cpp.s
 
 # target to generate assembly for a file
 Src/SeedCreators/SeedCreator.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.s
@@ -1161,6 +1210,7 @@ help:
 	@echo "... HashersMet2"
 	@echo "... Hashers"
 	@echo "... Json"
+	@echo "... RandStrobeCreators7"
 	@echo "... ResultPrinter"
 	@echo "... HashersSeed3"
 	@echo "... RandStrobeCreators6"
@@ -1239,6 +1289,9 @@ help:
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.o"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.i"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.s"
+	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.o"
+	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.i"
+	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.s"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.o"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.i"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.s"

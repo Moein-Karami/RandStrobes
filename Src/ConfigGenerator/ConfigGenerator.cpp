@@ -1,11 +1,14 @@
 #include "ConfigGenerator.hpp"
 
-ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask)
+ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask,
+		uint64_t number_of_samples, uint64_t seq_len)
 : kmer_len(kmer_len)
 , w_min(w_min)
 , w_max(w_max)
 , n(n)
 , mask(mask)
+, number_of_samples(number_of_samples)
+, seq_len(seq_len)
 {
 }
 
@@ -15,7 +18,7 @@ void ConfigGenerator::add_data_generator_config(std::string path)
 	config["DataGenerator"] = "RandomDataGenerator";
 
 	Json::Value data_generator_config;
-	data_generator_config["seq_len"] = SEQ_LEN;
+	data_generator_config["seq_len"] = seq_len;
 	config["DataGeneratorConfig"] = data_generator_config;
 
 	add_hasher_config(path + "_RandomDataGenerator", config);
@@ -57,7 +60,8 @@ void ConfigGenerator::add_comparator_config(std::string output_path, Json::Value
 
 void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Value config)
 {
-	std::vector<std::string> seed_creators = {"GuoPibri", "LiuPatroLi", "SahlinBitCount", "SahlinMod", "Shen", "XorVar"};
+	std::vector<std::string> seed_creators = {"GuoPibri", "LiuPatroLi", "SahlinBitCount", "SahlinMod", "Shen", "XorVar",
+		"MAMod"};
 
 	config["SeedCreator"] = "RandStrobeCreator";
 	
@@ -70,7 +74,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 
 	for (auto seed_creator : seed_creators)
 	{
-		if (seed_creator == "LiuPatroLi" && config["HasherConfig"]["method"] == "NoHash")
+		if (seed_creator == "LiuPatroLi" && (config["HasherConfig"]["method"] == "NoHash" || config["HasherConfig"]["method"] == "ThomasWangHash"))
 			continue;
 		seed_creator_config["method"] = seed_creator;
 		config["SeedCreatorConfig"] = seed_creator_config;
@@ -80,8 +84,8 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 
 void ConfigGenerator::add_number_of_samples_config(std::string output_path, Json::Value config)
 {
-	output_path += "_" + std::to_string(NUMBER_OF_SAMPLES) + ".json";
-	config["NumberOfSamples"] = NUMBER_OF_SAMPLES;
+	output_path += "_" + std::to_string(number_of_samples) + ".json";
+	config["NumberOfSamples"] = number_of_samples;
 	Json::StyledWriter writer;
 
 	std::ofstream file(output_path);
@@ -98,6 +102,8 @@ int32_t main()
 	uint64_t w_max;
 	uint32_t n;
 	uint64_t mask;
+	uint64_t number_of_samples;
+	uint64_t seq_len;
 
 	std::cout << "Directory: ";
 	std::cin >> output_path; 
@@ -114,6 +120,12 @@ int32_t main()
 	std::cout << "mask: ";
 	std::cin >> mask;
 
-	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask);
+	std::cout << "number of samples: ";
+	std::cin >> number_of_samples;
+
+	std::cout << "seq len: ";
+	std::cin >> seq_len;
+
+	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask, number_of_samples, seq_len);
 	config_generator.add_data_generator_config(output_path);
 }

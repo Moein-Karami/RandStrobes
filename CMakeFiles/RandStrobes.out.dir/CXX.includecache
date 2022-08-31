@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/BenchMark.cpp
 BenchMark.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/BenchMark.hpp
 
 Includes/BenchMark.hpp
 ResultPrinter.hpp
@@ -43,6 +43,8 @@ RandStrobeCreatorXorVar.hpp
 Includes/RandStrobeCreatorXorVar.hpp
 RandStrobeCreatorLiuPatroLi.hpp
 Includes/RandStrobeCreatorLiuPatroLi.hpp
+RandStrobeCreatorMAMod.hpp
+Includes/RandStrobeCreatorMAMod.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -285,6 +287,10 @@ RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 

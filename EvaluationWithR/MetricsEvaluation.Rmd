@@ -1,8 +1,10 @@
 ---
 title: "Strobmers' Evaluation"
-output:
-  pdf_document: default
-  html_notebook: default
+#output:
+#  pdf_document: default
+#  html_notebook: default
+path_kmer_file: "`r path_kmer_file`"
+path_output_file: "`r path_output_file`"
 ---
 
 
@@ -21,18 +23,7 @@ header_data <- read.csv(path_header_file)
 #Constructing a dataframe for output 
 kmer_type = header_data$n[1]
 
-if(kmer_type == 2)
-{
-  columns = c("TimeofExecution","E-hits_metric","E-hits_diff", "UniqueKmers_2", 
-              "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
-}else 
-{
-   columns = c("TimeofExecution","E-hits_metric_kmer2","E-hits_metric_kmer2",
-              "E-hits_kmer3", "E-hits_diff_kmer2", "E-hits_kmer3",
-              "UniqueKmers_2","UniqueKmers_3", "UniqueHashes", "KS-test-diff_kmer2"
-              ,"KS-test-diff_kmer3","KS-test-kmer2","KS-test-kmer3", "Sample") 
-}
-
+columns = c("TimeofExecution","E-hits_metric","UniqueKmers_2", "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
 output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(output_evaluation) = columns
 output_median <- output_evaluation
@@ -50,16 +41,15 @@ for(i in 1:nrow(header_data))
   #header_data
   #header_data[header_data['Sample']== 1, ]
   output_evaluation <- evaluate_sample(strobmers_data[strobmers_data['Sample'] == i, ], 
-                                       header_data[header_data['Sample'] == i, ], output_evaluation
-                                       , kmer_type)
+                                       header_data[header_data['Sample'] == i, ], output_evaluation)
 }
 
-write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
-median_output <- apply(output_evaluation, 2, median)
-median_output <- as.vector(median_output)
-output_median[1, ] <- median_output
-print(output_median)
-write.csv(output_median, path_output_median_samples, row.names = FALSE)
+  write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
+  median_output <- apply(output_evaluation, 2, median)
+  median_output <- as.vector(median_output)
+  output_median[1, ] <- median_output
+  print(output_median)
+  write.csv(output_median, path_output_median_samples, row.names = FALSE)
 
 
 ```
@@ -112,16 +102,9 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type
 ```
 
 ```{r}
-calculate_ehits <- function(strobmers_data, type_kmer)
+calculate_ehits <- function(strobmers_data)
 {
-  if(type_kmer == 2)
-  {
-    table_kmer2 <- table(strobmers_data$kmer_2)
-  }
-  else 
-  {
-      table_kmer2 <- table(strobmers_data$kmer_3)
-  }
+  table_kmer2 <- table(strobmers_data$kmer_2)
   count_vector <- as.vector(table_kmer2)
   count_vector <- count_vector ^ 2;
   return(mean(count_vector))
@@ -203,40 +186,32 @@ calculate_ks_test_diff <- function(strobmbers_data, header_data, type_kmer)
 ```
 
 ```{r}
-calculate_ks_test_k2 <- function(strobmbers_data, header_data, type_kmer)
+calculate_ks_test_k2 <- function(strobmbers_data, header_data)
 {
   rand_seeds <- build_random_seeds(strobmers_data, header_data)
-  if(type_kmer == 2)
-  {
-    p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_2)
-  }
-  else 
-  {
-    p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_3)
-  }
+  p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_2)
   return(p_val_diff$p.value)
 }
 ```
 
+#Evaluation 
 
-```{r}
-build_random_seeds <- function(strobmers_data, header_data)
+for(i in 1:nrow(header_data))
 {
-  w_min <- header_data$w_min
-  w_max <- header_data$w_max
-  vec_rand_seeds <- c()
-  for(i in 1:header_data$NumberofSeeds)
-  {
-    rand <- sample(1:(w_max - w_min + 1), 1)
-    new_elem <- w_min + i + rand - 1
-    vec_rand_seeds <- append(vec_rand_seeds, new_elem)
-  }
-  #print(vec_rand_seeds)
-  return(vec_rand_seeds)
+  #header_data
+  #header_data[header_data['Sample']== 1, ]
+  output_evaluation <- evaluate_sample(strobmers_data[strobmers_data['Sample'] == i, ], 
+                                       header_data[header_data['Sample'] == i, ], output_evaluation)
 }
+
+  write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
+  median_output <- apply(output_evaluation, 2, median)
+  median_output <- as.vector(median_output)
+  output_median[1, ] <- median_output
+  print(output_median)
+  write.csv(output_median, path_output_median_samples, row.names = FALSE)
+
+
 ```
-
-
-
 
 
