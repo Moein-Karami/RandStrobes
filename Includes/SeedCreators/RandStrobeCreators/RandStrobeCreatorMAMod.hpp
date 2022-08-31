@@ -8,7 +8,7 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 {
 	public:
 		RandStrobeCreatorMAMod(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
-				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK, uint64_t p = DEFALUT_P);
+				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK, uint64_t p = DEFAULT_P);
 		std::vector<Seed*> create_seeds();
 		std::vector<Seed*> create_seeds_min();
 		std::vector<Seed*> create_seeds_max();

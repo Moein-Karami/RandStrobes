@@ -21,7 +21,9 @@ Hasher* BenchMark::create_hasher(Json::Value config)
 			return new NoHash();
 		else if (config["HasherConfig"]["method"].asString() == "ThomasWangHash")
 		{
-			uint64_t mask = DEFAULT_MASK;
+			std::cerr << "kmer_len: " << config["SeedCreatorConfig"]["kmer_len"].asUInt64() << std::endl;
+			uint64_t mask = (1LL <<2*config["SeedCreatorConfig"]["kmer_len"].asUInt()) - 1;
+			std::cerr << "Mask: " << mask << std::endl;
 			if (!config["HasherConfig"]["mask"].isNull())
 				mask = config["HasherConfig"]["mask"].asUInt64();
 			return new ThomasWangHash(mask);
