@@ -6,14 +6,14 @@
    },
    "Hasher" : "SeedBasedHasher",
    "HasherConfig" : {
-      "method" : "XXHash"
+      "method" : "WyHash"
    },
    "NumberOfSamples" : 1,
    "SeedCreator" : "RandStrobeCreator",
    "SeedCreatorConfig" : {
       "kmer_len" : 20,
       "mask" : 18446744073709551615,
-      "method" : "MAMod",
+      "method" : "LiuPatroLi",
       "n" : 2,
       "w_max" : 100,
       "w_min" : 21

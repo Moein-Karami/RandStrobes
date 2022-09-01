@@ -72,6 +72,8 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 
 std::vector<Seed*> RandStrobeCreator::create_seeds()
 {
+	prepare_data();
+
 	std::vector<Seed*> seeds;
 	Strobe* strobe;
 	size_t best_choose;
@@ -118,4 +120,9 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 uint64_t RandStrobeCreator::get_first_hash(size_t ind)
 {
 	return hashes[ind];
+}
+
+void RandStrobeCreator::prepare_data()
+{
+	/* Do nothing */
 }
