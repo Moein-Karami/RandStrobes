@@ -1,2 +1,2 @@
-"TimeofExecution","E-hits_metric","UniqueKmers_2","UniqueHashes","KS-test-diff","KS-test-kmer2","Sample"
-548,4.93548387096774,31,58,1.59385260545264e-09,1.7803624130508e-09,1
+"TimeofExecution","E-hits_metric","E-hits-diff","UniqueKmers_2","UniqueHashes","KS-test-diff","KS-test-kmer2","Sample"
+548,4.93548387096774,2.25,31,58,1.28971395096933e-06,5.77129455336944e-10,1

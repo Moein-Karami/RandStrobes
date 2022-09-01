@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
 RandomDataGenerator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataGenerators/RandomDataGenerator.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.hpp
 
 Includes/DataGenerators/DataGenerator.hpp
 LibrariesAndDefines.hpp
