@@ -13,7 +13,7 @@
    "SeedCreatorConfig" : {
       "kmer_len" : 20,
       "mask" : 18446744073709551615,
-      "method" : "SahlinMod",
+      "method" : "MAXor",
       "n" : 2,
       "w_max" : 100,
       "w_min" : 21

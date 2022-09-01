@@ -61,7 +61,7 @@ void ConfigGenerator::add_comparator_config(std::string output_path, Json::Value
 void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Value config)
 {
 	std::vector<std::string> seed_creators = {"GuoPibri", "LiuPatroLi", "SahlinBitCount", "SahlinMod", "Shen", "XorVar",
-		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen"};
+		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor"};
 
 	config["SeedCreator"] = "RandStrobeCreator";
 	
@@ -75,6 +75,8 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	for (auto seed_creator : seed_creators)
 	{
 		if (seed_creator == "LiuPatroLi" && (config["HasherConfig"]["method"] == "NoHash" || config["HasherConfig"]["method"] == "ThomasWangHash"))
+			continue;
+		if (seed_creator == "MAXor" && config["HasherConfig"]["method"] == "NoHash")
 			continue;
 		seed_creator_config["method"] = seed_creator;
 		config["SeedCreatorConfig"] = seed_creator_config;
