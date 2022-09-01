@@ -1,5 +1,5 @@
 {
-   "Comparator" : "max",
+   "Comparator" : "min",
    "DataGenerator" : "RandomDataGenerator",
    "DataGeneratorConfig" : {
       "seq_len" : 100

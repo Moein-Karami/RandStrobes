@@ -18,13 +18,10 @@
 #include "RandStrobeCreatorGuoPibri.hpp"
 #include "RandStrobeCreatorSahlinBitCount.hpp"
 #include "RandStrobeCreatorSahlinMod.hpp"
-#include "RandStrobeCreatorFixedSahlinMod.hpp"
 #include "RandStrobeCreatorShen.hpp"
-#include "RandStrobeCreatorSpecialCaseFixedShen.hpp"
 #include "RandStrobeCreatorXorVar.hpp"
 #include "RandStrobeCreatorLiuPatroLi.hpp"
 #include "RandStrobeCreatorMAMod.hpp"
-#include "RandStrobeCreatorMAXor.hpp"
 
 
 #include "json-forwards.h"

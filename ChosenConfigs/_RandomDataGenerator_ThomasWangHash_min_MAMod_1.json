@@ -1,12 +1,12 @@
 {
-   "Comparator" : "max",
+   "Comparator" : "min",
    "DataGenerator" : "RandomDataGenerator",
    "DataGeneratorConfig" : {
       "seq_len" : 100
    },
-   "Hasher" : "SeedBasedHasher",
+   "Hasher" : "SimpleHasher",
    "HasherConfig" : {
-      "method" : "XXHash"
+      "method" : "ThomasWangHash"
    },
    "NumberOfSamples" : 1,
    "SeedCreator" : "RandStrobeCreator",
