@@ -353,7 +353,7 @@ pre code {
 </div>
 
 
-<pre class="r"><code>build_random_seeds &lt;- function(strobmers_data, header_data)
+<pre class="r"><code>build_random_seeds &lt;- function(strobmers_data, header_data, type_kmer)
 {
   w_min &lt;- header_data$w_min
   w_max &lt;- header_data$w_max
@@ -362,19 +362,30 @@ pre code {
   {
     rand &lt;- sample(1:(w_max - w_min + 1), 1)
     new_elem &lt;- w_min + i + rand - 1
+    if(type_kmer == 3)
+    {
+      rand2 &lt;- sample(1:(w_max - w_min + 1), 1)
+      new_elem &lt;- w_min + new_elem + rand2 - 1
+    }
     vec_rand_seeds &lt;- append(vec_rand_seeds, new_elem)
   }
   return(vec_rand_seeds)
 }</code></pre>
 <pre class="r"><code>calculate_ks_test_k2 &lt;- function(strobmbers_data, header_data, type_kmer)
 {
-  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data)
-  p_val_diff &lt;- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data, type_kmer)
+  if(type_kmer == 2)
+  {
+    p_val_diff &lt;- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  }else
+  {
+     p_val_diff &lt;- ks.test(rand_seeds, strobmbers_data$kmer_3)
+  }
   return(p_val_diff$p.value)
 }</code></pre>
 <pre class="r"><code>calculate_ks_test_diff &lt;- function(strobmbers_data, header_data, type_kmer)
 {
-  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data)
+  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data, type_kmer)
   if(type_kmer == 2)
   {
     diff_base_strobe &lt;- strobmbers_data$kmer_2 - strobmers_data$kmer_1

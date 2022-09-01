@@ -8,7 +8,7 @@ path_output_file: "`r path_output_file`"
 ---
 
 ```{r}
-build_random_seeds <- function(strobmers_data, header_data)
+build_random_seeds <- function(strobmers_data, header_data, type_kmer)
 {
   w_min <- header_data$w_min
   w_max <- header_data$w_max
@@ -17,6 +17,11 @@ build_random_seeds <- function(strobmers_data, header_data)
   {
     rand <- sample(1:(w_max - w_min + 1), 1)
     new_elem <- w_min + i + rand - 1
+    if(type_kmer == 3)
+    {
+      rand2 <- sample(1:(w_max - w_min + 1), 1)
+      new_elem <- w_min + new_elem + rand2 - 1
+    }
     vec_rand_seeds <- append(vec_rand_seeds, new_elem)
   }
   return(vec_rand_seeds)
@@ -26,8 +31,14 @@ build_random_seeds <- function(strobmers_data, header_data)
 ```{r}
 calculate_ks_test_k2 <- function(strobmbers_data, header_data, type_kmer)
 {
-  rand_seeds <- build_random_seeds(strobmers_data, header_data)
-  p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  rand_seeds <- build_random_seeds(strobmers_data, header_data, type_kmer)
+  if(type_kmer == 2)
+  {
+    p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  }else
+  {
+     p_val_diff <- ks.test(rand_seeds, strobmbers_data$kmer_3)
+  }
   return(p_val_diff$p.value)
 }
 ```
@@ -35,7 +46,7 @@ calculate_ks_test_k2 <- function(strobmbers_data, header_data, type_kmer)
 ```{r}
 calculate_ks_test_diff <- function(strobmbers_data, header_data, type_kmer)
 {
-  rand_seeds <- build_random_seeds(strobmers_data, header_data)
+  rand_seeds <- build_random_seeds(strobmers_data, header_data, type_kmer)
   if(type_kmer == 2)
   {
     diff_base_strobe <- strobmbers_data$kmer_2 - strobmers_data$kmer_1
@@ -188,8 +199,8 @@ if(kmer_type == 2)
   columns = c("TimeofExecution","E-hits_metric","E-hits-diff", "UniqueKmers_2", "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
 }else 
 {
-    columns = c("TimeofExecution","E-hits_metric_kmer2", "E-hits_metric_kmer3","
-                UniqueKmers_2", "UniqueKmers_3", "UniqueHashes", "KS-test-diff_kmer2",
+    columns = c("TimeofExecution","E-hits_metric_kmer2", "E-hits_metric_kmer3",
+                "UniqueKmers_2", "UniqueKmers_3", "UniqueHashes", "KS-test-diff_kmer2",
                 "KS-test-diff_kmer3", "KS-test-kmer2", "KS-test-kmer3", "Sample") 
 }
 output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
