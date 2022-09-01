@@ -37,14 +37,20 @@ RandStrobeCreatorSahlinBitCount.hpp
 Includes/RandStrobeCreatorSahlinBitCount.hpp
 RandStrobeCreatorSahlinMod.hpp
 Includes/RandStrobeCreatorSahlinMod.hpp
+RandStrobeCreatorFixedSahlinMod.hpp
+Includes/RandStrobeCreatorFixedSahlinMod.hpp
 RandStrobeCreatorShen.hpp
 Includes/RandStrobeCreatorShen.hpp
+RandStrobeCreatorSpecialCaseFixedShen.hpp
+Includes/RandStrobeCreatorSpecialCaseFixedShen.hpp
 RandStrobeCreatorXorVar.hpp
 Includes/RandStrobeCreatorXorVar.hpp
 RandStrobeCreatorLiuPatroLi.hpp
 Includes/RandStrobeCreatorLiuPatroLi.hpp
 RandStrobeCreatorMAMod.hpp
 Includes/RandStrobeCreatorMAMod.hpp
+RandStrobeCreatorMAXor.hpp
+Includes/RandStrobeCreatorMAXor.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -282,6 +288,10 @@ Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
 
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorFixedSahlinMod.hpp
+RandStrobeCreatorSahlinMod.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
+
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
@@ -291,6 +301,10 @@ RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
@@ -305,6 +319,10 @@ Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.hpp
+RandStrobeCreatorShen.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
 RandStrobeCreator.hpp
