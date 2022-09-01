@@ -11,11 +11,11 @@
    "NumberOfSamples" : 1,
    "SeedCreator" : "RandStrobeCreator",
    "SeedCreatorConfig" : {
-      "kmer_len" : 20,
+      "kmer_len" : 15,
       "mask" : 18446744073709551615,
       "method" : "SahlinMod",
-      "n" : 2,
-      "w_max" : 100,
-      "w_min" : 21
+      "n" : 3,
+      "w_max" : 30,
+      "w_min" : 16
    }
 }

@@ -24,6 +24,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
   "Includes/ConfigGenerator"
+  "Includes/Tools"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersSeed3.dir/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp.o"
@@ -46,6 +47,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
   "Includes/ConfigGenerator"
+  "Includes/Tools"
   )
 
 # Targets to which this target links.

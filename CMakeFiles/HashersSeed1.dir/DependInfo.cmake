@@ -23,6 +23,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
   "Includes/ConfigGenerator"
+  "Includes/Tools"
   )
 
 # Targets to which this target links.
