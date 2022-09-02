@@ -1,13 +1,12 @@
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/edit_cache.dir
-/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/ConfigGen.dir
-/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators5.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators2.dir
-/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators10.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators4.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataStore.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HasherSimple1.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/SeedCreators.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataGen.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators5.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/ConfigGen.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators3.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Maximizer.dir
 /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobes.out.dir

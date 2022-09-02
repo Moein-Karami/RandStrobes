@@ -462,7 +462,6 @@ pre code {
     hist(strobmers_data$kmer_2, xlab = &quot;Second Kmer Position&quot;, main = &quot;Histogram Second Kmer&quot;, ylab = &quot;Count&quot;, 
          breaks = 1000)
    }
-   print(type_kmer)
    if(type_kmer == 2)
    {
      time_execution &lt;- header_data$TimeExecution
@@ -472,9 +471,12 @@ pre code {
      p_val_diff &lt;- calculate_ks_test_diff(strobmers_data, header_data, 2)
      p_val_kmer2 &lt;- calculate_ks_test_k2(strobmers_data, header_data, 2)
      diff_ehits &lt;- calculate_ehits_diff(strobmers_data, 2)
+     hash_method &lt;- as.character(header_data$HashMethod)
+     randstrobe_method &lt;- as.character(header_data$SeedGeneratorMethod)
   
-     output_evaluation[nrow(output_evaluation) + 1,] &lt;- c(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
-                                                          p_val_diff, p_val_kmer2, header_data$Sample)
+     output_evaluation[nrow(output_evaluation) + 1,] &lt;- list(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
+                                                          p_val_diff, p_val_kmer2, 
+                                                          hash_method, randstrobe_method, header_data$Sample)
    }else 
    {
      time_execution &lt;- header_data$TimeExecution
@@ -489,11 +491,14 @@ pre code {
      p_val_kmer3 &lt;- calculate_ks_test_k2(strobmers_data, header_data, 3)
      diff_ehits2 &lt;- calculate_ehits_diff(strobmers_data, 2)
      diff_ehits3 &lt;- calculate_ehits_diff(strobmers_data, 3)
+     hash_method &lt;- as.character(header_data$HashMethod)
+     randstrobe_method &lt;- as.character(header_data$SeedGeneratorMethod)
   
-     output_evaluation[nrow(output_evaluation) + 1,] &lt;- c(time_execution, ehits2, ehits3, 
+     output_evaluation[nrow(output_evaluation) + 1,] &lt;- list(time_execution, ehits2, ehits3, 
                                                           diff_ehits2, diff_ehits3, unique_k2, unique_k3, 
                                                           unique_hashes, p_val_diff2, p_val_diff3,
-                                                          p_val_kmer2, p_val_kmer3, header_data$Sample)
+                                                          p_val_kmer2, p_val_kmer3,
+                                                          hash_method, randstrobe_method, header_data$Sample)
    }
    return(output_evaluation)
 }</code></pre>
