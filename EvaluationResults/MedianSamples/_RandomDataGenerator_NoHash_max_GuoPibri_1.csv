@@ -1,2 +1,2 @@
-"TimeofExecution","E-hits_metric_kmer2","E-hits_metric_kmer3","UniqueKmers_2","UniqueKmers_3","UniqueHashes","KS-test-diff_kmer2","KS-test-diff_kmer3","KS-test-kmer2","KS-test-kmer3","Sample"
-90,2.96153846153846,14.8461538461538,10.3571428571429,8.05882352941176,26,13,39,0.905701564703783,4.56301663120939e-14,0.745252999517785
+"TimeofExecution","E-hits_metric_kmer2","E-hits_metric_kmer3","Diff-E-hits-kmer2","Diff-E-hits-kmer3","UniqueKmers_2","UniqueKmers_3","UniqueHashes","KS-test-diff_kmer2","KS-test-diff_kmer3","KS-test-kmer2","KS-test-kmer3","HashMethod","RandStrobeMethod","Sample"
+"127","2.961538","14.84615","10.35714","8.058824","26","13","39","0.3847466","4.563017e-14","0.986476","0.04982811","NoHash","GuoPibri","1"

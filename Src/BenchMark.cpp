@@ -122,6 +122,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		config["SeedCreatorConfig"]["n"].asUInt(), config["SeedCreatorConfig"]["kmer_len"].asUInt64()
 		, config["SeedCreatorConfig"]["w_min"].asUInt64(), config["SeedCreatorConfig"]["w_max"].asUInt64()
 		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
+		, config["HasherConfig"]["method"].asString()
 		);
 	
 	// std::cerr << "job done " << std::endl;

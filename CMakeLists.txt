@@ -47,7 +47,7 @@ target_link_libraries( config.out
     RandStrobeCreators7
     RandStrobeCreators8
     RandStrobeCreators9
-    RandStrobeCreators10
+#    RandStrobeCreators10
     RandStrobeCreators11
     Json
     Hashers 
@@ -80,7 +80,7 @@ target_link_libraries(${NAME_PROJECT}
     RandStrobeCreators7
     RandStrobeCreators8
     RandStrobeCreators9
-    RandStrobeCreators10
+#    RandStrobeCreators10
     RandStrobeCreators11
     Json
     Hashers 
@@ -157,9 +157,9 @@ add_library(RandStrobeCreators9 STATIC ./Src/SeedCreators/RandStrobeCreators/Ran
     ./Src/SeedCreators/SeedCreator.cpp)
 
 
-add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorFast.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
-    ./Src/SeedCreators/SeedCreator.cpp)
+#add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorFast.cpp
+#    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+#    ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators11 STATIC 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.cpp

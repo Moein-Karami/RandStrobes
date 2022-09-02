@@ -141,7 +141,6 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type
     hist(strobmers_data$kmer_2, xlab = "Second Kmer Position", main = "Histogram Second Kmer", ylab = "Count", 
          breaks = 1000)
    }
-   print(type_kmer)
    if(type_kmer == 2)
    {
      time_execution <- header_data$TimeExecution
@@ -151,9 +150,12 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type
      p_val_diff <- calculate_ks_test_diff(strobmers_data, header_data, 2)
      p_val_kmer2 <- calculate_ks_test_k2(strobmers_data, header_data, 2)
      diff_ehits <- calculate_ehits_diff(strobmers_data, 2)
+     hash_method <- as.character(header_data$HashMethod)
+     randstrobe_method <- as.character(header_data$SeedGeneratorMethod)
   
-     output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
-                                                          p_val_diff, p_val_kmer2, header_data$Sample)
+     output_evaluation[nrow(output_evaluation) + 1,] <- list(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
+                                                          p_val_diff, p_val_kmer2, 
+                                                          hash_method, randstrobe_method, header_data$Sample)
    }else 
    {
      time_execution <- header_data$TimeExecution
@@ -168,11 +170,14 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type
      p_val_kmer3 <- calculate_ks_test_k2(strobmers_data, header_data, 3)
      diff_ehits2 <- calculate_ehits_diff(strobmers_data, 2)
      diff_ehits3 <- calculate_ehits_diff(strobmers_data, 3)
+     hash_method <- as.character(header_data$HashMethod)
+     randstrobe_method <- as.character(header_data$SeedGeneratorMethod)
   
-     output_evaluation[nrow(output_evaluation) + 1,] <- c(time_execution, ehits2, ehits3, 
+     output_evaluation[nrow(output_evaluation) + 1,] <- list(time_execution, ehits2, ehits3, 
                                                           diff_ehits2, diff_ehits3, unique_k2, unique_k3, 
                                                           unique_hashes, p_val_diff2, p_val_diff3,
-                                                          p_val_kmer2, p_val_kmer3, header_data$Sample)
+                                                          p_val_kmer2, p_val_kmer3,
+                                                          hash_method, randstrobe_method, header_data$Sample)
    }
    return(output_evaluation)
 }
@@ -196,12 +201,15 @@ kmer_type = header_data$n[1]
 
 if(kmer_type == 2)
 {
-  columns = c("TimeofExecution","E-hits_metric","E-hits-diff", "UniqueKmers_2", "UniqueHashes", "KS-test-diff", "KS-test-kmer2","Sample") 
+  columns = c("TimeofExecution","E-hits_metric","E-hits-diff", "UniqueKmers_2", "UniqueHashes", "KS-test-diff",                                   "KS-test-kmer2","HashMethod", 
+                "RandStrobeMethod", "Sample") 
 }else 
 {
     columns = c("TimeofExecution","E-hits_metric_kmer2", "E-hits_metric_kmer3",
+                "Diff-E-hits-kmer2", "Diff-E-hits-kmer3",
                 "UniqueKmers_2", "UniqueKmers_3", "UniqueHashes", "KS-test-diff_kmer2",
-                "KS-test-diff_kmer3", "KS-test-kmer2", "KS-test-kmer3", "Sample") 
+                "KS-test-diff_kmer3", "KS-test-kmer2", "KS-test-kmer3", "HashMethod", 
+                "RandStrobeMethod", "Sample") 
 }
 output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(output_evaluation) = columns
@@ -219,7 +227,7 @@ for(i in 1:nrow(header_data))
   #header_data
   #header_data[header_data['Sample']== 1, ]
   output_evaluation <- evaluate_sample(strobmers_data[strobmers_data['Sample'] == i, ], 
-                                       header_data[header_data['Sample'] == i, ], output_evaluation,
+                                       header_data[i, ], output_evaluation,
                                        kmer_type)
 }
 

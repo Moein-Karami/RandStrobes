@@ -6,21 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp
-SeedBasedHasher.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
-
-Includes/Hashers/Hasher.hpp
-LibrariesAndDefines.hpp
-Includes/Hashers/LibrariesAndDefines.hpp
-
-Includes/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
-Hasher.hpp
-Includes/Hashers/SeedBasedHashers/Hasher.hpp
-
-Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
--
-chrono
--
-
