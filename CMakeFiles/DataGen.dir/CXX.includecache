@@ -6,3 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
+RandomDataGenerator.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataGenerators/RandomDataGenerator.hpp
+
+Includes/DataGenerators/DataGenerator.hpp
+LibrariesAndDefines.hpp
+Includes/DataGenerators/LibrariesAndDefines.hpp
+
+Includes/DataGenerators/RandomDataGenerator.hpp
+DataGenerator.hpp
+Includes/DataGenerators/DataGenerator.hpp
+
+Includes/LibrariesAndDefines.hpp
+bits/stdc++.h
+-
+chrono
+-
+functional
+-
+
