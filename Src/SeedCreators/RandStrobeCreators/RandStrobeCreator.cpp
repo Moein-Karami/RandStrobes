@@ -50,11 +50,11 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 
-	// std::cerr << "before create kmers" << std::endl;
+	// std::cout << "before create kmers" << std::endl;
 	
 	for (int i = 0; i < kmer_len - 1; i++)
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
-	// std::cerr << "first uncomplete kmer: "
+	// std::cout << "first uncomplete kmer: "
 	for (int i = kmer_len - 1; i < seq.size(); i++)
 	{
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
@@ -65,7 +65,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 				// << std::endl;
 	}
 
-	// std::cerr << "before specialize create_seeds" << std::endl;
+	// std::cout << "before specialize create_seeds" << std::endl;
 
 	return create_seeds();
 }
@@ -79,10 +79,10 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
-	// cerr << seq.size() - kmer_len - w_min - (n - 2) * w_max << endl;
+	// cout << seq.size() - kmer_len - w_min - (n - 2) * w_max << endl;
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		// std::cerr << "creating the " << i << "th strobe, its kmer and hash: " << kmers[i] << " " << hashes[i] << std::endl;
+		// std::cout << "creating the " << i << "th strobe, its kmer and hash: " << kmers[i] << " " << hashes[i] << std::endl;
 		strobe = new Strobe();
 		strobe->add_kmer(i, hashes[i]);
 		curr_hash = get_first_hash(i);
@@ -94,25 +94,25 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 			{
 				if (i < 2)
 				{
-					// std::cerr << "checking " << q << "th kmer in seq, its kmer and hash: " << kmers[q] << " " << hashes[q]
+					// std::cout << "checking " << q << "th kmer in seq, its kmer and hash: " << kmers[q] << " " << hashes[q]
 				// << "  its value: " << get_score(curr_hash, i, q) << std::endl;
 				}
 				
 				if (comparator->is_first_better(get_score(curr_hash, i, q), best_value))
 				{
-					// std::cerr << "checking results positive" << std::endl;
+					// std::cout << "checking results positive" << std::endl;
 					best_choose = q;
 					best_value = get_score(curr_hash, i, q);
-					// std::cerr << "best choose changes to " << best_choose << std::endl;
+					// std::cout << "best choose changes to " << best_choose << std::endl;
 				}
 			}
 			strobe->add_kmer(best_choose, hashes[best_choose]);
 			curr_hash = get_score(curr_hash, i, best_choose);
-			// std::cerr << "next kmer added, it was: " << best_choose << std::endl;
+			// std::cout << "next kmer added, it was: " << best_choose << std::endl;
 		}
 		
 		seeds.push_back(strobe);
-		// std::cerr << "end of creating seed I = " << i << std::endl << std::endl;
+		// std::cout << "end of creating seed I = " << i << std::endl << std::endl;
 	}
 	return seeds;
 }

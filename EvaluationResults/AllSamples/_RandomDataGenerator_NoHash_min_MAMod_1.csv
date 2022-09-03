@@ -1,2 +1,2 @@
 "TimeofExecution","E-hits_metric","E-hits-diff","UniqueKmers_2","UniqueHashes","KS-test-diff","KS-test-kmer2","HashMethod","RandStrobeMethod","Sample"
-245,6.44827586206897,2.4047619047619,29,58,6.20847817600634e-12,8.80406858527749e-14,"NoHash","MAMod",1
+145,8.5,6.10714285714286,26,58,5.05551156493311e-12,1.39742362126327e-08,"NoHash","MAMod",1

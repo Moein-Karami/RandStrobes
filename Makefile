@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named ResultPrinter
+
+# Build rule for target.
+ResultPrinter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ResultPrinter
+.PHONY : ResultPrinter
+
+# fast build rule for target.
+ResultPrinter/fast:
+	$(MAKE) -f CMakeFiles/ResultPrinter.dir/build.make CMakeFiles/ResultPrinter.dir/build
+.PHONY : ResultPrinter/fast
+
+#=============================================================================
 # Target rules for targets named ConfigGen
 
 # Build rule for target.
@@ -332,19 +345,6 @@ HashersSeed3/fast:
 .PHONY : HashersSeed3/fast
 
 #=============================================================================
-# Target rules for targets named ResultPrinter
-
-# Build rule for target.
-ResultPrinter: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ResultPrinter
-.PHONY : ResultPrinter
-
-# fast build rule for target.
-ResultPrinter/fast:
-	$(MAKE) -f CMakeFiles/ResultPrinter.dir/build.make CMakeFiles/ResultPrinter.dir/build
-.PHONY : ResultPrinter/fast
-
-#=============================================================================
 # Target rules for targets named HashersMet1
 
 # Build rule for target.
@@ -434,6 +434,19 @@ HasherSimple2: cmake_check_build_system
 HasherSimple2/fast:
 	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/build
 .PHONY : HasherSimple2/fast
+
+#=============================================================================
+# Target rules for targets named RandStrobeCreators12
+
+# Build rule for target.
+RandStrobeCreators12: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators12
+.PHONY : RandStrobeCreators12
+
+# fast build rule for target.
+RandStrobeCreators12/fast:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/build
+.PHONY : RandStrobeCreators12/fast
 
 #=============================================================================
 # Target rules for targets named Json
@@ -656,6 +669,7 @@ Src/DataStoringClasses/Strobe.cpp.o:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Strobe.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Strobe.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Strobe.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Strobe.cpp.o
 .PHONY : Src/DataStoringClasses/Strobe.cpp.o
 
 Src/DataStoringClasses/Strobe.i: Src/DataStoringClasses/Strobe.cpp.i
@@ -676,6 +690,7 @@ Src/DataStoringClasses/Strobe.cpp.i:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Strobe.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Strobe.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Strobe.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Strobe.cpp.i
 .PHONY : Src/DataStoringClasses/Strobe.cpp.i
 
 Src/DataStoringClasses/Strobe.s: Src/DataStoringClasses/Strobe.cpp.s
@@ -696,6 +711,7 @@ Src/DataStoringClasses/Strobe.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Strobe.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Strobe.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Strobe.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Strobe.cpp.s
 .PHONY : Src/DataStoringClasses/Strobe.cpp.s
 
 Src/Hashers/HashMethodes/index.o: Src/Hashers/HashMethodes/index.cpp.o
@@ -992,6 +1008,7 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 .PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.i: Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
@@ -1012,6 +1029,7 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 .PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.s: Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
@@ -1032,6 +1050,7 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 .PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFastMAXor.o: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFastMAXor.cpp.o
@@ -1196,6 +1215,33 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.cpp.s
 .PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.cpp.s
 
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.o: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.o
+
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.o
+
+# target to build an object file
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.o
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.o
+
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.i: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.i
+
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.i
+
+# target to preprocess a source file
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.i
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.i
+
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.s: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.s
+
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.s
+
+# target to generate assembly for a file
+Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.s
+.PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp.s
+
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.o: Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp.o
 
 .PHONY : Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.o
@@ -1350,6 +1396,7 @@ Src/SeedCreators/SeedCreator.cpp.o:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/SeedCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/SeedCreator.cpp.o
 .PHONY : Src/SeedCreators/SeedCreator.cpp.o
 
 Src/SeedCreators/SeedCreator.i: Src/SeedCreators/SeedCreator.cpp.i
@@ -1371,6 +1418,7 @@ Src/SeedCreators/SeedCreator.cpp.i:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/SeedCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/SeedCreator.cpp.i
 .PHONY : Src/SeedCreators/SeedCreator.cpp.i
 
 Src/SeedCreators/SeedCreator.s: Src/SeedCreators/SeedCreator.cpp.s
@@ -1392,6 +1440,7 @@ Src/SeedCreators/SeedCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/SeedCreators/SeedCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/SeedCreators/SeedCreator.cpp.s
 .PHONY : Src/SeedCreators/SeedCreator.cpp.s
 
 Src/Tools/MAXorNode.o: Src/Tools/MAXorNode.cpp.o
@@ -1428,6 +1477,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... ResultPrinter"
 	@echo "... ConfigGen"
 	@echo "... RandStrobeCreators5"
 	@echo "... RandStrobeCreators2"
@@ -1445,7 +1495,6 @@ help:
 	@echo "... RandStrobeCreators"
 	@echo "... RandStrobeCreators6"
 	@echo "... HashersSeed3"
-	@echo "... ResultPrinter"
 	@echo "... HashersMet1"
 	@echo "... RandStrobeCreators7"
 	@echo "... RandStrobeCreators1"
@@ -1453,6 +1502,7 @@ help:
 	@echo "... RandStrobeCreators8"
 	@echo "... RandStrobeCreators9"
 	@echo "... HasherSimple2"
+	@echo "... RandStrobeCreators12"
 	@echo "... Json"
 	@echo "... Hashers"
 	@echo "... rebuild_cache"
@@ -1528,6 +1578,9 @@ help:
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.o"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.i"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.s"
+	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.o"
+	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.i"
+	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.s"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.o"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.i"
 	@echo "... Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.s"

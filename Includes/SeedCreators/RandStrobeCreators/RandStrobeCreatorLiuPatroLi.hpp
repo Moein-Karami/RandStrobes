@@ -3,8 +3,6 @@
 
 #include "RandStrobeCreator.hpp"
 
-typedef struct { uint64_t high; uint64_t low; } Int128;
-
 class RandStrobeCreatorLiuPatroLi : public RandStrobeCreator
 {
 	public:

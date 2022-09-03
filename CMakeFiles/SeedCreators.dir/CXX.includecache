@@ -99,6 +99,8 @@ bits/stdc++.h
 -
 chrono
 -
+functional
+-
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp

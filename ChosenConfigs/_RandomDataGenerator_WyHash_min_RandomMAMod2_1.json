@@ -4,16 +4,16 @@
    "DataGeneratorConfig" : {
       "seq_len" : 100
    },
-   "Hasher" : "SimpleHasher",
+   "Hasher" : "SeedBasedHasher",
    "HasherConfig" : {
-      "method" : "NoHash"
+      "method" : "WyHash"
    },
    "NumberOfSamples" : 1,
    "SeedCreator" : "RandStrobeCreator",
    "SeedCreatorConfig" : {
       "kmer_len" : 20,
       "mask" : 18446744073709551615,
-      "method" : "FixedSahlinMod",
+      "method" : "RandomMAMod",
       "n" : 2,
       "w_max" : 100,
       "w_min" : 21

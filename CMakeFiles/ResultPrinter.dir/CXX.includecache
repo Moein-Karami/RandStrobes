@@ -19,6 +19,8 @@ bits/stdc++.h
 -
 chrono
 -
+functional
+-
 
 Includes/ResultPrinter.hpp
 LibrariesAndDefines.hpp

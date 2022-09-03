@@ -127,6 +127,8 @@ bits/stdc++.h
 -
 chrono
 -
+functional
+-
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 LibrariesAndDefines.hpp

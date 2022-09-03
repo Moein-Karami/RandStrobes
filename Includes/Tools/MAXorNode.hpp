@@ -12,6 +12,7 @@ class MAXorNode
 		void remove(size_t ind, uint64_t val);
 		size_t get_best_ind(uint64_t val, bool cmp);
 		bool is_empty();
+		void print_all(std::string until_now);
 	protected:
 		int64_t bit_ind;
 		std::set<size_t> inds;

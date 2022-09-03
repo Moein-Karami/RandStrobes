@@ -13,6 +13,10 @@ uint64_t RandStrobeCreatorFastMAXor::get_score(uint64_t curr_hash, uint64_t ind1
 
 std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 {
+	for (int i = 0; i < hashes.size(); i++)
+		std::cout << "Hashes " << i << ": " << hashes[i] << " " << std::bitset<64>(hashes[i]) << std::endl;
+	std::cout << std::endl;
+
 	bool cmp = comparator->is_first_better(1, 0);
 
 	std::vector<Seed*> seeds;
@@ -31,23 +35,28 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		// std::cerr << "start creating seeds, I = " << i << std::endl;
+		std::cout << "start creating seeds, I = " << i << std::endl;
+		std::cout << "CUR HASH: " << hashes[i] << " " << std::bitset<64>(hashes[i]) << std::endl;
+		if (i < 1)
+			nodes[1]->print_all("");
+
 		strobe = new Strobe();
 		strobe->add_kmer(i, hashes[i]);
 		curr_hash = get_first_hash(i);
-		// std::cerr << "before choose next kmers" << std::endl;
+		// std::cout << "before choose next kmers" << std::endl;
 		for (int j = 1; j < n; j++)
 		{
+			std::cout << "start get best for j = " << j << std::endl;
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
 			strobe->add_kmer(best_choose, hashes[best_choose]);
 			curr_hash = (curr_hash ^ hashes[best_choose]);
-			nodes[j]->remove(best_choose, hashes[best_choose]);
-			if (i + w_min + (j - 1) * w_max + 1 < hashes.size())
-				nodes[j]->add(i + w_min + (j - 1) * w_max + 1, hashes[i + w_min + (j - 1) * w_max + 1]);
+			nodes[j]->remove(i + w_min + (j - 1) * w_max, hashes[i + w_min + (j - 1) * w_max]);
+			if (i + j * w_max + 1 < hashes.size())
+				nodes[j]->add(i + j * w_max + 1, hashes[i + j * w_max + 1]);
 		}
 		
 		seeds.push_back(strobe);
-		// std::cerr << "end of creating seed I = " << i << std::endl << std::endl;
+		// std::cout << "end of creating seed I = " << i << std::endl << std::endl;
 	}
 	for (int i = 1; i < n; i++)
 		delete nodes[i];

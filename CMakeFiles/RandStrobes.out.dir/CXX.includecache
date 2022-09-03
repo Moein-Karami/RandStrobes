@@ -47,6 +47,14 @@ RandStrobeCreatorMAMod.hpp
 Includes/RandStrobeCreatorMAMod.hpp
 RandStrobeCreatorFastMAXor.hpp
 Includes/RandStrobeCreatorFastMAXor.hpp
+RandStrobeCreatorFixedSahlinMod.hpp
+Includes/RandStrobeCreatorFixedSahlinMod.hpp
+RandStrobeCreatorSpecialCaseFixedShen.hpp
+Includes/RandStrobeCreatorSpecialCaseFixedShen.hpp
+RandStrobeCreatorMAXor.hpp
+Includes/RandStrobeCreatorMAXor.hpp
+RandStrobeCreatorRandomMAMod.hpp
+Includes/RandStrobeCreatorRandomMAMod.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -265,6 +273,8 @@ bits/stdc++.h
 -
 chrono
 -
+functional
+-
 
 Includes/ResultPrinter.hpp
 LibrariesAndDefines.hpp
@@ -290,6 +300,10 @@ Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 MAXorNode.hpp
 Includes/SeedCreators/RandStrobeCreators/MAXorNode.hpp
 
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorFixedSahlinMod.hpp
+RandStrobeCreatorSahlinMod.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
+
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
@@ -299,6 +313,14 @@ RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
@@ -313,6 +335,10 @@ Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.hpp
+RandStrobeCreatorShen.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
 RandStrobeCreator.hpp

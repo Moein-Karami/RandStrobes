@@ -26,6 +26,7 @@
 #include "RandStrobeCreatorFixedSahlinMod.hpp"
 #include "RandStrobeCreatorSpecialCaseFixedShen.hpp"
 #include "RandStrobeCreatorMAXor.hpp"
+#include "RandStrobeCreatorRandomMAMod.hpp"
 
 
 #include "json-forwards.h"
