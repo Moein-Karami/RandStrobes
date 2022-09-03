@@ -1,2 +1,2 @@
-"TimeofExecution","E-hits_metric_kmer2","E-hits_metric_kmer3","Diff-E-hits-kmer2","Diff-E-hits-kmer3","UniqueKmers_2","UniqueKmers_3","UniqueHashes","KS-test-diff_kmer2","KS-test-diff_kmer3","KS-test-kmer2","KS-test-kmer3","HashMethod","RandStrobeMethod","Sample"
-"127","2.961538","14.84615","10.35714","8.058824","26","13","39","0.3847466","4.563017e-14","0.986476","0.04982811","NoHash","GuoPibri","1"
+"TimeofExecution","E-hits_metric","E-hits-diff","UniqueKmers_2","UniqueHashes","KS-test-diff","KS-test-kmer2","HashMethod","RandStrobeMethod","Sample"
+"196","5.137931","8.6","29","59","4.744592e-07","4.697387e-11","NoHash","GuoPibri","1"

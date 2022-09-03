@@ -1,0 +1,2 @@
+"TimeofExecution","E-hits_metric","E-hits-diff","UniqueKmers_2","UniqueHashes","KS-test-diff","KS-test-kmer2","HashMethod","RandStrobeMethod","Sample"
+221,6.34615384615385,4.96875,26,59,2.11371175342645e-05,3.33855165735031e-12,"ThomasWangHash","XorVar",1
