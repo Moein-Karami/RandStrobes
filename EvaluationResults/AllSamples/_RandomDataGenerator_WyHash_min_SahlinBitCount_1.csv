@@ -1,0 +1,2 @@
+"TimeofExecution","E-hits_metric","E-hits-diff","UniqueKmers_2","UniqueHashes","KS-test-diff","KS-test-kmer2","HashMethod","RandStrobeMethod","Sample"
+149,5.19354838709677,6.25,31,59,1.68726223881421e-07,1.27369226277096e-11,"WyHash","SahlinBitCount",1

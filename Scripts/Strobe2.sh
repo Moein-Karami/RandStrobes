@@ -14,3 +14,4 @@ do
 	R -e "path_kmer_file='$name'; path_output_file='$name'; rmarkdown::render('EvaluationWithR/MetricsEvaluation.Rmd')"
 	echo "Metrics are created"
 done
+R -e "rmarkdown::render('EvaluationWithR/PlotMaker.Rmd')"
