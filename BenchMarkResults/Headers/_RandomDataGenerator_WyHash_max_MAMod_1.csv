@@ -1,0 +1,2 @@
+TimeExecution,NumberofSeeds,n,kmer_len,w_min,w_max,mask,SeedGeneratorMethod,HashMethod,Sample
+192,59,2,20,21,100,18446744073709551615,MAMod,WyHash,1
