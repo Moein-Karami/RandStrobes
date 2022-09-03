@@ -353,7 +353,7 @@ pre code {
 </div>
 
 
-<pre class="r"><code>build_random_seeds &lt;- function(strobmers_data, header_data)
+<pre class="r"><code>build_random_seeds &lt;- function(strobmers_data, header_data, type_kmer)
 {
   w_min &lt;- header_data$w_min
   w_max &lt;- header_data$w_max
@@ -362,73 +362,144 @@ pre code {
   {
     rand &lt;- sample(1:(w_max - w_min + 1), 1)
     new_elem &lt;- w_min + i + rand - 1
+    if(type_kmer == 3)
+    {
+      rand2 &lt;- sample(1:(w_max - w_min + 1), 1)
+      new_elem &lt;- w_min + new_elem + rand2 - 1
+    }
     vec_rand_seeds &lt;- append(vec_rand_seeds, new_elem)
   }
-  #print(vec_rand_seeds)
   return(vec_rand_seeds)
 }</code></pre>
-<pre class="r"><code>calculate_ks_test_k2 &lt;- function(strobmbers_data, header_data)
+<pre class="r"><code>calculate_ks_test_k2 &lt;- function(strobmbers_data, header_data, type_kmer)
 {
-  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data)
-  p_val_diff &lt;- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data, type_kmer)
+  if(type_kmer == 2)
+  {
+    p_val_diff &lt;- ks.test(rand_seeds, strobmbers_data$kmer_2)
+  }else
+  {
+     p_val_diff &lt;- ks.test(rand_seeds, strobmbers_data$kmer_3)
+  }
   return(p_val_diff$p.value)
 }</code></pre>
-<pre class="r"><code>calculate_ks_test_diff &lt;- function(strobmbers_data, header_data)
+<pre class="r"><code>calculate_ks_test_diff &lt;- function(strobmbers_data, header_data, type_kmer)
 {
-  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data)
-  diff_base_strobe &lt;- strobmbers_data$kmer_2 - strobmers_data$kmer_1
+  rand_seeds &lt;- build_random_seeds(strobmers_data, header_data, type_kmer)
+  if(type_kmer == 2)
+  {
+    diff_base_strobe &lt;- strobmbers_data$kmer_2 - strobmers_data$kmer_1
+  }
+  else
+  {
+    diff_base_strobe &lt;- strobmbers_data$kmer_3 - strobmers_data$kmer_2
+  }
   diff_rand &lt;- rand_seeds - 1:nrow(strobmers_data)
- # print(rand_seeds)
   p_val_diff &lt;- ks.test(diff_base_strobe, diff_rand)
-  #print(p_val_diff)
   return(p_val_diff$p.value)
 }</code></pre>
-<pre class="r"><code>calculate_unique_hashes &lt;- function(strobmers_data)
+<pre class="r"><code>calculate_unique_hashes &lt;- function(strobmers_data, type_kmer)
 {
-  hash_df &lt;- strobmers_data[, c(&quot;hash_1&quot;, &quot;hash_2&quot;)]
-  hash_df &lt;- unique(hash_df)
+  if(type_kmer == 2)
+  {
+    hash_df &lt;- strobmers_data[, c(&quot;hash_1&quot;, &quot;hash_2&quot;)]
+    hash_df &lt;- unique(hash_df)
+  }
+  else 
+  {
+    hash_df &lt;- strobmers_data[, c(&quot;hash_1&quot;, &quot;hash_2&quot;, &quot;hash_3&quot;)]
+    hash_df &lt;- unique(hash_df)
+  }
   return(nrow(hash_df))
 }</code></pre>
-<pre class="r"><code>calculate_unique_k2 &lt;- function(strobmers_data)
+<pre class="r"><code>calculate_unique_k2 &lt;- function(strobmers_data, type_kmer)
 {
-  table_kmer2 &lt;- table(strobmers_data$kmer_2)
+  if(type_kmer == 2)
+  {
+    table_kmer2 &lt;- table(strobmers_data$kmer_2)
+  }
+  else
+  {
+      table_kmer2 &lt;- table(strobmers_data$kmer_3)
+  }
   return(length(names(table_kmer2)))
-  #print(paste(&quot;Number of unique k2 is: &quot;, length(names(table_kmer2))))
 }</code></pre>
-<pre class="r"><code>calculate_ehits &lt;- function(strobmers_data)
+<pre class="r"><code>calculate_ehits &lt;- function(strobmers_data, type_kmer)
 {
-  table_kmer2 &lt;- table(strobmers_data$kmer_2)
+  if(type_kmer == 2)
+  {
+   table_kmer2 &lt;- table(strobmers_data$kmer_2)
+  }
+  else 
+  {
+    table_kmer2 &lt;- table(strobmers_data$kmer_3)
+  }
   count_vector &lt;- as.vector(table_kmer2)
   count_vector &lt;- count_vector ^ 2;
   return(mean(count_vector))
   #print(paste(&quot;The E-hits metric value is: &quot;, mean(count_vector)))
 }</code></pre>
-<pre class="r"><code>calculate_ehits &lt;- function(strobmers_data)
+<pre class="r"><code>calculate_ehits_diff &lt;- function(strobmers_data, type_kmer)
 {
-  table_kmer2 &lt;- table(strobmers_data$kmer_2)
-  count_vector &lt;- as.vector(table_kmer2)
-  count_vector &lt;- count_vector ^ 2;
-  return(mean(count_vector))
-  #print(paste(&quot;The E-hits metric value is: &quot;, mean(count_vector)))
+  if(type_kmer == 2)
+  {
+    diff_vec &lt;- strobmers_data$kmer_2 - strobmers_data$kmer_1
+  }
+  else 
+  {
+    diff_vec &lt;- strobmers_data$kmer_3 - strobmers_data$kmer_2
+  }
+  table_diff &lt;- table(diff_vec)
+  print(table_diff)
+  vec_table_dif &lt;- as.vector(table_diff)
+  vec_table_dif &lt;- vec_table_dif ^ 2
+  return(mean(vec_table_dif))
 }</code></pre>
-<pre class="r"><code>evaluate_sample &lt;- function(strobmers_data, header_data, output_evaluation)
+<pre class="r"><code>evaluate_sample &lt;- function(strobmers_data, header_data, output_evaluation, type_kmer)
 {
-   #print(paste(&quot;Time execution is: &quot;, header_data$TimeExecution))
    if(header_data$Sample == 1)
    {
     hist(strobmers_data$kmer_2, xlab = &quot;Second Kmer Position&quot;, main = &quot;Histogram Second Kmer&quot;, ylab = &quot;Count&quot;, 
          breaks = 1000)
    }
-   
-   time_execution &lt;- header_data$TimeExecution
-   ehits &lt;- calculate_ehits(strobmers_data)
-   unique_k2 &lt;- calculate_unique_k2(strobmers_data)
-   unique_hashes &lt;- calculate_unique_hashes(strobmers_data)
-   p_val_diff &lt;- calculate_ks_test_diff(strobmers_data, header_data)
-   p_val_kmer2 &lt;- calculate_ks_test_k2(strobmers_data, header_data)
-
-   output_evaluation[nrow(output_evaluation) + 1,] &lt;- c(time_execution, ehits, unique_k2, unique_hashes,
-                                                        p_val_diff, p_val_kmer2, header_data$Sample)
+   if(type_kmer == 2)
+   {
+     time_execution &lt;- header_data$TimeExecution
+     ehits &lt;- calculate_ehits(strobmers_data, 2)
+     unique_k2 &lt;- calculate_unique_k2(strobmers_data, 2)
+     unique_hashes &lt;- calculate_unique_hashes(strobmers_data, 2)
+     p_val_diff &lt;- calculate_ks_test_diff(strobmers_data, header_data, 2)
+     p_val_kmer2 &lt;- calculate_ks_test_k2(strobmers_data, header_data, 2)
+     diff_ehits &lt;- calculate_ehits_diff(strobmers_data, 2)
+     hash_method &lt;- as.character(header_data$HashMethod)
+     randstrobe_method &lt;- as.character(header_data$SeedGeneratorMethod)
+  
+     output_evaluation[nrow(output_evaluation) + 1,] &lt;- list(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
+                                                          p_val_diff, p_val_kmer2, 
+                                                          hash_method, randstrobe_method, header_data$Sample)
+   }else 
+   {
+     time_execution &lt;- header_data$TimeExecution
+     ehits2 &lt;- calculate_ehits(strobmers_data, 2)
+     ehits3 &lt;- calculate_ehits(strobmers_data, 3)
+     unique_k2 &lt;- calculate_unique_k2(strobmers_data, 2)
+     unique_k3 &lt;- calculate_unique_k2(strobmers_data, 3)
+     unique_hashes &lt;- calculate_unique_hashes(strobmers_data, 3)
+     p_val_diff2 &lt;- calculate_ks_test_diff(strobmers_data, header_data, 2)
+     p_val_diff3 &lt;- calculate_ks_test_diff(strobmers_data, header_data, 3)
+     p_val_kmer2 &lt;- calculate_ks_test_k2(strobmers_data, header_data, 2)
+     p_val_kmer3 &lt;- calculate_ks_test_k2(strobmers_data, header_data, 3)
+     diff_ehits2 &lt;- calculate_ehits_diff(strobmers_data, 2)
+     diff_ehits3 &lt;- calculate_ehits_diff(strobmers_data, 3)
+     hash_method &lt;- as.character(header_data$HashMethod)
+     randstrobe_method &lt;- as.character(header_data$SeedGeneratorMethod)
+  
+     output_evaluation[nrow(output_evaluation) + 1,] &lt;- list(time_execution, ehits2, ehits3, 
+                                                          diff_ehits2, diff_ehits3, unique_k2, unique_k3, 
+                                                          unique_hashes, p_val_diff2, p_val_diff3,
+                                                          p_val_kmer2, p_val_kmer3,
+                                                          hash_method, randstrobe_method, header_data$Sample)
+   }
    return(output_evaluation)
 }</code></pre>
 

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/jsoncpp.cpp" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o"
+  "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/jsoncpp.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -23,6 +23,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
   "Includes/ConfigGenerator"
+  "Includes/Tools"
   )
 
 # Targets to which this target links.

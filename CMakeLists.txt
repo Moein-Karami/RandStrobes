@@ -23,6 +23,8 @@ include_directories(Includes/DataStoringClasses/Seed)
 
 include_directories(Includes/ConfigGenerator)
 
+include_directories(Includes/Tools)
+
 project(${NAME_PROJECT}
     LANGUAGES CXX C)
 
@@ -45,7 +47,8 @@ target_link_libraries( config.out
     RandStrobeCreators7
     RandStrobeCreators8
     RandStrobeCreators9
-    RandStrobeCreators10
+#    RandStrobeCreators10
+    RandStrobeCreators11
     Json
     Hashers 
     HashersMet1
@@ -77,7 +80,8 @@ target_link_libraries(${NAME_PROJECT}
     RandStrobeCreators7
     RandStrobeCreators8
     RandStrobeCreators9
-    RandStrobeCreators10
+#    RandStrobeCreators10
+    RandStrobeCreators11
     Json
     Hashers 
     HashersMet1
@@ -117,19 +121,25 @@ add_library(RandStrobeCreators STATIC ./Src/SeedCreators/RandStrobeCreators/Rand
 add_library(RandStrobeCreators1 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp) 
+    
 add_library(RandStrobeCreators2 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
+
 add_library(RandStrobeCreators3 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
+
 add_library(RandStrobeCreators4 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
+
 add_library(RandStrobeCreators5 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
+
 add_library(RandStrobeCreators6 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
+    ./Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
@@ -137,19 +147,25 @@ add_library(RandStrobeCreators7 STATIC ./Src/SeedCreators/RandStrobeCreators/Ran
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
-add_library(RandStrobeCreators8 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFixedSahlinMod.cpp
-./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.cpp
-./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
-    ./Src/SeedCreators/SeedCreator.cpp)
-
-add_library(RandStrobeCreators9 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
+add_library(RandStrobeCreators8 STATIC 
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFixedSahlinMod.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
-add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.cpp
+add_library(RandStrobeCreators9 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
+
+
+#add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorFast.cpp
+#    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+#    ./Src/SeedCreators/SeedCreator.cpp)
+
+add_library(RandStrobeCreators11 STATIC 
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/SeedCreator.cpp)
+
 #Json***********************************************
 
 add_library(Json STATIC ./Src/Json/jsoncpp.cpp)

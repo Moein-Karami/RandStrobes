@@ -10,7 +10,7 @@ RandStrobeCreatorMAMod::RandStrobeCreatorMAMod(Hasher* hasher, Comparator* compa
 std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 {
 	for (size_t i = 0; i < hashes.size(); i++)
-		hashes[i] %= p, std::cerr << "moded hash of " << i << " " << hashes[i] << std::endl;
+		hashes[i] %= p;
 
 	if (comparator->is_first_better(1, 2))
 		return create_seeds_min();

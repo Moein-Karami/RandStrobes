@@ -75,18 +75,12 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 			return new RandStrobeCreatorSahlinBitCount(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "SahlinMod")
 			return new RandStrobeCreatorSahlinMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
-		else if (config["SeedCreatorConfig"]["method"].asString() == "FixedSahlinMod")
-			return new RandStrobeCreatorFixedSahlinMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "Shen")
 			return new RandStrobeCreatorShen(hasher, comparator, kmer_len, w_min, w_max, n, mask);
-		else if (config["SeedCreatorConfig"]["method"].asString() == "SpecialCaseFixedShen")
-			return new RandStrobeCreatorSpecialCaseFixedShen(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "XorVar")
 			return new RandStrobeCreatorXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "MAMod")
 			return new RandStrobeCreatorMAMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
-		else if (config["SeedCreatorConfig"]["method"].asString() == "MAXor")
-			return new RandStrobeCreatorMAXor(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 	}
 	return NULL;
 }
@@ -128,6 +122,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		config["SeedCreatorConfig"]["n"].asUInt(), config["SeedCreatorConfig"]["kmer_len"].asUInt64()
 		, config["SeedCreatorConfig"]["w_min"].asUInt64(), config["SeedCreatorConfig"]["w_max"].asUInt64()
 		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
+		, config["HasherConfig"]["method"].asString()
 		);
 	
 	// std::cerr << "job done " << std::endl;
