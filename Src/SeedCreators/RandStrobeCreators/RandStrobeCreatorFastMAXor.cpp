@@ -1,22 +1,17 @@
 #include "RandStrobeCreatorFastMAXor.hpp"
 
-RandStrobeCreatorMAXorFast::RandStrobeCreatorMAXorFast(Hasher* hasher, Comparator* comparator, size_t kmer_len,
+RandStrobeCreatorFastMAXor::RandStrobeCreatorFastMAXor(Hasher* hasher, Comparator* comparator, size_t kmer_len,
 		size_t w_min, size_t w_max, uint32_t n, uint64_t mask)
 : RandStrobeCreator(hasher, comparator, kmer_len, w_min, w_max, n, mask)
 {
 }
 
-RandStrobeCreatorMAXorFast::~RandStrobeCreatorMAXorFast()
-{
-	delete node;
-}
-
-uint64_t RandStrobeCreatorMAXorFast::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorFastMAXor::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
 	return -1;
 }
 
-std::vector<Seed*> RandStrobeCreatorMAXorFast::create_seeds()
+std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 {
 	bool cmp = comparator->is_first_better(1, 0);
 
@@ -46,9 +41,9 @@ std::vector<Seed*> RandStrobeCreatorMAXorFast::create_seeds()
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
 			strobe->add_kmer(best_choose, hashes[best_choose]);
 			curr_hash = (curr_hash ^ hashes[best_choose]);
-			nodes[j].remove(best_choose, hashes[best_choose]);
+			nodes[j]->remove(best_choose, hashes[best_choose]);
 			if (i + w_min + (j - 1) * w_max + 1 < hashes.size())
-				nodes[j].add(i + w_min + (j - 1) * w_max + 1, hashes[i + w_min + (j - 1) * w_max + 1]);
+				nodes[j]->add(i + w_min + (j - 1) * w_max + 1, hashes[i + w_min + (j - 1) * w_max + 1]);
 		}
 		
 		seeds.push_back(strobe);

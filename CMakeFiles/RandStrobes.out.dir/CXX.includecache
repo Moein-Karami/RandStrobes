@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/BenchMark.cpp
 BenchMark.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/BenchMark.hpp
 
 Includes/BenchMark.hpp
 ResultPrinter.hpp
@@ -45,6 +45,8 @@ RandStrobeCreatorLiuPatroLi.hpp
 Includes/RandStrobeCreatorLiuPatroLi.hpp
 RandStrobeCreatorMAMod.hpp
 Includes/RandStrobeCreatorMAMod.hpp
+RandStrobeCreatorFastMAXor.hpp
+Includes/RandStrobeCreatorFastMAXor.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -282,6 +284,12 @@ Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
 
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorFastMAXor.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+MAXorNode.hpp
+Includes/SeedCreators/RandStrobeCreators/MAXorNode.hpp
+
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
@@ -323,4 +331,8 @@ ThomasWangHash.hpp
 Includes/SeedCreators/ThomasWangHash.hpp
 NoHash.hpp
 Includes/SeedCreators/NoHash.hpp
+
+Includes/Tools/MAXorNode.hpp
+LibrariesAndDefines.hpp
+Includes/Tools/LibrariesAndDefines.hpp
 

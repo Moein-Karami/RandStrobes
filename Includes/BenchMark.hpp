@@ -22,6 +22,10 @@
 #include "RandStrobeCreatorXorVar.hpp"
 #include "RandStrobeCreatorLiuPatroLi.hpp"
 #include "RandStrobeCreatorMAMod.hpp"
+#include "RandStrobeCreatorFastMAXor.hpp"
+#include "RandStrobeCreatorFixedSahlinMod.hpp"
+#include "RandStrobeCreatorSpecialCaseFixedShen.hpp"
+#include "RandStrobeCreatorMAXor.hpp"
 
 
 #include "json-forwards.h"

@@ -81,6 +81,15 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 			return new RandStrobeCreatorXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "MAMod")
 			return new RandStrobeCreatorMAMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "FastMAXor")
+			return new RandStrobeCreatorFastMAXor(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "FixedSahlinMod")
+			return new RandStrobeCreatorFixedSahlinMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "SpecialCaseFixedShen")
+			return new RandStrobeCreatorSpecialCaseFixedShen(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "MAXor")
+			return new RandStrobeCreatorMAXor(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+
 	}
 	return NULL;
 }

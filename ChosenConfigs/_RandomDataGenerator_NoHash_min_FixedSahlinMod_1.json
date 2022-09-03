@@ -1,21 +1,21 @@
 {
-   "Comparator" : "max",
+   "Comparator" : "min",
    "DataGenerator" : "RandomDataGenerator",
    "DataGeneratorConfig" : {
       "seq_len" : 100
    },
    "Hasher" : "SimpleHasher",
    "HasherConfig" : {
-      "method" : "ThomasWangHash"
+      "method" : "NoHash"
    },
    "NumberOfSamples" : 1,
    "SeedCreator" : "RandStrobeCreator",
    "SeedCreatorConfig" : {
-      "kmer_len" : 15,
+      "kmer_len" : 20,
       "mask" : 18446744073709551615,
-      "method" : "SahlinMod",
-      "n" : 3,
-      "w_max" : 30,
-      "w_min" : 16
+      "method" : "FixedSahlinMod",
+      "n" : 2,
+      "w_max" : 100,
+      "w_min" : 21
    }
 }
