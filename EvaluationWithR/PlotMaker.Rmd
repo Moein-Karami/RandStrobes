@@ -22,7 +22,7 @@ for(file_now in all_files)
   }
   cnt <- cnt + 1
 }
-deleted <- c('Sample', 'HashMethod', 'RandStrobeMethod')
+deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods
 new_data$Sample <- NULL
 new_data$RandStrobeMethod <- NULL
