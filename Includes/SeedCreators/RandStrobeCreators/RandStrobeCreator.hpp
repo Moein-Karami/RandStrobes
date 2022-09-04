@@ -13,7 +13,7 @@ class RandStrobeCreator : public SeedCreator
 		RandStrobeCreator(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
 				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 		~RandStrobeCreator();
-		std::vector<Seed*> create_seeds(const std::string& sequence);
+		virtual std::vector<Seed*> create_seeds(const std::string& sequence);
 	
 	protected:
 		std::string seq;

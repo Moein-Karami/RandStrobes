@@ -27,6 +27,7 @@ CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o
  Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
  Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorFastMAXor.hpp
  Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorFixedSahlinMod.hpp
+ Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorFullyRandom.hpp
  Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.hpp
  Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
  Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.hpp
