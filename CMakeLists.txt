@@ -35,6 +35,7 @@ target_link_libraries( config.out
     Maximizer
     Minimizer
     DataGen
+    FileDataGen
     DataStore
     SeedCreators
     RandStrobeCreators
@@ -69,6 +70,7 @@ target_link_libraries(${NAME_PROJECT}
     Maximizer
     Minimizer
     DataGen
+    FileDataGen
     DataStore
     SeedCreators
     RandStrobeCreators
@@ -108,6 +110,8 @@ add_library(Minimizer STATIC ./Src/Comparators/Minimizer.cpp)
 #DataGenerators ***********************************
 
 add_library(DataGen STATIC ./Src/DataGenerators/RandomDataGenerator.cpp)
+
+add_library(FileDataGen STATIC ./Src/DataGenerators/FromFileDataGenerator.cpp)
 
 #DataStoring *******************************************
 

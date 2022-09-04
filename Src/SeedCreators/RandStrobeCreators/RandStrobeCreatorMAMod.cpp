@@ -45,7 +45,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 		for (int j = 1; j < n; j++)
 		{
 			tmp = *(hash_values[j].begin());
-			it = hash_values[j].lower_bound({p - curr_hash, std::numeric_limits<uint64_t>::min()});
+			it = hash_values[j].upper_bound({p - curr_hash, std::numeric_limits<uint64_t>::max()});
 			if (it != hash_values[j].end())
 			{
 				candidate = *it;
@@ -88,13 +88,23 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 		strobe = new Strobe();
 		strobe->add_kmer(i, hashes[i]);
 		curr_hash = get_first_hash(i);
+		// std::cout << "Curr hash: " << curr_hash << std::endl;
 		// std::cout << "before choose next kmers" << std::endl;
 		for (int j = 1; j < n; j++)
 		{
-			tmp = *(hash_values[j].begin());
-			it = hash_values[j].lower_bound({p - curr_hash, std::numeric_limits<uint64_t>::max()});
-			if ( it != hash_values[j].end())
+			// std::cout << "candidates: " << std::endl;
+			if (i < 5)
 			{
+				for (auto el : hash_values[j])
+				std::cout << el.first << " " << el.second << std::endl;
+			}
+			tmp = *(hash_values[j].begin());
+			// std::cout << "tmp: " << tmp.first << " " << tmp.second << std::endl;
+			it = hash_values[j].upper_bound({p - curr_hash, std::numeric_limits<uint64_t>::min()});
+			// std::cout << "P - curr_hash = " << p - curr_hash << std::endl;
+			if (it != hash_values[j].end())
+			{
+				// std::cout << "Candidate: " << it->first << " " << it->second << std::endl;
 				candidate = *it;
 				if ((tmp.first + curr_hash) % p < (candidate.first + curr_hash) % p)
 					tmp = candidate;
@@ -104,6 +114,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], i + j * w_max + 1));
+			// std::cout << "______________" << std::endl;
 		}
 		
 		seeds.push_back(strobe);

@@ -82,6 +82,7 @@ RandStrobes.out: CMakeFiles/RandStrobes.out.dir/build.make
 RandStrobes.out: build/libMaximizer.a
 RandStrobes.out: build/libMinimizer.a
 RandStrobes.out: build/libDataGen.a
+RandStrobes.out: build/libFileDataGen.a
 RandStrobes.out: build/libDataStore.a
 RandStrobes.out: build/libSeedCreators.a
 RandStrobes.out: build/libRandStrobeCreators.a

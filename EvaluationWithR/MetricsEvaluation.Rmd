@@ -17,6 +17,11 @@ build_random_seeds <- function(strobmers_data, header_data, type_kmer)
   {
     rand <- sample(1:(w_max - w_min + 1), 1)
     new_elem <- w_min + i + rand - 1
+
+    ##
+    print(c(i, new_elem));
+    ##
+  
     if(type_kmer == 3)
     {
       rand2 <- sample(1:(w_max - w_min + 1), 1)

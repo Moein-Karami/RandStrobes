@@ -21,6 +21,8 @@ Maximizer.hpp
 Includes/Maximizer.hpp
 RandomDataGenerator.hpp
 Includes/RandomDataGenerator.hpp
+FromFileDataGenerator.hpp
+Includes/FromFileDataGenerator.hpp
 Strobe.hpp
 Includes/Strobe.hpp
 WyHash.hpp
@@ -75,6 +77,10 @@ Includes/Comparators/Comparaotr.hpp
 Includes/DataGenerators/DataGenerator.hpp
 LibrariesAndDefines.hpp
 Includes/DataGenerators/LibrariesAndDefines.hpp
+
+Includes/DataGenerators/FromFileDataGenerator.hpp
+DataGenerator.hpp
+Includes/DataGenerators/DataGenerator.hpp
 
 Includes/DataGenerators/RandomDataGenerator.hpp
 DataGenerator.hpp

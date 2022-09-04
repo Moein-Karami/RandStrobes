@@ -10,6 +10,16 @@ DataGenerator* BenchMark::create_data_generator(Json::Value config)
 			seed = config["DataGeneratorConfig"]["seed"].asUInt64();
 		return new RandomDataGenerator(seq_len, seed);
 	}
+	else if (config["DataGenerator"].asString() == "FromFileDataGenerator")
+	{
+		std::string file_name = config["DataGeneratorConfig"]["file_name"].asString();
+		return new FromFileDataGenerator(file_name);
+	}
+	else
+	{
+		std::cerr << "Unknown DataGenerator type" << std::endl;
+		exit(1);
+	}
 	return NULL;
 }
 
@@ -21,9 +31,9 @@ Hasher* BenchMark::create_hasher(Json::Value config)
 			return new NoHash();
 		else if (config["HasherConfig"]["method"].asString() == "ThomasWangHash")
 		{
-			std::cout << "kmer_len: " << config["SeedCreatorConfig"]["kmer_len"].asUInt64() << std::endl;
+			// std::cout << "kmer_len: " << config["SeedCreatorConfig"]["kmer_len"].asUInt64() << std::endl;
 			uint64_t mask = (1LL <<2*config["SeedCreatorConfig"]["kmer_len"].asUInt()) - 1;
-			std::cout << "Mask: " << mask << std::endl;
+			// std::cout << "Mask: " << mask << std::endl;
 			if (!config["HasherConfig"]["mask"].isNull())
 				mask = config["HasherConfig"]["mask"].asUInt64();
 			return new ThomasWangHash(mask);

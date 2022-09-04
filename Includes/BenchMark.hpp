@@ -8,6 +8,8 @@
 #include "Maximizer.hpp"
 
 #include "RandomDataGenerator.hpp"
+#include "FromFileDataGenerator.hpp"
+
 #include "Strobe.hpp"
 
 #include "WyHash.hpp"
