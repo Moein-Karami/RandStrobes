@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp
 ThomasWangHash.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.hpp
 
 Includes/Hashers/Hasher.hpp
 LibrariesAndDefines.hpp

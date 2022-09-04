@@ -138,6 +138,36 @@ calculate_ehits_diff <- function(strobmers_data, type_kmer)
 }
 ```
 
+```{r}
+calculate_conflict_metric <- function(storbmers_data, header_data)
+{
+  k = header_data$k
+  all = 0
+  for(i in 1:ncol(strobmers_data))
+  {
+    end_check = min(i + k, ncol(strobmers_data))
+    kmer1_end = strobmers_data$kmer_1[i] + k - 1
+    kmer2_end = strobmers_data$kmer_2[i] + k - 1
+    max_overlap = 0
+    for(j in i+1:end_check)
+    {
+      overlap = 0
+      overlap = kmer1_end  - strobmers_data$kmer_1[j]
+      if(overlap < 0)
+          overlap = 0
+      overlap = overlap + max(kmer2_end - storbmers_data$kmer_2[j], 0)
+      if(header_data$n == 3)
+      {
+        overlap = overlap + max(0, strobmers_data$kmer_3[i] + k - 1 - strobmers_data$kmer_3[j])
+      }
+      max_overlap = max(overlap, max_overlap)
+    }
+    all = all + max_overlap
+  }
+  return (all / ncol(strobmers_data))
+}
+```
+
 
 ```{r}
 evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type_kmer)
@@ -158,10 +188,12 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type
      diff_ehits <- calculate_ehits_diff(strobmers_data, 2)
      hash_method <- as.character(header_data$HashMethod)
      randstrobe_method <- as.character(header_data$SeedGeneratorMethod)
+     conflict <- calculate_conflict_metric(strobmers_data, header_data)
+
   
      output_evaluation[nrow(output_evaluation) + 1,] <- list(time_execution, ehits, diff_ehits, unique_k2, unique_hashes,
                                                           p_val_diff, p_val_kmer2, 
-                                                          hash_method, randstrobe_method, header_data$Sample)
+                                                          hash_method, randstrobe_method, conflict, header_data$Sample)
    }else 
    {
      time_execution <- header_data$TimeExecution
@@ -178,16 +210,18 @@ evaluate_sample <- function(strobmers_data, header_data, output_evaluation, type
      diff_ehits3 <- calculate_ehits_diff(strobmers_data, 3)
      hash_method <- as.character(header_data$HashMethod)
      randstrobe_method <- as.character(header_data$SeedGeneratorMethod)
+     conflict <- calculate_conflict_metric(strobmers_data, header_data)
   
      output_evaluation[nrow(output_evaluation) + 1,] <- list(time_execution, ehits2, ehits3, 
                                                           diff_ehits2, diff_ehits3, unique_k2, unique_k3, 
                                                           unique_hashes, p_val_diff2, p_val_diff3,
                                                           p_val_kmer2, p_val_kmer3,
-                                                          hash_method, randstrobe_method, header_data$Sample)
+                                                          hash_method, randstrobe_method, conflict, header_data$Sample)
    }
    return(output_evaluation)
 }
 ```
+
 
 ```{r read_arg, include=FALSE}
 ## path_kmer_file <- readline(prompt = "Please Enter kmers file path for evaluation: ")
@@ -208,14 +242,14 @@ kmer_type = header_data$n[1]
 if(kmer_type == 2)
 {
   columns = c("TimeofExecution","E-hits_metric","E-hits-diff", "UniqueKmers_2", "UniqueHashes", "KS-test-diff",                                   "KS-test-kmer2","HashMethod", 
-                "RandStrobeMethod", "Sample") 
+                "RandStrobeMethod", "Max-Conflict-Average", "Sample") 
 }else 
 {
     columns = c("TimeofExecution","E-hits_metric_kmer2", "E-hits_metric_kmer3",
                 "Diff-E-hits-kmer2", "Diff-E-hits-kmer3",
                 "UniqueKmers_2", "UniqueKmers_3", "UniqueHashes", "KS-test-diff_kmer2",
                 "KS-test-diff_kmer3", "KS-test-kmer2", "KS-test-kmer3", "HashMethod", 
-                "RandStrobeMethod", "Sample") 
+                "RandStrobeMethod", "Max-Conflict-Average", "Sample") 
 }
 output_evaluation = data.frame(matrix(nrow = 0, ncol = length(columns))) 
 colnames(output_evaluation) = columns
@@ -238,10 +272,20 @@ for(i in 1:nrow(header_data))
 }
 
   write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
-  median_output <- apply(output_evaluation, 2, median)
-  median_output <- as.vector(median_output)
-  output_median[1, ] <- median_output
-  print(output_median)
+  deleted <- c('Sample', 'HashMethod', 'RandStrobeMethod')
+  output_median <- data.frame(HashMethod = output_evaluation$HashMethod[1], RandStrobeMethod =                                                            output_evaluation$RandStrobeMethod[1])
+  for(i in 1:ncol(output_evaluation))
+  {
+    if(names(output_evaluation)[i] %in% deleted)
+    {
+      next
+    }
+    output_median[, names(output_evaluation)[i]] = median(output_evaluation[, i])
+  }
+  #median_output <- apply(new_data, 2, median)
+  #median_output <- as.vector(median_output)
+  #output_median[1, ] <- median_output
+  #print(output_median)
   write.csv(output_median, path_output_median_samples, row.names = FALSE)
 
 
