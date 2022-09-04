@@ -7,6 +7,7 @@ CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/Comparators/Compara
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/Comparators/Maximizer.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/Comparators/Minimizer.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataGenerators/DataGenerator.hpp
+CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataGenerators/FromFileDataGenerator.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataGenerators/RandomDataGenerator.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Seed.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Strobe.hpp

@@ -54,14 +54,16 @@ CMAKE_BINARY_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 # The main recursive "all" target.
 all: CMakeFiles/ResultPrinter.dir/all
-all: CMakeFiles/ConfigGen.dir/all
-all: CMakeFiles/RandStrobeCreators5.dir/all
+all: CMakeFiles/HasherSimple2.dir/all
 all: CMakeFiles/RandStrobeCreators2.dir/all
 all: CMakeFiles/RandStrobeCreators10.dir/all
 all: CMakeFiles/RandStrobeCreators4.dir/all
 all: CMakeFiles/DataStore.dir/all
 all: CMakeFiles/HasherSimple1.dir/all
 all: CMakeFiles/SeedCreators.dir/all
+all: CMakeFiles/FileDataGen.dir/all
+all: CMakeFiles/ConfigGen.dir/all
+all: CMakeFiles/RandStrobeCreators5.dir/all
 all: CMakeFiles/DataGen.dir/all
 all: CMakeFiles/RandStrobeCreators3.dir/all
 all: CMakeFiles/Maximizer.dir/all
@@ -77,7 +79,6 @@ all: CMakeFiles/RandStrobeCreators1.dir/all
 all: CMakeFiles/RandStrobeCreators11.dir/all
 all: CMakeFiles/RandStrobeCreators8.dir/all
 all: CMakeFiles/RandStrobeCreators9.dir/all
-all: CMakeFiles/HasherSimple2.dir/all
 all: CMakeFiles/RandStrobeCreators12.dir/all
 all: CMakeFiles/Json.dir/all
 all: CMakeFiles/Hashers.dir/all
@@ -94,14 +95,16 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/ResultPrinter.dir/clean
-clean: CMakeFiles/ConfigGen.dir/clean
-clean: CMakeFiles/RandStrobeCreators5.dir/clean
+clean: CMakeFiles/HasherSimple2.dir/clean
 clean: CMakeFiles/RandStrobeCreators2.dir/clean
 clean: CMakeFiles/RandStrobeCreators10.dir/clean
 clean: CMakeFiles/RandStrobeCreators4.dir/clean
 clean: CMakeFiles/DataStore.dir/clean
 clean: CMakeFiles/HasherSimple1.dir/clean
 clean: CMakeFiles/SeedCreators.dir/clean
+clean: CMakeFiles/FileDataGen.dir/clean
+clean: CMakeFiles/ConfigGen.dir/clean
+clean: CMakeFiles/RandStrobeCreators5.dir/clean
 clean: CMakeFiles/DataGen.dir/clean
 clean: CMakeFiles/RandStrobeCreators3.dir/clean
 clean: CMakeFiles/Maximizer.dir/clean
@@ -117,7 +120,6 @@ clean: CMakeFiles/RandStrobeCreators1.dir/clean
 clean: CMakeFiles/RandStrobeCreators11.dir/clean
 clean: CMakeFiles/RandStrobeCreators8.dir/clean
 clean: CMakeFiles/RandStrobeCreators9.dir/clean
-clean: CMakeFiles/HasherSimple2.dir/clean
 clean: CMakeFiles/RandStrobeCreators12.dir/clean
 clean: CMakeFiles/Json.dir/clean
 clean: CMakeFiles/Hashers.dir/clean
@@ -155,58 +157,31 @@ CMakeFiles/ResultPrinter.dir/clean:
 .PHONY : CMakeFiles/ResultPrinter.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ConfigGen.dir
+# Target rules for target CMakeFiles/HasherSimple2.dir
 
 # All Build rule for target.
-CMakeFiles/ConfigGen.dir/all:
-	$(MAKE) -f CMakeFiles/ConfigGen.dir/build.make CMakeFiles/ConfigGen.dir/depend
-	$(MAKE) -f CMakeFiles/ConfigGen.dir/build.make CMakeFiles/ConfigGen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=1 "Built target ConfigGen"
-.PHONY : CMakeFiles/ConfigGen.dir/all
+CMakeFiles/HasherSimple2.dir/all:
+	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/depend
+	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=10,11 "Built target HasherSimple2"
+.PHONY : CMakeFiles/HasherSimple2.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ConfigGen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 1
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ConfigGen.dir/all
+CMakeFiles/HasherSimple2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/HasherSimple2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
-.PHONY : CMakeFiles/ConfigGen.dir/rule
+.PHONY : CMakeFiles/HasherSimple2.dir/rule
 
 # Convenience name for target.
-ConfigGen: CMakeFiles/ConfigGen.dir/rule
+HasherSimple2: CMakeFiles/HasherSimple2.dir/rule
 
-.PHONY : ConfigGen
-
-# clean rule for target.
-CMakeFiles/ConfigGen.dir/clean:
-	$(MAKE) -f CMakeFiles/ConfigGen.dir/build.make CMakeFiles/ConfigGen.dir/clean
-.PHONY : CMakeFiles/ConfigGen.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/RandStrobeCreators5.dir
-
-# All Build rule for target.
-CMakeFiles/RandStrobeCreators5.dir/all:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/depend
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=68,69,70,71,72 "Built target RandStrobeCreators5"
-.PHONY : CMakeFiles/RandStrobeCreators5.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/RandStrobeCreators5.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RandStrobeCreators5.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
-.PHONY : CMakeFiles/RandStrobeCreators5.dir/rule
-
-# Convenience name for target.
-RandStrobeCreators5: CMakeFiles/RandStrobeCreators5.dir/rule
-
-.PHONY : RandStrobeCreators5
+.PHONY : HasherSimple2
 
 # clean rule for target.
-CMakeFiles/RandStrobeCreators5.dir/clean:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/clean
-.PHONY : CMakeFiles/RandStrobeCreators5.dir/clean
+CMakeFiles/HasherSimple2.dir/clean:
+	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/clean
+.PHONY : CMakeFiles/HasherSimple2.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/RandStrobeCreators2.dir
@@ -215,7 +190,7 @@ CMakeFiles/RandStrobeCreators5.dir/clean:
 CMakeFiles/RandStrobeCreators2.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=53,54,55,56,57 "Built target RandStrobeCreators2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=54,55,56,57,58 "Built target RandStrobeCreators2"
 .PHONY : CMakeFiles/RandStrobeCreators2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -242,7 +217,7 @@ CMakeFiles/RandStrobeCreators2.dir/clean:
 CMakeFiles/RandStrobeCreators10.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=38,39,40,41,42,43 "Built target RandStrobeCreators10"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=39,40,41,42,43,44 "Built target RandStrobeCreators10"
 .PHONY : CMakeFiles/RandStrobeCreators10.dir/all
 
 # Build rule for subdir invocation for target.
@@ -269,7 +244,7 @@ CMakeFiles/RandStrobeCreators10.dir/clean:
 CMakeFiles/RandStrobeCreators4.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=63,64,65,66,67 "Built target RandStrobeCreators4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=64,65,66,67,68 "Built target RandStrobeCreators4"
 .PHONY : CMakeFiles/RandStrobeCreators4.dir/all
 
 # Build rule for subdir invocation for target.
@@ -323,7 +298,7 @@ CMakeFiles/DataStore.dir/clean:
 CMakeFiles/HasherSimple1.dir/all:
 	$(MAKE) -f CMakeFiles/HasherSimple1.dir/build.make CMakeFiles/HasherSimple1.dir/depend
 	$(MAKE) -f CMakeFiles/HasherSimple1.dir/build.make CMakeFiles/HasherSimple1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=6,7 "Built target HasherSimple1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=8,9 "Built target HasherSimple1"
 .PHONY : CMakeFiles/HasherSimple1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -371,6 +346,87 @@ CMakeFiles/SeedCreators.dir/clean:
 .PHONY : CMakeFiles/SeedCreators.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/FileDataGen.dir
+
+# All Build rule for target.
+CMakeFiles/FileDataGen.dir/all:
+	$(MAKE) -f CMakeFiles/FileDataGen.dir/build.make CMakeFiles/FileDataGen.dir/depend
+	$(MAKE) -f CMakeFiles/FileDataGen.dir/build.make CMakeFiles/FileDataGen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=6,7 "Built target FileDataGen"
+.PHONY : CMakeFiles/FileDataGen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/FileDataGen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FileDataGen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
+.PHONY : CMakeFiles/FileDataGen.dir/rule
+
+# Convenience name for target.
+FileDataGen: CMakeFiles/FileDataGen.dir/rule
+
+.PHONY : FileDataGen
+
+# clean rule for target.
+CMakeFiles/FileDataGen.dir/clean:
+	$(MAKE) -f CMakeFiles/FileDataGen.dir/build.make CMakeFiles/FileDataGen.dir/clean
+.PHONY : CMakeFiles/FileDataGen.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ConfigGen.dir
+
+# All Build rule for target.
+CMakeFiles/ConfigGen.dir/all:
+	$(MAKE) -f CMakeFiles/ConfigGen.dir/build.make CMakeFiles/ConfigGen.dir/depend
+	$(MAKE) -f CMakeFiles/ConfigGen.dir/build.make CMakeFiles/ConfigGen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=1 "Built target ConfigGen"
+.PHONY : CMakeFiles/ConfigGen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ConfigGen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ConfigGen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
+.PHONY : CMakeFiles/ConfigGen.dir/rule
+
+# Convenience name for target.
+ConfigGen: CMakeFiles/ConfigGen.dir/rule
+
+.PHONY : ConfigGen
+
+# clean rule for target.
+CMakeFiles/ConfigGen.dir/clean:
+	$(MAKE) -f CMakeFiles/ConfigGen.dir/build.make CMakeFiles/ConfigGen.dir/clean
+.PHONY : CMakeFiles/ConfigGen.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/RandStrobeCreators5.dir
+
+# All Build rule for target.
+CMakeFiles/RandStrobeCreators5.dir/all:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/depend
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=69,70,71,72,73 "Built target RandStrobeCreators5"
+.PHONY : CMakeFiles/RandStrobeCreators5.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/RandStrobeCreators5.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RandStrobeCreators5.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
+.PHONY : CMakeFiles/RandStrobeCreators5.dir/rule
+
+# Convenience name for target.
+RandStrobeCreators5: CMakeFiles/RandStrobeCreators5.dir/rule
+
+.PHONY : RandStrobeCreators5
+
+# clean rule for target.
+CMakeFiles/RandStrobeCreators5.dir/clean:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/clean
+.PHONY : CMakeFiles/RandStrobeCreators5.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/DataGen.dir
 
 # All Build rule for target.
@@ -404,7 +460,7 @@ CMakeFiles/DataGen.dir/clean:
 CMakeFiles/RandStrobeCreators3.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=58,59,60,61,62 "Built target RandStrobeCreators3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=59,60,61,62,63 "Built target RandStrobeCreators3"
 .PHONY : CMakeFiles/RandStrobeCreators3.dir/all
 
 # Build rule for subdir invocation for target.
@@ -431,7 +487,7 @@ CMakeFiles/RandStrobeCreators3.dir/clean:
 CMakeFiles/Maximizer.dir/all:
 	$(MAKE) -f CMakeFiles/Maximizer.dir/build.make CMakeFiles/Maximizer.dir/depend
 	$(MAKE) -f CMakeFiles/Maximizer.dir/build.make CMakeFiles/Maximizer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=26,27 "Built target Maximizer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=27,28 "Built target Maximizer"
 .PHONY : CMakeFiles/Maximizer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -456,14 +512,16 @@ CMakeFiles/Maximizer.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ResultPrinter.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ConfigGen.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators5.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple2.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators2.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators10.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators4.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/DataStore.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple1.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/SeedCreators.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/FileDataGen.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ConfigGen.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators5.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/DataGen.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators3.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Maximizer.dir/all
@@ -477,7 +535,6 @@ CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators1.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators11.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators8.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators9.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple2.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators12.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Json.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Hashers.dir/all
@@ -513,7 +570,7 @@ CMakeFiles/RandStrobes.out.dir/clean:
 CMakeFiles/Minimizer.dir/all:
 	$(MAKE) -f CMakeFiles/Minimizer.dir/build.make CMakeFiles/Minimizer.dir/depend
 	$(MAKE) -f CMakeFiles/Minimizer.dir/build.make CMakeFiles/Minimizer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=28,29 "Built target Minimizer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=29,30 "Built target Minimizer"
 .PHONY : CMakeFiles/Minimizer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -538,13 +595,15 @@ CMakeFiles/Minimizer.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/config.out.dir/all: CMakeFiles/ResultPrinter.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators5.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple2.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators2.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators10.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators4.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/DataStore.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple1.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/SeedCreators.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/FileDataGen.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators5.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/DataGen.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators3.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/Maximizer.dir/all
@@ -558,7 +617,6 @@ CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators1.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators11.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators8.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators9.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple2.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators12.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/Json.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/Hashers.dir/all
@@ -594,7 +652,7 @@ CMakeFiles/config.out.dir/clean:
 CMakeFiles/RandStrobeCreators.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=30,31,32 "Built target RandStrobeCreators"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=31,32,33 "Built target RandStrobeCreators"
 .PHONY : CMakeFiles/RandStrobeCreators.dir/all
 
 # Build rule for subdir invocation for target.
@@ -621,12 +679,12 @@ CMakeFiles/RandStrobeCreators.dir/clean:
 CMakeFiles/RandStrobeCreators6.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=73,74,75,76,77 "Built target RandStrobeCreators6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=74,75,76,77 "Built target RandStrobeCreators6"
 .PHONY : CMakeFiles/RandStrobeCreators6.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/RandStrobeCreators6.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RandStrobeCreators6.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
 .PHONY : CMakeFiles/RandStrobeCreators6.dir/rule
@@ -648,7 +706,7 @@ CMakeFiles/RandStrobeCreators6.dir/clean:
 CMakeFiles/HashersSeed3.dir/all:
 	$(MAKE) -f CMakeFiles/HashersSeed3.dir/build.make CMakeFiles/HashersSeed3.dir/depend
 	$(MAKE) -f CMakeFiles/HashersSeed3.dir/build.make CMakeFiles/HashersSeed3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=20,21,22,23 "Built target HashersSeed3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=22,23,24,25 "Built target HashersSeed3"
 .PHONY : CMakeFiles/HashersSeed3.dir/all
 
 # Build rule for subdir invocation for target.
@@ -675,7 +733,7 @@ CMakeFiles/HashersSeed3.dir/clean:
 CMakeFiles/HashersMet1.dir/all:
 	$(MAKE) -f CMakeFiles/HashersMet1.dir/build.make CMakeFiles/HashersMet1.dir/depend
 	$(MAKE) -f CMakeFiles/HashersMet1.dir/build.make CMakeFiles/HashersMet1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=12,13 "Built target HashersMet1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=14,15 "Built target HashersMet1"
 .PHONY : CMakeFiles/HashersMet1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -729,7 +787,7 @@ CMakeFiles/RandStrobeCreators7.dir/clean:
 CMakeFiles/RandStrobeCreators1.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=33,34,35,36,37 "Built target RandStrobeCreators1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=34,35,36,37,38 "Built target RandStrobeCreators1"
 .PHONY : CMakeFiles/RandStrobeCreators1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -756,7 +814,7 @@ CMakeFiles/RandStrobeCreators1.dir/clean:
 CMakeFiles/RandStrobeCreators11.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=44,45,46,47,48 "Built target RandStrobeCreators11"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=45,46,47,48,49 "Built target RandStrobeCreators11"
 .PHONY : CMakeFiles/RandStrobeCreators11.dir/all
 
 # Build rule for subdir invocation for target.
@@ -831,40 +889,13 @@ CMakeFiles/RandStrobeCreators9.dir/clean:
 .PHONY : CMakeFiles/RandStrobeCreators9.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/HasherSimple2.dir
-
-# All Build rule for target.
-CMakeFiles/HasherSimple2.dir/all:
-	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/depend
-	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=8,9 "Built target HasherSimple2"
-.PHONY : CMakeFiles/HasherSimple2.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/HasherSimple2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/HasherSimple2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
-.PHONY : CMakeFiles/HasherSimple2.dir/rule
-
-# Convenience name for target.
-HasherSimple2: CMakeFiles/HasherSimple2.dir/rule
-
-.PHONY : HasherSimple2
-
-# clean rule for target.
-CMakeFiles/HasherSimple2.dir/clean:
-	$(MAKE) -f CMakeFiles/HasherSimple2.dir/build.make CMakeFiles/HasherSimple2.dir/clean
-.PHONY : CMakeFiles/HasherSimple2.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/RandStrobeCreators12.dir
 
 # All Build rule for target.
 CMakeFiles/RandStrobeCreators12.dir/all:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/depend
 	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=49,50,51,52 "Built target RandStrobeCreators12"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=50,51,52,53 "Built target RandStrobeCreators12"
 .PHONY : CMakeFiles/RandStrobeCreators12.dir/all
 
 # Build rule for subdir invocation for target.
@@ -891,12 +922,12 @@ CMakeFiles/RandStrobeCreators12.dir/clean:
 CMakeFiles/Json.dir/all:
 	$(MAKE) -f CMakeFiles/Json.dir/build.make CMakeFiles/Json.dir/depend
 	$(MAKE) -f CMakeFiles/Json.dir/build.make CMakeFiles/Json.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=24,25 "Built target Json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=26 "Built target Json"
 .PHONY : CMakeFiles/Json.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Json.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Json.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
 .PHONY : CMakeFiles/Json.dir/rule
@@ -918,7 +949,7 @@ CMakeFiles/Json.dir/clean:
 CMakeFiles/Hashers.dir/all:
 	$(MAKE) -f CMakeFiles/Hashers.dir/build.make CMakeFiles/Hashers.dir/depend
 	$(MAKE) -f CMakeFiles/Hashers.dir/build.make CMakeFiles/Hashers.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=10,11 "Built target Hashers"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=12,13 "Built target Hashers"
 .PHONY : CMakeFiles/Hashers.dir/all
 
 # Build rule for subdir invocation for target.
@@ -945,7 +976,7 @@ CMakeFiles/Hashers.dir/clean:
 CMakeFiles/HashersSeed1.dir/all:
 	$(MAKE) -f CMakeFiles/HashersSeed1.dir/build.make CMakeFiles/HashersSeed1.dir/depend
 	$(MAKE) -f CMakeFiles/HashersSeed1.dir/build.make CMakeFiles/HashersSeed1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=16,17 "Built target HashersSeed1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=18,19 "Built target HashersSeed1"
 .PHONY : CMakeFiles/HashersSeed1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -972,7 +1003,7 @@ CMakeFiles/HashersSeed1.dir/clean:
 CMakeFiles/HashersMet2.dir/all:
 	$(MAKE) -f CMakeFiles/HashersMet2.dir/build.make CMakeFiles/HashersMet2.dir/depend
 	$(MAKE) -f CMakeFiles/HashersMet2.dir/build.make CMakeFiles/HashersMet2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=14,15 "Built target HashersMet2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=16,17 "Built target HashersMet2"
 .PHONY : CMakeFiles/HashersMet2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -999,7 +1030,7 @@ CMakeFiles/HashersMet2.dir/clean:
 CMakeFiles/HashersSeed2.dir/all:
 	$(MAKE) -f CMakeFiles/HashersSeed2.dir/build.make CMakeFiles/HashersSeed2.dir/depend
 	$(MAKE) -f CMakeFiles/HashersSeed2.dir/build.make CMakeFiles/HashersSeed2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=18,19 "Built target HashersSeed2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=20,21 "Built target HashersSeed2"
 .PHONY : CMakeFiles/HashersSeed2.dir/all
 
 # Build rule for subdir invocation for target.

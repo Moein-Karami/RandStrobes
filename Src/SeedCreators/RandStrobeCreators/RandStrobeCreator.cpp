@@ -80,6 +80,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	uint64_t curr_hash;
 	uint64_t best_value;
 	// cout << seq.size() - kmer_len - w_min - (n - 2) * w_max << endl;
+	// std::cout << "SIZE : " << seq.size() <<" "<< kmer_len << " "<< w_min << " " << (n - 2) * w_max << std::endl;
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		// std::cout << "creating the " << i << "th strobe, its kmer and hash: " << kmers[i] << " " << hashes[i] << std::endl;
@@ -92,11 +93,11 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 			best_value = get_score(curr_hash, i, best_choose);
 			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
-				if (i < 2)
-				{
+				// if (i < 2)
+				// {
 					// std::cout << "checking " << q << "th kmer in seq, its kmer and hash: " << kmers[q] << " " << hashes[q]
 				// << "  its value: " << get_score(curr_hash, i, q) << std::endl;
-				}
+				// }
 				
 				if (comparator->is_first_better(get_score(curr_hash, i, q), best_value))
 				{

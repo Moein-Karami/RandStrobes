@@ -15,13 +15,31 @@ ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max
 void ConfigGenerator::add_data_generator_config(std::string path)
 {
 	Json::Value config;
-	config["DataGenerator"] = "RandomDataGenerator";
-
 	Json::Value data_generator_config;
-	data_generator_config["seq_len"] = seq_len;
-	config["DataGeneratorConfig"] = data_generator_config;
 
-	add_hasher_config(path + "_RandomDataGenerator", config);
+	if (data_generator == "Random")
+	{
+		config["DataGenerator"] = "RandomDataGenerator";
+		data_generator_config["seq_len"] = seq_len;
+		config["DataGeneratorConfig"] = data_generator_config;
+		add_hasher_config(path + "_RandomDataGenerator", config);
+	}
+	else if (data_generator == "FromFile")
+	{
+		std::vector<std::string> file_names = {"Data/data"};
+		config["DataGenerator"] = "FromFileDataGenerator";
+		for (auto name : file_names)
+		{
+			data_generator_config["file_name"] = name;
+			config["DataGeneratorConfig"] = data_generator_config;
+			add_hasher_config(path + "_FromFileDataGenerator_" + name, config);
+		}
+	}
+	else
+	{
+		std::cout << "Unknown data generator: " << data_generator << std::endl;
+		exit(1);
+	}
 }
 
 void ConfigGenerator::add_hasher_config(std::string output_path, Json::Value config)
@@ -80,7 +98,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 			continue;
 		seed_creator_config["method"] = seed_creator;
 		config["SeedCreatorConfig"] = seed_creator_config;
-		add_number_of_samples_config(output_path + "_" + seed_creator + std::to_string(n), config);
+		add_number_of_samples_config(output_path + "_" + seed_creator + "_" + std::to_string(n), config);
 	}
 }
 
@@ -106,6 +124,7 @@ int32_t main()
 	uint64_t mask;
 	uint64_t number_of_samples;
 	uint64_t seq_len;
+	std::string data_generator;
 
 	std::cout << "Directory: ";
 	std::cin >> output_path; 
@@ -128,6 +147,9 @@ int32_t main()
 	std::cout << "seq len: ";
 	std::cin >> seq_len;
 
-	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask, number_of_samples, seq_len);
+	std::cout << "DataGenerator: ";
+	std::cin >> data_generator;
+
+	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask, number_of_samples, seq_len, data_generator);
 	config_generator.add_data_generator_config(output_path);
 }

@@ -9,7 +9,7 @@ class ConfigGenerator
 {
 	public:
 		ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask,
-				uint64_t number_of_samples, uint64_t seq_len);
+				uint64_t number_of_samples, uint64_t seq_len, std::string data_generator);
 		void add_data_generator_config(std::string output_path);
 		void add_hasher_config(std::string output_path, Json::Value config);
 		void add_comparator_config(std::string output_path, Json::Value config);
@@ -24,6 +24,7 @@ class ConfigGenerator
 		uint64_t mask;
 		uint64_t number_of_samples;
 		uint64_t seq_len;
+		std::string data_generator;
 };
 
 #endif

@@ -41,15 +41,15 @@ size_t MAXorNode::get_best_ind(uint64_t val, bool cmp)
 	if (bit_ind < 0 || inds.size() == 1)
 		return *inds.begin();
 
-	std::cout << "Bit ind: " << bit_ind << std::endl;
+	// std::cout << "Bit ind: " << bit_ind << std::endl;
 	if (childs[cmp ^ ((val & (1LL << bit_ind)) != 0)]->is_empty() == false)
 	{
-		std::cout << "go to 0" << std::endl;
+		// std::cout << "go to 0" << std::endl;
 		return childs[cmp ^ ((val & (1LL << bit_ind)) != 0)]->get_best_ind(val, cmp);
 	}
 	else
 	{
-		std::cout << "go to 1" << std::endl;
+		// std::cout << "go to 1" << std::endl;
 		return childs[(cmp ^ ((val & (1LL << bit_ind)) != 0)) ^ 1]->get_best_ind(val, cmp);
 	}
 		
@@ -64,12 +64,12 @@ bool MAXorNode::is_empty()
 
 void MAXorNode::print_all(std::string until_now)
 {
-	std::cout << "Bit ind: " << bit_ind << std::endl;
-	std::cout << "Until now: " << until_now << std::endl;
-	for (auto i : inds)
-		std::cout << i << " ";
-	std::cout << std::endl;
-	std::cout << "_______**********________" << std::endl;
+	// std::cout << "Bit ind: " << bit_ind << std::endl;
+	// std::cout << "Until now: " << until_now << std::endl;
+	// for (auto i : inds)
+		// std::cout << i << " ";
+	// std::cout << std::endl;
+	// std::cout << "_______**********________" << std::endl;
 	for (int i = 0; i < 2; i++)
 		if (childs[i] != NULL)
 			childs[i]->print_all(until_now + std::to_string(i));
