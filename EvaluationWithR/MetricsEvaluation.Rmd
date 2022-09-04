@@ -19,7 +19,8 @@ build_random_seeds <- function(strobmers_data, header_data, type_kmer)
     new_elem <- w_min + i + rand - 1
 
     ##
-    print(c(i, new_elem));
+    ##print(c(i, new_elem));
+    ##write(c(i, new_elem),file="res.txt",append=TRUE)
     ##
   
     if(type_kmer == 3)
