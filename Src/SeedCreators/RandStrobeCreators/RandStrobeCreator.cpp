@@ -43,6 +43,9 @@ uint32_t RandStrobeCreator::get_char_code(char c)
 
 std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 {
+	for (int i = 0; i < seq.size(); i++)
+		std::cout << seq[i] << std::endl;
+
 	seq = sequence;
 	hashes.clear();
 	kmers.clear();
@@ -70,6 +73,8 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 	return create_seeds();
 }
 
+typedef std::pair<uint64_t, uint64_t> pii;
+
 std::vector<Seed*> RandStrobeCreator::create_seeds()
 {
 	prepare_data();
@@ -81,6 +86,9 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	uint64_t best_value;
 	// cout << seq.size() - kmer_len - w_min - (n - 2) * w_max << endl;
 	// std::cout << "SIZE : " << seq.size() <<" "<< kmer_len << " "<< w_min << " " << (n - 2) * w_max << std::endl;
+	
+	std::map<pii, pii> dup_seeds;
+	
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		// std::cout << "creating the " << i << "th strobe, its kmer and hash: " << kmers[i] << " " << hashes[i] << std::endl;
@@ -110,6 +118,14 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 			strobe->add_kmer(best_choose, hashes[best_choose]);
 			curr_hash = get_score(curr_hash, i, best_choose);
 			// std::cout << "next kmer added, it was: " << best_choose << std::endl;
+
+			if (dup_seeds.find(pii(hashes[i], hashes[best_choose])) != dup_seeds.end())
+			{
+				std::cout << "DUPLICATE SEEDS FOUND: " << " " << hashes[i] << " " << hashes[best_choose] << std::endl;
+				std::cout << "First: kmer1, kmer2: " << dup_seeds[pii(hashes[i], hashes[best_choose])].first << " " << dup_seeds[pii(hashes[i], hashes[best_choose])].second << std::endl;
+				std::cout << "Second: kmer1, kmer2: " << i << " " << best_choose << std::endl;
+			}
+			dup_seeds[pii(hashes[i], hashes[best_choose])] = pii(i, best_choose);
 		}
 		
 		seeds.push_back(strobe);

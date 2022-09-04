@@ -1,7 +1,7 @@
 #include "ConfigGenerator.hpp"
 
 ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask,
-		uint64_t number_of_samples, uint64_t seq_len)
+		uint64_t number_of_samples, uint64_t seq_len, std::string data_generator)
 : kmer_len(kmer_len)
 , w_min(w_min)
 , w_max(w_max)
@@ -9,6 +9,7 @@ ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max
 , mask(mask)
 , number_of_samples(number_of_samples)
 , seq_len(seq_len)
+, data_generator(data_generator)
 {
 }
 

@@ -362,6 +362,11 @@ pre code {
   {
     rand &lt;- sample(1:(w_max - w_min + 1), 1)
     new_elem &lt;- w_min + i + rand - 1
+
+    ##
+    print(c(i, new_elem));
+    ##
+  
     if(type_kmer == 3)
     {
       rand2 &lt;- sample(1:(w_max - w_min + 1), 1)
