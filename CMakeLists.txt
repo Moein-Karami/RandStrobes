@@ -35,6 +35,7 @@ target_link_libraries( config.out
     Maximizer
     Minimizer
     DataGen
+    FileDataGen
     DataStore
     SeedCreators
     RandStrobeCreators
@@ -47,8 +48,9 @@ target_link_libraries( config.out
     RandStrobeCreators7
     RandStrobeCreators8
     RandStrobeCreators9
-#    RandStrobeCreators10
+    RandStrobeCreators10
     RandStrobeCreators11
+    RandStrobeCreators12
     Json
     Hashers 
     HashersMet1
@@ -68,6 +70,7 @@ target_link_libraries(${NAME_PROJECT}
     Maximizer
     Minimizer
     DataGen
+    FileDataGen
     DataStore
     SeedCreators
     RandStrobeCreators
@@ -80,8 +83,9 @@ target_link_libraries(${NAME_PROJECT}
     RandStrobeCreators7
     RandStrobeCreators8
     RandStrobeCreators9
-#    RandStrobeCreators10
+    RandStrobeCreators10
     RandStrobeCreators11
+    RandStrobeCreators12
     Json
     Hashers 
     HashersMet1
@@ -106,6 +110,8 @@ add_library(Minimizer STATIC ./Src/Comparators/Minimizer.cpp)
 #DataGenerators ***********************************
 
 add_library(DataGen STATIC ./Src/DataGenerators/RandomDataGenerator.cpp)
+
+add_library(FileDataGen STATIC ./Src/DataGenerators/FromFileDataGenerator.cpp)
 
 #DataStoring *******************************************
 
@@ -157,15 +163,18 @@ add_library(RandStrobeCreators9 STATIC ./Src/SeedCreators/RandStrobeCreators/Ran
     ./Src/SeedCreators/SeedCreator.cpp)
 
 
-#add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorFast.cpp
-#    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
-#    ./Src/SeedCreators/SeedCreator.cpp)
+add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFastMAXor.cpp
+   ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+   ./Src/SeedCreators/SeedCreator.cpp ./Src/Tools/MAXorNode.cpp)
 
 add_library(RandStrobeCreators11 STATIC 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.cpp
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
+add_library(RandStrobeCreators12 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/SeedCreator.cpp)
 #Json***********************************************
 
 add_library(Json STATIC ./Src/Json/jsoncpp.cpp)

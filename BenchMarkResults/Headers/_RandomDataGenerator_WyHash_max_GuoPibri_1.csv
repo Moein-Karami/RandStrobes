@@ -1,2 +1,0 @@
-TimeExecution,NumberofSeeds,n,kmer_len,w_min,w_max,mask,SeedGeneratorMethod,HashMethod,Sample
-179,59,2,20,21,100,18446744073709551615,GuoPibri,WyHash,1

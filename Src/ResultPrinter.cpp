@@ -10,7 +10,7 @@ void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<
 	std::string output_path_result = "BenchMarkResults/Results/" + output_path;
 	std::string output_path_header = "BenchMarkResults/Headers/" + output_path;
 
-	// std::cerr << "****** In ResultPrinter::output_path_result : " << output_path_result << 
+	// std::cout << "****** In ResultPrinter::output_path_result : " << output_path_result << 
 	// "\n output_path_header: " << output_path_header << " ******" << std::endl;
 
 	output_csv.open(output_path_result);

@@ -6,3 +6,37 @@
 
 #IncludeRegexTransform: 
 
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
+WyHash.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
+
+Includes/Hashers/HashMethodes/wyhash.h
+stdint.h
+-
+string.h
+-
+intrin.h
+-
+
+Includes/Hashers/Hasher.hpp
+LibrariesAndDefines.hpp
+Includes/Hashers/LibrariesAndDefines.hpp
+
+Includes/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
+Hasher.hpp
+Includes/Hashers/SeedBasedHashers/Hasher.hpp
+
+Includes/Hashers/SeedBasedHashers/WyHash.hpp
+SeedBasedHasher.hpp
+Includes/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
+wyhash.h
+Includes/Hashers/SeedBasedHashers/wyhash.h
+
+Includes/LibrariesAndDefines.hpp
+bits/stdc++.h
+-
+chrono
+-
+functional
+-
+

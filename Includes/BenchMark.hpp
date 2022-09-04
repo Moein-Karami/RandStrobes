@@ -8,6 +8,8 @@
 #include "Maximizer.hpp"
 
 #include "RandomDataGenerator.hpp"
+#include "FromFileDataGenerator.hpp"
+
 #include "Strobe.hpp"
 
 #include "WyHash.hpp"
@@ -22,6 +24,11 @@
 #include "RandStrobeCreatorXorVar.hpp"
 #include "RandStrobeCreatorLiuPatroLi.hpp"
 #include "RandStrobeCreatorMAMod.hpp"
+#include "RandStrobeCreatorFastMAXor.hpp"
+#include "RandStrobeCreatorFixedSahlinMod.hpp"
+#include "RandStrobeCreatorSpecialCaseFixedShen.hpp"
+#include "RandStrobeCreatorMAXor.hpp"
+#include "RandStrobeCreatorRandomMAMod.hpp"
 
 
 #include "json-forwards.h"

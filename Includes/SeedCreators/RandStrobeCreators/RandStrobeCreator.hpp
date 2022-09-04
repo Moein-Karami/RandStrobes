@@ -14,9 +14,6 @@ class RandStrobeCreator : public SeedCreator
 				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 		~RandStrobeCreator();
 		std::vector<Seed*> create_seeds(const std::string& sequence);
-		uint32_t get_char_code(char c);
-		virtual std::vector<Seed*> create_seeds();
-		virtual uint64_t get_first_hash(size_t ind);
 	
 	protected:
 		std::string seq;
@@ -29,6 +26,11 @@ class RandStrobeCreator : public SeedCreator
 		uint32_t n;
 		Comparator* comparator;
 		virtual uint64_t get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2) = 0;
+		virtual void prepare_data();
+		uint32_t get_char_code(char c);
+		virtual std::vector<Seed*> create_seeds();
+		virtual uint64_t get_first_hash(size_t ind);
+		virtual uint64_t get_new_curr_hash(uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
 };
 
 #endif

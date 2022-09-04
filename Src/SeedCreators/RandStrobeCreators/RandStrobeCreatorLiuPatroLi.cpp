@@ -25,7 +25,7 @@ uint64_t RandStrobeCreatorLiuPatroLi::get_hash_concat(uint64_t kmer1, uint64_t k
 uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
     uint64_t score = get_hash_concat(curr_hash, kmers[ind2]);
-    std::cout << "res for " << ind1 <<" " <<ind2 << " = " << score<<std::endl;
+    // std::cout << "res for " << ind1 <<" " <<ind2 << " = " << score<<std::endl;
     
 	return score;
 }
