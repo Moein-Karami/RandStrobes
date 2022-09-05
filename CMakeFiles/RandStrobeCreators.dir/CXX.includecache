@@ -10,10 +10,13 @@
 RandStrobeCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
+<<<<<<< HEAD
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
+=======
+>>>>>>> 0b469ebb4f6c75feba76da3623d9479a4917f5ed
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
 Includes/Comparators/LibrariesAndDefines.hpp
