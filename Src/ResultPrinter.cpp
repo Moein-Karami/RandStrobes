@@ -2,7 +2,7 @@
 
 void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<std::vector<Seed*>> seeds_collection,
 				std::string output_path, uint32_t n, uint64_t kmer_len, uint64_t w_min, uint64_t w_max,
-				uint64_t mask, std::string seed_method, std::string hash_method)
+				uint64_t mask, std::string seed_method, std::string hash_method, std::string comperator)
 {
 	std::ofstream output_csv;
 	std::ofstream output_csv2;
@@ -36,7 +36,7 @@ void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<
 	{
 		output_csv2 << construction_times[i] << "," << seeds_collection[i].size() << "," << n << "," <<
 			kmer_len << "," << w_min << "," << w_max << "," << mask << "," << seed_method << "," << 
-			hash_method << "," << i + 1 << std::endl;
+			hash_method + "-" + comperator << "," <<  i + 1 << std::endl;
 		for (auto seed : seeds_collection[i])
 			output_csv << seed->to_string() << i + 1 << std::endl;
 		output_csv << std::endl;
