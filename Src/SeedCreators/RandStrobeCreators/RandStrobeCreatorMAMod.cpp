@@ -93,11 +93,11 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 		for (int j = 1; j < n; j++)
 		{
 			// std::cout << "candidates: " << std::endl;
-			if (i < 5)
-			{
-				for (auto el : hash_values[j])
-				std::cout << el.first << " " << el.second << std::endl;
-			}
+			// if (i < 5)
+			// {
+			// 	for (auto el : hash_values[j])
+			// 	std::cout << el.first << " " << el.second << std::endl;
+			// }
 			tmp = *(hash_values[j].begin());
 			// std::cout << "tmp: " << tmp.first << " " << tmp.second << std::endl;
 			it = hash_values[j].upper_bound({p - curr_hash, std::numeric_limits<uint64_t>::min()});
