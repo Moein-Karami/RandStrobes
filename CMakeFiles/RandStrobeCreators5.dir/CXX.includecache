@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
-Strobe.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
-
 /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
 /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
@@ -17,14 +13,6 @@ RandStrobeCreator.hpp
 /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
 RandStrobeCreatorShen.hpp
 /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
-
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
-RandStrobeCreatorShen.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
