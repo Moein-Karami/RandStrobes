@@ -442,7 +442,7 @@ pre code {
   }
   count_vector &lt;- as.vector(table_kmer2)
   count_vector &lt;- count_vector ^ 2;
-  return(mean(count_vector))
+  return(sum(count_vector) / nrow(strobmers_data))
   #print(paste(&quot;The E-hits metric value is: &quot;, mean(count_vector)))
 }</code></pre>
 <pre class="r"><code>calculate_ehits_diff &lt;- function(strobmers_data, type_kmer)
@@ -459,7 +459,7 @@ pre code {
   print(table_diff)
   vec_table_dif &lt;- as.vector(table_diff)
   vec_table_dif &lt;- vec_table_dif ^ 2
-  return(mean(vec_table_dif))
+  return(sum(vec_table_dif) / nrow(strobmers_data))
 }</code></pre>
 <pre class="r"><code>evaluate_sample &lt;- function(strobmers_data, header_data, output_evaluation, type_kmer)
 {
