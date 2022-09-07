@@ -114,7 +114,7 @@ calculate_ehits <- function(strobmers_data, type_kmer)
   }
   count_vector <- as.vector(table_kmer2)
   count_vector <- count_vector ^ 2;
-  return(mean(count_vector))
+  return(sum(count_vector) / nrow(strobmers_data))
   #print(paste("The E-hits metric value is: ", mean(count_vector)))
 }
 ```
@@ -134,7 +134,7 @@ calculate_ehits_diff <- function(strobmers_data, type_kmer)
   print(table_diff)
   vec_table_dif <- as.vector(table_diff)
   vec_table_dif <- vec_table_dif ^ 2
-  return(mean(vec_table_dif))
+  return(sum(vec_table_dif) / nrow(strobmers_data))
 }
 ```
 
@@ -241,7 +241,7 @@ for(i in 1:nrow(header_data))
 }
 
   write.csv(output_evaluation, path_output_all_samples, row.names = FALSE)
-  deleted <- c('Sample', 'HashMethod', 'RandStrobeMethod')
+  deleted <- c('HashMethod', 'RandStrobeMethod')
   output_median <- data.frame(HashMethod = output_evaluation$HashMethod[1], RandStrobeMethod =                                                            output_evaluation$RandStrobeMethod[1])
   for(i in 1:ncol(output_evaluation))
   {
