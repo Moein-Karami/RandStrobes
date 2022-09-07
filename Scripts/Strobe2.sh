@@ -12,6 +12,8 @@ do
 	echo "RandStrobes are created"
 	sleep 1
 	R -e "path_kmer_file='$name'; path_output_file='$name'; rmarkdown::render('EvaluationWithR/MetricsEvaluation.Rmd')"
+	g++ -std=c++11 EvaluationWithC++/metric_calculator.cpp -o metric.out
+	./metric.out "$name"
 	echo "Metrics are created"
 done
 R -e "rmarkdown::render('EvaluationWithR/PlotMaker.Rmd')"
