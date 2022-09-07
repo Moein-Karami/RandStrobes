@@ -95,7 +95,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	{
 		// std::cout << "creating the " << i << "th strobe, its kmer and hash: " << kmers[i] << " " << hashes[i] << std::endl;
 		strobe = new Strobe();
-		strobe->add_kmer(i, hashes[i]);
+		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
 		{
@@ -117,7 +117,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 					// std::cout << "best choose changes to " << best_choose << std::endl;
 				}
 			}
-			strobe->add_kmer(best_choose, hashes[best_choose]);
+			strobe->add_kmer(best_choose, kmers[best_choose]);
 			curr_hash = get_score(curr_hash, i, best_choose);
 			// std::cout << "next kmer added, it was: " << best_choose << std::endl;
 

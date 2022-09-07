@@ -41,14 +41,14 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 			nodes[1]->print_all("");
 
 		strobe = new Strobe();
-		strobe->add_kmer(i, hashes[i]);
+		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		// std::cout << "before choose next kmers" << std::endl;
 		for (int j = 1; j < n; j++)
 		{
 			// std::cout << "start get best for j = " << j << std::endl;
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
-			strobe->add_kmer(best_choose, hashes[best_choose]);
+			strobe->add_kmer(best_choose, kmers[best_choose]);
 			curr_hash = (curr_hash ^ hashes[best_choose]);
 			nodes[j]->remove(i + w_min + (j - 1) * w_max, hashes[i + w_min + (j - 1) * w_max]);
 			if (i + j * w_max + 1 < hashes.size())

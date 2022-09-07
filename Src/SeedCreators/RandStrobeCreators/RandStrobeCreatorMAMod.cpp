@@ -39,7 +39,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	{
 		// std::cout << "start creating seeds, I = " << i << std::endl;
 		strobe = new Strobe();
-		strobe->add_kmer(i, hashes[i]);
+		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		// std::cout << "before choose next kmers" << std::endl;
 		for (int j = 1; j < n; j++)
@@ -52,7 +52,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 				if ((tmp.first + curr_hash) % p > (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
-			strobe->add_kmer(tmp.second, tmp.first);
+			strobe->add_kmer(tmp.second, kmers[tmp.second]);
 			curr_hash = (tmp.first + curr_hash) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
@@ -86,7 +86,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 	{
 		// std::cout << "start creating seeds, I = " << i << std::endl;
 		strobe = new Strobe();
-		strobe->add_kmer(i, hashes[i]);
+		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		// std::cout << "Curr hash: " << curr_hash << std::endl;
 		// std::cout << "before choose next kmers" << std::endl;
@@ -109,7 +109,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 				if ((tmp.first + curr_hash) % p < (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
-			strobe->add_kmer(tmp.second, tmp.first);
+			strobe->add_kmer(tmp.second, kmers[tmp.second]);
 			curr_hash = (tmp.first + curr_hash) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
