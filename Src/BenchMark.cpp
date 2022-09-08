@@ -125,7 +125,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 
 		std::string seq = data_generator->get_data();
 
-		//std::cout << "Seq: " << seq << std::endl;
+		// std::cout << "********************Seq: " << seq << std::endl;
 
 		std::vector<Seed*> seeds;
 		

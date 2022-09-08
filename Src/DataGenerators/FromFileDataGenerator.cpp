@@ -4,8 +4,14 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 {
 	file.open(file_name);
 	std::string seq;
-	while (file >> seq)
-		data.push(seq);
+	std::string line;
+	while (file >> line)
+	{
+		if (line[0] == '>')
+			data.push(seq);
+		else 
+			seq += line;
+	}
 	file.close();
 }
 
