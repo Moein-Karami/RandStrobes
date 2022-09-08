@@ -45,7 +45,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 		for (int j = 1; j < n; j++)
 		{
 			tmp = *(hash_values[j].begin());
-			it = hash_values[j].upper_bound({p - curr_hash, std::numeric_limits<uint64_t>::max()});
+			it = hash_values[j].lower_bound({p - curr_hash, std::numeric_limits<uint64_t>::min()});
 			if (it != hash_values[j].end())
 			{
 				candidate = *it;
@@ -67,10 +67,12 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 
 std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 {
+	uint64_t maximal_uint = std::numeric_limits<uint64_t>::max();
+
 	std::set<pii, std::greater<pii>> hash_values[n];
 	for (size_t i = 1; i < n; i++)
 		for (size_t j = w_min + (i - 1) * w_max ; j < std::min(i * w_max + 1, hashes.size()); j++)
-			hash_values[i].insert(pii(hashes[j], j));
+			hash_values[i].insert(pii(hashes[j], maximal_uint - j));
 	
 	
 	std::vector<Seed*> seeds;
@@ -100,7 +102,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 			// }
 			tmp = *(hash_values[j].begin());
 			// std::cout << "tmp: " << tmp.first << " " << tmp.second << std::endl;
-			it = hash_values[j].upper_bound({p - curr_hash, std::numeric_limits<uint64_t>::min()});
+			it = hash_values[j].lower_bound({p - curr_hash - 1, maximal_uint});
 			// std::cout << "P - curr_hash = " << p - curr_hash << std::endl;
 			if (it != hash_values[j].end())
 			{
@@ -109,11 +111,11 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 				if ((tmp.first + curr_hash) % p < (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
-			strobe->add_kmer(tmp.second, kmers[tmp.second]);
+			strobe->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
 			curr_hash = (tmp.first + curr_hash) % p;
-			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
+			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], maximal_uint - (i + w_min + (j - 1) * w_max)));
 			if (i + j * w_max + 1 < hashes.size())
-				hash_values[j].insert(pii(hashes[i + j * w_max + 1], i + j * w_max + 1));
+				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));
 			// std::cout << "______________" << std::endl;
 		}
 		

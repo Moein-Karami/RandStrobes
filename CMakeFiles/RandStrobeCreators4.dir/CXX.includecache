@@ -6,31 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.cpp
-Strobe.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.hpp
-
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.cpp
-RandStrobeCreatorSahlinMod.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
-RandStrobeCreator.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.cpp
-RandStrobeCreatorSahlinMod.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
->>>>>>> 0b469ebb4f6c75feba76da3623d9479a4917f5ed
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
@@ -151,10 +129,6 @@ Maximizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
-RandStrobeCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp
