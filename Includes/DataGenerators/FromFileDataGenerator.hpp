@@ -10,6 +10,7 @@ class FromFileDataGenerator : public DataGenerator
 		std::string get_data();
 	private:
 		std::ifstream file;
+		std::queue<std::string> data;
 };
 
 #endif
