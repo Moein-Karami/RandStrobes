@@ -8,7 +8,10 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 	while (file >> line)
 	{
 		if (line[0] == '>')
+		{
 			data.push(seq);
+			seq = "";
+		}
 		else 
 			seq += line;
 	}
