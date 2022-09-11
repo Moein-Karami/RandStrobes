@@ -7,6 +7,7 @@ do
 	name="${config/.json/}"
 	name="${name/$configs_dir/}"
 	name+=".csv"
+	echo "$config"
 	echo "$name"
 	./RandStrobes.out "$config" "$name"
 	echo "RandStrobes are created"

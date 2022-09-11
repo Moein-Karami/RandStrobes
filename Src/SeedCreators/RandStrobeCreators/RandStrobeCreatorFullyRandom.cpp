@@ -21,14 +21,20 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 	
 	for (int i = 0; i < kmer_len - 1; i++)
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
-	// std::cout << "first uncomplete kmer: "
+	// std::cout << "first uncomplete kmer: " << std::endl;
+
 	for (int i = kmer_len - 1; i < seq.size(); i++)
 	{
+		// std::cout << "i: " << i << std::endl;
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
+		// std::cout << "curr_kmer: " << curr_kmer << std::endl;
 		tmp = curr_kmer & mask;
+		// std::cout << "tmp: " << tmp << std::endl;
 		hashes.push_back(tmp);
-		// std::cout << "kmer number " << hashes.size() - 1 << ": value and hash: " << kmers.back() <<" " << hashes.back()
-				// << std::endl;
+		kmers.push_back(tmp);
+		// std::cout << "pushed" << std::endl;
+		// std::cout << "kmer number " << hashes.size() - 1 << ": value and hash: " <<" " << hashes.back()
+		// 		<< std::endl;
 	}
 
 	srand(time(0));
