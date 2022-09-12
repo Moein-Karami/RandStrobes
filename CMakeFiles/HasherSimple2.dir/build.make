@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+CMAKE_SOURCE_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+CMAKE_BINARY_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HasherSimple2.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/HasherSimple2.dir/flags.make
 
 CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o: CMakeFiles/HasherSimple2.dir/flags.make
 CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o: Src/Hashers/SimpleHashers/ThomasWangHash.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o -c "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp"
 
 CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp > CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp" > CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.i
 
 CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp -o CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp" -o CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.s
 
 # Object files for target HasherSimple2
 HasherSimple2_OBJECTS = \
@@ -80,7 +80,7 @@ HasherSimple2_EXTERNAL_OBJECTS =
 build/libHasherSimple2.a: CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o
 build/libHasherSimple2.a: CMakeFiles/HasherSimple2.dir/build.make
 build/libHasherSimple2.a: CMakeFiles/HasherSimple2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libHasherSimple2.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libHasherSimple2.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/HasherSimple2.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HasherSimple2.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/HasherSimple2.dir/clean:
 .PHONY : CMakeFiles/HasherSimple2.dir/clean
 
 CMakeFiles/HasherSimple2.dir/depend:
-	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HasherSimple2.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/c/University/Advanced/Sahlin Projects/RandStrobes" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/c/University/Advanced/Sahlin Projects/RandStrobes" "/home/c/University/Advanced/Sahlin Projects/RandStrobes" "/home/c/University/Advanced/Sahlin Projects/RandStrobes" "/home/c/University/Advanced/Sahlin Projects/RandStrobes" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/HasherSimple2.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/HasherSimple2.dir/depend
 
