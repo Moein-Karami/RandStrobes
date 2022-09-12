@@ -20,6 +20,7 @@ class CsvWriter
 {
     public:
         CsvWriter(string output_path);
+        ~CsvWriter();
         void write_row(vector<string> vec_add);
         void write_word(string new_word, bool is_comma);
         void write_word(int new_word, bool is_comma);
@@ -34,6 +35,7 @@ class Sample
 {
     public:
         Sample(string inp_id);
+        ~Sample();
         void add_seed(Seed* new_seed);
         void print();
         void evaluate_sample();
@@ -75,6 +77,7 @@ class CsvFile
 {
     public:
         CsvFile(string file_name);
+        ~CsvFile();
         void read();
         vector<string> parse_new_line(string line);
         void print_col_name();
@@ -143,6 +146,23 @@ void Seed::print()
     cout << endl;
 }
 
+Sample::~Sample()
+{
+    for(int i = 0; i < seeds.size(); i++)
+    {
+        delete seeds[i];
+    }
+}
+
+CsvFile::~CsvFile()
+{
+    file_stream.close();
+}
+
+CsvWriter::~CsvWriter()
+{
+    writer_csv.close();
+}
 
 void Sample::evaluate_sample()
 {
@@ -682,6 +702,14 @@ int main(int argc, char** argv)
         csv_median_sample -> write_word(median[i], is_comma);
     }
     csv_median_sample->new_line();
+    delete csv_result;
+    delete csv_header;
+    delete csv_all_sample;
+    delete csv_median_sample;
+    for(int i = 0; i < samples.size(); i++)
+    {
+        delete samples[i];
+    }
     /*for(int i = 0; i < samples.size(); i++)
     {
         samples[i]->print();
