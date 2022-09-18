@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
 WyHash.hpp
 /mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
-WyHash.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/Hashers/HashMethodes/wyhash.h
 stdint.h

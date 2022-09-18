@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Comparators/Minimizer.cpp
 Minimizer.hpp
 /mnt2/Moein-K/RandStrobes/Src/Comparators/Minimizer.hpp
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Comparators/Minimizer.cpp
-Minimizer.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Comparators/Minimizer.hpp
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp

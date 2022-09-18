@@ -43,17 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
-=======
-CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DataStore.dir/depend.make
@@ -66,7 +59,6 @@ include CMakeFiles/DataStore.dir/flags.make
 
 CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o: CMakeFiles/DataStore.dir/flags.make
 CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o: Src/DataStoringClasses/Strobe.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o -c /mnt2/Moein-K/RandStrobes/Src/DataStoringClasses/Strobe.cpp
 
@@ -88,18 +80,6 @@ CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o.provides: CMakeFile
 
 CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o.provides.build: CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o
 
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
-
-CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp > CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.i
-
-CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp -o CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.s
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Object files for target DataStore
 DataStore_OBJECTS = \
@@ -111,11 +91,7 @@ DataStore_EXTERNAL_OBJECTS =
 build/libDataStore.a: CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o
 build/libDataStore.a: CMakeFiles/DataStore.dir/build.make
 build/libDataStore.a: CMakeFiles/DataStore.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libDataStore.a"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libDataStore.a"
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 	$(CMAKE_COMMAND) -P CMakeFiles/DataStore.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DataStore.dir/link.txt --verbose=$(VERBOSE)
 
@@ -133,10 +109,6 @@ CMakeFiles/DataStore.dir/clean:
 .PHONY : CMakeFiles/DataStore.dir/clean
 
 CMakeFiles/DataStore.dir/depend:
-<<<<<<< HEAD
 	cd /mnt2/Moein-K/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes/CMakeFiles/DataStore.dir/DependInfo.cmake --color=$(COLOR)
-=======
-	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataStore.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 .PHONY : CMakeFiles/DataStore.dir/depend
 

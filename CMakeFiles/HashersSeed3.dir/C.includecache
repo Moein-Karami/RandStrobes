@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/xxhash.c
 xxhash.h
 /mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/xxhash.h
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/xxhash.c
-xxhash.h
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/xxhash.h
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/Hashers/HashMethodes/xxhash.h
 stddef.h

@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
 /mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.hpp
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.hpp
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp

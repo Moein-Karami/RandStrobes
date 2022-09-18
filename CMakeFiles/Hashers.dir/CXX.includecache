@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Hashers/Hasher.cpp
 Hasher.hpp
 /mnt2/Moein-K/RandStrobes/Src/Hashers/Hasher.hpp
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/Hasher.cpp
-Hasher.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/Hasher.hpp
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/Hashers/Hasher.hpp
 LibrariesAndDefines.hpp

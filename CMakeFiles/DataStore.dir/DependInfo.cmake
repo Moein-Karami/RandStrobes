@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< HEAD
   "/mnt2/Moein-K/RandStrobes/Src/DataStoringClasses/Strobe.cpp" "/mnt2/Moein-K/RandStrobes/CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o"
-=======
-  "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o"
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< HEAD
   "/mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.cpp" "/mnt2/Moein-K/RandStrobes/CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o"
-=======
-  "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o"
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

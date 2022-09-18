@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/BenchMark.cpp
 BenchMark.hpp
 /mnt2/Moein-K/RandStrobes/Src/BenchMark.hpp
-=======
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.cpp
-BenchMark.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.hpp
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/BenchMark.hpp
 ResultPrinter.hpp

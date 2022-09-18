@@ -43,17 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
-=======
-CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HashersMet1.dir/depend.make
@@ -66,7 +59,6 @@ include CMakeFiles/HashersMet1.dir/flags.make
 
 CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o: CMakeFiles/HashersMet1.dir/flags.make
 CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o: Src/Hashers/HashMethodes/index.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o -c /mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/index.cpp
 
@@ -88,18 +80,6 @@ CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o.provides: CMakeF
 
 CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o.provides.build: CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o
 
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/index.cpp
-
-CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/index.cpp > CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.i
-
-CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/index.cpp -o CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.s
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Object files for target HashersMet1
 HashersMet1_OBJECTS = \
@@ -111,11 +91,7 @@ HashersMet1_EXTERNAL_OBJECTS =
 build/libHashersMet1.a: CMakeFiles/HashersMet1.dir/Src/Hashers/HashMethodes/index.cpp.o
 build/libHashersMet1.a: CMakeFiles/HashersMet1.dir/build.make
 build/libHashersMet1.a: CMakeFiles/HashersMet1.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libHashersMet1.a"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libHashersMet1.a"
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 	$(CMAKE_COMMAND) -P CMakeFiles/HashersMet1.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HashersMet1.dir/link.txt --verbose=$(VERBOSE)
 
@@ -133,10 +109,6 @@ CMakeFiles/HashersMet1.dir/clean:
 .PHONY : CMakeFiles/HashersMet1.dir/clean
 
 CMakeFiles/HashersMet1.dir/depend:
-<<<<<<< HEAD
 	cd /mnt2/Moein-K/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes/CMakeFiles/HashersMet1.dir/DependInfo.cmake --color=$(COLOR)
-=======
-	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersMet1.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 .PHONY : CMakeFiles/HashersMet1.dir/depend
 

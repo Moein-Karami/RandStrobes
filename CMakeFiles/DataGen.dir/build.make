@@ -43,17 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
-=======
-CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DataGen.dir/depend.make
@@ -66,7 +59,6 @@ include CMakeFiles/DataGen.dir/flags.make
 
 CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o: CMakeFiles/DataGen.dir/flags.make
 CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o: Src/DataGenerators/RandomDataGenerator.cpp
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o -c /mnt2/Moein-K/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
 
@@ -88,18 +80,6 @@ CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o.provides: CM
 
 CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o.provides.build: CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o
 
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
-
-CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp > CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.i
-
-CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp -o CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.s
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Object files for target DataGen
 DataGen_OBJECTS = \
@@ -111,11 +91,7 @@ DataGen_EXTERNAL_OBJECTS =
 build/libDataGen.a: CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o
 build/libDataGen.a: CMakeFiles/DataGen.dir/build.make
 build/libDataGen.a: CMakeFiles/DataGen.dir/link.txt
-<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libDataGen.a"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libDataGen.a"
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 	$(CMAKE_COMMAND) -P CMakeFiles/DataGen.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DataGen.dir/link.txt --verbose=$(VERBOSE)
 
@@ -133,10 +109,6 @@ CMakeFiles/DataGen.dir/clean:
 .PHONY : CMakeFiles/DataGen.dir/clean
 
 CMakeFiles/DataGen.dir/depend:
-<<<<<<< HEAD
 	cd /mnt2/Moein-K/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes/CMakeFiles/DataGen.dir/DependInfo.cmake --color=$(COLOR)
-=======
-	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataGen.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 .PHONY : CMakeFiles/DataGen.dir/depend
 

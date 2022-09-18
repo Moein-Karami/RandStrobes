@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< HEAD
   "/mnt2/Moein-K/RandStrobes/Src/Json/jsoncpp.cpp" "/mnt2/Moein-K/RandStrobes/CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o"
-=======
-  "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/jsoncpp.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o"
->>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
