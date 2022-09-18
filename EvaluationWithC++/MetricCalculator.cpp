@@ -16,6 +16,25 @@ class Seed
         int sample_id;
 };
 
+class CsvFile
+{
+    public:
+        CsvFile(string file_name, bool is_result);
+        ~CsvFile();
+        void read();
+        vector<string> parse_new_line(string line);
+        void print_col_name();
+        vector< vector<string> > get_cols(vector<string>needed_cols);
+        Seed* get_new_seed();
+        vector<Seed*> input_seeds(int num_seeds);
+    private:
+        vector<string> get_col(int index);
+        vector<string>col_name;
+        vector< vector<string> > lines;
+        ifstream file_stream;
+};
+
+
 class CsvWriter
 {
     public:
@@ -34,7 +53,7 @@ class CsvWriter
 class Sample 
 {
     public:
-        Sample(string inp_id);
+        Sample(int inp_id, CsvFile* inp_csv_file);
         ~Sample();
         void add_seed(Seed* new_seed);
         void print();
@@ -71,23 +90,22 @@ class Sample
         string seed_generator_method;
         string hash_method;
         double conflicts;
+        CsvFile* csv_file;
 };
 
-class CsvFile
+
+vector<Seed*> CsvFile::input_seeds(int num_seeds)
 {
-    public:
-        CsvFile(string file_name);
-        ~CsvFile();
-        void read();
-        vector<string> parse_new_line(string line);
-        void print_col_name();
-        vector< vector<string> > get_cols(vector<string>needed_cols);
-    private:
-        vector<string> get_col(int index);
-        vector<string>col_name;
-        vector< vector<string> > lines;
-        ifstream file_stream;
-};
+    vector<Seed*> ans;
+    //   cout << "HELOOOOOOOOOO" << endl;
+    for(int i = 0; i < num_seeds; i++)
+    {
+        //   cout << "HELOOOOOOOOOO" << endl;
+        ans.push_back(get_new_seed());
+    }
+    return ans;
+}
+
 
 void Seed::add_kmer(string new_kmer)
 {
@@ -164,8 +182,26 @@ CsvWriter::~CsvWriter()
     writer_csv.close();
 }
 
+Seed* CsvFile::get_new_seed()
+{
+    string new_line;
+    file_stream >> new_line;
+    vector<string> parsed_string = parse_new_line(new_line);
+    Seed* new_seed = new Seed();
+    for(int i = 0; i < parsed_string.size(); i++)
+    {
+        if(i % 2 == 0)
+            new_seed->add_kmer(parsed_string[i]);
+        else 
+            new_seed->add_hash(parsed_string[i]);
+    }
+    return new_seed;
+}
+
 void Sample::evaluate_sample()
 {
+    seeds = csv_file->input_seeds(number_seeds);
+
     ehits_kmers.push_back(calculate_ehits_kmers(2));
     if(n == 3)
     {
@@ -185,6 +221,9 @@ void Sample::evaluate_sample()
     unique_hashes = calculate_unique_hashes();
     conflicts = calculate_conflicts();
     ehits_hashes.push_back(calculate_ehits_hashes());
+    for(int i = 0; i < seeds.size(); i++)
+        delete seeds[i];
+    seeds.clear();
 }
 
 double Sample::calculate_ehits_hashes()
@@ -326,25 +365,19 @@ void Sample::add_seed(Seed* new_seed)
     seeds.push_back(new_seed);
 }
 
-Sample::Sample(string inp_id)
+Sample::Sample(int inp_id, CsvFile* inp_csv_file)
 {
-    sample_id = stoi(inp_id);
+    sample_id = inp_id;
+    csv_file = inp_csv_file;
 }
 
 void Sample::print()
 {
-   /* cout << "Sample " << " " << sample_id << endl;
-    for(int i = 0; i < seeds.size(); i++)
-    {
-        seeds[i] -> print();
-    }
-    */
    cout << "Time" << " " << time_execution << " kmer_len: " << kmer_len <<" seq_len: " <<  seq_len << endl;
 }
 
 void Sample::init_header(vector< vector<string> > & col_seeds)
 {
-    // cout << "FOLAN" << " " << col_seeds.size() << endl;
     time_execution = stoi(col_seeds[0][sample_id - 1]);
     number_seeds =  stoi(col_seeds[1][sample_id - 1]);
     n =  stoi(col_seeds[2][sample_id - 1]);
@@ -407,40 +440,27 @@ vector<Seed*> create_seeds(vector< vector<string> > &col_seeds)
 
 vector<Sample*> build_samples(CsvFile* csv_result, CsvFile* csv_header)
 {
-    vector<string> needed_cols{"kmer_1", "hash_1", "kmer_2", "hash_2", "kmer_3", "hash_3"};
-    vector< vector<string> > col_seeds = csv_result -> get_cols(needed_cols);
+    vector<string> needed_cols{"Sample"};
+    vector< vector<string> > col_samples = csv_header -> get_cols(needed_cols);
     needed_cols.clear();
-    needed_cols.push_back("Sample");
-    vector< vector<string> > col_sample = csv_result -> get_cols(needed_cols);
-   /* for(int i = 0; i < col_seeds.size(); i++)
-    {
-        cout << needed_cols[i] << endl;
-        for(int j = 0; j < col_seeds[i].size(); j++)
-        {
-            cout << col_seeds[i][j] << " ";
-        }
-        cout << endl;
-    }
-    */
     vector<Sample*> ans;
     Sample* new_sample;
-    vector<Seed*> seeds = create_seeds(col_seeds);
-    int tmp = 0;
-    for(int i = 0; i < col_sample[0].size(); i++)
+
+    for(int i = 0; i < col_samples.size(); i++)
     {
-        if(i == 0 || col_sample[0][i] != col_sample[0][i - 1])
-        {
-           new_sample = new Sample(col_sample[0][i]);
-           ans.push_back(new_sample);
-        }
-        new_sample->add_seed(seeds[i]);
+        new_sample = new Sample(i + 1, csv_result);
+        ans.push_back(new_sample);
     }
+
     return ans;
 }
 
-CsvFile::CsvFile(string file_name)
+CsvFile::CsvFile(string file_name, bool is_result)
 {
     file_stream = ifstream(file_name);
+    string tmp;
+    if(is_result)
+        file_stream >> tmp;
 }
 
 void CsvFile::print_col_name()
@@ -475,14 +495,13 @@ void CsvFile::read()
 {
     string new_line;
     file_stream >> new_line;
+    // cout << new_line << endl;
     col_name = parse_new_line(new_line);
     while(file_stream >> new_line)
     {
         lines.push_back(parse_new_line(new_line));   
     }
 }
-
-
 
 string add_suffix(string prefix, char* suffix)
 {
@@ -661,22 +680,27 @@ int main(int argc, char** argv)
     string path_output = add_suffix("EvaluationResults/AllSamples/", argv[1]);
     string path_median = add_suffix("EvaluationResults/MedianSamples/", argv[1]);
 
-
-    CsvFile* csv_result = new CsvFile(path_result);
-    CsvFile* csv_header = new CsvFile(path_header);
+    CsvFile* csv_result = new CsvFile(path_result, 1);
+    CsvFile* csv_header = new CsvFile(path_header, 0);
     CsvWriter* csv_all_sample = new CsvWriter(path_output);
     CsvWriter* csv_median_sample = new CsvWriter(path_median);
 
-
-    csv_result->read();
     csv_header->read();
+
+
+
     vector<Sample*> samples = build_samples(csv_result, csv_header);
+
     fill_header_samples(samples, csv_header);
 
+
     int num_kmer = samples[0] -> get_n();
+
     vector<string> name_cols = build_name_cols(num_kmer, 0);
     vector<vector<double> > all_data;
+
     csv_all_sample -> write_row(name_cols);
+
     for(int i = 0; i < samples.size(); i++)
     {
         samples[i] -> evaluate_sample();
@@ -684,12 +708,15 @@ int main(int argc, char** argv)
         samples[i] -> add_all_data(all_data);
     }
     
+
     vector<double>median;
     for(int i = 0; i < all_data.size(); i++)
     {
         median.push_back(find_median(all_data[i]));
     }
     
+
+
     name_cols = build_name_cols(num_kmer, 1);
     csv_median_sample -> write_row(name_cols);
     csv_median_sample -> write_word(samples[0]->get_hash(), 1);
@@ -701,7 +728,10 @@ int main(int argc, char** argv)
             is_comma = 0;
         csv_median_sample -> write_word(median[i], is_comma);
     }
+
     csv_median_sample->new_line();
+
+
     delete csv_result;
     delete csv_header;
     delete csv_all_sample;
@@ -710,9 +740,4 @@ int main(int argc, char** argv)
     {
         delete samples[i];
     }
-    /*for(int i = 0; i < samples.size(); i++)
-    {
-        samples[i]->print();
-    }
-    */
 }
