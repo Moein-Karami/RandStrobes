@@ -173,11 +173,15 @@ int32_t main()
 	std::cout << "number of samples: ";
 	std::cin >> number_of_samples;
 
-	std::cout << "seq len: ";
-	std::cin >> seq_len;
-
 	std::cout << "DataGenerator: ";
 	std::cin >> data_generator;
+
+	if (data_generator == "Random")
+	{
+		seq_len = 0;
+		std::cout << "seq len: ";
+		std::cin >> seq_len;
+	}
 
 	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask, number_of_samples, seq_len, data_generator);
 	config_generator.add_data_generator_config(output_path);
