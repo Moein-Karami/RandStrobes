@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 set(NAME_PROJECT RandStrobes.out)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 
 include_directories(Includes)
 
@@ -28,7 +28,7 @@ include_directories(Includes/Tools)
 project(${NAME_PROJECT}
     LANGUAGES CXX C)
 
-add_executable(config.out)
+add_executable(config.out ./Src/ConfigGenerator/ConfigGenerator.cpp ./Includes/ConfigGenerator/ConfigGenerator.hpp)
 target_sources(config.out PRIVATE ./Src/ConfigGenerator/ConfigGenerator.cpp ./Includes/ConfigGenerator/ConfigGenerator.hpp)
 link_directories(./build)
 target_link_libraries( config.out
@@ -64,8 +64,8 @@ target_link_libraries( config.out
     ResultPrinter
 )
 
-add_executable(${NAME_PROJECT})
-target_sources(${NAME_PROJECT} PRIVATE ./Src/BenchMark.cpp ./Includes/BenchMark.hpp )
+add_executable(${NAME_PROJECT} ./Src/BenchMark.cpp ./Includes/BenchMark.hpp)
+target_sources(${NAME_PROJECT} PRIVATE ./Src/BenchMark.cpp ./Includes/BenchMark.hpp)
 link_directories(./build)
 target_link_libraries(${NAME_PROJECT} 
     Maximizer

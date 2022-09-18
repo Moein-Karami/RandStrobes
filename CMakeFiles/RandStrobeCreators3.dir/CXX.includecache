@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.cpp
+/mnt2/Moein-K/RandStrobes/Src/DataStoringClasses/Strobe.cpp
 Strobe.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+/mnt2/Moein-K/RandStrobes/Src/DataStoringClasses/Strobe.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
+/mnt2/Moein-K/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+/mnt2/Moein-K/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp
+/mnt2/Moein-K/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp
 RandStrobeCreatorSahlinBitCount.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.hpp
+/mnt2/Moein-K/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+/mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+/mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp

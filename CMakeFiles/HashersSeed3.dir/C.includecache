@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/xxhash.c
+/mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/xxhash.c
 xxhash.h
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/xxhash.h
+/mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/xxhash.h
 
 Includes/Hashers/HashMethodes/xxhash.h
 stddef.h

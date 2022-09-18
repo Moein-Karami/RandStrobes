@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Minimizer.cpp" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o"
+  "/mnt2/Moein-K/RandStrobes/Src/Comparators/Minimizer.cpp" "/mnt2/Moein-K/RandStrobes/CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

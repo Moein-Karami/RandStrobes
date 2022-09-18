@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/xxhash.c" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o"
+  "/mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/xxhash.c" "/mnt2/Moein-K/RandStrobes/CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

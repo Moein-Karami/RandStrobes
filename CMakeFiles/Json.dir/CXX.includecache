@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/jsoncpp.cpp
+/mnt2/Moein-K/RandStrobes/Src/Json/jsoncpp.cpp
 json.h
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/json.h
+/mnt2/Moein-K/RandStrobes/Src/Json/json.h
 json/config.h
 -
 clocale
 -
 json_tool.h
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/json_tool.h
+/mnt2/Moein-K/RandStrobes/Src/Json/json_tool.h
 json/assertions.h
 -
 json/reader.h
@@ -70,9 +70,9 @@ utility
 stdarg.h
 -
 json_valueiterator.inl
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/json_valueiterator.inl
+/mnt2/Moein-K/RandStrobes/Src/Json/json_valueiterator.inl
 json_tool.h
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/json_tool.h
+/mnt2/Moein-K/RandStrobes/Src/Json/json_tool.h
 json/writer.h
 -
 algorithm
