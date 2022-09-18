@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp
 SeedBasedHasher.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
 
 Includes/Hashers/Hasher.hpp
 LibrariesAndDefines.hpp
