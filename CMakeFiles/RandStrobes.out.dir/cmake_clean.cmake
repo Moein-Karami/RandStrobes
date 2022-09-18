@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o"
-  "RandStrobes.out"
   "RandStrobes.out.pdb"
+  "RandStrobes.out"
 )
 
 # Per-language clean rules from dependency scanning.

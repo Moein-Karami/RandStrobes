@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Maximizer.dir/Src/Comparators/Maximizer.cpp.o"
-  "build/libMaximizer.a"
   "build/libMaximizer.pdb"
+  "build/libMaximizer.a"
 )
 
 # Per-language clean rules from dependency scanning.
