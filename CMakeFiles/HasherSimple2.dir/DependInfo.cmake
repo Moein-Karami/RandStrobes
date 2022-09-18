@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+<<<<<<< HEAD
   "/mnt2/Moein-K/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp" "/mnt2/Moein-K/RandStrobes/CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o"
+=======
+  "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HasherSimple2.dir/Src/Hashers/SimpleHashers/ThomasWangHash.cpp.o"
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

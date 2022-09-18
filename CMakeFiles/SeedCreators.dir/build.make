@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
+=======
+CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SeedCreators.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/SeedCreators.dir/flags.make
 
 CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o: CMakeFiles/SeedCreators.dir/flags.make
 CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o: Src/SeedCreators/SeedCreator.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o -c /mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 
@@ -80,6 +88,18 @@ CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o.provides: CMakeFi
 
 CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o.provides.build: CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
 
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+
+CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp > CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.i
+
+CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp -o CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.s
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Object files for target SeedCreators
 SeedCreators_OBJECTS = \
@@ -91,7 +111,11 @@ SeedCreators_EXTERNAL_OBJECTS =
 build/libSeedCreators.a: CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
 build/libSeedCreators.a: CMakeFiles/SeedCreators.dir/build.make
 build/libSeedCreators.a: CMakeFiles/SeedCreators.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libSeedCreators.a"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libSeedCreators.a"
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 	$(CMAKE_COMMAND) -P CMakeFiles/SeedCreators.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SeedCreators.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +133,10 @@ CMakeFiles/SeedCreators.dir/clean:
 .PHONY : CMakeFiles/SeedCreators.dir/clean
 
 CMakeFiles/SeedCreators.dir/depend:
+<<<<<<< HEAD
 	cd /mnt2/Moein-K/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes/CMakeFiles/SeedCreators.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/SeedCreators.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 .PHONY : CMakeFiles/SeedCreators.dir/depend
 

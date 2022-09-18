@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
 RandomDataGenerator.hpp
 /mnt2/Moein-K/RandStrobes/Src/DataGenerators/RandomDataGenerator.hpp
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp
+RandomDataGenerator.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.hpp
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/DataGenerators/DataGenerator.hpp
 LibrariesAndDefines.hpp

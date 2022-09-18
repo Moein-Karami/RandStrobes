@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
+=======
+CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HashersMet2.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/HashersMet2.dir/flags.make
 
 CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o: CMakeFiles/HashersMet2.dir/flags.make
 CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o: Src/Hashers/HashMethodes/xxhash.c
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o   -c /mnt2/Moein-K/RandStrobes/Src/Hashers/HashMethodes/xxhash.c
 
@@ -80,6 +88,18 @@ CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o.provides: CMakeFi
 
 CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o.provides.build: CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o
 
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o   -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/xxhash.c
+
+CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/xxhash.c > CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.i
+
+CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/HashMethodes/xxhash.c -o CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.s
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Object files for target HashersMet2
 HashersMet2_OBJECTS = \
@@ -91,7 +111,11 @@ HashersMet2_EXTERNAL_OBJECTS =
 build/libHashersMet2.a: CMakeFiles/HashersMet2.dir/Src/Hashers/HashMethodes/xxhash.c.o
 build/libHashersMet2.a: CMakeFiles/HashersMet2.dir/build.make
 build/libHashersMet2.a: CMakeFiles/HashersMet2.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library build/libHashersMet2.a"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library build/libHashersMet2.a"
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 	$(CMAKE_COMMAND) -P CMakeFiles/HashersMet2.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HashersMet2.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +133,10 @@ CMakeFiles/HashersMet2.dir/clean:
 .PHONY : CMakeFiles/HashersMet2.dir/clean
 
 CMakeFiles/HashersMet2.dir/depend:
+<<<<<<< HEAD
 	cd /mnt2/Moein-K/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes/CMakeFiles/HashersMet2.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersMet2.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 .PHONY : CMakeFiles/HashersMet2.dir/depend
 

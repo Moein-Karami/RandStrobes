@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/CMakeFiles/HasherSimple2.dir
 /mnt2/Moein-K/RandStrobes/CMakeFiles/HasherSimple1.dir
 /mnt2/Moein-K/RandStrobes/CMakeFiles/HashersSeed2.dir
@@ -33,3 +34,40 @@
 /mnt2/Moein-K/RandStrobes/CMakeFiles/RandStrobeCreators5.dir
 /mnt2/Moein-K/RandStrobes/CMakeFiles/RandStrobeCreators8.dir
 /mnt2/Moein-K/RandStrobes/CMakeFiles/RandStrobeCreators6.dir
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/edit_cache.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/ResultPrinter.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HasherSimple2.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HasherSimple1.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators2.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators10.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators4.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataStore.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/SeedCreators.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/FileDataGen.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/ConfigGen.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators5.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataGen.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators3.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Maximizer.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobes.out.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Minimizer.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/config.out.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators13.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators6.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersSeed3.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersMet1.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators7.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators1.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators11.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators8.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators9.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/RandStrobeCreators12.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Json.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/Hashers.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/rebuild_cache.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersSeed1.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersMet2.dir
+/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersSeed2.dir
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc

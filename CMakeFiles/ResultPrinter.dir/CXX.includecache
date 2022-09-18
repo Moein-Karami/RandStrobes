@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/ResultPrinter.cpp
 ResultPrinter.hpp
 /mnt2/Moein-K/RandStrobes/Src/ResultPrinter.hpp
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/ResultPrinter.cpp
+ResultPrinter.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/ResultPrinter.hpp
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp

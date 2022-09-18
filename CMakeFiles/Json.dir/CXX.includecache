@@ -6,15 +6,25 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Json/jsoncpp.cpp
 json.h
 /mnt2/Moein-K/RandStrobes/Src/Json/json.h
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/jsoncpp.cpp
+json.h
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/json.h
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 json/config.h
 -
 clocale
 -
 json_tool.h
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Json/json_tool.h
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/json_tool.h
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 json/assertions.h
 -
 json/reader.h
@@ -70,9 +80,15 @@ utility
 stdarg.h
 -
 json_valueiterator.inl
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/Json/json_valueiterator.inl
 json_tool.h
 /mnt2/Moein-K/RandStrobes/Src/Json/json_tool.h
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/json_valueiterator.inl
+json_tool.h
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Json/json_tool.h
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 json/writer.h
 -
 algorithm

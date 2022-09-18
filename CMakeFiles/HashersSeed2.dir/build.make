@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
+=======
+CMAKE_SOURCE_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/aryan/Desktop/University/KSahlin/RandStrobes
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Include any dependencies generated for this target.
 include CMakeFiles/HashersSeed2.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/HashersSeed2.dir/flags.make
 
 CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o: CMakeFiles/HashersSeed2.dir/flags.make
 CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o: Src/Hashers/SeedBasedHashers/WyHash.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o -c /mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
 
@@ -80,6 +88,18 @@ CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o.provides: 
 
 CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o.provides.build: CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o
 
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o -c /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
+
+CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp > CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.i
+
+CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp -o CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.s
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 # Object files for target HashersSeed2
 HashersSeed2_OBJECTS = \
@@ -91,7 +111,11 @@ HashersSeed2_EXTERNAL_OBJECTS =
 build/libHashersSeed2.a: CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o
 build/libHashersSeed2.a: CMakeFiles/HashersSeed2.dir/build.make
 build/libHashersSeed2.a: CMakeFiles/HashersSeed2.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt2/Moein-K/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libHashersSeed2.a"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library build/libHashersSeed2.a"
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 	$(CMAKE_COMMAND) -P CMakeFiles/HashersSeed2.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/HashersSeed2.dir/link.txt --verbose=$(VERBOSE)
 
@@ -109,6 +133,10 @@ CMakeFiles/HashersSeed2.dir/clean:
 .PHONY : CMakeFiles/HashersSeed2.dir/clean
 
 CMakeFiles/HashersSeed2.dir/depend:
+<<<<<<< HEAD
 	cd /mnt2/Moein-K/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes /mnt2/Moein-K/RandStrobes/CMakeFiles/HashersSeed2.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/aryan/Desktop/University/KSahlin/RandStrobes && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes /home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/HashersSeed2.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 .PHONY : CMakeFiles/HashersSeed2.dir/depend
 

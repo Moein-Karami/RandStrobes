@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /mnt2/Moein-K/RandStrobes/Src/DataStoringClasses/Strobe.cpp
 Strobe.hpp
 /mnt2/Moein-K/RandStrobes/Src/DataStoringClasses/Strobe.hpp
@@ -21,6 +22,23 @@ RandStrobeCreatorSahlinBitCount.hpp
 /mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
 /mnt2/Moein-K/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+=======
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
+Strobe.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
+RandStrobeCreator.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp
+RandStrobeCreatorSahlinBitCount.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.hpp
+
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+SeedCreator.hpp
+/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+>>>>>>> b58bb0c8dac5209f972bb5beeb55c4768f4472fc
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp

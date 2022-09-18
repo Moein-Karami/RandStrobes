@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt2/Moein-K/RandStrobes
+CMAKE_SOURCE_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt2/Moein-K/RandStrobes
+CMAKE_BINARY_DIR = "/home/c/University/Advanced/Sahlin Projects/RandStrobes"
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt2/Moein-K/RandStrobes/CMakeFiles /mnt2/Moein-K/RandStrobes/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt2/Moein-K/RandStrobes/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -387,40 +387,14 @@ DataStore/fast:
 # Target rules for targets named SeedCreators
 
 # Build rule for target.
-SeedCreators: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 SeedCreators
-.PHONY : SeedCreators
+RandStrobeCreators1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators1
+.PHONY : RandStrobeCreators1
 
 # fast build rule for target.
-SeedCreators/fast:
-	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/build
-.PHONY : SeedCreators/fast
-
-#=============================================================================
-# Target rules for targets named HashersMet2
-
-# Build rule for target.
-HashersMet2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HashersMet2
-.PHONY : HashersMet2
-
-# fast build rule for target.
-HashersMet2/fast:
-	$(MAKE) -f CMakeFiles/HashersMet2.dir/build.make CMakeFiles/HashersMet2.dir/build
-.PHONY : HashersMet2/fast
-
-#=============================================================================
-# Target rules for targets named RandStrobeCreators
-
-# Build rule for target.
-RandStrobeCreators: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators
-.PHONY : RandStrobeCreators
-
-# fast build rule for target.
-RandStrobeCreators/fast:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/build
-.PHONY : RandStrobeCreators/fast
+RandStrobeCreators1/fast:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/build
+.PHONY : RandStrobeCreators1/fast
 
 #=============================================================================
 # Target rules for targets named RandStrobeCreators11
