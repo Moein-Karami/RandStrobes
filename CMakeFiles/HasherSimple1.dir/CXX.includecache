@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/NoHash.cpp
+/mnt2/Moein-K/RandStrobes/Src/Hashers/SimpleHashers/NoHash.cpp
 NoHash.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SimpleHashers/NoHash.hpp
+/mnt2/Moein-K/RandStrobes/Src/Hashers/SimpleHashers/NoHash.hpp
 
 Includes/Hashers/Hasher.hpp
 LibrariesAndDefines.hpp

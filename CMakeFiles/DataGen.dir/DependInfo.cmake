@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp" "/home/aryan/Desktop/University/KSahlin/RandStrobes/CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o"
+  "/mnt2/Moein-K/RandStrobes/Src/DataGenerators/RandomDataGenerator.cpp" "/mnt2/Moein-K/RandStrobes/CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

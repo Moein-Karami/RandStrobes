@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp
+SeedBasedHasher.hpp
+/mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
+
+/mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/XXHash.cpp
+XXHash.hpp
+/mnt2/Moein-K/RandStrobes/Src/Hashers/SeedBasedHashers/XXHash.hpp
+=======
 /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp
 SeedBasedHasher.hpp
 /home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
-
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/XXHash.cpp
-XXHash.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/Hashers/SeedBasedHashers/XXHash.hpp
 
 Includes/Hashers/HashMethodes/xxhash.h
 stddef.h
