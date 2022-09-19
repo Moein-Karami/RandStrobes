@@ -200,30 +200,44 @@ Seed* CsvFile::get_new_seed()
 
 void Sample::evaluate_sample()
 {
+
+    cout << "Evaluation started..." << endl;
+
     seeds = csv_file->input_seeds(number_seeds);
+
+    cout << "Input new sample seeds" << endl;
 
     ehits_kmers.push_back(calculate_ehits_kmers(2));
     if(n == 3)
     {
         ehits_kmers.push_back(calculate_ehits_kmers(3));
     }
+
+    cout << "Calculate Ehits Kmers" << endl;
+
     ehits_distance.push_back(calculate_ehits_distance(1, 2));
     if(n == 3)
     {
         ehits_distance.push_back(calculate_ehits_distance(1, 3));
         ehits_distance.push_back(calculate_ehits_distance(2, 3));
     }
+    cout << "Calculate Distance Kmers" << endl;
     unique_kmers.push_back(calculate_unique_kmers(2));
     if(n == 3)
     {
         unique_kmers.push_back(calculate_unique_kmers(3));
     }
+    cout << "Calculate unique kmers" << endl;
     unique_hashes = calculate_unique_hashes();
+    cout << "Calculate Unique Hashes" << endl;
     conflicts = calculate_conflicts();
+    cout << "Calculate Conflicts" << endl;
     ehits_hashes.push_back(calculate_ehits_hashes());
+    cout << "Calculate ehits hashes" << endl;
     for(int i = 0; i < seeds.size(); i++)
         delete seeds[i];
     seeds.clear();
+    cout << "Seeds deleted" << endl;
 }
 
 double Sample::calculate_ehits_hashes()
@@ -687,36 +701,40 @@ int main(int argc, char** argv)
 
     csv_header->read();
 
-
+    cout << "Read Header" << endl;
 
     vector<Sample*> samples = build_samples(csv_result, csv_header);
 
-    fill_header_samples(samples, csv_header);
+    cout << "Build Samples" << endl;
 
+    fill_header_samples(samples, csv_header);
+    
+    cout << "Filled Header" << endl;
 
     int num_kmer = samples[0] -> get_n();
-
+    
     vector<string> name_cols = build_name_cols(num_kmer, 0);
     vector<vector<double> > all_data;
 
     csv_all_sample -> write_row(name_cols);
+
+    cout << "Row name writeen" << endl;
 
     for(int i = 0; i < samples.size(); i++)
     {
         samples[i] -> evaluate_sample();
         samples[i] -> write_in_file(csv_all_sample, 0);
         samples[i] -> add_all_data(all_data);
+        cout << "A sample evaluation finished" << endl;
     }
     
-
+    cout << "Evaluation Finished" << endl;
     vector<double>median;
     for(int i = 0; i < all_data.size(); i++)
     {
         median.push_back(find_median(all_data[i]));
     }
     
-
-
     name_cols = build_name_cols(num_kmer, 1);
     csv_median_sample -> write_row(name_cols);
     csv_median_sample -> write_word(samples[0]->get_hash(), 1);
