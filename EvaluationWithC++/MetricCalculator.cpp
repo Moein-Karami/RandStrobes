@@ -356,21 +356,29 @@ double Sample::calculate_ehits_distance(int num_kmer1, int num_kmer2)
 
 double Sample::calculate_ehits_kmers(int num_kmer)
 {
+    std::cout << "calculate ehits started" << std::endl;
     int sum = 0;
     vector<int>cnt_repeat;
+    std::cout <<"seq len: " << seq_len << std::endl;
     for(int i = 0; i < seq_len; i++)
     {
         cnt_repeat.push_back(0);
     }
+    std::cout << "cnt_repeat initialized and it's size is:" << cnt_repeat.size() << std::endl;
     for(int i = 0; i < seeds.size(); i++)
     {
+        if (seeds[i]->get_kmer(num_kmer) >= cnt_repeat.size())
+            std::cout << "seeds[i]->get_kmer(num_kmer) = " << seeds[i]->get_kmer(num_kmer) << std::endl;
         cnt_repeat[seeds[i]->get_kmer(num_kmer)]++;
     }
+    std::cout << "cnt_repeat calculated" << std::endl;
     for(int i = 0; i < seq_len; i++)
     {
         sum += cnt_repeat[i] * cnt_repeat[i];
     }
+    std::cout << "sum calculated" << std::endl;
     int num_seeds = seeds.size();
+    std::cout << "num_seeds calculated" << std::endl;
     return (double)sum / (double)num_seeds;
 }
 
