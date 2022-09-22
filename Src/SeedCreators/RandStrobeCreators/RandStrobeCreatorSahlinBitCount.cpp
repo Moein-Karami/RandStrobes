@@ -11,3 +11,7 @@ uint64_t RandStrobeCreatorSahlinBitCount::get_score(uint64_t curr_hash, uint64_t
 	return __builtin_popcountll(curr_hash ^ hashes[ind2]);
 }
 
+uint64_t RandStrobeCreatorSahlinBitCount::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+{
+	return curr_hash ^ hashes[ind2];
+}
