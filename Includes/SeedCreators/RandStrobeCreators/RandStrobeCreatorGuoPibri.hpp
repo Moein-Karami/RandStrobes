@@ -3,6 +3,8 @@
 
 #include "RandStrobeCreator.hpp"
 
+const uint64_t p = 997;
+
 class RandStrobeCreatorGuoPibri : public RandStrobeCreator
 {
 	public:
@@ -11,6 +13,7 @@ class RandStrobeCreatorGuoPibri : public RandStrobeCreator
 
 	protected:
 		uint64_t get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
+		uint64_t get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
 };
 
 #endif

@@ -118,7 +118,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 				}
 			}
 			strobe->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = get_score(curr_hash, i, best_choose);
+			curr_hash = get_value_to_choose_third_strobe(curr_hash, i, best_choose);
 			// std::cout << "next kmer added, it was: " << best_choose << std::endl;
 
 			// if (dup_seeds.find(pii(hashes[i], hashes[best_choose])) != dup_seeds.end())
@@ -147,6 +147,11 @@ void RandStrobeCreator::prepare_data()
 }
 
 uint64_t RandStrobeCreator::get_new_curr_hash(uint64_t curr_hash, size_t ind1, size_t ind2)
+{
+	return get_score(curr_hash, ind1, ind2);
+}
+
+uint64_t RandStrobeCreator::get_value_to_choose_third_strobe(uint64_t curr_hash, size_t ind1, size_t ind2)
 {
 	return get_score(curr_hash, ind1, ind2);
 }

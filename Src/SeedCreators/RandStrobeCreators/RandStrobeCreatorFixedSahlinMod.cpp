@@ -11,3 +11,8 @@ void RandStrobeCreatorFixedSahlinMod::prepare_data()
 	for (size_t i = 0; i < hashes.size(); i++)
 		hashes[i] %= p;
 }
+
+uint64_t RandStrobeCreatorFixedSahlinMod::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+{
+	return (hasher->hash(kmers[ind1]) ^ hasher->hash(kmers[ind2]));
+}

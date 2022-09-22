@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobe.cpp.o"
-  "build/libDataStore.pdb"
   "build/libDataStore.a"
+  "build/libDataStore.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

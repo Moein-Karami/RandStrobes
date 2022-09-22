@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o"
-  "build/libResultPrinter.pdb"
   "build/libResultPrinter.a"
+  "build/libResultPrinter.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

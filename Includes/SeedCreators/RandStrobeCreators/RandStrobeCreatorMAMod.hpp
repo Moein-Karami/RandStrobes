@@ -15,6 +15,7 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 		std::vector<Seed*> create_seeds();
 		std::vector<Seed*> create_seeds_min();
 		std::vector<Seed*> create_seeds_max();
+		uint64_t get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2);
 
 		uint64_t p;
 };

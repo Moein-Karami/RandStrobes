@@ -119,12 +119,14 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	std::vector<uint64_t> durations;
 	std::vector<std::vector<Seed*>> seeds_collection;
 
+	size_t length_of_sequence;
+
 	for (int i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
 	{
 		//std::cout << "start sampling" << std::endl;
 
 		std::string seq = data_generator->get_data();
-
+		length_of_sequence = seq.size();
 		// std::cout << "********************Seq: " << seq << std::endl;
 
 		std::vector<Seed*> seeds;
@@ -147,8 +149,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		, config["SeedCreatorConfig"]["w_min"].asUInt64(), config["SeedCreatorConfig"]["w_max"].asUInt64()
 		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
 		, config["HasherConfig"]["method"].asString(), config["Comparator"].asString() 
-		, config["DataGeneratorConfig"]["seq_len"].asUInt64()
-		);
+		, length_of_sequence);
 	
 	// std::cout << "job done " << std::endl;
 
