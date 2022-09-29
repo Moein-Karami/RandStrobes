@@ -38,10 +38,16 @@ for(i in 1:ncol(new_data))
   plot_now <- ggplot(data_all_methods,
          aes(fill = RandStrobeMethod, y = new_data[, i], x = HashMethod)
          ) + geom_bar(position="dodge", stat="identity")
-  plot_now <- plot_now + labs(title = paste(names(new_data)[i], "based on hashes and linkings"),
+  added_str <- "based on hashes and linkings"
+  if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers")
+    added_str <- "based on final seed hash values"
+  plot_now <- plot_now + labs(title = paste(names(new_data)[i], added_str),
               x = "Hashes", y =  names(new_data)[i])
   print(paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""))
-  png(filename=paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""), width=1000, height=1000)
+  png(filename=paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""), width=1200, height=1200)
+  print(plot_now)
+  dev.off()
+  pdf(file=paste("../EvaluationResults/Figures/", names(new_data)[i], ".pdf",sep = ""))
   print(plot_now)
   dev.off()
 }

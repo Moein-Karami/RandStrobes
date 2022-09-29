@@ -111,13 +111,14 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 
 void BenchMark::run(Json::Value config, std::string output_path)
 {
+	ResultPrinter* result_printer = new ResultPrinter(output_path, config["SeedCreatorConfig"]["n"].asUInt());
 	// std::cout << "Start Run" << std::endl << std::endl;
 	DataGenerator* data_generator = create_data_generator(config);
 	// std::cout << "Data Generator created" << std::endl << std::endl;
 	SeedCreator* seed_creator = create_seed_creator(config);
 	// std::cout << "Seed Creator created" << std::endl << std::endl;
 	std::vector<uint64_t> durations;
-	std::vector<std::vector<Seed*>> seeds_collection;
+	std::vector<int> seeds_size;
 
 	size_t length_of_sequence;
 
@@ -137,14 +138,17 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		seeds = seed_creator->create_seeds(seq);
 		auto finish_time = std::chrono::high_resolution_clock::now();
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
-
 		durations.push_back(duration.count());
-		seeds_collection.push_back(seeds);
+		seeds_size.push_back(seeds.size());
+		for(int j = 0; j < seeds.size(); j++)
+		{
+			result_printer->add_seed(seeds[j], i);
+			delete(seeds[j]);
+		}
 	}
 	// std::cout << "creating seeds is done " << std::endl;
 
-	ResultPrinter result_printer;
-	result_printer.print(durations, seeds_collection, output_path, 
+	result_printer->print(durations, seeds_size, output_path, 
 		config["SeedCreatorConfig"]["n"].asUInt(), config["SeedCreatorConfig"]["kmer_len"].asUInt64()
 		, config["SeedCreatorConfig"]["w_min"].asUInt64(), config["SeedCreatorConfig"]["w_max"].asUInt64()
 		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
@@ -153,11 +157,9 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	
 	// std::cout << "job done " << std::endl;
 
-	for (auto seeds : seeds_collection)
-		for (auto seed : seeds)
-			delete(seed);
 	delete(data_generator);
 	delete(seed_creator);
+	delete(result_printer);
 
 	// std::cout << "memmory fixed" << std::endl;
 }
