@@ -244,7 +244,7 @@ double Sample::calculate_ehits_hashes()
 {
     vector<string> hash_strs;
     map<string, int> cnt_strobe;
-    int ans = 0;
+    uint64_t ans = 0;
     for(int i = 0; i < seeds.size(); i++)
     {
         string now_strobe = seeds[i]->get_hash();
@@ -256,7 +256,7 @@ double Sample::calculate_ehits_hashes()
     }
     for(int i = 0; i < hash_strs.size(); i++)
     {
-        ans += cnt_strobe[hash_strs[i]] * cnt_strobe[hash_strs[i]];
+        ans += (uint64_t)cnt_strobe[hash_strs[i]] * (uint64_t)cnt_strobe[hash_strs[i]];
     }
     int sz = seeds.size();
     return (double)ans / (double)sz;
@@ -282,7 +282,7 @@ int Sample::cal_conf_two(int index1, int index2)
 
 double Sample::calculate_conflicts()
 {
-    int sum = 0;
+    uint64_t sum = 0;
     for(int i = 0; i < seeds.size(); i++)
     {
         int mx = 0;
@@ -291,7 +291,7 @@ double Sample::calculate_conflicts()
             int conf_now = cal_conf_two(i, j);
             mx = max(mx, conf_now);
         }
-        sum += mx;
+        sum += (uint64_t)mx;
     }
     int sz = seeds.size();
     return (double)sum / (double)sz;
@@ -336,7 +336,7 @@ int Sample::calculate_unique_kmers(int num_kmer)
 
 double Sample::calculate_ehits_distance(int num_kmer1, int num_kmer2)
 {
-    int sum = 0;
+    uint64_t sum = 0;
     vector<int>cnt_repeat;
     for(int i = 0; i < seq_len; i++)
     {
@@ -348,7 +348,7 @@ double Sample::calculate_ehits_distance(int num_kmer1, int num_kmer2)
     }
     for(int i = 0; i < seq_len; i++)
     {
-        sum += cnt_repeat[i] * cnt_repeat[i];
+        sum += (uint64_t)cnt_repeat[i] * (uint64_t)cnt_repeat[i];
     }
     int num_seeds = seeds.size();
     return (double)sum / (double)num_seeds;
@@ -356,8 +356,7 @@ double Sample::calculate_ehits_distance(int num_kmer1, int num_kmer2)
 
 double Sample::calculate_ehits_kmers(int num_kmer)
 {
-    std::cout << "calculate ehits started" << std::endl;
-    int sum = 0;
+    uint64_t sum = 0;
     vector<int>cnt_repeat;
     std::cout <<"seq len: " << seq_len << std::endl;
     for(int i = 0; i < seq_len; i++)
@@ -374,7 +373,7 @@ double Sample::calculate_ehits_kmers(int num_kmer)
     std::cout << "cnt_repeat calculated" << std::endl;
     for(int i = 0; i < seq_len; i++)
     {
-        sum += cnt_repeat[i] * cnt_repeat[i];
+        sum += (uint64_t)cnt_repeat[i] * (uint64_t)cnt_repeat[i];
     }
     std::cout << "sum calculated" << std::endl;
     int num_seeds = seeds.size();
