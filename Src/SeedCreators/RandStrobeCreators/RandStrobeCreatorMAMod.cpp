@@ -53,7 +53,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 					tmp = candidate;
 			}
 			strobe->add_kmer(tmp.second, kmers[tmp.second]);
-			curr_hash = (tmp.first + curr_hash) % p;
+			curr_hash = get_value_to_choose_third_strobe(curr_hash, i, tmp.second);
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], i + j * w_max + 1));
@@ -112,7 +112,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 					tmp = candidate;
 			}
 			strobe->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
-			curr_hash = (tmp.first + curr_hash) % p;
+			curr_hash = get_value_to_choose_third_strobe(curr_hash, i, tmp.second);;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], maximal_uint - (i + w_min + (j - 1) * w_max)));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));
@@ -128,4 +128,9 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
 	return NULL;
+}
+
+uint64_t RandStrobeCreatorMAMod::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+{
+	return (hasher->hash(kmers[ind1]) ^ hasher->hash(kmers[ind2])) % p;
 }
