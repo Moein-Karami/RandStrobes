@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o"
-  "build/libDataGen.a"
   "build/libDataGen.pdb"
+  "build/libDataGen.a"
 )
 
 # Per-language clean rules from dependency scanning.
