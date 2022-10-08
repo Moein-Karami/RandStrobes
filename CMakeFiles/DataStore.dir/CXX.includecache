@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
+/mnt2/Moein-K/Sahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
 Strobe.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+/mnt2/Moein-K/Sahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
