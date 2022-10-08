@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HasherSimple1.dir/Src/Hashers/SimpleHashers/NoHash.cpp.o"
-  "build/libHasherSimple1.a"
   "build/libHasherSimple1.pdb"
+  "build/libHasherSimple1.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HashersSeed1.dir/Src/Hashers/SeedBasedHashers/SeedBasedHasher.cpp.o"
-  "build/libHashersSeed1.a"
   "build/libHashersSeed1.pdb"
+  "build/libHashersSeed1.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -98,21 +98,21 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 			// if (i < 5)
 			// {
 			// 	for (auto el : hash_values[j])
-			// 	std::cout << el.first << " " << el.second << std::endl;
+			// 		std::cout << el.first << " " << maximal_uint - el.second << std::endl;
 			// }
 			tmp = *(hash_values[j].begin());
-			// std::cout << "tmp: " << tmp.first << " " << tmp.second << std::endl;
+			// std::cout << "tmp: " << tmp.first << " " << maximal_uint - tmp.second << std::endl;
 			it = hash_values[j].lower_bound({p - curr_hash - 1, maximal_uint});
 			// std::cout << "P - curr_hash = " << p - curr_hash << std::endl;
 			if (it != hash_values[j].end())
 			{
-				// std::cout << "Candidate: " << it->first << " " << it->second << std::endl;
+				// std::cout << "Candidate: " << it->first << " " << maximal_uint - it->second << std::endl;
 				candidate = *it;
 				if ((tmp.first + curr_hash) % p < (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
 			strobe->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
-			curr_hash = get_value_to_choose_third_strobe(curr_hash, i, tmp.second);;
+			curr_hash = get_value_to_choose_third_strobe(curr_hash, i, maximal_uint - tmp.second);;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], maximal_uint - (i + w_min + (j - 1) * w_max)));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));
@@ -132,5 +132,5 @@ uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t ind1, ui
 
 uint64_t RandStrobeCreatorMAMod::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
-	return (hasher->hash(kmers[ind1]) ^ hasher->hash(kmers[ind2])) % p;
+	return hasher->hash(hasher->hash(kmers[ind1]) ^ hasher->hash(kmers[ind2])) % p;
 }

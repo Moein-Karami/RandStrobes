@@ -28,7 +28,7 @@ void ConfigGenerator::add_data_generator_config(std::string path)
 	else if (data_generator == "FromFile")
 	{
 		// std::cout << "file" << std::endl;
-		std::vector<std::string> file_names = {"data"};
+		std::vector<std::string> file_names = {"Human_Genome"};//, "data"};
 		config["DataGenerator"] = "FromFileDataGenerator";
 		for (auto name : file_names)
 		{
@@ -94,7 +94,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	// std::cout << "SeedCreator" << std::endl;
 	
 	std::vector<std::string> seed_creators = {"GuoPibri", "LiuPatroLi", "SahlinBitCount", "SahlinMod", "Shen", "XorVar",
-		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor"}; // "FastMAXor",
+		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor", "RandomMAMod"}; // "FastMAXor",
 
 	config["SeedCreator"] = "RandStrobeCreator";
 	
