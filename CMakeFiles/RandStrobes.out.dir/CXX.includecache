@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.cpp
+/mnt2/Moein-K/Sahlin/RandStrobes/Src/BenchMark.cpp
 BenchMark.hpp
-/home/aryan/Desktop/University/KSahlin/RandStrobes/Src/BenchMark.hpp
+/mnt2/Moein-K/Sahlin/RandStrobes/Src/BenchMark.hpp
 
 Includes/BenchMark.hpp
 ResultPrinter.hpp
