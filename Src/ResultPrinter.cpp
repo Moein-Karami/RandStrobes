@@ -41,8 +41,8 @@ void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<
 	for (int i = 0; i < construction_times.size(); i++)
 	{
 		output_csv2 << construction_times[i] << "," << seeds_size[i] << "," << n << "," <<
-			kmer_len << "," << w_min << "," << w_max << "," << mask << "," << seed_method << "," << 
-			hash_method + "-" + comperator << "," <<  seq_len << "," <<  i + 1 << std::endl;
+			kmer_len << "," << w_min << "," << w_max << "," << mask << "," << seed_method << 
+			"," << hash_method + "-" + comperator << "," <<  seq_len << "," <<  i + 1 << std::endl;
 	}
 	
 	output_csv.close();
