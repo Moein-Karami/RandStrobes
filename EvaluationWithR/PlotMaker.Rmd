@@ -22,6 +22,25 @@ for(file_now in all_files)
   }
   cnt <- cnt + 1
 }
+
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "None-max")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "NoHash-max"] <- "None-max"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "None-min")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "NoHash-min"] <- "None-min"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "TW-max")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "ThomasWangHash-max"] <- "TW-max"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "TW-min")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "ThomasWangHash-min"] <- "TW-min"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "Wy-max")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-max"] <- "Wy-max"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "Wy-min")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-min"] <- "Wy-min"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX-max")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-max"] <- "XX-max"
+levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX-min")
+data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-min"] <- "XX-min"
+
+
 deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods
 new_data$Sample <- NULL
@@ -34,22 +53,31 @@ for(i in 1:ncol(new_data))
   file_name <- paste("../EvaluationResults/MetricsSortedByMethods/", names(new_data)[i], ".csv",sep = "")
   sorted_data <- sorted_data[, c('HashMethod', 'RandStrobeMethod', names(new_data)[i])]
   write.csv(sorted_data, file_name, row.names = FALSE)
+  normalized_by = new_data[1, i]
+  new_data[, i] <- new_data[, i] / normalized_by
+
   #print(names(new_data)[i])
   plot_now <- ggplot(data_all_methods,
          aes(fill = RandStrobeMethod, y = new_data[, i], x = HashMethod)
-         ) + geom_bar(position="dodge", stat="identity")
+         ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 70), 
+                                                                  
+                                                                  
+                                                                  axis.title=element_text(size=50), 
+                                                                  legend.text = element_text(size = 50),
+                                                                  legend.title = element_text(size = 50),
+                                                                  axis.text = element_text(size = 40))
   added_str <- "based on hashes and linkings"
   if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers")
     added_str <- "based on final seed hash values"
   plot_now <- plot_now + labs(title = paste(names(new_data)[i], added_str),
-              x = "Hashes", y =  names(new_data)[i])
-  print(paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""))
-  png(filename=paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""), width=1200, height=1200)
+              x = "Hashes", y =  paste("Normalized ", names(new_data)[i], sep = ""))
+#  print(paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""))
+  png(filename=paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""), width=3000, height= 3000)
   print(plot_now)
   dev.off()
-  pdf(file=paste("../EvaluationResults/Figures/", names(new_data)[i], ".pdf",sep = ""))
-  print(plot_now)
-  dev.off()
+  ggsave( filename = paste("../EvaluationResults/Figures/", names(new_data)[i], ".pdf",sep = ""), 
+          plot = plot_now, width = 45, height = 30
+)
 }
   #row.names(data_all_methods) <- data_all_methods$RandStrobeMethod
 #print(data_all_methods)
