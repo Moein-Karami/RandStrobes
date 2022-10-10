@@ -94,7 +94,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	// std::cout << "SeedCreator" << std::endl;
 	
 	std::vector<std::string> seed_creators = {"GuoPibri", "LiuPatroLi", "SahlinBitCount", "SahlinMod", "Shen", "XorVar",
-		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor", "RandomMAMod"}; // "FastMAXor",
+		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor", "RandomMAMod", "MAXorVar"}; // "FastMAXor",
 
 	config["SeedCreator"] = "RandStrobeCreator";
 	
