@@ -110,6 +110,7 @@ config.out: build/libRandStrobeCreators10.a
 config.out: build/libRandStrobeCreators11.a
 config.out: build/libRandStrobeCreators12.a
 config.out: build/libRandStrobeCreators13.a
+config.out: build/libRandStrobeCreators14.a
 config.out: build/libJson.a
 config.out: build/libHashers.a
 config.out: build/libHashersMet1.a

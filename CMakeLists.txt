@@ -52,6 +52,7 @@ target_link_libraries( config.out
     RandStrobeCreators11
     RandStrobeCreators12
     RandStrobeCreators13
+    RandStrobeCreators14
     Json
     Hashers 
     HashersMet1
@@ -88,6 +89,7 @@ target_link_libraries(${NAME_PROJECT}
     RandStrobeCreators11
     RandStrobeCreators12
     RandStrobeCreators13
+    RandStrobeCreators14
     Json
     Hashers 
     HashersMet1
@@ -179,6 +181,11 @@ add_library(RandStrobeCreators12 STATIC ./Src/SeedCreators/RandStrobeCreators/Ra
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators13 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFullyRandom.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/SeedCreator.cpp)
+
+add_library(RandStrobeCreators14 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.cpp
+    ./Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.hpp 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 #Json***********************************************
