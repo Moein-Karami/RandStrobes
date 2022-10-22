@@ -40,7 +40,6 @@ data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-max"] <- "XX-
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX-min")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-min"] <- "XX-min"
 
-
 deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods
 new_data$Sample <- NULL
@@ -69,13 +68,34 @@ for(i in 1:ncol(new_data))
   added_str <- "based on hashes and linkings"
   if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers")
     added_str <- "based on final seed hash values"
-  plot_now <- plot_now + labs(title = paste(names(new_data)[i], added_str),
-              x = "Hashes", y =  paste("Normalized ", names(new_data)[i], sep = ""))
+  name_now <- names(new_data)[i]
+  if(name_now == "E.hits.Unique.Strobmers")
+    name_now <- "E-hits Unique Strobmers"
+  if(name_now == "E.hits.strobe2.positions")
+    name_now <- "E-hits strobe2 positions"
+  if(name_now == "E.hits.strobe3.postions")
+    name_now <- "E-hits strobe3 positions"
+  if(name_now == "E.hits.distance.between.strobe2.and.strobe1")
+    name_now <- "E-hits distance between strobe2 and strobe1"
+  if(name_now == "E.hits.distance.between.strobe3.and.strobe1")
+    name_now <- "E-hits distance between strobe3 and strobe1"
+  if(name_now == "E.hits.distance.between.strobe3.and.strobe2")
+    name_now <- "E-hits distance between strobe3 and strobe2"
+  if(name_now == "Unique.Strobmers")
+    name_now <- "Unique Strobmers"
+  if(name_now == "TimeofExecution")
+    name_now <- "Time of execution"
+  if(name_now == "Unique.strobe2.postions")
+    name_now <- "Unique strobe2 postions"
+  if(name_now == "Unique.strobe2.postions")
+    name_now <- "Unique strobe3 postions"
+  plot_now <- plot_now + labs(title = paste(name_now, added_str),
+              x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
 #  print(paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""))
-  png(filename=paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""), width=3000, height= 3000)
+  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=3000, height= 3000)
   print(plot_now)
   dev.off()
-  ggsave( filename = paste("../EvaluationResults/Figures/", names(new_data)[i], ".pdf",sep = ""), 
+  ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
           plot = plot_now, width = 45, height = 30
 )
 }
