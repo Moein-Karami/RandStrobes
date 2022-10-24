@@ -32,13 +32,34 @@ data_all_methods$HashMethod[data_all_methods$HashMethod == "ThomasWangHash-max"]
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "TW-min")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "ThomasWangHash-min"] <- "TW-min"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "Wy-max")
-data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-max"] <- "Wy-max"
+data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-max"] <- "WY-max"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "Wy-min")
-data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-min"] <- "Wy-min"
+data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-min"] <- "WY-min"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX-max")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-max"] <- "XX-max"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX-min")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-min"] <- "XX-min"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XOR")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "GuoPibri"] <- "XOR"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MOD")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinMod"] <- "MOD"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "AND")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Shen"] <- "AND"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "BC")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinBitCount"] <- "BC"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "CC")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "LiuPatroLi"] <- "CC"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XV")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"] <- "XV"
+
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MOD")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinMod"] <- "MOD"
 
 deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods
