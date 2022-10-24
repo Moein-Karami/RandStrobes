@@ -467,7 +467,7 @@ vector<Sample*> build_samples(CsvFile* csv_result, CsvFile* csv_header)
     vector<Sample*> ans;
     Sample* new_sample;
 
-    for(int i = 0; i < col_samples.size(); i++)
+    for(int i = 0; i < col_samples[0].size(); i++)
     {
         new_sample = new Sample(i + 1, csv_result);
         ans.push_back(new_sample);
