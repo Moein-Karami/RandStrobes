@@ -5,7 +5,48 @@ output: html_notebook
 
 
 ```{r}
+create_name_file <- function(name_now)
+{
+  name_now <- gsub("kmer", "strobe", name_now)
+  name_now <- gsub("E.hits", "E-hits", name_now)
+  name_now <- gsub("\\.", " ", name_now)
+  name_now <- gsub("postion", "position", name_now)
+  name_now <- gsub("E-hits position distance between strobe2 and strobe1", "E-hits distance between strobe2 and strobe1", name_now)
+  name_now <- gsub("E-hits position distance between strobe3 and strobe1", "E-hits distance between strobe3 and strobe1", name_now)
+  name_now <- gsub("E-hits position distance between strobe3 and strobe2", "E-hits distance between strobe3 and strobe2", name_now)
+    name_now <- gsub("TimeofExecution", "Time of execution", name_now)
+    return(name_now)
+}
+```
+
+```{r}
+create_rand_strobe_methods <- function(rand_strobe_now)
+{
+  rand_ans <- c()
+  for(str in rand_strobe_now)
+  {
+    if(str == "XOR")
+    {
+      rand_ans <- append(rand_ans, TeX(r"($l_{XOR}$)"))
+    }
+    else 
+      rand_ans <- append(rand_ans, TeX(r"($l_{Other}$)"))
+  }
+  return(rand_ans)
+}
+```
+
+```{r}
+to_latex <- function(input_str)
+     TeX(paste("$", input_str, "$"))
+
+```
+
+
+
+```{r}
 library(ggplot2)
+library(latex2exp)
 all_files <- list.files(path = "../EvaluationResults/MedianSamples")
 cnt <- 1
 for(file_now in all_files)
@@ -22,6 +63,15 @@ for(file_now in all_files)
   }
   cnt <- cnt + 1
 }
+
+data_all_methods <- data_all_methods[!grepl('FixedSahlinMod', data_all_methods$RandStrobeMethod),]
+data_all_methods <- data_all_methods[!grepl('FullyRandom', data_all_methods$RandStrobeMethod),]
+data_all_methods <- data_all_methods[!grepl('MAXor', data_all_methods$RandStrobeMethod),]
+data_all_methods <- data_all_methods[!grepl('MAXorVar', data_all_methods$RandStrobeMethod),]
+data_all_methods <- data_all_methods[!grepl('RandomMAMod', data_all_methods$RandStrobeMethod),]
+data_all_methods <- data_all_methods[!grepl('SpecialCaseFixedShen', data_all_methods$RandStrobeMethod),]
+
+
 
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "None-max")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "NoHash-max"] <- "None-max"
@@ -41,25 +91,25 @@ levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "X
 data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-min"] <- "XX-min"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XOR")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "GuoPibri"] <- "XOR"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "GuoPibri"] <- "l_{XOR}-f_{+}"
 
-levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MOD")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinMod"] <- "MOD"
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), 'MOD')
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinMod"] <- 'l_{MOD}-f_{XOR}'
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "AND")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Shen"] <- "AND"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Shen"] <- "l_{AND}-f_{XOR}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "BC")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinBitCount"] <- "BC"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinBitCount"] <- "l_{BC}-f_{+}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "CC")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "LiuPatroLi"] <- "CC"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "LiuPatroLi"] <- "l_{CC}-f_{CC}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XV")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"] <- "XV"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"] <- "l_{XV}-f_{+}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MAMD")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "MAMD"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "l_{MAMD}-f_{XOR}"
 
 deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods
@@ -72,47 +122,39 @@ for(i in 1:ncol(new_data))
   sorted_data <- data_all_methods[order(col_now), ]
   file_name <- paste("../EvaluationResults/MetricsSortedByMethods/", names(new_data)[i], ".csv",sep = "")
   sorted_data <- sorted_data[, c('HashMethod', 'RandStrobeMethod', names(new_data)[i])]
+  
+  rand_strobe_method <- create_rand_strobe_methods(data_all_methods$RandStrobeMethod)
+
   write.csv(sorted_data, file_name, row.names = FALSE)
   normalized_by = new_data[1, i]
   new_data[, i] <- new_data[, i] / normalized_by
 
   #print(names(new_data)[i])
   plot_now <- ggplot(data_all_methods,
-         aes(fill = RandStrobeMethod, y = new_data[, i], x = HashMethod)
+         aes(fill =  RandStrobeMethod, y = new_data[, i], x = HashMethod)
          ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 70), 
                                                                   
                                                                   
                                                                   axis.title=element_text(size=50), 
                                                                   legend.text = element_text(size = 50),
                                                                   legend.title = element_text(size = 50),
-                                                                  axis.text = element_text(size = 40))
+                                                                  axis.text = element_text(size = 40)) + 
+    guides(fill=guide_legend(title="RandStrobe Method")) + scale_fill_discrete(labels = to_latex) +
+theme(legend.text.align = 0)
+  
+  
   added_str <- "based on hashes and linkings"
   if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers")
     added_str <- "based on final seed hash values"
+  
+  
   name_now <- names(new_data)[i]
-  if(name_now == "E.hits.Unique.Strobmers")
-    name_now <- "E-hits Unique Strobmers"
-  if(name_now == "E.hits.strobe2.positions")
-    name_now <- "E-hits strobe2 positions"
-  if(name_now == "E.hits.strobe3.postions")
-    name_now <- "E-hits strobe3 positions"
-  if(name_now == "E.hits.distance.between.strobe2.and.strobe1")
-    name_now <- "E-hits distance between strobe2 and strobe1"
-  if(name_now == "E.hits.distance.between.strobe3.and.strobe1")
-    name_now <- "E-hits distance between strobe3 and strobe1"
-  if(name_now == "E.hits.distance.between.strobe3.and.strobe2")
-    name_now <- "E-hits distance between strobe3 and strobe2"
-  if(name_now == "Unique.Strobmers")
-    name_now <- "Unique Strobmers"
-  if(name_now == "TimeofExecution")
-    name_now <- "Time of execution"
-  if(name_now == "Unique.strobe2.postions")
-    name_now <- "Unique strobe2 postions"
-  if(name_now == "Unique.strobe2.postions")
-    name_now <- "Unique strobe3 postions"
+  name_now <- create_name_file(name_now)
+
   plot_now <- plot_now + labs(title = paste(name_now, added_str),
               x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
-#  print(paste("../EvaluationResults/Figures/", names(new_data)[i], ".png",sep = ""))
+  
+  
   png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=3000, height= 3000)
   print(plot_now)
   dev.off()
