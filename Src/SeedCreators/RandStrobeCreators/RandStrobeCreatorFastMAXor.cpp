@@ -6,7 +6,7 @@ RandStrobeCreatorFastMAXor::RandStrobeCreatorFastMAXor(Hasher* hasher, Comparato
 {
 }
 
-uint64_t RandStrobeCreatorFastMAXor::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorFastMAXor::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
 {
 	return -1;
 }
@@ -31,9 +31,6 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		if (i < 1)
-			nodes[1]->print_all("");
-
 		strobe = new Strobe();
 		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
@@ -41,7 +38,7 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 		{
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
 			strobe->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = (curr_hash ^ hashes[best_choose]);
+			curr_hash = hasher->hash(curr_hash) ^ hasher->hash(hashes[best_choose]);
 			nodes[j]->remove(i + w_min + (j - 1) * w_max, hashes[i + w_min + (j - 1) * w_max]);
 			if (i + j * w_max + 1 < hashes.size())
 				nodes[j]->add(i + j * w_max + 1, hashes[i + j * w_max + 1]);
