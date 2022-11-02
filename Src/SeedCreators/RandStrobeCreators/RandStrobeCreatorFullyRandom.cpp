@@ -29,13 +29,13 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 	srand(time(0));
 
 	std::vector<Seed*> seeds;
-	Strobe* strobe;
+	Strobemer* strobemer;
 	uint64_t best_choose;
 	uint64_t offset;
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobe = new Strobe();
+		strobemer = new Strobemer();
 		strobe->add_kmer(i, kmers[i]);
 		
 		for (int j = 1; j < n; j++)
@@ -46,7 +46,7 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 			strobe->add_kmer(best_choose, kmers[best_choose]);
 		}
 		
-		seeds.push_back(strobe);
+		seeds.push_back(strobemer);
 	}
 	return seeds;
 }

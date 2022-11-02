@@ -27,7 +27,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	
 	
 	std::vector<Seed*> seeds;
-	Strobe* strobe;
+	Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
@@ -37,7 +37,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobe = new Strobe();
+		strobemer = new Strobemer();
 		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
@@ -51,13 +51,13 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 					tmp = candidate;
 			}
 			strobe->add_kmer(tmp.second, kmers[tmp.second]);
-			curr_hash = get_new_curr_hash(strobe) % p;
+			curr_hash = get_new_curr_hash(strobemer) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], i + j * w_max + 1));
 		}
-		
-		seeds.push_back(strobe);
+		strobemer->set_final_hash(get_final_hash(strobemer));
+		seeds.push_back(strobemer);
 	}
 	return seeds;
 }
@@ -73,7 +73,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 	
 	
 	std::vector<Seed*> seeds;
-	Strobe* strobe;
+	Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
@@ -83,8 +83,8 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobe = new Strobe();
-		strobe->add_kmer(i, kmers[i]);
+		strobemer = new Strobemer();
+		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
 		{
@@ -102,8 +102,8 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));
 		}
-		
-		seeds.push_back(strobe);
+		strobemer->set_final_hash(get_final_hash(strobemer));
+		seeds.push_back(strobemer);
 	}
 	return seeds;
 }

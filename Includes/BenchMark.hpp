@@ -10,7 +10,7 @@
 #include "RandomDataGenerator.hpp"
 #include "FromFileDataGenerator.hpp"
 
-#include "Strobe.hpp"
+#include "Strobemer.hpp"
 
 #include "WyHash.hpp"
 #include "XXHash.hpp"

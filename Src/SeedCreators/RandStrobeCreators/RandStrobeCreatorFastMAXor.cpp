@@ -16,7 +16,7 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 	bool cmp = comparator->is_first_better(1, 0);
 
 	std::vector<Seed*> seeds;
-	Strobe* strobe;
+	Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
@@ -31,20 +31,20 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobe = new Strobe();
+		strobemer = new Strobemer();
 		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
 		{
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
 			strobe->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = get_final_hash(strobe);
+			curr_hash = get_final_hash(strobemer);
 			nodes[j]->remove(i + w_min + (j - 1) * w_max, hashes[i + w_min + (j - 1) * w_max]);
 			if (i + j * w_max + 1 < hashes.size())
 				nodes[j]->add(i + j * w_max + 1, hashes[i + j * w_max + 1]);
 		}
-		
-		seeds.push_back(strobe);
+		strobemer->set_final_hash(get_final_hash(strobemer));
+		seeds.push_back(strobemer);
 	}
 	for (int i = 1; i < n; i++)
 		delete nodes[i];

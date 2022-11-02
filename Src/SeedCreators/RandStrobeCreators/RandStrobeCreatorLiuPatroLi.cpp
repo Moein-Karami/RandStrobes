@@ -8,10 +8,10 @@ RandStrobeCreatorLiuPatroLi::RandStrobeCreatorLiuPatroLi(Hasher* hasher, Compara
 
 uint64_t RandStrobeCreatorLiuPatroLi::get_hash_concat(uint64_t kmer1, uint64_t kmer2)
 {
-    Int128 strobeconcat;
-    strobeconcat.high = kmer1;
-    strobeconcat.low = kmer2;
-    return hasher->hash(&strobeconcat, sizeof(strobeconcat));
+    Int128 concated;
+    concated.high = kmer1;
+    concated.low = kmer2;
+    return hasher->hash(&concated, sizeof(concated));
 }
 
 uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)

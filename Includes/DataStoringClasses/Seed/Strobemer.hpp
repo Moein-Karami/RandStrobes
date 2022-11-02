@@ -1,9 +1,9 @@
-#ifndef _Strobe_hpp_
-#define _Strobe_hpp_
+#ifndef _Strobemer_hpp_
+#define _Strobemer_hpp_
 
 #include "Seed.hpp"
 
-class Strobe : public Seed
+class Strobemer : public Seed
 {
 	public:
 		std::string get_seed();

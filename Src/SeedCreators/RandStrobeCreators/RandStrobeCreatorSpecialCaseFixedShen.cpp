@@ -12,7 +12,7 @@ void RandStrobeCreatorSpecialCaseFixedShen::prepare_data()
 		hashes[i] &= q;
 }
 
-uint64_t RandStrobeCreatorSpecialCaseFixedShen::get_new_curr_hash(const Strobe* strobe)
+uint64_t RandStrobeCreatorSpecialCaseFixedShen::get_new_curr_hash(const Strobemer* strobemer)
 {
-	return get_final_hash(strobe) & q;
+	return get_final_hash(strobemer) & q;
 }

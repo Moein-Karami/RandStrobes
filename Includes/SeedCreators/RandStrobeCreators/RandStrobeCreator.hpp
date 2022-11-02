@@ -3,7 +3,7 @@
 
 #include "LibrariesAndDefines.hpp"
 #include "SeedCreator.hpp"
-#include "Strobe.hpp"
+#include "Strobemer.hpp"
 #include "Maximizer.hpp"
 #include "Minimizer.hpp"
 
@@ -30,8 +30,8 @@ class RandStrobeCreator : public SeedCreator
 		uint32_t get_char_code(char c);
 		virtual std::vector<Seed*> create_seeds();
 		virtual uint64_t get_first_hash(size_t ind);
-		virtual uint64_t get_final_hash(const Strobe* strobe);
-		virtual uint64_t get_new_curr_hash(const Strobe* strobe);
+		virtual uint64_t get_final_hash(const Strobemer* strobemer);
+		virtual uint64_t get_new_curr_hash(const Strobemer* strobemer);
 };
 
 #endif

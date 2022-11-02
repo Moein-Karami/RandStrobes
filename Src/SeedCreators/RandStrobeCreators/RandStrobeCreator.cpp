@@ -69,14 +69,14 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	prepare_data();
 
 	std::vector<Seed*> seeds;
-	Strobe* strobe;
+	Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
 	
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobe = new Strobe();
+		strobemer = new Strobemer();
 		strobe->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
@@ -92,10 +92,10 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 				}
 			}
 			strobe->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = get_new_curr_hash(strobe);
+			curr_hash = get_new_curr_hash(strobemer);
 		}
-		strobe->set_final_hash(get_final_hash(strobe));
-		seeds.push_back(strobe);
+		strobe->set_final_hash(get_final_hash(strobemer));
+		seeds.push_back(strobemer);
 	}
 	return seeds;
 }
@@ -110,15 +110,15 @@ void RandStrobeCreator::prepare_data()
 	/* Do nothing */
 }
 
-uint64_t RandStrobeCreator::get_final_hash(const Strobe* strobe)
+uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
-	for (auto pos : strobe->positions)
+	for (auto pos : strobemer->positions)
 		final_hash ^= hasher->hash(hashes[pos]);
 	return final_hash;
 }
 
-uint64_t RandStrobeCreator::get_new_curr_hash(const Strobe* strobe)
+uint64_t RandStrobeCreator::get_new_curr_hash(const Strobemer* strobemer)
 {
-	return get_final_hash(strobe);
+	return get_final_hash(strobemer);
 }
