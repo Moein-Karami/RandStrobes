@@ -6,12 +6,12 @@ RandStrobeCreatorGuoPibri::RandStrobeCreatorGuoPibri(Hasher* hasher, Comparator*
 {
 }
 
-uint64_t RandStrobeCreatorGuoPibri::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorGuoPibri::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
 {
 	return (curr_hash ^ hashes[ind2]);
 }
 
-uint64_t RandStrobeCreatorGuoPibri::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorGuoPibri::get_new_curr_hash(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
 {
-	return hasher->hash(hashes[ind1]) ^ hasher->hash(hashes[ind2]);
+	return hasher->hash(curr_hash) ^ hasher->hash(hashes[last_ind]);
 }
