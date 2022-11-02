@@ -8,25 +8,15 @@ RandStrobeCreatorLiuPatroLi::RandStrobeCreatorLiuPatroLi(Hasher* hasher, Compara
 
 uint64_t RandStrobeCreatorLiuPatroLi::get_hash_concat(uint64_t kmer1, uint64_t kmer2)
 {
-    // if(kmer_len * 2 <= 64)
-    // {
-    //     return hasher->hash(kmer1 << kmer_len + kmer2);
-    // }
-    // uint64_t arr_concat[2];
-    // arr_concat[0] = kmer1 + kmer2 >> (64 - kmer_len);
-    // arr_concat[1] = kmer2 << (64 - kmer_len);
-    // return hasher->hash(&arr_concat, kmer_len * 2);
-    Int128 strobeconcat;
-    strobeconcat.high = kmer1;
-    strobeconcat.low = kmer2;
-    return hasher->hash(&strobeconcat, sizeof(strobeconcat));
+    Int128 concated;
+    concated.high = kmer1;
+    concated.low = kmer2;
+    return hasher->hash(&concated, sizeof(concated));
 }
 
-uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-    uint64_t score = get_hash_concat(curr_hash, kmers[ind2]);
-    // std::cout << "res for " << ind1 <<" " <<ind2 << " = " << score<<std::endl;
-    
+    uint64_t score = get_hash_concat(curr_hash, kmers[new_strobe_pos]);
 	return score;
 }
 

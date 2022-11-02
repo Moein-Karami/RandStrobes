@@ -27,10 +27,10 @@ create_rand_strobe_methods <- function(rand_strobe_now)
   {
     if(str == "XOR")
     {
-      rand_ans <- append(rand_ans, TeX(r"($l_{XOR}$)"))
+      rand_ans <- append(rand_ans, TeX(r"($\u2113_{XOR}$)"))
     }
     else 
-      rand_ans <- append(rand_ans, TeX(r"($l_{Other}$)"))
+      rand_ans <- append(rand_ans, str)
   }
   return(rand_ans)
 }
@@ -91,25 +91,25 @@ levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "X
 data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-min"] <- "XX-min"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XOR")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "GuoPibri"] <- "l_{XOR}-f_{+}"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "GuoPibri"] <- "\u2113_{XOR}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), 'MOD')
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinMod"] <- 'l_{MOD}-f_{XOR}'
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinMod"] <- '\u2113_{MOD}'
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "AND")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Shen"] <- "l_{AND}-f_{XOR}"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Shen"] <- "\u2113_{AND}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "BC")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinBitCount"] <- "l_{BC}-f_{+}"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "SahlinBitCount"] <- "\u2113_{BC}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "CC")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "LiuPatroLi"] <- "l_{CC}-f_{CC}"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "LiuPatroLi"] <- "\u2113_{CC}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XV")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"] <- "l_{XV}-f_{+}"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"] <- "\u2113_{XV}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MAMD")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "l_{MAMD}-f_{XOR}"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "\u2113_{MAMD}"
 
 deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods

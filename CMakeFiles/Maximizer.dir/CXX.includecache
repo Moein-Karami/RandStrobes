@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Comparators/Maximizer.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Maximizer.cpp
 Maximizer.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Comparators/Maximizer.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Maximizer.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp

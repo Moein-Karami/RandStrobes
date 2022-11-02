@@ -12,7 +12,7 @@ void RandStrobeCreatorFixedSahlinMod::prepare_data()
 		hashes[i] %= p;
 }
 
-uint64_t RandStrobeCreatorFixedSahlinMod::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorFixedSahlinMod::get_new_curr_hash(const Strobemer* strobemer)
 {
-	return hasher->hash((hasher->hash(kmers[ind1]) ^ hasher->hash(kmers[ind2]))) % p;
+	return get_final_hash(strobemer) % p;
 }

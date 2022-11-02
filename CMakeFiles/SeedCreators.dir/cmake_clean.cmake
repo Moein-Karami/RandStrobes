@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o"
-  "build/libSeedCreators.pdb"
   "build/libSeedCreators.a"
+  "build/libSeedCreators.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

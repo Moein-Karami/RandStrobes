@@ -1,12 +1,12 @@
-#include "Strobe.hpp"
+#include "Strobemer.hpp"
 
-void Strobe::add_kmer(size_t position, uint64_t kmer_hash)
+void Strobemer::add_kmer(size_t position, uint64_t kmer_hash)
 {
 	positions.push_back(position);
 	kmers_hash.push_back(kmer_hash);
 }
 
-std::string Strobe::get_seed()
+std::string Strobemer::get_seed()
 {
 	std::string seed;
 	for (auto i : kmers_hash)
@@ -14,7 +14,7 @@ std::string Strobe::get_seed()
 	return seed;
 }
 
-std::string Strobe::to_string()
+std::string Strobemer::to_string()
 {
 	std::string res;
 
@@ -27,3 +27,7 @@ std::string Strobe::to_string()
 	return res;
 }
 
+void Strobemer::set_final_hash(uint64_t hash)
+{
+	final_hash = hash;
+}

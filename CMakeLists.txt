@@ -119,7 +119,7 @@ add_library(FileDataGen STATIC ./Src/DataGenerators/FromFileDataGenerator.cpp)
 
 #DataStoring *******************************************
 
-add_library(DataStore STATIC ./Src/DataStoringClasses/Strobe.cpp)
+add_library(DataStore STATIC ./Src/DataStoringClasses/Strobemer.cpp)
 
 #SeedCreators ***************************************
 
@@ -129,64 +129,64 @@ add_library(RandStrobeCreators STATIC ./Src/SeedCreators/RandStrobeCreators/Rand
    ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators1 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp) 
     
 add_library(RandStrobeCreators2 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators3 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinBitCount.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators4 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators5 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators6 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
     ./Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp 
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators7 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAMod.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators8 STATIC 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFixedSahlinMod.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators9 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 
 add_library(RandStrobeCreators10 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFastMAXor.cpp
-   ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+   ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
    ./Src/SeedCreators/SeedCreator.cpp ./Src/Tools/MAXorNode.cpp)
 
 add_library(RandStrobeCreators11 STATIC 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSpecialCaseFixedShen.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators12 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorRandomMAMod.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators13 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorFullyRandom.cpp
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 
 add_library(RandStrobeCreators14 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.cpp
     ./Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.hpp 
-    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobe.cpp
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Strobemer.cpp
     ./Src/SeedCreators/SeedCreator.cpp)
 #Json***********************************************
 

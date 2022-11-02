@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/BenchMark.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/BenchMark.cpp
 BenchMark.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/BenchMark.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/BenchMark.hpp
 
 Includes/BenchMark.hpp
 ResultPrinter.hpp
@@ -23,8 +23,8 @@ RandomDataGenerator.hpp
 Includes/RandomDataGenerator.hpp
 FromFileDataGenerator.hpp
 Includes/FromFileDataGenerator.hpp
-Strobe.hpp
-Includes/Strobe.hpp
+Strobemer.hpp
+Includes/Strobemer.hpp
 WyHash.hpp
 Includes/WyHash.hpp
 XXHash.hpp
@@ -59,6 +59,8 @@ RandStrobeCreatorRandomMAMod.hpp
 Includes/RandStrobeCreatorRandomMAMod.hpp
 RandStrobeCreatorFullyRandom.hpp
 Includes/RandStrobeCreatorFullyRandom.hpp
+RandStrobeCreatorMAXorVar.hpp
+Includes/RandStrobeCreatorMAXorVar.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -92,7 +94,7 @@ Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
 
-Includes/DataStoringClasses/Seed/Strobe.hpp
+Includes/DataStoringClasses/Seed/Strobemer.hpp
 Seed.hpp
 Includes/DataStoringClasses/Seed/Seed.hpp
 
@@ -295,8 +297,8 @@ LibrariesAndDefines.hpp
 Includes/SeedCreators/RandStrobeCreators/LibrariesAndDefines.hpp
 SeedCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/SeedCreator.hpp
-Strobe.hpp
-Includes/SeedCreators/RandStrobeCreators/Strobe.hpp
+Strobemer.hpp
+Includes/SeedCreators/RandStrobeCreators/Strobemer.hpp
 Maximizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
@@ -329,6 +331,10 @@ RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXor.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 

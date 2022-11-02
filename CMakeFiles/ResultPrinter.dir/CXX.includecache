@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/ResultPrinter.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/ResultPrinter.cpp
 ResultPrinter.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/ResultPrinter.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/ResultPrinter.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp

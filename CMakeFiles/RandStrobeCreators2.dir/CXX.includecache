@@ -6,21 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
-Strobe.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
-
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.cpp
-RandStrobeCreatorLiuPatroLi.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
-
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
@@ -38,7 +26,7 @@ Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
 
-Includes/DataStoringClasses/Seed/Strobe.hpp
+Includes/DataStoringClasses/Seed/Strobemer.hpp
 Seed.hpp
 Includes/DataStoringClasses/Seed/Seed.hpp
 
@@ -135,16 +123,12 @@ LibrariesAndDefines.hpp
 Includes/SeedCreators/RandStrobeCreators/LibrariesAndDefines.hpp
 SeedCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/SeedCreator.hpp
-Strobe.hpp
-Includes/SeedCreators/RandStrobeCreators/Strobe.hpp
+Strobemer.hpp
+Includes/SeedCreators/RandStrobeCreators/Strobemer.hpp
 Maximizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
-RandStrobeCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp

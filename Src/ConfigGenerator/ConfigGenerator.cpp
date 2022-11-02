@@ -27,7 +27,6 @@ void ConfigGenerator::add_data_generator_config(std::string path)
 	}
 	else if (data_generator == "FromFile")
 	{
-		// std::cout << "file" << std::endl;
 		std::vector<std::string> file_names = {"Human_Genome"};//, "data"};
 		config["DataGenerator"] = "FromFileDataGenerator";
 		for (auto name : file_names)
@@ -46,7 +45,6 @@ void ConfigGenerator::add_data_generator_config(std::string path)
 
 void ConfigGenerator::add_hasher_config(std::string output_path, Json::Value config)
 {
-	// std::cout << "Hasher" << std::endl;
 	std::vector<std::string> simple_hashers = {"NoHash", "ThomasWangHash"};
 	std::vector<std::string> seed_based_hashers = {"WyHash", "XXHash"};
 	Json::Value hasher_config;
@@ -73,7 +71,6 @@ void ConfigGenerator::add_hasher_config(std::string output_path, Json::Value con
 
 void ConfigGenerator::add_comparator_config(std::string output_path, Json::Value config)
 {
-	// std::cout << "comparatr" << std::endl;
 	std::vector<std::string> comparators = {"min", "max"};
 
 	if (config["Hasher"] == "FullyRandom")
@@ -91,10 +88,8 @@ void ConfigGenerator::add_comparator_config(std::string output_path, Json::Value
 
 void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Value config)
 {
-	// std::cout << "SeedCreator" << std::endl;
-	
 	std::vector<std::string> seed_creators = {"GuoPibri", "LiuPatroLi", "SahlinBitCount", "SahlinMod", "Shen", "XorVar",
-		"MAMod", "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor", "RandomMAMod", "MAXorVar"}; // "FastMAXor",
+		"MAMod"};//, "FixedSahlinMod", "SpecialCaseFixedShen", "MAXor", "RandomMAMod", "MAXorVar", "FastMAXor"};
 
 	config["SeedCreator"] = "RandStrobeCreator";
 	
@@ -130,15 +125,12 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 
 void ConfigGenerator::add_number_of_samples_config(std::string output_path, Json::Value config)
 {
-	// std::cout << "number_of_samples" << std::endl;
 	output_path += "_" + std::to_string(number_of_samples) + ".json";
 	config["NumberOfSamples"] = number_of_samples;
 	Json::StyledWriter writer;
 
 	std::ofstream file(output_path);
-	// std::cout << "before write" << std::endl;
 	file << writer.write(config);
-	// std::cout << "after write" << std::endl;
 	file.close();
 }
 

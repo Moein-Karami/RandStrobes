@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o"
   "CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/SeedCreator.cpp.o"
-  "build/libRandStrobeCreators.pdb"
   "build/libRandStrobeCreators.a"
+  "build/libRandStrobeCreators.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
