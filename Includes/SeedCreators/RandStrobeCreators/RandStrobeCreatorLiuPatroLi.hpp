@@ -13,7 +13,6 @@ class RandStrobeCreatorLiuPatroLi : public RandStrobeCreator
 		uint64_t get_score(uint64_t curr_hash,uint64_t first_ind, uint64_t last_ind);
         uint64_t get_hash_concat(uint64_t kmer1, uint64_t kmer2);
 		uint64_t get_first_hash(size_t ind);
-		uint64_t get_new_curr_hash(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind);
 };
 
 #endif

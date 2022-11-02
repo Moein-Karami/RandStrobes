@@ -6,17 +6,12 @@ RandStrobeCreatorXorVar::RandStrobeCreatorXorVar(Hasher* hasher, Comparator* com
 {
 }
 
-uint64_t RandStrobeCreatorXorVar::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorXorVar::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
 {
-	return hasher->hash(curr_hash ^ kmers[ind2]);
+	return hasher->hash(curr_hash ^ kmers[last_ind]);
 }
 
 uint64_t RandStrobeCreatorXorVar::get_first_hash(size_t ind)
 {
     return kmers[ind];
-}
-
-uint64_t RandStrobeCreatorXorVar::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
-{
-	return hasher->hash(hashes[ind1]) ^ hasher->hash(hashes[ind2]);;
 }

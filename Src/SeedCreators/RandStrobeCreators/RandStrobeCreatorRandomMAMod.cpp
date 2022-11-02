@@ -6,16 +6,11 @@ RandStrobeCreatorRandomMAMod::RandStrobeCreatorRandomMAMod(Hasher* hasher, Compa
 {
 }
 
-uint64_t RandStrobeCreatorRandomMAMod::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorRandomMAMod::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
 {
 	Int128 tmp;
 	tmp.high = curr_hash;
-	tmp.low = hashes[ind2];
+	tmp.low = hashes[last_ind];
 	uint64_t p = hasher->hash(&tmp, sizeof(tmp));
-	return (curr_hash % p + hashes[ind2] % p) % p;
-}
-
-uint64_t RandStrobeCreatorRandomMAMod::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
-{
-	return hasher->hash(hashes[ind1]) ^ hasher->hash(hashes[ind2]);;
+	return (curr_hash % p + hashes[last_ind] % p) % p;
 }

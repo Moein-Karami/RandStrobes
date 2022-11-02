@@ -24,8 +24,3 @@ uint64_t RandStrobeCreatorLiuPatroLi::get_first_hash(size_t ind)
 {
     return kmers[ind];
 }
-
-uint64_t RandStrobeCreatorLiuPatroLi::get_new_curr_hash(uint64_t curr_hash, size_t first_ind, size_t last_ind)
-{
-	return hasher->hash(hashes[first_ind]) ^ hasher->hash(hashes[last_ind]);
-}
