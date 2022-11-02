@@ -11,7 +11,7 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK, uint64_t p = DEFAULT_P);
 		
 	protected:
-		uint64_t get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind);
+		uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
 		std::vector<Seed*> create_seeds();
 		std::vector<Seed*> create_seeds_min();
 		std::vector<Seed*> create_seeds_max();

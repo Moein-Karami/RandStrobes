@@ -6,9 +6,9 @@ RandStrobeCreatorXorVar::RandStrobeCreatorXorVar(Hasher* hasher, Comparator* com
 {
 }
 
-uint64_t RandStrobeCreatorXorVar::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
+uint64_t RandStrobeCreatorXorVar::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-	return hasher->hash(curr_hash ^ kmers[last_ind]);
+	return hasher->hash(curr_hash ^ kmers[new_strobe_pos]);
 }
 
 uint64_t RandStrobeCreatorXorVar::get_first_hash(size_t ind)

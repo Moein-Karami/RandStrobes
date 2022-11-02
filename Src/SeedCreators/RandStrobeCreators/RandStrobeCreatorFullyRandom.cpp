@@ -51,7 +51,7 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 	return seeds;
 }
 
-uint64_t RandStrobeCreatorFullyRandom::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorFullyRandom::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
 	return 0;
 }

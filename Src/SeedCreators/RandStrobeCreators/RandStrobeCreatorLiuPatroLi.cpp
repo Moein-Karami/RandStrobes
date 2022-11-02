@@ -14,9 +14,9 @@ uint64_t RandStrobeCreatorLiuPatroLi::get_hash_concat(uint64_t kmer1, uint64_t k
     return hasher->hash(&strobeconcat, sizeof(strobeconcat));
 }
 
-uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
+uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-    uint64_t score = get_hash_concat(curr_hash, kmers[last_ind]);
+    uint64_t score = get_hash_concat(curr_hash, kmers[new_strobe_pos]);
 	return score;
 }
 

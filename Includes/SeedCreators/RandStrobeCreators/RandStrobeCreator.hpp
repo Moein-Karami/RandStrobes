@@ -25,7 +25,7 @@ class RandStrobeCreator : public SeedCreator
 		uint64_t mask;
 		uint32_t n;
 		Comparator* comparator;
-		virtual uint64_t get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind) = 0;
+		virtual uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos) = 0;
 		virtual void prepare_data();
 		uint32_t get_char_code(char c);
 		virtual std::vector<Seed*> create_seeds();

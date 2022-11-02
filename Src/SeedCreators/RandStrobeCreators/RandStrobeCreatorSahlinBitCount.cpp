@@ -6,7 +6,7 @@ RandStrobeCreatorSahlinBitCount::RandStrobeCreatorSahlinBitCount(Hasher* hasher,
 {
 }
 
-uint64_t RandStrobeCreatorSahlinBitCount::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
+uint64_t RandStrobeCreatorSahlinBitCount::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-	return __builtin_popcountll(curr_hash ^ hashes[last_ind]);
+	return __builtin_popcountll(curr_hash ^ hashes[new_strobe_pos]);
 }

@@ -6,7 +6,7 @@ RandStrobeCreatorFastMAXor::RandStrobeCreatorFastMAXor(Hasher* hasher, Comparato
 {
 }
 
-uint64_t RandStrobeCreatorFastMAXor::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
+uint64_t RandStrobeCreatorFastMAXor::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
 	return -1;
 }

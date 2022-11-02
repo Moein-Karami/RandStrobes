@@ -6,7 +6,7 @@ RandStrobeCreatorGuoPibri::RandStrobeCreatorGuoPibri(Hasher* hasher, Comparator*
 {
 }
 
-uint64_t RandStrobeCreatorGuoPibri::get_score(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind)
+uint64_t RandStrobeCreatorGuoPibri::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-	return (curr_hash ^ hashes[last_ind]);
+	return (curr_hash ^ hashes[new_strobe_pos]);
 }
