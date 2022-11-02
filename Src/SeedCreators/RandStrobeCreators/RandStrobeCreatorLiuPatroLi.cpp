@@ -8,14 +8,6 @@ RandStrobeCreatorLiuPatroLi::RandStrobeCreatorLiuPatroLi(Hasher* hasher, Compara
 
 uint64_t RandStrobeCreatorLiuPatroLi::get_hash_concat(uint64_t kmer1, uint64_t kmer2)
 {
-    // if(kmer_len * 2 <= 64)
-    // {
-    //     return hasher->hash(kmer1 << kmer_len + kmer2);
-    // }
-    // uint64_t arr_concat[2];
-    // arr_concat[0] = kmer1 + kmer2 >> (64 - kmer_len);
-    // arr_concat[1] = kmer2 << (64 - kmer_len);
-    // return hasher->hash(&arr_concat, kmer_len * 2);
     Int128 strobeconcat;
     strobeconcat.high = kmer1;
     strobeconcat.low = kmer2;
@@ -25,12 +17,15 @@ uint64_t RandStrobeCreatorLiuPatroLi::get_hash_concat(uint64_t kmer1, uint64_t k
 uint64_t  RandStrobeCreatorLiuPatroLi::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
     uint64_t score = get_hash_concat(curr_hash, kmers[ind2]);
-    // std::cout << "res for " << ind1 <<" " <<ind2 << " = " << score<<std::endl;
-    
 	return score;
 }
 
 uint64_t RandStrobeCreatorLiuPatroLi::get_first_hash(size_t ind)
 {
     return kmers[ind];
+}
+
+uint64_t RandStrobeCreatorLiuPatroLi::get_value_to_choose_third_strobe(uint64_t curr_hash, size_t ind1, size_t ind2)
+{
+	return hasher->hash(hashes[ind1]) ^ hasher->hash(hashes[ind2]);
 }

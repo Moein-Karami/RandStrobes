@@ -13,5 +13,5 @@ uint64_t RandStrobeCreatorGuoPibri::get_score(uint64_t curr_hash, uint64_t ind1,
 
 uint64_t RandStrobeCreatorGuoPibri::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
-	return hasher->hash((curr_hash + hashes[ind2]));
+	return hasher->hash(hashes[ind1]) ^ hasher->hash(hashes[ind2]);
 }

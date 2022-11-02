@@ -18,5 +18,5 @@ uint64_t RandStrobeCreatorMAXor::get_score(uint64_t curr_hash, uint64_t ind1, ui
 
 uint64_t RandStrobeCreatorMAXor::get_new_curr_hash(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
 {
-	return curr_hash ^ hashes[ind2];
+	return hasher->hash(hashes[ind1]) ^ hasher->hash(hashes[ind2]);;
 }
