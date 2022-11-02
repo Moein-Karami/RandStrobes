@@ -467,7 +467,7 @@ vector<Sample*> build_samples(CsvFile* csv_result, CsvFile* csv_header)
     vector<Sample*> ans;
     Sample* new_sample;
 
-    for(int i = 0; i < col_samples.size(); i++)
+    for(int i = 0; i < col_samples[0].size(); i++)
     {
         new_sample = new Sample(i + 1, csv_result);
         ans.push_back(new_sample);
@@ -582,20 +582,20 @@ vector<string> build_name_cols(int num_kmer, bool is_median)
 {
     vector<string> name_cols{"HashMethod","RandStrobeMethod", "TimeofExecution"};
 
-    name_cols.push_back("E-hits-kmer2 positions");
+    name_cols.push_back("E-hits strobe2 positions");
     if(num_kmer == 3)
-        name_cols.push_back("E-hits-kmer3 postions");
-    name_cols.push_back("E-hits position distance kmer2 and kmer1");
+        name_cols.push_back("E-hits strobe3 postions");
+    name_cols.push_back("E-hits distance between strobe2 and strobe1");
     if(num_kmer == 3)
     {
-        name_cols.push_back("E-hits postion distance between kmer3 and kmer1");
-        name_cols.push_back("E-hits postion distance between kmer3 and kmer2");
+        name_cols.push_back("E-hits distance between strobe3 and strobe1");
+        name_cols.push_back("E-hits distance between strobe3 and strobe2");
     }
 
-    name_cols.push_back("Unique kmer2 postions");
+    name_cols.push_back("Unique strobe2 postions");
     if(num_kmer == 3)
     {
-        name_cols.push_back("Unique kmer3 position");
+        name_cols.push_back("Unique strobe3 position");
     }
     name_cols.push_back("Unique Strobmers");
     name_cols.push_back("Conflicts");
