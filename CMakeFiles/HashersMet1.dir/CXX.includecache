@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/HashMethodes/index.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/index.cpp
 index.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/HashMethodes/index.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/index.hpp
 iostream
 -
 math.h
@@ -16,9 +16,9 @@ math.h
 bitset
 -
 xxhash.h
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/HashMethodes/xxhash.h
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/xxhash.h
 wyhash.h
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/HashMethodes/wyhash.h
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/HashMethodes/wyhash.h
 
 Includes/Hashers/HashMethodes/index.hpp
 stdio.h

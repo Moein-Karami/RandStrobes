@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/DataStoringClasses/Strobe.cpp
-Strobe.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/DataStoringClasses/Strobe.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp
+Strobemer.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
 
-Includes/DataStoringClasses/Seed/Strobe.hpp
+Includes/DataStoringClasses/Seed/Strobemer.hpp
 Seed.hpp
 Includes/DataStoringClasses/Seed/Seed.hpp
 

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/Hasher.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/Hasher.cpp
 Hasher.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/Hasher.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/Hasher.hpp
 
 Includes/Hashers/Hasher.hpp
 LibrariesAndDefines.hpp

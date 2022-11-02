@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
 WyHash.hpp
-/mnt2/Moein-K/Sahlin/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
 
 Includes/Hashers/HashMethodes/wyhash.h
 stdint.h

@@ -77,24 +77,24 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		strobemer = new Strobemer();
-		strobe->add_kmer(i, kmers[i]);
+		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
 		{
 			best_choose = i + w_min + (j - 1) * w_max;
-			best_value = get_score(curr_hash, i, best_choose);
+			best_value = get_score(curr_hash, best_choose);
 			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
-				if (comparator->is_first_better(get_score(curr_hash, i, q), best_value))
+				if (comparator->is_first_better(get_score(curr_hash, q), best_value))
 				{
 					best_choose = q;
-					best_value = get_score(curr_hash, i, q);
+					best_value = get_score(curr_hash, q);
 				}
 			}
-			strobe->add_kmer(best_choose, kmers[best_choose]);
+			strobemer->add_kmer(best_choose, kmers[best_choose]);
 			curr_hash = get_new_curr_hash(strobemer);
 		}
-		strobe->set_final_hash(get_final_hash(strobemer));
+		strobemer->set_final_hash(get_final_hash(strobemer));
 		seeds.push_back(strobemer);
 	}
 	return seeds;

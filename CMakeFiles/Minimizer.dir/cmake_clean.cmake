@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o"
-  "build/libMinimizer.pdb"
   "build/libMinimizer.a"
+  "build/libMinimizer.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

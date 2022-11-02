@@ -38,7 +38,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		strobemer = new Strobemer();
-		strobe->add_kmer(i, kmers[i]);
+		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
 		{
@@ -50,7 +50,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 				if ((tmp.first + curr_hash) % p > (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
-			strobe->add_kmer(tmp.second, kmers[tmp.second]);
+			strobemer->add_kmer(tmp.second, kmers[tmp.second]);
 			curr_hash = get_new_curr_hash(strobemer) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
@@ -96,8 +96,8 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 				if ((tmp.first + curr_hash) % p < (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
-			strobe->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
-			curr_hash = get_new_curr_hash(strobe) % p;
+			strobemer->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
+			curr_hash = get_new_curr_hash(strobemer) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], maximal_uint - (i + w_min + (j - 1) * w_max)));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));

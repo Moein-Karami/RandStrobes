@@ -8,5 +8,5 @@ RandStrobeCreatorMAXorVar::RandStrobeCreatorMAXorVar(Hasher* hasher, Comparator*
 
 uint64_t RandStrobeCreatorMAXorVar::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-	return hasher->hash(curr_hash ^ hashes[ind2]);
+	return hasher->hash(curr_hash ^ hashes[new_strobe_pos]);
 }

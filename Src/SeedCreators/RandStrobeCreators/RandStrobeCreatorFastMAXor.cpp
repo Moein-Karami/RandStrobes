@@ -32,12 +32,12 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		strobemer = new Strobemer();
-		strobe->add_kmer(i, kmers[i]);
+		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
 		{
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
-			strobe->add_kmer(best_choose, kmers[best_choose]);
+			strobemer->add_kmer(best_choose, kmers[best_choose]);
 			curr_hash = get_final_hash(strobemer);
 			nodes[j]->remove(i + w_min + (j - 1) * w_max, hashes[i + w_min + (j - 1) * w_max]);
 			if (i + j * w_max + 1 < hashes.size())
