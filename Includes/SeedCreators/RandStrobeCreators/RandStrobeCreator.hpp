@@ -30,7 +30,7 @@ class RandStrobeCreator : public SeedCreator
 		uint32_t get_char_code(char c);
 		virtual std::vector<Seed*> create_seeds();
 		virtual uint64_t get_first_hash(size_t ind);
-		virtual uint64_t get_new_curr_hash(uint64_t curr_hash, uint64_t first_ind, uint64_t last_ind);
+		virtual uint64_t get_final_hash(const Strobe* strobe);
 };
 
 #endif

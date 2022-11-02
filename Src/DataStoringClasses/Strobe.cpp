@@ -27,3 +27,7 @@ std::string Strobe::to_string()
 	return res;
 }
 
+void Strobe::set_final_hash(uint64_t hash)
+{
+	final_hash = hash;
+}

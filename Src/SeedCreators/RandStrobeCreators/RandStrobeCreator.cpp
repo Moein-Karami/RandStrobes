@@ -92,9 +92,9 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 				}
 			}
 			strobe->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = get_new_curr_hash(curr_hash, i, best_choose);
+			curr_hash = get_final_hash(strobe);
 		}
-		
+		strobe->set_final_hash(curr_hash);
 		seeds.push_back(strobe);
 	}
 	return seeds;
@@ -110,7 +110,10 @@ void RandStrobeCreator::prepare_data()
 	/* Do nothing */
 }
 
-uint64_t RandStrobeCreator::get_new_curr_hash(uint64_t curr_hash, size_t first_ind, size_t last_ind)
+uint64_t RandStrobeCreator::get_final_hash(const Strobe* strobe)
 {
-	return hasher->hash(curr_hash) ^ hasher->hash(hashes[last_ind]);
+	uint64_t final_hash = 0;
+	for (auto pos : strobe->positions)
+		final_hash ^= hasher->hash(hashes[pos]);
+	return final_hash;
 }

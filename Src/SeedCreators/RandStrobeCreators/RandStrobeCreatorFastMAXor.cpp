@@ -38,7 +38,7 @@ std::vector<Seed*> RandStrobeCreatorFastMAXor::create_seeds()
 		{
 			best_choose = nodes[j]->get_best_ind(curr_hash, cmp);
 			strobe->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = hasher->hash(curr_hash) ^ hasher->hash(hashes[best_choose]);
+			curr_hash = get_final_hash(strobe);
 			nodes[j]->remove(i + w_min + (j - 1) * w_max, hashes[i + w_min + (j - 1) * w_max]);
 			if (i + j * w_max + 1 < hashes.size())
 				nodes[j]->add(i + j * w_max + 1, hashes[i + j * w_max + 1]);
