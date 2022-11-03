@@ -10,7 +10,7 @@
 #include "RandomDataGenerator.hpp"
 #include "FromFileDataGenerator.hpp"
 
-#include "Strobe.hpp"
+#include "Strobemer.hpp"
 
 #include "WyHash.hpp"
 #include "XXHash.hpp"
@@ -30,7 +30,7 @@
 #include "RandStrobeCreatorMAXor.hpp"
 #include "RandStrobeCreatorRandomMAMod.hpp"
 #include "RandStrobeCreatorFullyRandom.hpp"
-
+#include "RandStrobeCreatorMAXorVar.hpp"
 
 #include "json-forwards.h"
 #include "json.h"

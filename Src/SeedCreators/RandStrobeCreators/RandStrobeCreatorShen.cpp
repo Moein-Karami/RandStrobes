@@ -7,12 +7,7 @@ RandStrobeCreatorShen::RandStrobeCreatorShen(Hasher* hasher, Comparator* compara
 {
 }
 
-uint64_t RandStrobeCreatorShen::get_score(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorShen::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-	return (curr_hash + hashes[ind2]) & q;
-}
-
-uint64_t RandStrobeCreatorShen::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
-{
-	return hasher->hash(curr_hash ^ hashes[ind2]);
+	return (curr_hash + hashes[new_strobe_pos]) & q;
 }

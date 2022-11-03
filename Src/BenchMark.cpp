@@ -31,9 +31,7 @@ Hasher* BenchMark::create_hasher(Json::Value config)
 			return new NoHash();
 		else if (config["HasherConfig"]["method"].asString() == "ThomasWangHash")
 		{
-			// std::cout << "kmer_len: " << config["SeedCreatorConfig"]["kmer_len"].asUInt64() << std::endl;
 			uint64_t mask = (1LL <<2*config["SeedCreatorConfig"]["kmer_len"].asUInt()) - 1;
-			// std::cout << "Mask: " << mask << std::endl;
 			if (!config["HasherConfig"]["mask"].isNull())
 				mask = config["HasherConfig"]["mask"].asUInt64();
 			return new ThomasWangHash(mask);
@@ -104,6 +102,8 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 			return new RandStrobeCreatorMAXor(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "RandomMAMod")
 			return new RandStrobeCreatorRandomMAMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
+		else if (config["SeedCreatorConfig"]["method"].asString() == "MAXorVar")
+			return new RandStrobeCreatorMAXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 
 	}
 	return NULL;
@@ -112,11 +112,8 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 void BenchMark::run(Json::Value config, std::string output_path)
 {
 	ResultPrinter* result_printer = new ResultPrinter(output_path, config["SeedCreatorConfig"]["n"].asUInt());
-	// std::cout << "Start Run" << std::endl << std::endl;
 	DataGenerator* data_generator = create_data_generator(config);
-	// std::cout << "Data Generator created" << std::endl << std::endl;
 	SeedCreator* seed_creator = create_seed_creator(config);
-	// std::cout << "Seed Creator created" << std::endl << std::endl;
 	std::vector<uint64_t> durations;
 	std::vector<int> seeds_size;
 
@@ -124,16 +121,9 @@ void BenchMark::run(Json::Value config, std::string output_path)
 
 	for (int i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
 	{
-		//std::cout << "start sampling" << std::endl;
-
 		std::string seq = data_generator->get_data();
 		length_of_sequence = seq.size();
-		// std::cout << "********************Seq: " << seq << std::endl;
-
 		std::vector<Seed*> seeds;
-		
-		//std::cout << "data generated : " << seq << std::endl << std::endl;
-
 		auto start_time = std::chrono::high_resolution_clock::now();
 		seeds = seed_creator->create_seeds(seq);
 		auto finish_time = std::chrono::high_resolution_clock::now();
@@ -146,7 +136,6 @@ void BenchMark::run(Json::Value config, std::string output_path)
 			delete(seeds[j]);
 		}
 	}
-	// std::cout << "creating seeds is done " << std::endl;
 
 	result_printer->print(durations, seeds_size, output_path, 
 		config["SeedCreatorConfig"]["n"].asUInt(), config["SeedCreatorConfig"]["kmer_len"].asUInt64()
@@ -154,23 +143,16 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		, config["SeedCreatorConfig"]["mask"].asUInt64(), config["SeedCreatorConfig"]["method"].asString()
 		, config["HasherConfig"]["method"].asString(), config["Comparator"].asString() 
 		, length_of_sequence);
-	
-	// std::cout << "job done " << std::endl;
 
 	delete(data_generator);
 	delete(seed_creator);
 	delete(result_printer);
-
-	// std::cout << "memmory fixed" << std::endl;
 }
 
 int32_t main(int argc, char* argv[])
 {
-	// std::cout << "Start" << std::endl;
-
 	if (argc != 3)
 	{
-		// std::cout << "Wrong Inputs" << std::endl;
 		return 0;
 	}
 
@@ -186,8 +168,6 @@ int32_t main(int argc, char* argv[])
 	
 	BenchMark benchmark;
 	std::string output_path(argv[2]);
-
-	// std::cout << "Benchmark started" << std::endl;
 
 	benchmark.run(vals, output_path);
 }

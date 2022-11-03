@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o"
-  "build/libJson.pdb"
   "build/libJson.a"
+  "build/libJson.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -12,7 +12,7 @@ void RandStrobeCreatorSpecialCaseFixedShen::prepare_data()
 		hashes[i] &= q;
 }
 
-uint64_t RandStrobeCreatorSpecialCaseFixedShen::get_value_to_choose_third_strobe(uint64_t curr_hash, uint64_t ind1, uint64_t ind2)
+uint64_t RandStrobeCreatorSpecialCaseFixedShen::get_new_curr_hash(const Strobemer* strobemer)
 {
-	return hasher->hash(hasher->hash(kmers[ind1]) ^ hasher->hash(kmers[ind2])) & q;
+	return get_final_hash(strobemer) & q;
 }
