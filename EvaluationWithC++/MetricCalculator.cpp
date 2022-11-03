@@ -10,9 +10,12 @@ class Seed
         void print();
         int get_kmer(int index_num);
         string get_hash();
+        string get_final_hash();
+        void add_final_hash(string final_hash_input);
     private:
         vector<int> kmers;
         vector<string> hashes;
+        string final_hash;
         int sample_id;
 };
 
@@ -67,6 +70,7 @@ class Sample
     private:
         double calculate_ehits_kmers(int num_kmer);
         double calculate_ehits_distance(int num_kmer1, int num_kmer2);
+        int calculate_unique_final_hashes();
         int calculate_unique_kmers(int num_kmer);
         int calculate_unique_hashes();
         double calculate_conflicts();
@@ -90,6 +94,8 @@ class Sample
         string seed_generator_method;
         string hash_method;
         double conflicts;
+        double ratio_final_hash;
+        int unique_final_hash;
         CsvFile* csv_file;
 };
 
@@ -106,6 +112,10 @@ vector<Seed*> CsvFile::input_seeds(int num_seeds)
     return ans;
 }
 
+void Seed::add_final_hash(string final_hash_input)
+{
+    final_hash = final_hash_input;
+}
 
 void Seed::add_kmer(string new_kmer)
 {
@@ -130,6 +140,11 @@ int Sample::get_n()
 void Seed::add_hash(string new_hash)
 {
     hashes.push_back(new_hash);
+}
+
+string Seed::get_final_hash()
+{
+    return final_hash;
 }
 
 string Seed::get_hash()
@@ -188,13 +203,14 @@ Seed* CsvFile::get_new_seed()
     file_stream >> new_line;
     vector<string> parsed_string = parse_new_line(new_line);
     Seed* new_seed = new Seed();
-    for(int i = 0; i < parsed_string.size(); i++)
+    for(int i = 0; i < (int)parsed_string.size() - 2; i++)
     {
         if(i % 2 == 0)
             new_seed->add_kmer(parsed_string[i]);
         else 
             new_seed->add_hash(parsed_string[i]);
     }
+    new_seed->add_final_hash(parsed_string[(int)parsed_string.size() - 2]);
     return new_seed;
 }
 
@@ -236,8 +252,26 @@ void Sample::evaluate_sample()
     cout << "Calculate ehits hashes" << endl;
     for(int i = 0; i < seeds.size(); i++)
         delete seeds[i];
+    unique_final_hash = calculate_unique_final_hashes();
+    ratio_final_hash = (double)unique_final_hash / (double)unique_hashes;
     seeds.clear();
     cout << "Seeds deleted" << endl;
+}
+
+int Sample::calculate_unique_final_hashes()
+{
+    map<string, bool> mark_strobe;
+    int ans = 0;
+    for(int i = 0; i < seeds.size(); i++)
+    {
+        string now_strobe = seeds[i]->get_final_hash();
+        if(!mark_strobe[now_strobe])
+        {
+            mark_strobe[now_strobe] = 1;
+            ans++;
+        }
+    }
+    return ans;
 }
 
 double Sample::calculate_ehits_hashes()
@@ -567,11 +601,10 @@ void Sample::write_in_file(CsvWriter* csv_all_sample, bool is_median)
     csv_all_sample->write_word(conflicts, 1);
     for(int i = 0; i < ehits_hashes.size(); i++)
     {
-        bool is_comma = 1;
-        if(i == (int)ehits_hashes.size() - 1 && is_median)
-            is_comma = 0;
-        csv_all_sample->write_word(ehits_hashes[i], is_comma);
+        csv_all_sample->write_word(ehits_hashes[i], 1);
     }
+    csv_all_sample->write_word(unique_final_hash, 1);
+    csv_all_sample->write_word(ratio_final_hash, 1);
     if(!is_median)
         csv_all_sample->write_word(sample_id, 0);
     csv_all_sample->new_line(); 
@@ -582,24 +615,26 @@ vector<string> build_name_cols(int num_kmer, bool is_median)
 {
     vector<string> name_cols{"HashMethod","RandStrobeMethod", "TimeofExecution"};
 
-    name_cols.push_back("E-hits strobe2 positions");
+    name_cols.push_back("E-hits of strobe2 positions");
     if(num_kmer == 3)
-        name_cols.push_back("E-hits strobe3 postions");
-    name_cols.push_back("E-hits distance between strobe2 and strobe1");
+        name_cols.push_back("E-hits of strobe3 postions");
+    name_cols.push_back("E-hits of distance between strobe2 and strobe1");
     if(num_kmer == 3)
     {
-        name_cols.push_back("E-hits distance between strobe3 and strobe1");
-        name_cols.push_back("E-hits distance between strobe3 and strobe2");
+        name_cols.push_back("E-hits of distance between strobe3 and strobe1");
+        name_cols.push_back("E-hits of distance between strobe3 and strobe2");
     }
 
-    name_cols.push_back("Unique strobe2 postions");
+    name_cols.push_back("Number of unique strobe2 postions");
     if(num_kmer == 3)
     {
-        name_cols.push_back("Unique strobe3 position");
+        name_cols.push_back("Number of unique strobe3 position");
     }
-    name_cols.push_back("Unique Strobmers");
+    name_cols.push_back("Number of unique Strobmers");
     name_cols.push_back("Conflicts");
     name_cols.push_back("E-hits Unique Strobmers");
+    name_cols.push_back("Number of unique final seed hash values");
+    name_cols.push_back("ratio between unique final seed hash value and number of unique strobmers");
     if(!is_median)
         name_cols.push_back("Sample");
     return name_cols;
@@ -680,6 +715,8 @@ void Sample::add_all_data(vector< vector<double> >& all_data)
     {
         add_new_num(all_data, pnt, ehits_hashes[i]);
     }
+    add_new_num(all_data, pnt, unique_final_hash);
+    add_new_num(all_data, pnt, ratio_final_hash);
 }
 
 double find_median(vector<double>& vec_inp)

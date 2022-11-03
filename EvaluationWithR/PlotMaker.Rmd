@@ -54,6 +54,7 @@ for(file_now in all_files)
   path_now = paste("../EvaluationResults/MedianSamples/", file_now, sep = "")
   print(path_now)
   new_csv <- read.csv(path_now)
+  print(ncol(new_csv))
   if(cnt == 1)
   {
     data_all_methods <- new_csv
@@ -62,10 +63,10 @@ for(file_now in all_files)
     data_all_methods <- rbind(data_all_methods, new_csv)
   }
   cnt <- cnt + 1
+  print(cnt)
 }
 
 data_all_methods <- data_all_methods[!grepl('FixedSahlinMod', data_all_methods$RandStrobeMethod),]
-data_all_methods <- data_all_methods[!grepl('FullyRandom', data_all_methods$RandStrobeMethod),]
 data_all_methods <- data_all_methods[!grepl('MAXor', data_all_methods$RandStrobeMethod),]
 data_all_methods <- data_all_methods[!grepl('MAXorVar', data_all_methods$RandStrobeMethod),]
 data_all_methods <- data_all_methods[!grepl('RandomMAMod', data_all_methods$RandStrobeMethod),]
@@ -111,13 +112,29 @@ data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"]
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MAMD")
 data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "\u2113_{MAMD}"
 
+data_all_methods2 <- data_all_methods[!grepl('FullyRandom', data_all_methods$RandStrobeMethod),]
+
 deleted <- c('HashMethod', 'RandStrobeMethod')
 new_data <- data_all_methods
+new_data2 <- data_all_methods2
 new_data$Sample <- NULL
 new_data$RandStrobeMethod <- NULL
 new_data$HashMethod <- NULL
+new_data2$Sample <- NULL
+new_data2$RandStrobeMethod <- NULL
+new_data2$HashMethod <- NULL
 for(i in 1:ncol(new_data))
 {
+  temp <- data_all_methods
+  temp2 <- new_data
+  print(names(new_data)[i])
+  if(names(new_data)[i] == "TimeofExecution" || names(new_data)[i] == "Number.of.unique.Strobmers"||
+     names(new_data)[i] == "Number.of.unique.final.seed.hash.values"||
+     names(new_data)[i] == "ratio.between.unique.final.seed.hash.value.and.number.of.unique.strobmers")
+  {
+    data_all_methods <- data_all_methods2
+    new_data <- new_data2
+  }
   col_now <- data_all_methods[, names(new_data)[i]]
   sorted_data <- data_all_methods[order(col_now), ]
   file_name <- paste("../EvaluationResults/MetricsSortedByMethods/", names(new_data)[i], ".csv",sep = "")
@@ -127,8 +144,13 @@ for(i in 1:ncol(new_data))
 
   write.csv(sorted_data, file_name, row.names = FALSE)
   normalized_by = new_data[1, i]
-  new_data[, i] <- new_data[, i] / normalized_by
-
+  print(names(new_data)[i])
+  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers"&&
+     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
+     names(new_data)[i] != "ratio.between.unique.final.seed.hash.value.and.number.of.unique.strobmers")
+  {
+      new_data[, i] <- new_data[, i] / normalized_by
+  }
   #print(names(new_data)[i])
   plot_now <- ggplot(data_all_methods,
          aes(fill =  RandStrobeMethod, y = new_data[, i], x = HashMethod)
@@ -151,9 +173,14 @@ theme(legend.text.align = 0)
   name_now <- names(new_data)[i]
   name_now <- create_name_file(name_now)
 
-  plot_now <- plot_now + labs(title = paste(name_now, added_str),
+  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers"&&
+     names(new_data)[i] != "Number.of.unique.final.seed.hash.values"&&
+     names(new_data)[i] != "ratio.between.unique.final.seed.hash.value.and.number.of.unique.strobmers")
+    plot_now <- plot_now + labs(title = paste(name_now, added_str),
               x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
-  
+  else 
+      plot_now <- plot_now + labs(title = paste(name_now, added_str),
+              x = "Hashes", y =  name_now)
   
   png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=3000, height= 3000)
   print(plot_now)
@@ -161,6 +188,8 @@ theme(legend.text.align = 0)
   ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
           plot = plot_now, width = 45, height = 30
 )
+  data_all_methods <- temp
+  new_data <- temp2
 }
   #row.names(data_all_methods) <- data_all_methods$RandStrobeMethod
 #print(data_all_methods)
