@@ -20,6 +20,7 @@ ResultPrinter::ResultPrinter(std::string output_path, int n)
 			output_csv << ",";
 		else 
 		{
+			output_csv << "," << "FinalHash";
 			output_csv << "," << "Sample";
 			output_csv << std::endl;
 		}

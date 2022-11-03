@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libMinimizer.a  CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o
+/usr/bin/ar qc build/libMinimizer.a CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o
 /usr/bin/ranlib build/libMinimizer.a
