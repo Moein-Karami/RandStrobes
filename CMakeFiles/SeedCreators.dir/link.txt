@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libSeedCreators.a  CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
+/usr/bin/ar qc build/libSeedCreators.a CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
 /usr/bin/ranlib build/libSeedCreators.a

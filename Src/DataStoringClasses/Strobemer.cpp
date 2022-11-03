@@ -23,6 +23,8 @@ std::string Strobemer::to_string()
 		res += std::to_string(positions[i]) + ',' + std::to_string(kmers_hash[i]);
 		res += ",";
 	}
+
+	res += (std::to_string(final_hash) + ",");
 	
 	return res;
 }
