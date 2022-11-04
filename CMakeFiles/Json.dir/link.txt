@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libJson.a CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o
+/usr/bin/ar qc build/libJson.a  CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o
 /usr/bin/ranlib build/libJson.a

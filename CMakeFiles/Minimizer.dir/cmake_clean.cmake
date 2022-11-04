@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o"
-  "CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o.d"
   "build/libMinimizer.a"
   "build/libMinimizer.pdb"
 )
