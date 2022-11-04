@@ -6,6 +6,7 @@ cmake_install.cmake
 CMakeCache.txt
 CMakeFiles/*
 ConfigFiles/*
+ChosenConfigs/*
 *.json
 *.csv
 *.png
@@ -13,3 +14,7 @@ ConfigFiles/*
 *.fa
 *.pdf
 *.zip
+*.html
+build/*
+CreatedSequences/*
+*.out
