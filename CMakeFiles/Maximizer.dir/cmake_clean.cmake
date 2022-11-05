@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Maximizer.dir/Src/Comparators/Maximizer.cpp.o"
+  "CMakeFiles/Maximizer.dir/Src/Comparators/Maximizer.cpp.o.d"
   "build/libMaximizer.a"
   "build/libMaximizer.pdb"
 )

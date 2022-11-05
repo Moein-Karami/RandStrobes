@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libResultPrinter.a  CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o
+/usr/bin/ar qc build/libResultPrinter.a CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o
 /usr/bin/ranlib build/libResultPrinter.a
