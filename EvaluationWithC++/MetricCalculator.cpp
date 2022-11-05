@@ -250,10 +250,10 @@ void Sample::evaluate_sample()
     cout << "Calculate Conflicts" << endl;
     ehits_hashes.push_back(calculate_ehits_hashes());
     cout << "Calculate ehits hashes" << endl;
-    for(int i = 0; i < seeds.size(); i++)
-        delete seeds[i];
     unique_final_hash = calculate_unique_final_hashes();
     ratio_final_hash = (double)unique_final_hash / (double)unique_hashes;
+    for(int i = 0; i < seeds.size(); i++)
+        delete seeds[i];
     seeds.clear();
     cout << "Seeds deleted" << endl;
 }
