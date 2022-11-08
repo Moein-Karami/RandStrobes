@@ -15,6 +15,8 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 		std::vector<Seed*> create_seeds();
 		std::vector<Seed*> create_seeds_min();
 		std::vector<Seed*> create_seeds_max();
+		uint64_t get_final_hash(const Strobemer* strobemer);
+		uint64_t get_new_curr_hash(const Strobemer* strobemer);
 		uint64_t p;
 };
 

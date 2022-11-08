@@ -112,3 +112,16 @@ uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t new_stro
 {
 	return NULL;
 }
+
+uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
+{
+	uint64_t final_hash = 0;
+	for (auto pos : strobemer->positions)
+		final_hash ^= hasher->hash(hasher->hash(kmers[pos]));
+	return final_hash;
+}
+
+uint64_t RandStrobeCreatorMAMod::get_new_curr_hash(const Strobemer* strobemer)
+{
+	return get_final_hash(strobemer);
+}
