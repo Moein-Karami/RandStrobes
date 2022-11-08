@@ -9,7 +9,7 @@ do
 	name+=".csv"
 	echo "$config"
 	echo "$name"
-	# ./RandStrobes.out "$config" "$name"
+	./RandStrobes.out "$config" "$name"
 	echo "RandStrobes are created"
 	# sleep 1
 	# R -e "path_kmer_file='$name'; path_output_file='$name'; rmarkdown::render('EvaluationWithR/MetricsEvaluation.Rmd')"

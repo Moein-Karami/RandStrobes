@@ -110,7 +110,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 
 uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
-	return NULL;
+	return -1;
 }
 
 uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
