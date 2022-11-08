@@ -130,6 +130,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
 		durations.push_back(duration.count());
 		seeds_size.push_back(seeds.size());
+		
 		for(int j = 0; j < seeds.size(); j++)
 		{
 			result_printer->add_seed(seeds[j], i);
