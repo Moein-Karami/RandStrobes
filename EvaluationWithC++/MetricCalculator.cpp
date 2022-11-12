@@ -68,6 +68,7 @@ class Sample
         string get_hash();
         string get_seed_method();
     private:
+        double calculate_ehits_final_hashes();
         double calculate_ehits_kmers(int num_kmer);
         double calculate_ehits_distance(int num_kmer1, int num_kmer2);
         int calculate_unique_final_hashes();
@@ -94,6 +95,7 @@ class Sample
         string seed_generator_method;
         string hash_method;
         double conflicts;
+        double ehits_final_hash;
         double ratio_final_hash;
         int unique_final_hash;
         CsvFile* csv_file;
@@ -252,6 +254,7 @@ void Sample::evaluate_sample()
     cout << "Calculate ehits hashes" << endl;
     unique_final_hash = calculate_unique_final_hashes();
     ratio_final_hash = (double)unique_final_hash / (double)unique_hashes;
+    ehits_final_hash = calculate_ehits_final_hashes();
     for(int i = 0; i < seeds.size(); i++)
         delete seeds[i];
     seeds.clear();
@@ -282,6 +285,28 @@ double Sample::calculate_ehits_hashes()
     for(int i = 0; i < seeds.size(); i++)
     {
         string now_strobe = seeds[i]->get_hash();
+        if(!cnt_strobe[now_strobe])
+        {
+            hash_strs.push_back(now_strobe);
+        }
+        cnt_strobe[now_strobe]++;
+    }
+    for(int i = 0; i < hash_strs.size(); i++)
+    {
+        ans += (uint64_t)cnt_strobe[hash_strs[i]] * (uint64_t)cnt_strobe[hash_strs[i]];
+    }
+    int sz = seeds.size();
+    return (double)ans / (double)sz;
+}
+
+double Sample::calculate_ehits_final_hashes()
+{
+    vector<string> hash_strs;
+    map<string, int> cnt_strobe;
+    uint64_t ans = 0;
+    for(int i = 0; i < seeds.size(); i++)
+    {
+        string now_strobe = seeds[i]->get_final_hash();
         if(!cnt_strobe[now_strobe])
         {
             hash_strs.push_back(now_strobe);
@@ -605,6 +630,7 @@ void Sample::write_in_file(CsvWriter* csv_all_sample, bool is_median)
     }
     csv_all_sample->write_word(unique_final_hash, 1);
     csv_all_sample->write_word(ratio_final_hash, 1);
+    csv_all_sample->write_word(ehits_final_hash, 1);
     if(!is_median)
         csv_all_sample->write_word(sample_id, 0);
     csv_all_sample->new_line(); 
@@ -632,9 +658,10 @@ vector<string> build_name_cols(int num_kmer, bool is_median)
     }
     name_cols.push_back("Number of unique Strobmers");
     name_cols.push_back("Conflicts");
-    name_cols.push_back("E-hits Unique Strobmers");
+    name_cols.push_back("E-hits of Strobmers");
     name_cols.push_back("Number of unique final seed hash values");
-    name_cols.push_back("ratio between unique final seed hash value and number of unique strobmers");
+    name_cols.push_back("Ratio of number of unique final seed hash value to number of unique strobmers");
+    name_cols.push_back("E-hits of final seed hash values");
     if(!is_median)
         name_cols.push_back("Sample");
     return name_cols;
@@ -717,6 +744,7 @@ void Sample::add_all_data(vector< vector<double> >& all_data)
     }
     add_new_num(all_data, pnt, unique_final_hash);
     add_new_num(all_data, pnt, ratio_final_hash);
+    add_new_num(all_data, pnt, ehits_final_hash);
 }
 
 double find_median(vector<double>& vec_inp)

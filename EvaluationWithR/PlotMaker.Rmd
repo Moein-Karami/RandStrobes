@@ -128,9 +128,9 @@ for(i in 1:ncol(new_data))
   temp <- data_all_methods
   temp2 <- new_data
   print(names(new_data)[i])
-  if(names(new_data)[i] == "TimeofExecution" || names(new_data)[i] == "Number.of.unique.Strobmers"||
+        if(names(new_data)[i] == "TimeofExecution" || names(new_data)[i] == "Number.of.unique.Strobmers" ||
      names(new_data)[i] == "Number.of.unique.final.seed.hash.values"||
-     names(new_data)[i] == "ratio.between.unique.final.seed.hash.value.and.number.of.unique.strobmers")
+     names(new_data)[i] == "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" ||   names(new_data)[i] == "E.hits.of.Strobmers" ||  names(new_data)[i] == "E.hits.of.final.seed.hash.values")
   {
     data_all_methods <- data_all_methods2
     new_data <- new_data2
@@ -145,9 +145,9 @@ for(i in 1:ncol(new_data))
   write.csv(sorted_data, file_name, row.names = FALSE)
   normalized_by = new_data[1, i]
   print(names(new_data)[i])
-  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers"&&
+  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] == "Number.of.unique.Strobmers" &&
      names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
-     names(new_data)[i] != "ratio.between.unique.final.seed.hash.value.and.number.of.unique.strobmers")
+     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
   {
       new_data[, i] <- new_data[, i] / normalized_by
   }
@@ -164,25 +164,25 @@ for(i in 1:ncol(new_data))
     guides(fill=guide_legend(title="RandStrobe Method")) + scale_fill_discrete(labels = to_latex) +
 theme(legend.text.align = 0)
   
-  
-  added_str <- "based on hashes and linkings"
-  if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers")
-    added_str <- "based on final seed hash values"
+  added_str <- ""
+ # added_str <- "based on hashes and linkings"
+ #   if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers" || names(new_data)[i] == "E.hits.Unique.Strobmers")
+#    added_str <- "based on final seed hash values"
   
   
   name_now <- names(new_data)[i]
   name_now <- create_name_file(name_now)
 
-  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers"&&
-     names(new_data)[i] != "Number.of.unique.final.seed.hash.values"&&
-     names(new_data)[i] != "ratio.between.unique.final.seed.hash.value.and.number.of.unique.strobmers")
+  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] == "Number.of.unique.Strobmers" &&
+     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
+     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
     plot_now <- plot_now + labs(title = paste(name_now, added_str),
               x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
   else 
       plot_now <- plot_now + labs(title = paste(name_now, added_str),
               x = "Hashes", y =  name_now)
   
-  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=3000, height= 3000)
+  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=4000, height= 4000)
   print(plot_now)
   dev.off()
   ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
