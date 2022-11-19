@@ -42,6 +42,31 @@ to_latex <- function(input_str)
 
 ```
 
+```{r}
+draw_normalized_plot <- function(data_all_methods, new_data, name_now, i)
+{
+  plot_now <- ggplot(data_all_methods,
+         aes(fill =  RandStrobeMethod, y = new_data[, i], x = HashMethod)
+         ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 70), 
+                                                                  
+                                                                  
+                                                                  axis.title=element_text(size=80), 
+                                                                  legend.text = element_text(size = 80),
+                                                                  legend.title = element_text(size = 80),
+                                                                  axis.text = element_text(size = 60)) + 
+  guides(fill=guide_legend(title="RandStrobe Method")) + scale_fill_discrete(labels = to_latex) +
+  theme(legend.text.align = 0) + coord_cartesian(ylim = c(min(new_data[, i]), NA))
+   plot_now <- plot_now + labs(title = paste(name_now, added_str),
+              x = "Hashes", y =  name_now)
+  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=4000, height= 4000)
+  print(plot_now)
+  dev.off()
+  ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
+    plot = plot_now, width = 45, height = 30
+  )
+}
+```
+
 
 
 ```{r}
@@ -143,24 +168,25 @@ for(i in 1:ncol(new_data))
   rand_strobe_method <- create_rand_strobe_methods(data_all_methods$RandStrobeMethod)
 
   write.csv(sorted_data, file_name, row.names = FALSE)
-  normalized_by = new_data[1, i]
-  print(names(new_data)[i])
-  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] == "Number.of.unique.Strobmers" &&
-     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
-     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
-  {
-      new_data[, i] <- new_data[, i] / normalized_by
-  }
+  normalized_by = min(new_data[ , i])
+  new_data_normalized <- new_data
+  new_data_normalized[, i] <- new_data_normalized[, i] - normalized_by
+#  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers" &&
+#     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
+#     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
+  #{
+  #    new_data[, i] <- new_data[, i] / normalized_by
+  #}
   #print(names(new_data)[i])
   plot_now <- ggplot(data_all_methods,
          aes(fill =  RandStrobeMethod, y = new_data[, i], x = HashMethod)
          ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 70), 
                                                                   
                                                                   
-                                                                  axis.title=element_text(size=50), 
-                                                                  legend.text = element_text(size = 50),
-                                                                  legend.title = element_text(size = 50),
-                                                                  axis.text = element_text(size = 40)) + 
+                                                                  axis.title=element_text(size=80), 
+                                                                  legend.text = element_text(size = 80),
+                                                                  legend.title = element_text(size = 80),
+                                                                  axis.text = element_text(size = 60)) + 
     guides(fill=guide_legend(title="RandStrobe Method")) + scale_fill_discrete(labels = to_latex) +
 theme(legend.text.align = 0)
   
@@ -173,12 +199,12 @@ theme(legend.text.align = 0)
   name_now <- names(new_data)[i]
   name_now <- create_name_file(name_now)
 
-  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] == "Number.of.unique.Strobmers" &&
-     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
-     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
-    plot_now <- plot_now + labs(title = paste(name_now, added_str),
-              x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
-  else 
+ # if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers" &&
+ #    names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
+ #    names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
+ #   plot_now <- plot_now + labs(title = paste(name_now, added_str),
+  #            x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
+  #else 
       plot_now <- plot_now + labs(title = paste(name_now, added_str),
               x = "Hashes", y =  name_now)
   
@@ -188,6 +214,8 @@ theme(legend.text.align = 0)
   ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
           plot = plot_now, width = 45, height = 30
 )
+
+  draw_normalized_plot(data_all_methods, new_data, name_now, i)
   data_all_methods <- temp
   new_data <- temp2
 }
