@@ -3,16 +3,18 @@
 ### Initialize
 
 ```
-./Scripts/InitializeNeedidFolders.sh
+./Scripts/InitializeNeededFolders.sh
 ```
 
 ### Complie
+
 ```
 cmake .
 make
 ```
 
 ### Create configurations for randstorbes
+
 To create randstrobes, you can set a variety of comparator, linking, and hashing functions.
 
 The configurations can be set in Src/ConfigGenerator/ConfigGenerator.cpp. You can set the hash function in the "add_hasher_config" function, the comparator in the "add_comparator_config" function, and the link function in the "add_seed_creator_config" function.
@@ -20,9 +22,11 @@ The configurations can be set in Src/ConfigGenerator/ConfigGenerator.cpp. You ca
 Using this file, you will be able to generate all the configuration files that appear in the paper. We recommend you don't make any changes to this file and just generate all the configuration files and delete any that you do not want.
 
 To generate the configs run this code:
+
 ```
 ./config.out
 ```
+
 inputs:
 $Directory:$ path which you want to place the configs. (add slash to the end of your directory)
 
@@ -59,6 +63,7 @@ If you have three lines in your file and set "number of samples" equal to 5, aft
 You can see the figures in "EvaluationResults/Figures".
 
 For clearing the results and run code again you can use:
+
 ```
 ./Scripts/ClearResult.sh
 ```
