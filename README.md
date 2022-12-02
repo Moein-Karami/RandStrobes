@@ -28,9 +28,9 @@ To generate the configs run this code:
 ```
 
 inputs:
-\begin{itemize}
+$\begin{itemize}
 \item test
-\end{itemize}
+\end{itemize}$
 $Directory:$ path which you want to place the configs. (add slash to the end of your directory)
 
 comment: For runnig the create and evaluation randstrobes code you have to copy your selected configs to "./ChosenConfigs".
