@@ -12,7 +12,7 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 			data.push(seq);
 			seq = "";
 		}
-		else 
+		else if (seq.size() > 0)
 			seq += line;
 	}
 	if (seq.size() > 0)
