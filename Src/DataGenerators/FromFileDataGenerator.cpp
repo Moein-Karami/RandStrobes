@@ -15,6 +15,9 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 		else 
 			seq += line;
 	}
+	if (seq.size() > 0)
+		data.push(seq);
+
 	file.close();
 }
 
