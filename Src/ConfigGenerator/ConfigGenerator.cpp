@@ -27,7 +27,7 @@ void ConfigGenerator::add_data_generator_config(std::string path)
 	}
 	else if (data_generator == "FromFile")
 	{
-		std::vector<std::string> file_names = {"Human_Genome"};//, "data"};
+		std::vector<std::string> file_names = {"data"};
 		config["DataGenerator"] = "FromFileDataGenerator";
 		for (auto name : file_names)
 		{
