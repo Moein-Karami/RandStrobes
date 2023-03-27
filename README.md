@@ -50,9 +50,22 @@ comment: In this input, if you select "Random", the sequences that are used for 
 
 This input will be read from a file named "data" in the "Data" folder if you write "FromFile" for this input. You must place your data in that directory and rename it to 'data'.
 
-Each line from the file will be used to create randstrobes, so please don't add any characters to your input. If you set "number of samples" to 3 and you have 5 lines in your file, only the first 3 lines will be seeded.
+The 'data' file will have data separated by '>' symbols. This allows you to split your input into multiple lines, with each sequence ending with a '>'. For instance, the following input:
 
-If you have three lines in your file and set "number of samples" equal to 5, after creating randstrobes for all three lines, the code will read the data from the beginning and create strobes for the first two lines again.
+ATTCG
+
+ATT
+
+CCG
+
+\>
+
+AAT
+
+will be considered as two sequences: 'ATTCGATTCCG' and 'AAT'.
+It is important to note that any line starting with the '>' symbol will be disregarded.
+
+If you have three sequences in your file and set "number of samples" equal to 5, after creating randstrobes for all three sequences, the code will read the data from the beginning and create strobes for the first two sequences again.
 
 ### Create and evaluate randstrobes
 
