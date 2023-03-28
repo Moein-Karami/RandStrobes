@@ -7,12 +7,12 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 	std::string line;
 	while (file >> line)
 	{
-		if (line[0] == '>')
+		if (line[0] == '>' && seq.size() > 0)
 		{
 			data.push(seq);
 			seq = "";
 		}
-		else if (seq.size() > 0)
+		else if (line.size() > 0)
 			seq += line;
 	}
 	if (seq.size() > 0)
