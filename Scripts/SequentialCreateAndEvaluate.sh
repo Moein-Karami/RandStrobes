@@ -1,6 +1,7 @@
 #!/bin/bash
 
 configs_dir=ChosenConfigs/
+g++ -std=c++11 EvaluationWithC++/MetricCalculator.cpp -o metric.out
 
 for config in "$configs_dir"*
 do
@@ -11,7 +12,6 @@ do
 	echo "RandStrobes are created"
 	# sleep 1
 	# R -e "path_kmer_file='$name'; path_output_file='$name'; rmarkdown::render('EvaluationWithR/MetricsEvaluation.Rmd')"
-	g++ -std=c++11 EvaluationWithC++/MetricCalculator.cpp -o metric.out
 	./metric.out "$name"
 	echo "Metrics are created"
 done
