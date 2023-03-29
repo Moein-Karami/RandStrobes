@@ -69,8 +69,13 @@ If you have three sequences in your file and set "number of samples" equal to 5,
 
 ### Create and evaluate randstrobes
 
+For sequential execution run:
 ```
-./Scripts/CreateAndEvaluate.sh
+./Scripts/SequentialCreateAndEvaluate.sh
+```
+For parallel execution run:
+```
+./Scripts/ParallelCreateAndEvaluate.sh
 ```
 
 You can see the figures in "EvaluationResults/Figures".
