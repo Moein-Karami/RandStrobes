@@ -1,0 +1,12 @@
+mkdir BenchMarkResults
+mkdir BenchMarkResults/Headers
+mkdir BenchMarkResults/Results
+
+mkdir ChosenConfigs
+mkdir ConfigFiles
+
+mkdir EvaluationResults
+mkdir EvaluationResults/AllSamples
+mkdir EvaluationResults/Figures
+mkdir EvaluationResults/MedianSamples
+mkdir EvaluationResults/MetricsSortedByMethods

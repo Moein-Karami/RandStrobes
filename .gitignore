@@ -18,3 +18,4 @@ ChosenConfigs/*
 build/*
 CreatedSequences/*
 *.out
+Tmp/*
