@@ -1,7 +1,7 @@
 #include "ConfigGenerator.hpp"
 
 ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask,
-		uint64_t number_of_samples, uint64_t seq_len, std::string data_generator)
+		uint64_t number_of_samples, uint64_t seq_len, std::string data_generator, std::string data_file_name)
 : kmer_len(kmer_len)
 , w_min(w_min)
 , w_max(w_max)
@@ -10,6 +10,7 @@ ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max
 , number_of_samples(number_of_samples)
 , seq_len(seq_len)
 , data_generator(data_generator)
+, data_file_name(data_file_name)
 {
 }
 
@@ -27,7 +28,7 @@ void ConfigGenerator::add_data_generator_config(std::string path)
 	}
 	else if (data_generator == "FromFile")
 	{
-		std::vector<std::string> file_names = {"data"};
+		std::vector<std::string> file_names = {data_file_name};
 		config["DataGenerator"] = "FromFileDataGenerator";
 		for (auto name : file_names)
 		{
@@ -146,6 +147,7 @@ int32_t main()
 	uint64_t number_of_samples;
 	uint64_t seq_len;
 	std::string data_generator;
+	std::string data_file_name;
 
 	std::cout << "Directory: ";
 	std::cin >> output_path; 
@@ -174,7 +176,13 @@ int32_t main()
 		std::cout << "seq len: ";
 		std::cin >> seq_len;
 	}
+	else if (data_generator == "FromFile")
+	{
+		std::cout << "Date file name: ";
+		std::cin >> data_file_name;
+	}
 
-	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask, number_of_samples, seq_len, data_generator);
+	ConfigGenerator config_generator(kmer_len, w_min, w_max, n, mask, number_of_samples, seq_len, data_generator,
+			data_file_name);
 	config_generator.add_data_generator_config(output_path);
 }
