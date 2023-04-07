@@ -6,7 +6,9 @@ CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobe
 CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/Comparators/Maximizer.hpp
 CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/Comparators/Minimizer.hpp
 CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/DataStoringClasses/Seed/Seed.hpp
-CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/DataStoringClasses/Seed/Strobemer.hpp
+CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
+CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/DataStoringClasses/Seed/Strobemer/Strobemer2.hpp
+CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/DataStoringClasses/Seed/Strobemer/Strobemer3.hpp
 CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/Hashers/HashMethodes/wyhash.h
 CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/Hashers/HashMethodes/xxhash.h
 CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o: Includes/Hashers/Hasher.hpp

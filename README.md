@@ -46,11 +46,11 @@ We suggest to set this to "./ChosenConfigs/" and delete unwanted configs.
 
 - $DataGenerator:$ Write "FromFile" or "Random"
 
-comment: In this input, if you select "Random", the sequences that are used for creating randomstrobes will be generated randomly, and you must set their length in the next input.
+comment: In this input, if you select "Random", the sequences that are used for creating randstrobes will be generated randomly, and you must set their length in the next input.
 
-This input will be read from a file named "data" in the "Data" folder if you write "FromFile" for this input. You must place your data in that directory and rename it to 'data'.
+In other case, if you choose "FromFile", the sequences that are used for creating randstrobes will be retrieved from a file which you should put in "Data" folder and write its fullname as input for the next field.
 
-The 'data' file will have data separated by '>' symbols. This allows you to split your input into multiple lines, with each sequence ending with a '>'. For instance, the following input:
+The 'datafile' must have sequences separated by '>' symbols. This allows you to split your input into multiple lines, with each sequence ending with a '>'. For instance, the following input:
 
 ATTCG
 

@@ -84,6 +84,8 @@ RandStrobes.out: build/libMinimizer.a
 RandStrobes.out: build/libDataGen.a
 RandStrobes.out: build/libFileDataGen.a
 RandStrobes.out: build/libDataStore.a
+RandStrobes.out: build/libDataStore2.a
+RandStrobes.out: build/libDataStore3.a
 RandStrobes.out: build/libSeedCreators.a
 RandStrobes.out: build/libRandStrobeCreators.a
 RandStrobes.out: build/libRandStrobeCreators1.a

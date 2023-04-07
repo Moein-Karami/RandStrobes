@@ -6,23 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Minimizer.cpp
-Minimizer.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Minimizer.hpp
-
-Includes/Comparators/Comparaotr.hpp
-LibrariesAndDefines.hpp
-Includes/Comparators/LibrariesAndDefines.hpp
-
-Includes/Comparators/Minimizer.hpp
-Comparaotr.hpp
-Includes/Comparators/Comparaotr.hpp
-
-Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
--
-chrono
--
-functional
--
-

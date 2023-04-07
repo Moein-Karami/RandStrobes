@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libDataStore.a  CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobemer.cpp.o
+/usr/bin/ar qc build/libDataStore.a  CMakeFiles/DataStore.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
 /usr/bin/ranlib build/libDataStore.a

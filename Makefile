@@ -163,6 +163,19 @@ HashersSeed3/fast:
 .PHONY : HashersSeed3/fast
 
 #=============================================================================
+# Target rules for targets named HashersSeed1
+
+# Build rule for target.
+HashersSeed1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 HashersSeed1
+.PHONY : HashersSeed1
+
+# fast build rule for target.
+HashersSeed1/fast:
+	$(MAKE) -f CMakeFiles/HashersSeed1.dir/build.make CMakeFiles/HashersSeed1.dir/build
+.PHONY : HashersSeed1/fast
+
+#=============================================================================
 # Target rules for targets named RandStrobeCreators2
 
 # Build rule for target.
@@ -189,32 +202,6 @@ RandStrobeCreators10/fast:
 .PHONY : RandStrobeCreators10/fast
 
 #=============================================================================
-# Target rules for targets named RandStrobeCreators4
-
-# Build rule for target.
-RandStrobeCreators4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators4
-.PHONY : RandStrobeCreators4
-
-# fast build rule for target.
-RandStrobeCreators4/fast:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/build
-.PHONY : RandStrobeCreators4/fast
-
-#=============================================================================
-# Target rules for targets named DataStore
-
-# Build rule for target.
-DataStore: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DataStore
-.PHONY : DataStore
-
-# fast build rule for target.
-DataStore/fast:
-	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/build
-.PHONY : DataStore/fast
-
-#=============================================================================
 # Target rules for targets named SeedCreators
 
 # Build rule for target.
@@ -226,6 +213,19 @@ SeedCreators: cmake_check_build_system
 SeedCreators/fast:
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/build
 .PHONY : SeedCreators/fast
+
+#=============================================================================
+# Target rules for targets named RandStrobeCreators13
+
+# Build rule for target.
+RandStrobeCreators13: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators13
+.PHONY : RandStrobeCreators13
+
+# fast build rule for target.
+RandStrobeCreators13/fast:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/build
+.PHONY : RandStrobeCreators13/fast
 
 #=============================================================================
 # Target rules for targets named FileDataGen
@@ -280,19 +280,6 @@ DataGen/fast:
 .PHONY : DataGen/fast
 
 #=============================================================================
-# Target rules for targets named RandStrobeCreators3
-
-# Build rule for target.
-RandStrobeCreators3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators3
-.PHONY : RandStrobeCreators3
-
-# fast build rule for target.
-RandStrobeCreators3/fast:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/build
-.PHONY : RandStrobeCreators3/fast
-
-#=============================================================================
 # Target rules for targets named Maximizer
 
 # Build rule for target.
@@ -304,6 +291,32 @@ Maximizer: cmake_check_build_system
 Maximizer/fast:
 	$(MAKE) -f CMakeFiles/Maximizer.dir/build.make CMakeFiles/Maximizer.dir/build
 .PHONY : Maximizer/fast
+
+#=============================================================================
+# Target rules for targets named DataStore
+
+# Build rule for target.
+DataStore: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DataStore
+.PHONY : DataStore
+
+# fast build rule for target.
+DataStore/fast:
+	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/build
+.PHONY : DataStore/fast
+
+#=============================================================================
+# Target rules for targets named RandStrobeCreators4
+
+# Build rule for target.
+RandStrobeCreators4: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators4
+.PHONY : RandStrobeCreators4
+
+# fast build rule for target.
+RandStrobeCreators4/fast:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/build
+.PHONY : RandStrobeCreators4/fast
 
 #=============================================================================
 # Target rules for targets named RandStrobes.out
@@ -319,19 +332,6 @@ RandStrobes.out/fast:
 .PHONY : RandStrobes.out/fast
 
 #=============================================================================
-# Target rules for targets named Minimizer
-
-# Build rule for target.
-Minimizer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Minimizer
-.PHONY : Minimizer
-
-# fast build rule for target.
-Minimizer/fast:
-	$(MAKE) -f CMakeFiles/Minimizer.dir/build.make CMakeFiles/Minimizer.dir/build
-.PHONY : Minimizer/fast
-
-#=============================================================================
 # Target rules for targets named config.out
 
 # Build rule for target.
@@ -345,17 +345,30 @@ config.out/fast:
 .PHONY : config.out/fast
 
 #=============================================================================
-# Target rules for targets named RandStrobeCreators13
+# Target rules for targets named Minimizer
 
 # Build rule for target.
-RandStrobeCreators13: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators13
-.PHONY : RandStrobeCreators13
+Minimizer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Minimizer
+.PHONY : Minimizer
 
 # fast build rule for target.
-RandStrobeCreators13/fast:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/build
-.PHONY : RandStrobeCreators13/fast
+Minimizer/fast:
+	$(MAKE) -f CMakeFiles/Minimizer.dir/build.make CMakeFiles/Minimizer.dir/build
+.PHONY : Minimizer/fast
+
+#=============================================================================
+# Target rules for targets named RandStrobeCreators3
+
+# Build rule for target.
+RandStrobeCreators3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RandStrobeCreators3
+.PHONY : RandStrobeCreators3
+
+# fast build rule for target.
+RandStrobeCreators3/fast:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/build
+.PHONY : RandStrobeCreators3/fast
 
 #=============================================================================
 # Target rules for targets named RandStrobeCreators
@@ -397,6 +410,19 @@ HashersMet1/fast:
 .PHONY : HashersMet1/fast
 
 #=============================================================================
+# Target rules for targets named DataStore2
+
+# Build rule for target.
+DataStore2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DataStore2
+.PHONY : DataStore2
+
+# fast build rule for target.
+DataStore2/fast:
+	$(MAKE) -f CMakeFiles/DataStore2.dir/build.make CMakeFiles/DataStore2.dir/build
+.PHONY : DataStore2/fast
+
+#=============================================================================
 # Target rules for targets named RandStrobeCreators7
 
 # Build rule for target.
@@ -434,6 +460,19 @@ RandStrobeCreators11: cmake_check_build_system
 RandStrobeCreators11/fast:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/build
 .PHONY : RandStrobeCreators11/fast
+
+#=============================================================================
+# Target rules for targets named DataStore3
+
+# Build rule for target.
+DataStore3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DataStore3
+.PHONY : DataStore3
+
+# fast build rule for target.
+DataStore3/fast:
+	$(MAKE) -f CMakeFiles/DataStore3.dir/build.make CMakeFiles/DataStore3.dir/build
+.PHONY : DataStore3/fast
 
 #=============================================================================
 # Target rules for targets named RandStrobeCreators14
@@ -514,17 +553,17 @@ Hashers/fast:
 .PHONY : Hashers/fast
 
 #=============================================================================
-# Target rules for targets named HashersSeed1
+# Target rules for targets named HashersSeed2
 
 # Build rule for target.
-HashersSeed1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HashersSeed1
-.PHONY : HashersSeed1
+HashersSeed2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 HashersSeed2
+.PHONY : HashersSeed2
 
 # fast build rule for target.
-HashersSeed1/fast:
-	$(MAKE) -f CMakeFiles/HashersSeed1.dir/build.make CMakeFiles/HashersSeed1.dir/build
-.PHONY : HashersSeed1/fast
+HashersSeed2/fast:
+	$(MAKE) -f CMakeFiles/HashersSeed2.dir/build.make CMakeFiles/HashersSeed2.dir/build
+.PHONY : HashersSeed2/fast
 
 #=============================================================================
 # Target rules for targets named HashersMet2
@@ -538,19 +577,6 @@ HashersMet2: cmake_check_build_system
 HashersMet2/fast:
 	$(MAKE) -f CMakeFiles/HashersMet2.dir/build.make CMakeFiles/HashersMet2.dir/build
 .PHONY : HashersMet2/fast
-
-#=============================================================================
-# Target rules for targets named HashersSeed2
-
-# Build rule for target.
-HashersSeed2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HashersSeed2
-.PHONY : HashersSeed2
-
-# fast build rule for target.
-HashersSeed2/fast:
-	$(MAKE) -f CMakeFiles/HashersSeed2.dir/build.make CMakeFiles/HashersSeed2.dir/build
-.PHONY : HashersSeed2/fast
 
 Src/BenchMark.o: Src/BenchMark.cpp.o
 
@@ -717,74 +743,212 @@ Src/DataGenerators/RandomDataGenerator.cpp.s:
 	$(MAKE) -f CMakeFiles/DataGen.dir/build.make CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.s
 .PHONY : Src/DataGenerators/RandomDataGenerator.cpp.s
 
-Src/DataStoringClasses/Strobemer.o: Src/DataStoringClasses/Strobemer.cpp.o
+Src/DataStoringClasses/Seed/Strobemer/Strobemer.o: Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
 
-.PHONY : Src/DataStoringClasses/Strobemer.o
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer.o
 
 # target to build an object file
-Src/DataStoringClasses/Strobemer.cpp.o:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Strobemer.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Strobemer.cpp.o
-.PHONY : Src/DataStoringClasses/Strobemer.cpp.o
+Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
 
-Src/DataStoringClasses/Strobemer.i: Src/DataStoringClasses/Strobemer.cpp.i
+Src/DataStoringClasses/Seed/Strobemer/Strobemer.i: Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
 
-.PHONY : Src/DataStoringClasses/Strobemer.i
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer.i
 
 # target to preprocess a source file
-Src/DataStoringClasses/Strobemer.cpp.i:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Strobemer.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Strobemer.cpp.i
-.PHONY : Src/DataStoringClasses/Strobemer.cpp.i
+Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
 
-Src/DataStoringClasses/Strobemer.s: Src/DataStoringClasses/Strobemer.cpp.s
+Src/DataStoringClasses/Seed/Strobemer/Strobemer.s: Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
 
-.PHONY : Src/DataStoringClasses/Strobemer.s
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer.s
 
 # target to generate assembly for a file
-Src/DataStoringClasses/Strobemer.cpp.s:
-	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Strobemer.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Strobemer.cpp.s
-.PHONY : Src/DataStoringClasses/Strobemer.cpp.s
+Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/DataStore.dir/build.make CMakeFiles/DataStore.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+
+Src/DataStoringClasses/Seed/Strobemer/Strobemer2.o: Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer2.o
+
+# target to build an object file
+Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/DataStore2.dir/build.make CMakeFiles/DataStore2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+
+Src/DataStoringClasses/Seed/Strobemer/Strobemer2.i: Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer2.i
+
+# target to preprocess a source file
+Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/DataStore2.dir/build.make CMakeFiles/DataStore2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+
+Src/DataStoringClasses/Seed/Strobemer/Strobemer2.s: Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer2.s
+
+# target to generate assembly for a file
+Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/DataStore2.dir/build.make CMakeFiles/DataStore2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+
+Src/DataStoringClasses/Seed/Strobemer/Strobemer3.o: Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer3.o
+
+# target to build an object file
+Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/DataStore3.dir/build.make CMakeFiles/DataStore3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
+
+Src/DataStoringClasses/Seed/Strobemer/Strobemer3.i: Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer3.i
+
+# target to preprocess a source file
+Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/DataStore3.dir/build.make CMakeFiles/DataStore3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+
+Src/DataStoringClasses/Seed/Strobemer/Strobemer3.s: Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer3.s
+
+# target to generate assembly for a file
+Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s:
+	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators1.dir/build.make CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators11.dir/build.make CMakeFiles/RandStrobeCreators11.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/DataStore3.dir/build.make CMakeFiles/DataStore3.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators14.dir/build.make CMakeFiles/RandStrobeCreators14.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators8.dir/build.make CMakeFiles/RandStrobeCreators8.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators9.dir/build.make CMakeFiles/RandStrobeCreators9.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators12.dir/build.make CMakeFiles/RandStrobeCreators12.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
+.PHONY : Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
 
 Src/Hashers/HashMethodes/index.o: Src/Hashers/HashMethodes/index.cpp.o
 
@@ -1070,10 +1234,10 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.o: Src/SeedCreators/RandSt
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
@@ -1093,10 +1257,10 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.i: Src/SeedCreators/RandSt
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.i
@@ -1116,10 +1280,10 @@ Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.s: Src/SeedCreators/RandSt
 Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
@@ -1517,11 +1681,11 @@ Src/SeedCreators/SeedCreator.o: Src/SeedCreators/SeedCreator.cpp.o
 Src/SeedCreators/SeedCreator.cpp.o:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/SeedCreators/SeedCreator.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/SeedCreator.cpp.o
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/SeedCreators/SeedCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/SeedCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/SeedCreator.cpp.o
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/SeedCreator.cpp.o
 	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/SeedCreator.cpp.o
@@ -1541,11 +1705,11 @@ Src/SeedCreators/SeedCreator.i: Src/SeedCreators/SeedCreator.cpp.i
 Src/SeedCreators/SeedCreator.cpp.i:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/SeedCreators/SeedCreator.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/SeedCreator.cpp.i
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/SeedCreators/SeedCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/SeedCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/SeedCreator.cpp.i
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/SeedCreator.cpp.i
 	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/SeedCreator.cpp.i
@@ -1565,11 +1729,11 @@ Src/SeedCreators/SeedCreator.s: Src/SeedCreators/SeedCreator.cpp.s
 Src/SeedCreators/SeedCreator.cpp.s:
 	$(MAKE) -f CMakeFiles/RandStrobeCreators2.dir/build.make CMakeFiles/RandStrobeCreators2.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators10.dir/build.make CMakeFiles/RandStrobeCreators10.dir/Src/SeedCreators/SeedCreator.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/SeedCreators.dir/build.make CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/SeedCreator.cpp.s
-	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators13.dir/build.make CMakeFiles/RandStrobeCreators13.dir/Src/SeedCreators/SeedCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators5.dir/build.make CMakeFiles/RandStrobeCreators5.dir/Src/SeedCreators/SeedCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators4.dir/build.make CMakeFiles/RandStrobeCreators4.dir/Src/SeedCreators/SeedCreator.cpp.s
+	$(MAKE) -f CMakeFiles/RandStrobeCreators3.dir/build.make CMakeFiles/RandStrobeCreators3.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators.dir/build.make CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators6.dir/build.make CMakeFiles/RandStrobeCreators6.dir/Src/SeedCreators/SeedCreator.cpp.s
 	$(MAKE) -f CMakeFiles/RandStrobeCreators7.dir/build.make CMakeFiles/RandStrobeCreators7.dir/Src/SeedCreators/SeedCreator.cpp.s
@@ -1619,37 +1783,39 @@ help:
 	@echo "... HasherSimple2"
 	@echo "... HasherSimple1"
 	@echo "... HashersSeed3"
+	@echo "... rebuild_cache"
+	@echo "... HashersSeed1"
 	@echo "... RandStrobeCreators2"
 	@echo "... RandStrobeCreators10"
-	@echo "... RandStrobeCreators4"
-	@echo "... DataStore"
 	@echo "... SeedCreators"
+	@echo "... RandStrobeCreators13"
 	@echo "... FileDataGen"
 	@echo "... ConfigGen"
 	@echo "... RandStrobeCreators5"
 	@echo "... DataGen"
-	@echo "... RandStrobeCreators3"
 	@echo "... Maximizer"
+	@echo "... DataStore"
+	@echo "... RandStrobeCreators4"
 	@echo "... RandStrobes.out"
-	@echo "... Minimizer"
 	@echo "... config.out"
-	@echo "... RandStrobeCreators13"
+	@echo "... Minimizer"
+	@echo "... RandStrobeCreators3"
 	@echo "... RandStrobeCreators"
 	@echo "... RandStrobeCreators6"
 	@echo "... HashersMet1"
+	@echo "... DataStore2"
 	@echo "... RandStrobeCreators7"
 	@echo "... RandStrobeCreators1"
 	@echo "... RandStrobeCreators11"
+	@echo "... DataStore3"
 	@echo "... RandStrobeCreators14"
 	@echo "... RandStrobeCreators8"
 	@echo "... RandStrobeCreators9"
 	@echo "... RandStrobeCreators12"
 	@echo "... Json"
 	@echo "... Hashers"
-	@echo "... rebuild_cache"
-	@echo "... HashersSeed1"
-	@echo "... HashersMet2"
 	@echo "... HashersSeed2"
+	@echo "... HashersMet2"
 	@echo "... Src/BenchMark.o"
 	@echo "... Src/BenchMark.i"
 	@echo "... Src/BenchMark.s"
@@ -1668,9 +1834,15 @@ help:
 	@echo "... Src/DataGenerators/RandomDataGenerator.o"
 	@echo "... Src/DataGenerators/RandomDataGenerator.i"
 	@echo "... Src/DataGenerators/RandomDataGenerator.s"
-	@echo "... Src/DataStoringClasses/Strobemer.o"
-	@echo "... Src/DataStoringClasses/Strobemer.i"
-	@echo "... Src/DataStoringClasses/Strobemer.s"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer.o"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer.i"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer.s"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer2.o"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer2.i"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer2.s"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer3.o"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer3.i"
+	@echo "... Src/DataStoringClasses/Seed/Strobemer/Strobemer3.s"
 	@echo "... Src/Hashers/HashMethodes/index.o"
 	@echo "... Src/Hashers/HashMethodes/index.i"
 	@echo "... Src/Hashers/HashMethodes/index.s"

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobemer.cpp.o"
+  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/DataStore.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -22,6 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Includes/Hashers/SimpleHashers"
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
+  "Includes/DataStoringClasses/Seed/Strobemer"
   "Includes/ConfigGenerator"
   "Includes/Tools"
   )

@@ -6,121 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
 Strobemer.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
-RandStrobeCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
-RandStrobeCreatorXorVar.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
-
-Includes/Comparators/Comparaotr.hpp
-LibrariesAndDefines.hpp
-Includes/Comparators/LibrariesAndDefines.hpp
-
-Includes/Comparators/Maximizer.hpp
-Comparaotr.hpp
-Includes/Comparators/Comparaotr.hpp
-
-Includes/Comparators/Minimizer.hpp
-Comparaotr.hpp
-Includes/Comparators/Comparaotr.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
 
-Includes/DataStoringClasses/Seed/Strobemer.hpp
+Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
 Seed.hpp
-Includes/DataStoringClasses/Seed/Seed.hpp
-
-Includes/Hashers/HashMethodes/wyhash.h
-stdint.h
--
-string.h
--
-intrin.h
--
-
-Includes/Hashers/HashMethodes/xxhash.h
-stddef.h
--
-stdint.h
--
-limits.h
--
-stdint.h
--
-limits.h
--
-stdalign.h
--
-stdlib.h
--
-string.h
--
-limits.h
--
-assert.h
--
-assert.h
--
-stdint.h
--
-arm_neon.h
--
-immintrin.h
--
-emmintrin.h
--
-intrin.h
--
-s390intrin.h
--
-altivec.h
--
-mmintrin.h
--
-string.h
--
-
-Includes/Hashers/Hasher.hpp
-LibrariesAndDefines.hpp
-Includes/Hashers/LibrariesAndDefines.hpp
-
-Includes/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
-Hasher.hpp
-Includes/Hashers/SeedBasedHashers/Hasher.hpp
-
-Includes/Hashers/SeedBasedHashers/WyHash.hpp
-SeedBasedHasher.hpp
-Includes/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
-wyhash.h
-Includes/Hashers/SeedBasedHashers/wyhash.h
-
-Includes/Hashers/SeedBasedHashers/XXHash.hpp
-LibrariesAndDefines.hpp
-Includes/Hashers/SeedBasedHashers/LibrariesAndDefines.hpp
-SeedBasedHasher.hpp
-Includes/Hashers/SeedBasedHashers/SeedBasedHasher.hpp
-xxhash.h
-Includes/Hashers/SeedBasedHashers/xxhash.h
-
-Includes/Hashers/SimpleHashers/NoHash.hpp
-Hasher.hpp
-Includes/Hashers/SimpleHashers/Hasher.hpp
-
-Includes/Hashers/SimpleHashers/ThomasWangHash.hpp
-Hasher.hpp
-Includes/Hashers/SimpleHashers/Hasher.hpp
+Includes/DataStoringClasses/Seed/Strobemer/Seed.hpp
 
 Includes/LibrariesAndDefines.hpp
 bits/stdc++.h
@@ -129,34 +25,4 @@ chrono
 -
 functional
 -
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-LibrariesAndDefines.hpp
-Includes/SeedCreators/RandStrobeCreators/LibrariesAndDefines.hpp
-SeedCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/SeedCreator.hpp
-Strobemer.hpp
-Includes/SeedCreators/RandStrobeCreators/Strobemer.hpp
-Maximizer.hpp
-Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
-Minimizer.hpp
-Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
-RandStrobeCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-Includes/SeedCreators/SeedCreator.hpp
-LibrariesAndDefines.hpp
-Includes/SeedCreators/LibrariesAndDefines.hpp
-Seed.hpp
-Includes/SeedCreators/Seed.hpp
-WyHash.hpp
-Includes/SeedCreators/WyHash.hpp
-XXHash.hpp
-Includes/SeedCreators/XXHash.hpp
-ThomasWangHash.hpp
-Includes/SeedCreators/ThomasWangHash.hpp
-NoHash.hpp
-Includes/SeedCreators/NoHash.hpp
 
