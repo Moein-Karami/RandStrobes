@@ -1,26 +1,19 @@
-#include "Strobemer.hpp"
+#include "Strobemer2.hpp"
 
-Strobemer::Strobemer(int n)
+Strobemer2::Strobemer2()
+: Strobemer()
 {
-	// positions.reserve(n);
-	// kmers_hash.reserve(n);
-	// positions = new uint32_t[n];
-	// kmers_hash = new uint64_t[n];
-	// positions = (uint32_t*) malloc(n * sizeof(uint32_t));
-	// kmers_hash = (uint64_t*) malloc(n * sizeof(uint64_t));
-
-	last = 0;
 }
 
-Strobemer::~Strobemer()
-{
+// Strobemer3::~Strobemer3()
+// {
 	// delete(positions);
 	// delete(kmers_hash);
 	// positions.clear();
 	// kmers_hash.clear();
-}
+// }
 
-void Strobemer::add_kmer(size_t position, uint64_t kmer_hash)
+void Strobemer2::add_kmer(size_t position, uint64_t kmer_hash)
 {
 	positions[last] = position;
 	kmers_hash[last] = kmer_hash;
@@ -29,7 +22,7 @@ void Strobemer::add_kmer(size_t position, uint64_t kmer_hash)
 	// kmers_hash.push_back(kmer_hash);
 }
 
-std::string Strobemer::get_seed()
+std::string Strobemer2::get_seed()
 {
 	std::string seed;
 	for (int i = 0; i < last; i++)
@@ -39,7 +32,7 @@ std::string Strobemer::get_seed()
 	return seed;
 }
 
-std::string Strobemer::to_string()
+std::string Strobemer2::to_string()
 {
 	std::string res;
 
@@ -59,7 +52,15 @@ std::string Strobemer::to_string()
 	return res;
 }
 
-void Strobemer::set_final_hash(uint64_t hash)
+void Strobemer2::set_final_hash(uint64_t hash)
 {
 	final_hash = hash;
+}
+
+std::vector<uint32_t> Strobemer2::get_positions() const
+{
+	std::vector<uint32_t> res;
+	for (int i = 0; i < last; i++)
+		res.push_back(positions[i]);
+	return res;
 }

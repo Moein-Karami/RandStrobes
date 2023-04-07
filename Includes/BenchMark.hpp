@@ -11,6 +11,8 @@
 #include "FromFileDataGenerator.hpp"
 
 #include "Strobemer.hpp"
+#include "Strobemer2.hpp"
+#include "Strobemer3.hpp"
 
 #include "WyHash.hpp"
 #include "XXHash.hpp"

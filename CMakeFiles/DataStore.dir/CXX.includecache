@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
 Strobemer.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
 
-Includes/DataStoringClasses/Seed/Strobemer.hpp
+Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
 Seed.hpp
-Includes/DataStoringClasses/Seed/Seed.hpp
+Includes/DataStoringClasses/Seed/Strobemer/Seed.hpp
 
 Includes/LibrariesAndDefines.hpp
 bits/stdc++.h

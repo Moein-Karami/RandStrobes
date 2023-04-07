@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/DataStore.dir/Src/DataStoringClasses/Strobemer.cpp.o"
+  "CMakeFiles/DataStore.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o"
   "build/libDataStore.a"
   "build/libDataStore.pdb"
 )

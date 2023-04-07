@@ -22,6 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Includes/Hashers/SimpleHashers"
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
+  "Includes/DataStoringClasses/Seed/Strobemer"
   "Includes/ConfigGenerator"
   "Includes/Tools"
   )
