@@ -83,22 +83,48 @@ CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrob
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp" -o CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.s
 
-CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o: CMakeFiles/RandStrobeCreators1.dir/flags.make
-CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o: Src/DataStoringClasses/Strobemer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o -c "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp"
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o: CMakeFiles/RandStrobeCreators1.dir/flags.make
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o: Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o -c "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp"
 
-CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp" > CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.i
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp" > CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.i
 
-CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Strobemer.cpp" -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.s
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp" -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.s
+
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o: CMakeFiles/RandStrobeCreators1.dir/flags.make
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o: Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o -c "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp"
+
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp" > CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.i
+
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp" -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.s
+
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o: CMakeFiles/RandStrobeCreators1.dir/flags.make
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o: Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o -c "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp"
+
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp" > CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.i
+
+CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp" -o CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.s
 
 CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o: CMakeFiles/RandStrobeCreators1.dir/flags.make
 CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o: Src/SeedCreators/SeedCreator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o -c "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp"
 
 CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.i: cmake_force
@@ -113,7 +139,9 @@ CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.s: cmake_for
 RandStrobeCreators1_OBJECTS = \
 "CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp.o" \
 "CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o" \
-"CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o" \
+"CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o" \
+"CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o" \
+"CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o" \
 "CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o"
 
 # External object files for target RandStrobeCreators1
@@ -121,11 +149,13 @@ RandStrobeCreators1_EXTERNAL_OBJECTS =
 
 build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorGuoPibri.cpp.o
 build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o
-build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Strobemer.cpp.o
+build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp.o
+build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp.o
+build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp.o
 build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/Src/SeedCreators/SeedCreator.cpp.o
 build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/build.make
 build/libRandStrobeCreators1.a: CMakeFiles/RandStrobeCreators1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library build/libRandStrobeCreators1.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library build/libRandStrobeCreators1.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/RandStrobeCreators1.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RandStrobeCreators1.dir/link.txt --verbose=$(VERBOSE)
 

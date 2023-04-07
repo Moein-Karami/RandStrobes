@@ -22,6 +22,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "Includes/Hashers/SimpleHashers"
   "Includes/SeedCreators/RandStrobeCreators"
   "Includes/DataStoringClasses/Seed"
+  "Includes/DataStoringClasses/Seed/Strobemer"
   "Includes/ConfigGenerator"
   "Includes/Tools"
   )
@@ -33,6 +34,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/DataGen.dir/DependInfo.cmake"
   "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/FileDataGen.dir/DependInfo.cmake"
   "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/DataStore.dir/DependInfo.cmake"
+  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/DataStore2.dir/DependInfo.cmake"
+  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/DataStore3.dir/DependInfo.cmake"
   "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/SeedCreators.dir/DependInfo.cmake"
   "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/RandStrobeCreators.dir/DependInfo.cmake"
   "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/RandStrobeCreators1.dir/DependInfo.cmake"

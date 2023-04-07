@@ -4,6 +4,8 @@
 #include "LibrariesAndDefines.hpp"
 #include "SeedCreator.hpp"
 #include "Strobemer.hpp"
+#include "Strobemer2.hpp"
+#include "Strobemer3.hpp"
 #include "Maximizer.hpp"
 #include "Minimizer.hpp"
 

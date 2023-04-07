@@ -6,23 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Maximizer.cpp
-Maximizer.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Comparators/Maximizer.hpp
-
-Includes/Comparators/Comparaotr.hpp
-LibrariesAndDefines.hpp
-Includes/Comparators/LibrariesAndDefines.hpp
-
-Includes/Comparators/Maximizer.hpp
-Comparaotr.hpp
-Includes/Comparators/Comparaotr.hpp
-
-Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
--
-chrono
--
-functional
--
-

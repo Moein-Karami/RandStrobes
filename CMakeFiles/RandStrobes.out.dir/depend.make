@@ -10,7 +10,9 @@ CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataGenerators/Data
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataGenerators/FromFileDataGenerator.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataGenerators/RandomDataGenerator.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Seed.hpp
-CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Strobemer.hpp
+CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
+CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Strobemer/Strobemer2.hpp
+CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/DataStoringClasses/Seed/Strobemer/Strobemer3.hpp
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/Hashers/HashMethodes/wyhash.h
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/Hashers/HashMethodes/xxhash.h
 CMakeFiles/RandStrobes.out.dir/Src/BenchMark.cpp.o: Includes/Hashers/Hasher.hpp

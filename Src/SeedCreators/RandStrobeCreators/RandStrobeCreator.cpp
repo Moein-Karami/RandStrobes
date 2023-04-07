@@ -46,7 +46,9 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 	seq = sequence;
 	hashes.clear();
 	kmers.clear();
-
+	hashes.reserve(seq.size() + 1);
+	kmers.reserve(seq.size() + 1);
+	
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 	
@@ -69,6 +71,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	prepare_data();
 
 	std::vector<Seed*> seeds;
+	seeds.reserve(seq.size());
 	Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
@@ -76,7 +79,11 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobemer = new Strobemer();
+		if (n == 2)
+			strobemer = new Strobemer2();
+		else if (n == 3)
+			strobemer = new Strobemer3();
+
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
@@ -98,6 +105,12 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 		seeds.push_back(strobemer);
 	}
 	return seeds;
+	// for (int i = 0; i < seeds.size(); i++)
+	// 	delete(seeds[i]);
+	// seeds.clear();
+	// std::vector<Seed*> tmp;
+	// return tmp;
+
 }
 
 uint64_t RandStrobeCreator::get_first_hash(size_t ind)
@@ -113,8 +126,12 @@ void RandStrobeCreator::prepare_data()
 uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
-	for (auto pos : strobemer->positions)
+	std::vector<uint32_t> positions = strobemer->get_positions();
+	for (auto pos : positions)
 		final_hash ^= hasher->hash(hashes[pos]);
+	// for (int i = 0; i < strobemer->last; i++)
+	// 	final_hash ^= hasher->hash(hashes[strobemer->positions[i]]);
+
 	return final_hash;
 }
 
