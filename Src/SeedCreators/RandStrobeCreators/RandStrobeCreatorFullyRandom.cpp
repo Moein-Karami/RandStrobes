@@ -35,7 +35,7 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobemer = new Strobemer();
+		strobemer = new Strobemer(n);
 		strobemer->add_kmer(i, kmers[i]);
 		
 		for (int j = 1; j < n; j++)

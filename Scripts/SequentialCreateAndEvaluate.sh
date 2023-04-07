@@ -1,13 +1,14 @@
 #!/bin/bash
 
 configs_dir=ChosenConfigs/
-g++ -std=c++11 EvaluationWithC++/MetricCalculator.cpp -o metric.out
+# g++ -std=c++11 ./EvaluationWithC++/MetricCalculator.cpp -o metric.out
 
 for config in "$configs_dir"*
 do
 	name="${config/.json/}"
 	name="${name/$configs_dir/}"
 	name+=".csv"
+	echo "$config" "$name"
 	./RandStrobes.out "$config" "$name"
 	echo "RandStrobes are created"
 	# sleep 1

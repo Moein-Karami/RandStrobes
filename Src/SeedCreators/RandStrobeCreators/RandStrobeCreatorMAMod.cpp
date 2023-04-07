@@ -37,7 +37,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobemer = new Strobemer();
+		strobemer = new Strobemer(n);
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
@@ -83,7 +83,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
-		strobemer = new Strobemer();
+		strobemer = new Strobemer(n);
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
 		for (int j = 1; j < n; j++)
@@ -116,8 +116,11 @@ uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t new_stro
 uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
-	for (auto pos : strobemer->positions)
-		final_hash ^= hasher->hash(hasher->hash(kmers[pos]));
+	// for (auto pos : strobemer->positions)
+	// 	final_hash ^= hasher->hash(hasher->hash(kmers[pos]));
+	for (int i = 0; i < strobemer->last; i++)
+		final_hash ^= hasher->hash(hasher->hash(kmers[strobemer->positions[i]]));
+
 	return final_hash;
 }
 

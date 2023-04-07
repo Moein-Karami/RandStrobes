@@ -3,13 +3,13 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_FLAGS =  
+C_FLAGS =   -g
 
 C_DEFINES = 
 
 C_INCLUDES = -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Comparators" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/DataGenerators" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/DataStoringClasses" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Hashers" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Json" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/SeedCreators" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Hashers/HashMethodes" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Hashers/SeedBasedHashers" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Hashers/SimpleHashers" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/SeedCreators/RandStrobeCreators" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/DataStoringClasses/Seed" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/ConfigGenerator" -I"/home/c/University/Advanced/Sahlin Projects/RandStrobes/Includes/Tools" 
 
-CXX_FLAGS =   -std=gnu++11
+CXX_FLAGS =   -g -std=gnu++11
 
 CXX_DEFINES = 
 
