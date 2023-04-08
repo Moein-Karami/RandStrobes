@@ -10,12 +10,25 @@ class Seed
         void print();
         int get_kmer(int index_num);
         string get_hash();
-        string get_final_hash();
+        uint64_t get_final_hash();
         void add_final_hash(string final_hash_input);
+    protected:
+        uint64_t final_hash;
+};
+
+
+class Seed1 : public Seed
+{
     private:
-        vector<int> kmers;
-        vector<string> hashes;
-        string final_hash;
+        uint32_t kmers[2];
+        uint64_t hashes[2];
+};
+
+class Seed2 : public Seed
+{
+    private:
+        uint32_t kmers[3];
+        uint64_t hashes[3];
 };
 
 class CsvFile
@@ -66,6 +79,7 @@ class Sample
         void add_all_data(vector< vector<double> >& all_data);
         string get_hash();
         string get_seed_method();
+        void write_seeds(string path);
     private:
         double calculate_ehits_final_hashes();
         double calculate_ehits_kmers(int num_kmer);
@@ -104,10 +118,8 @@ class Sample
 vector<Seed*> CsvFile::input_seeds(int num_seeds)
 {
     vector<Seed*> ans;
-    //   cout << "HELOOOOOOOOOO" << endl;
     for(int i = 0; i < num_seeds; i++)
     {
-        //   cout << "HELOOOOOOOOOO" << endl;
         ans.push_back(get_new_seed());
     }
     return ans;
@@ -115,7 +127,11 @@ vector<Seed*> CsvFile::input_seeds(int num_seeds)
 
 void Seed::add_final_hash(string final_hash_input)
 {
-    final_hash = final_hash_input;
+    stringstream stream_temp;
+    stream_temp << final_hash_input;
+    uint64_t now;
+    stream_temp >> now;
+    final_hash = now;
 }
 
 void Seed::add_kmer(string new_kmer)
@@ -140,10 +156,14 @@ int Sample::get_n()
 
 void Seed::add_hash(string new_hash)
 {
-    hashes.push_back(new_hash);
+    stringstream stream_temp;
+    stream_temp << new_hash;
+    uint64_t now;
+    stream_temp >> now;
+    hashes.push_back(now);
 }
 
-string Seed::get_final_hash()
+uint64_t Seed::get_final_hash()
 {
     return final_hash;
 }
@@ -153,7 +173,11 @@ string Seed::get_hash()
     string ans = "";
     for(int i = 0; i < hashes.size(); i++)
     {
-        ans += hashes[i];
+        stringstream stream_temp;
+        stream_temp << hashes[i];
+        string now;
+        stream_temp >> now;
+        ans += now;
     }
     return ans;
 }
@@ -203,14 +227,22 @@ Seed* CsvFile::get_new_seed()
     string new_line;
     file_stream >> new_line;
     vector<string> parsed_string = parse_new_line(new_line);
-    Seed* new_seed = new Seed();
+    vector<string> kmers;
+    vector<string> hashes;
     for(int i = 0; i < (int)parsed_string.size() - 2; i++)
     {
         if(i % 2 == 0)
-            new_seed->add_kmer(parsed_string[i]);
+            kmers.push_back(parsed_string[i]);
         else 
-            new_seed->add_hash(parsed_string[i]);
+            hashes.push_back(parsed_string[i]);
     }
+    Seed* new_seed;
+    if(hashes.size() == 2)
+    {
+        new_seed = new Seed1();
+    }
+    else 
+        new_seed = new Seed2();
     new_seed->add_final_hash(parsed_string[(int)parsed_string.size() - 2]);
     return new_seed;
 }
@@ -262,11 +294,11 @@ void Sample::evaluate_sample()
 
 int Sample::calculate_unique_final_hashes()
 {
-    map<string, bool> mark_strobe;
+    map<uint64_t, bool> mark_strobe;
     int ans = 0;
     for(int i = 0; i < seeds.size(); i++)
     {
-        string now_strobe = seeds[i]->get_final_hash();
+        uint64_t now_strobe = seeds[i]->get_final_hash();
         if(!mark_strobe[now_strobe])
         {
             mark_strobe[now_strobe] = 1;
@@ -298,14 +330,15 @@ double Sample::calculate_ehits_hashes()
     return (double)ans / (double)sz;
 }
 
+
 double Sample::calculate_ehits_final_hashes()
 {
-    vector<string> hash_strs;
-    map<string, int> cnt_strobe;
+    vector<uint64_t> hash_strs;
+    map<uint64_t, int> cnt_strobe;
     uint64_t ans = 0;
     for(int i = 0; i < seeds.size(); i++)
     {
-        string now_strobe = seeds[i]->get_final_hash();
+        uint64_t now_strobe = seeds[i]->get_final_hash();
         if(!cnt_strobe[now_strobe])
         {
             hash_strs.push_back(now_strobe);
