@@ -2,33 +2,15 @@
 
 using namespace std;
 
-class Seed 
+struct Kmers
 {
-    public: 
-        void add_kmer(string input_kmer);
-        void add_hash(string input_hash);
-        void print();
-        int get_kmer(int index_num);
-        string get_hash();
-        uint64_t get_final_hash();
-        void add_final_hash(string final_hash_input);
-    protected:
-        uint64_t final_hash;
+    uint32_t kmer[3];
 };
 
-
-class Seed1 : public Seed
+struct Hashes 
 {
-    private:
-        uint32_t kmers[2];
-        uint64_t hashes[2];
-};
-
-class Seed2 : public Seed
-{
-    private:
-        uint32_t kmers[3];
-        uint64_t hashes[3];
+    uint64_t hashes[3];
+    uint64_t final_hash;
 };
 
 class CsvFile
@@ -37,11 +19,13 @@ class CsvFile
         CsvFile(string file_name, bool is_result);
         ~CsvFile();
         void read();
+        vector<Hashes*> input_hashes(int num_seeds);
+        vector<Kmers*> input_kmers(int num_seeds);
+        Hashes* get_new_hash();
+        Kmers* get_new_kmer();
         vector<string> parse_new_line(string line);
         void print_col_name();
         vector< vector<string> > get_cols(vector<string> needed_cols);
-        Seed* get_new_seed();
-        vector<Seed*> input_seeds(int num_seeds);
     private:
         vector<string> get_col(int index);
         vector<string> col_name;
@@ -68,9 +52,8 @@ class CsvWriter
 class Sample 
 {
     public:
-        Sample(int inp_id, CsvFile* inp_csv_file);
+        Sample(int inp_id, vector<CsvFile*> inp_csv_file);
         ~Sample();
-        void add_seed(Seed* new_seed);
         void print();
         void evaluate_sample();
         void init_header(vector< vector<string> > & col_seeds);
@@ -80,6 +63,14 @@ class Sample
         string get_hash();
         string get_seed_method();
         void write_seeds(string path);
+        void evaluate_hashes();
+        void evaluate_kmers();
+        void change_csv_file(CsvFile* inp_csv_file);
+
+        void add_kmer(Kmers* new_kmer);
+        void add_hash(Hashes* new_hash);
+
+
     private:
         double calculate_ehits_final_hashes();
         double calculate_ehits_kmers(int num_kmer);
@@ -89,8 +80,10 @@ class Sample
         int calculate_unique_hashes();
         double calculate_conflicts();
         double calculate_ehits_hashes();
+        string get_hash(Hashes* hash_now);
         int cal_conf_two(int index1, int index2);
-        vector<Seed*> seeds;
+        vector<Kmers*> kmers;
+        vector<Hashes*> hashes;
         int sample_id;
         int seq_len;
         vector<double> ehits_kmers;
@@ -111,32 +104,77 @@ class Sample
         double ehits_final_hash;
         double ratio_final_hash;
         int unique_final_hash;
-        CsvFile* csv_file;
+        vector<CsvFile*> csv_file;
+        int pnt_files;
 };
 
 
-vector<Seed*> CsvFile::input_seeds(int num_seeds)
+CsvFile::CsvFile(string file_name, bool is_result)
 {
-    vector<Seed*> ans;
+    file_stream = ifstream(file_name);
+    string tmp;
+    if(is_result)
+        file_stream >> tmp;
+}
+
+void CsvFile::print_col_name()
+{
+    for(int i = 0; i < col_name.size(); i++)
+    {
+        cout << col_name[i] << " ";
+    }
+    cout << endl;
+}
+
+vector<string> CsvFile::parse_new_line(string file_name)
+{
+    vector<string> ans;
+    string now = "";
+    for(int i = 0; i < file_name.size(); i++)
+    {
+        if(file_name[i] == ',')
+        {
+            ans.push_back(now);
+            now = "";
+            continue;
+        }
+        now += file_name[i];
+    }
+    if(now != "")
+        ans.push_back(now);
+    return ans;
+}   
+
+void CsvFile::read()
+{
+    string new_line;
+    file_stream >> new_line;
+    // cout << new_line << endl;
+    col_name = parse_new_line(new_line);
+    while(file_stream >> new_line)
+    {
+        lines.push_back(parse_new_line(new_line));   
+    }
+}
+
+vector<Hashes*> CsvFile::input_hashes(int num_seeds)
+{
+    vector<Hashes*> ans;
     for(int i = 0; i < num_seeds; i++)
     {
-        ans.push_back(get_new_seed());
+        ans.push_back(get_new_hash());
     }
     return ans;
 }
 
-void Seed::add_final_hash(string final_hash_input)
+vector<Kmers*> CsvFile::input_kmers(int num_seeds)
 {
-    stringstream stream_temp;
-    stream_temp << final_hash_input;
-    uint64_t now;
-    stream_temp >> now;
-    final_hash = now;
-}
-
-void Seed::add_kmer(string new_kmer)
-{
-    kmers.push_back(stoi(new_kmer));
+    vector<Kmers*> ans;
+    for(int i = 0; i < num_seeds; i++)
+    {
+        ans.push_back(get_new_kmer());
+    }
+    return ans;
 }
 
 string Sample::get_hash()
@@ -154,27 +192,31 @@ int Sample::get_n()
     return n;
 }
 
-void Seed::add_hash(string new_hash)
+uint64_t to_int_64(string inp)
 {
     stringstream stream_temp;
-    stream_temp << new_hash;
+    stream_temp << inp;
     uint64_t now;
     stream_temp >> now;
-    hashes.push_back(now);
+    return now;
 }
 
-uint64_t Seed::get_final_hash()
+uint32_t to_int_32(string inp)
 {
-    return final_hash;
+    stringstream stream_temp;
+    stream_temp << inp;
+    uint32_t now;
+    stream_temp >> now;
+    return now;
 }
 
-string Seed::get_hash()
+string Sample::get_hash(Hashes* hash_now)
 {
     string ans = "";
-    for(int i = 0; i < hashes.size(); i++)
+    for(int i = 0; i < n; i++)
     {
         stringstream stream_temp;
-        stream_temp << hashes[i];
+        stream_temp << hash_now->hashes[i];
         string now;
         stream_temp >> now;
         ans += now;
@@ -182,33 +224,16 @@ string Seed::get_hash()
     return ans;
 }
 
-int Seed::get_kmer(int index_num)
-{
-    return kmers[index_num - 1];
-}
-
-void Seed::print()
-{
-    cout << "**********" << endl;
-    cout << "Kmers" << endl;
-    for(int i = 0; i < kmers.size(); i++)
-    {
-        cout << kmers[i] << " ";
-    }
-    cout << endl;
-    cout << "Hashes" << endl;
-    for(int i = 0; i < hashes.size(); i++)
-    {
-        cout << hashes[i] << " ";
-    }
-    cout << endl;
-}
 
 Sample::~Sample()
 {
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < hashes.size(); i++)
     {
-        delete seeds[i];
+        delete hashes[i];
+    }
+    for(int i = 0; i < kmers.size(); i++)
+    {
+        delete kmers[i];
     }
 }
 
@@ -222,134 +247,139 @@ CsvWriter::~CsvWriter()
     writer_csv.close();
 }
 
-Seed* CsvFile::get_new_seed()
+Hashes* CsvFile::get_new_hash()
 {
     string new_line;
     file_stream >> new_line;
     vector<string> parsed_string = parse_new_line(new_line);
-    vector<string> kmers;
-    vector<string> hashes;
+    Hashes* new_hash = new Hashes();
+    int cnt = 0; 
+    for(int i = 0; i < (int)parsed_string.size() - 2; i++)
+    {
+        if(i % 2 == 1)
+            new_hash->hashes[cnt++] = to_int_64(parsed_string[i]);
+    }
+    new_hash->final_hash = to_int_64(parsed_string[(int)parsed_string.size() - 2]);
+    return new_hash;
+}
+
+Kmers* CsvFile::get_new_kmer()
+{
+    string new_line;
+    file_stream >> new_line;
+    vector<string> parsed_string = parse_new_line(new_line);
+    Kmers* new_kmer = new Kmers();
+    int cnt = 0; 
     for(int i = 0; i < (int)parsed_string.size() - 2; i++)
     {
         if(i % 2 == 0)
-            kmers.push_back(parsed_string[i]);
-        else 
-            hashes.push_back(parsed_string[i]);
+            new_kmer->kmer[cnt++] = to_int_32(parsed_string[i]);
     }
-    Seed* new_seed;
-    if(hashes.size() == 2)
-    {
-        new_seed = new Seed1();
-    }
-    else 
-        new_seed = new Seed2();
-    new_seed->add_final_hash(parsed_string[(int)parsed_string.size() - 2]);
-    return new_seed;
+    return new_kmer;
 }
 
-void Sample::evaluate_sample()
+void Sample::evaluate_hashes()
 {
+    cout << "Evaluation started..." << endl;  
 
-    cout << "Evaluation started..." << endl;
-
-    seeds = csv_file->input_seeds(number_seeds);
-
-    cout << "Input new sample seeds" << endl;
-
-    ehits_kmers.push_back(calculate_ehits_kmers(2));
-    if(n == 3)
-    {
-        ehits_kmers.push_back(calculate_ehits_kmers(3));
-    }
-
-    cout << "Calculate Ehits Kmers" << endl;
-
-    ehits_distance.push_back(calculate_ehits_distance(1, 2));
-    if(n == 3)
-    {
-        ehits_distance.push_back(calculate_ehits_distance(1, 3));
-        ehits_distance.push_back(calculate_ehits_distance(2, 3));
-    }
-    cout << "Calculate Distance Kmers" << endl;
-    unique_kmers.push_back(calculate_unique_kmers(2));
-    if(n == 3)
-    {
-        unique_kmers.push_back(calculate_unique_kmers(3));
-    }
-    cout << "Calculate unique kmers" << endl;
     unique_hashes = calculate_unique_hashes();
     cout << "Calculate Unique Hashes" << endl;
-    conflicts = calculate_conflicts();
-    cout << "Calculate Conflicts" << endl;
+  
     ehits_hashes.push_back(calculate_ehits_hashes());
     cout << "Calculate ehits hashes" << endl;
     unique_final_hash = calculate_unique_final_hashes();
     ratio_final_hash = (double)unique_final_hash / (double)unique_hashes;
     ehits_final_hash = calculate_ehits_final_hashes();
-    for(int i = 0; i < seeds.size(); i++)
-        delete seeds[i];
-    seeds.clear();
-    cout << "Seeds deleted" << endl;
+    for(int i = 0; i < hashes.size(); i++)
+        delete hashes[i];
+    hashes.clear();
 }
+
+void Sample::evaluate_kmers()
+{
+    ehits_kmers.push_back(calculate_ehits_kmers(1));
+    if(n == 3)
+    {
+        ehits_kmers.push_back(calculate_ehits_kmers(2));
+    }
+    cout << "Calculate Ehits Kmers" << endl;
+    ehits_distance.push_back(calculate_ehits_distance(0, 1));
+    if(n == 3)
+    {
+        ehits_distance.push_back(calculate_ehits_distance(0, 2));
+        ehits_distance.push_back(calculate_ehits_distance(1, 2));
+    }
+    cout << "Calculate Distance Kmers" << endl;
+
+    unique_kmers.push_back(calculate_unique_kmers(1));
+    if(n == 3)
+    {
+        unique_kmers.push_back(calculate_unique_kmers(2));
+    }
+    cout << "Calculate unique kmers" << endl;
+
+    conflicts = calculate_conflicts();
+    cout << "Calculate Conflicts" << endl;
+}
+
 
 int Sample::calculate_unique_final_hashes()
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     map<uint64_t, bool> mark_strobe;
     int ans = 0;
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        uint64_t now_strobe = seeds[i]->get_final_hash();
+        Hashes* hash_now = file_now->get_new_hash();
+        uint64_t now_strobe = hash_now->final_hash;
         if(!mark_strobe[now_strobe])
         {
             mark_strobe[now_strobe] = 1;
             ans++;
         }
+        delete hash_now;
     }
     return ans;
 }
 
 double Sample::calculate_ehits_hashes()
 {
-    vector<string> hash_strs;
+    CsvFile* file_now = csv_file[pnt_files++];
     map<string, int> cnt_strobe;
     uint64_t ans = 0;
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        string now_strobe = seeds[i]->get_hash();
-        if(!cnt_strobe[now_strobe])
-        {
-            hash_strs.push_back(now_strobe);
-        }
+        Hashes* hash_now = file_now->get_new_hash();
+        string now_strobe = get_hash(hash_now);
         cnt_strobe[now_strobe]++;
+        delete hash_now;
     }
-    for(int i = 0; i < hash_strs.size(); i++)
+    for(auto i = cnt_strobe.begin(); i != cnt_strobe.end(); i++)
     {
-        ans += (uint64_t)cnt_strobe[hash_strs[i]] * (uint64_t)cnt_strobe[hash_strs[i]];
+        ans += (uint64_t)i->second * (uint64_t)i->second;
     }
-    int sz = seeds.size();
+    int sz = number_seeds;
     return (double)ans / (double)sz;
 }
 
 
 double Sample::calculate_ehits_final_hashes()
 {
-    vector<uint64_t> hash_strs;
+    CsvFile* file_now = csv_file[pnt_files++];
     map<uint64_t, int> cnt_strobe;
     uint64_t ans = 0;
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        uint64_t now_strobe = seeds[i]->get_final_hash();
-        if(!cnt_strobe[now_strobe])
-        {
-            hash_strs.push_back(now_strobe);
-        }
+        Hashes* hash_now = file_now->get_new_hash();
+        uint64_t now_strobe = hash_now->final_hash;
         cnt_strobe[now_strobe]++;
+        delete hash_now;
     }
-    for(int i = 0; i < hash_strs.size(); i++)
+    for(auto i = cnt_strobe.begin(); i != cnt_strobe.end(); i++)
     {
-        ans += (uint64_t)cnt_strobe[hash_strs[i]] * (uint64_t)cnt_strobe[hash_strs[i]];
+        ans += (uint64_t)i->second * (uint64_t)i->second;
     }
-    int sz = seeds.size();
+    int sz = number_seeds;
     return (double)ans / (double)sz;
 }
 
@@ -359,8 +389,8 @@ int Sample::cal_conf_two(int index1, int index2)
     for(int i = 1; i <= n; i++)
     {
         int conf_now;
-        int pos1 = seeds[index1]->get_kmer(i);
-        int pos2 = seeds[index2]->get_kmer(i);
+        int pos1 = kmers[index1]->kmer[i - 1];
+        int pos2 = kmers[index2]->kmer[i - 1];
         if(pos1 < pos2)
             conf_now = pos1 - pos2 + kmer_len;
         else 
@@ -374,46 +404,57 @@ int Sample::cal_conf_two(int index1, int index2)
 double Sample::calculate_conflicts()
 {
     uint64_t sum = 0;
-    for(int i = 0; i < seeds.size(); i++)
+    CsvFile* file_now = csv_file[pnt_files++];
+    kmers = file_now->input_kmers(number_seeds);
+    for(int i = 0; i < number_seeds; i++)
     {
         int mx = 0;
-        for(int j = i + 1; j < min(i + kmer_len, (int)seeds.size()); j++)
+        for(int j = i + 1; j < min(i + kmer_len, number_seeds); j++)
         {
             int conf_now = cal_conf_two(i, j);
             mx = max(mx, conf_now);
         }
         sum += (uint64_t)mx;
     }
-    int sz = seeds.size();
+    int sz = kmers.size();
+    for(int i = 0; i < number_seeds; i++)
+        delete kmers[i];
+    kmers.clear();
     return (double)sum / (double)sz;
 }
 
 int Sample::calculate_unique_hashes()
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     map<string, bool> mark_strobe;
     int ans = 0;
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        string now_strobe = seeds[i]->get_hash();
+        Hashes* hash_now = file_now->get_new_hash();
+        string now_strobe = get_hash(hash_now);
         if(!mark_strobe[now_strobe])
         {
             mark_strobe[now_strobe] = 1;
             ans++;
         }
+        delete hash_now;
     }
     return ans;
 }
 
 int Sample::calculate_unique_kmers(int num_kmer)
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     vector<bool>cnt_repeat;
     for(int i = 0; i < seq_len; i++)
     {
         cnt_repeat.push_back(0);
     }
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        cnt_repeat[seeds[i]->get_kmer(num_kmer)] = 1;
+        Kmers* kmer_now = file_now->get_new_kmer();
+        cnt_repeat[kmer_now->kmer[num_kmer]] = 1;
+        delete kmer_now;
     }
     int ans = 0;
     for(int i = 0; i < seq_len; i++)
@@ -427,26 +468,31 @@ int Sample::calculate_unique_kmers(int num_kmer)
 
 double Sample::calculate_ehits_distance(int num_kmer1, int num_kmer2)
 {
+    CsvFile* file_now = csv_file[pnt_files++];
+
     uint64_t sum = 0;
     vector<int>cnt_repeat;
     for(int i = 0; i < seq_len; i++)
     {
         cnt_repeat.push_back(0);
     }
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        cnt_repeat[seeds[i]->get_kmer(num_kmer2) - seeds[i] -> get_kmer(num_kmer1)]++;
+        Kmers* kmer_now = file_now->get_new_kmer();
+        cnt_repeat[kmer_now->kmer[num_kmer2] - kmer_now->kmer[num_kmer1]]++;
+        delete kmer_now;
     }
     for(int i = 0; i < seq_len; i++)
     {
         sum += (uint64_t)cnt_repeat[i] * (uint64_t)cnt_repeat[i];
     }
-    int num_seeds = seeds.size();
+    int num_seeds = number_seeds;
     return (double)sum / (double)num_seeds;
 }
 
 double Sample::calculate_ehits_kmers(int num_kmer)
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     uint64_t sum = 0;
     vector<int>cnt_repeat;
     std::cout <<"seq len: " << seq_len << std::endl;
@@ -455,11 +501,13 @@ double Sample::calculate_ehits_kmers(int num_kmer)
         cnt_repeat.push_back(0);
     }
     std::cout << "cnt_repeat initialized and it's size is:" << cnt_repeat.size() << std::endl;
-    for(int i = 0; i < seeds.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        if (seeds[i]->get_kmer(num_kmer) >= cnt_repeat.size())
-            std::cout << "seeds[i]->get_kmer(num_kmer) = " << seeds[i]->get_kmer(num_kmer) << std::endl;
-        cnt_repeat[seeds[i]->get_kmer(num_kmer)]++;
+        Kmers* kmer_now = file_now->get_new_kmer();
+        if (kmer_now->kmer[num_kmer] >= cnt_repeat.size())
+            std::cout << "seeds[i]->get_kmer(num_kmer) = " << kmers[i]->kmer[num_kmer] << std::endl;
+        cnt_repeat[kmer_now->kmer[num_kmer]]++;
+        delete kmer_now;
     }
     std::cout << "cnt_repeat calculated" << std::endl;
     for(int i = 0; i < seq_len; i++)
@@ -467,20 +515,26 @@ double Sample::calculate_ehits_kmers(int num_kmer)
         sum += (uint64_t)cnt_repeat[i] * (uint64_t)cnt_repeat[i];
     }
     std::cout << "sum calculated" << std::endl;
-    int num_seeds = seeds.size();
+    int num_seeds = number_seeds;
     std::cout << "num_seeds calculated" << std::endl;
     return (double)sum / (double)num_seeds;
 }
 
-void Sample::add_seed(Seed* new_seed)
+void Sample::add_hash(Hashes* new_hash)
 {
-    seeds.push_back(new_seed);
+    hashes.push_back(new_hash);
 }
 
-Sample::Sample(int inp_id, CsvFile* inp_csv_file)
+void Sample::add_kmer(Kmers* new_kmer)
+{
+    kmers.push_back(new_kmer);
+}
+
+Sample::Sample(int inp_id, vector<CsvFile*> inp_csv_file)
 {
     sample_id = inp_id;
     csv_file = inp_csv_file;
+    pnt_files = 0;
 }
 
 void Sample::print()
@@ -532,25 +586,25 @@ vector< vector<string> > CsvFile::get_cols(vector<string> needed_cols)
     return ans;
 }
 
-vector<Seed*> create_seeds(vector< vector<string> > &col_seeds)
-{
-    vector<Seed*> ans;
-    for(int i = 0; i < col_seeds[0].size(); i++)
-    {
-        Seed* new_seed = new Seed();
-        for(int j = 0; j < col_seeds.size(); j ++)
-        {
-            if(j % 2 == 0)
-                new_seed->add_kmer(col_seeds[j][i]);
-            else 
-                new_seed->add_hash(col_seeds[j][i]);
-        }
-        ans.push_back(new_seed);
-    }
-    return ans;
-}
+// vector<Seed*> create_seeds(vector< vector<string> > &col_seeds)
+// {
+//     vector<Seed*> ans;
+//     for(int i = 0; i < col_seeds[0].size(); i++)
+//     {
+//         Seed* new_seed = new Seed();
+//         for(int j = 0; j < col_seeds.size(); j ++)
+//         {
+//             if(j % 2 == 0)
+//                 new_seed->add_kmer(col_seeds[j][i]);
+//             else 
+//                 new_seed->add_hash(col_seeds[j][i]);
+//         }
+//         ans.push_back(new_seed);
+//     }
+//     return ans;
+// }
 
-vector<Sample*> build_samples(CsvFile* csv_result, CsvFile* csv_header)
+vector<Sample*> build_samples(vector<CsvFile*> csv_result, CsvFile* csv_header)
 {
     vector<string> needed_cols{"Sample"};
     vector< vector<string> > col_samples = csv_header -> get_cols(needed_cols);
@@ -567,53 +621,7 @@ vector<Sample*> build_samples(CsvFile* csv_result, CsvFile* csv_header)
     return ans;
 }
 
-CsvFile::CsvFile(string file_name, bool is_result)
-{
-    file_stream = ifstream(file_name);
-    string tmp;
-    if(is_result)
-        file_stream >> tmp;
-}
 
-void CsvFile::print_col_name()
-{
-    for(int i = 0; i < col_name.size(); i++)
-    {
-        cout << col_name[i] << " ";
-    }
-    cout << endl;
-}
-
-vector<string> CsvFile::parse_new_line(string file_name)
-{
-    vector<string> ans;
-    string now = "";
-    for(int i = 0; i < file_name.size(); i++)
-    {
-        if(file_name[i] == ',')
-        {
-            ans.push_back(now);
-            now = "";
-            continue;
-        }
-        now += file_name[i];
-    }
-    if(now != "")
-        ans.push_back(now);
-    return ans;
-}   
-
-void CsvFile::read()
-{
-    string new_line;
-    file_stream >> new_line;
-    // cout << new_line << endl;
-    col_name = parse_new_line(new_line);
-    while(file_stream >> new_line)
-    {
-        lines.push_back(parse_new_line(new_line));   
-    }
-}
 
 string add_suffix(string prefix, char* suffix)
 {
@@ -779,6 +787,11 @@ void Sample::add_all_data(vector< vector<double> >& all_data)
     add_new_num(all_data, pnt, ehits_final_hash);
 }
 
+void Sample::change_csv_file(CsvFile* csv_result2)
+{
+    // csv_file = csv_result2;
+}
+
 double find_median(vector<double>& vec_inp)
 {
     sort(vec_inp.begin(), vec_inp.end());
@@ -797,8 +810,14 @@ int main(int argc, char** argv)
     string path_header = add_suffix("BenchMarkResults/Headers/", argv[1]);
     string path_output = add_suffix("EvaluationResults/AllSamples/", argv[1]);
     string path_median = add_suffix("EvaluationResults/MedianSamples/", argv[1]);
+    
+    vector<CsvFile*> csv_results;
+    
+    for(int i = 0; i < 18; i++)
+    {
+        csv_results.push_back(new CsvFile(path_result, 1));
+    }
 
-    CsvFile* csv_result = new CsvFile(path_result, 1);
     CsvFile* csv_header = new CsvFile(path_header, 0);
     CsvWriter* csv_all_sample = new CsvWriter(path_output);
     CsvWriter* csv_median_sample = new CsvWriter(path_median);
@@ -807,7 +826,7 @@ int main(int argc, char** argv)
 
     cout << "Read Header" << endl;
 
-    vector<Sample*> samples = build_samples(csv_result, csv_header);
+    vector<Sample*> samples = build_samples(csv_results, csv_header);
 
     cout << "Build Samples" << endl;
 
@@ -826,7 +845,8 @@ int main(int argc, char** argv)
 
     for(int i = 0; i < samples.size(); i++)
     {
-        samples[i] -> evaluate_sample();
+        samples[i] -> evaluate_hashes();
+        samples[i] -> evaluate_kmers();
         samples[i] -> write_in_file(csv_all_sample, 0);
         samples[i] -> add_all_data(all_data);
         cout << "A sample evaluation finished" << endl;
@@ -854,7 +874,9 @@ int main(int argc, char** argv)
     csv_median_sample->new_line();
 
 
-    delete csv_result;
+    for(int i = 0; i < csv_results.size(); i++)
+        delete csv_results[i];
+    csv_results.clear();
     delete csv_header;
     delete csv_all_sample;
     delete csv_median_sample;

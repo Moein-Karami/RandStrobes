@@ -1,0 +1,709 @@
+desc: (none)
+cmd: ./metric.out _RandomDataGenerator_NoHash_max_Shen_2_1.csv
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=34057306733
+mem_heap_B=71449817
+mem_heap_extra_B=28975679
+mem_stacks_B=0
+heap_tree=detailed
+n3: 71449817 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 56392560 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 56392560 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 56392560 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 56392560 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 56392560 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 56392560 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 56392560 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 56392560 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 56392560 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 56392560 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 14786143 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 14786040 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 14786040 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 14786040 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 14786040 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 14786040 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 14786040 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 14786040 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 14786040 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 14786040 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 14786040 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 14786040 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 14786040 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 103 in 9 places, all below massif's threshold (1.00%)
+ n0: 271114 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=65006875258
+mem_heap_B=135007363
+mem_heap_extra_B=54848965
+mem_stacks_B=0
+heap_tree=detailed
+n3: 135007363 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 106751376 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 106751376 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 106751376 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 106751376 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 106751376 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 106751376 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 106751376 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 106751376 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 106751376 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 106751376 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 27984869 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 27984762 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 27984762 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 27984762 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 27984762 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 27984762 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 27984762 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 27984762 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 27984762 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 27984762 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 27984762 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 27984762 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 27984762 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 107 in 9 places, all below massif's threshold (1.00%)
+ n0: 271118 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=90699784979
+mem_heap_B=187456219
+mem_heap_extra_B=76197517
+mem_stacks_B=0
+heap_tree=detailed
+n3: 187456219 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 148306464 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 148306464 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 148306464 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 148306464 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 148306464 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 148306464 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 148306464 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 148306464 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 148306464 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 148306464 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 38878638 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 38878532 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 38878532 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 38878532 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 38878532 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 38878532 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 38878532 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 38878532 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 38878532 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 38878532 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 38878532 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 38878532 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 38878532 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 106 in 9 places, all below massif's threshold (1.00%)
+ n0: 271117 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=125235405330
+mem_heap_B=257715200
+mem_heap_extra_B=104795352
+mem_stacks_B=0
+heap_tree=detailed
+n3: 257715200 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 203972400 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 203972400 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 203972400 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 203972400 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 203972400 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 203972400 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 203972400 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 203972400 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 203972400 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 203972400 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 53471683 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 53471577 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 53471577 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 53471577 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 53471577 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 53471577 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 53471577 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 53471577 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 53471577 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 53471577 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 53471577 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 53471577 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 53471577 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 106 in 9 places, all below massif's threshold (1.00%)
+ n0: 271117 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=172751100245
+mem_heap_B=354057524
+mem_heap_extra_B=144011764
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=217845556617
+mem_heap_B=445232396
+mem_heap_extra_B=181123988
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=250923056271
+mem_heap_B=511983618
+mem_heap_extra_B=208293366
+mem_stacks_B=0
+heap_tree=detailed
+n3: 511983618 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 405429912 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 405429912 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 405429912 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 405429912 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 405429912 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 405429912 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 405429912 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 405429912 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 405429912 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 405429912 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 106282589 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 106282483 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 106282483 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 106282483 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 106282483 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 106282483 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 106282483 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 106282483 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 106282483 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 106282483 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 106282483 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 106282483 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 106282483 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 106 in 9 places, all below massif's threshold (1.00%)
+ n0: 271117 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=8
+#-----------
+time=294770414081
+mem_heap_B=600330089
+mem_heap_extra_B=244252471
+mem_stacks_B=0
+heap_tree=detailed
+n3: 600330089 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 475426512 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 475426512 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 475426512 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 475426512 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 475426512 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 475426512 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 475426512 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 475426512 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 475426512 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 475426512 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 124632460 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 124632354 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 124632354 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 124632354 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 124632354 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 124632354 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 124632354 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 124632354 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 124632354 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 124632354 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 124632354 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 124632354 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 124632354 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 106 in 9 places, all below massif's threshold (1.00%)
+ n0: 271117 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=346269058229
+mem_heap_B=703921379
+mem_heap_extra_B=286419181
+mem_stacks_B=0
+heap_tree=detailed
+n3: 703921379 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 557501184 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 557501184 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 557501184 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 557501184 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 557501184 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 557501184 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 557501184 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 557501184 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 557501184 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 557501184 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 146149079 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 146148974 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 146148974 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 146148974 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 146148974 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 146148974 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 146148974 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 146148974 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 146148974 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 146148974 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 146148974 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 146148974 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 146148974 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 105 in 9 places, all below massif's threshold (1.00%)
+ n0: 271116 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=391510918495
+mem_heap_B=794796053
+mem_heap_extra_B=323412011
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=445304752373
+mem_heap_B=902709158
+mem_heap_extra_B=367337602
+mem_stacks_B=0
+heap_tree=peak
+n3: 902709158 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 714996072 0x12457F: std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 714996072 0x122DCC: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 714996072 0x120E6C: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 714996072 0x11E982: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 714996072 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 714996072 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 714996072 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 714996072 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 714996072 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 714996072 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n2: 187441969 0x49ACA59: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 187441863 0x125CC9: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, 0ul>(std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&, std::tuple<>&, std::_Index_tuple<0ul>, std::_Index_tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 187441863 0x12535E: std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::piecewise_construct_t, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<>) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 187441863 0x124616: void std::__new_allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 187441863 0x122E34: void std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > > >::construct<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::allocator<std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 187441863 0x120F03: void std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_construct_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >*, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 187441863 0x11E9C9: std::_Rb_tree_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >* std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 187441863 0x11A3F6: std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >&, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 187441863 0x1152FE: std::_Rb_tree_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > std::_Rb_tree<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool>, std::_Select1st<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> >, std::piecewise_construct_t const&, std::tuple<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n1: 187441863 0x1125D3: std::map<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, bool, std::less<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, bool> > >::operator[](std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+           n1: 187441863 0x10C728: Sample::calculate_unique_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+            n1: 187441863 0x10BA06: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+             n0: 187441863 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n0: 106 in 9 places, all below massif's threshold (1.00%)
+ n0: 271117 in 18 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=485787557533
+mem_heap_B=78611942
+mem_heap_extra_B=31890818
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=539637402091
+mem_heap_B=199202313
+mem_heap_extra_B=80978647
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=589478692221
+mem_heap_B=310363125
+mem_heap_extra_B=126226291
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=619816875543
+mem_heap_B=377904725
+mem_heap_extra_B=153718259
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=655211911711
+mem_heap_B=456619159
+mem_heap_extra_B=185759041
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=676883415984
+mem_heap_B=504771969
+mem_heap_extra_B=205358215
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=709390718734
+mem_heap_B=576954935
+mem_heap_extra_B=234738041
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=734674148840
+mem_heap_B=633059424
+mem_heap_extra_B=257573376
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=770793349626
+mem_heap_B=713162997
+mem_heap_extra_B=290181987
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=796076776670
+mem_heap_B=769203338
+mem_heap_extra_B=312994342
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=839419814284
+mem_heap_B=865225017
+mem_heap_extra_B=352082055
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=881408918851
+mem_heap_B=26845455
+mem_heap_extra_B=4430353
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=915085927127
+mem_heap_B=77129329
+mem_heap_extra_B=12810991
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=935292140840
+mem_heap_B=106957504
+mem_heap_extra_B=17782376
+mem_stacks_B=0
+heap_tree=detailed
+n2: 106957504 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 106686672 0x124116: std::__new_allocator<std::_Rb_tree_node<std::pair<unsigned long const, bool> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 106686672 0x122A4E: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<unsigned long const, bool> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<unsigned long const, bool> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 106686672 0x1207C8: std::_Rb_tree<unsigned long, std::pair<unsigned long const, bool>, std::_Select1st<std::pair<unsigned long const, bool> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, bool> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 106686672 0x11D6F6: std::_Rb_tree_node<std::pair<unsigned long const, bool> >* std::_Rb_tree<unsigned long, std::pair<unsigned long const, bool>, std::_Select1st<std::pair<unsigned long const, bool> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, bool> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<unsigned long const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<unsigned long const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 106686672 0x118FAA: std::_Rb_tree<unsigned long, std::pair<unsigned long const, bool>, std::_Select1st<std::pair<unsigned long const, bool> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, bool> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<unsigned long const&>, std::tuple<> >(std::_Rb_tree<unsigned long, std::pair<unsigned long const, bool>, std::_Select1st<std::pair<unsigned long const, bool> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, bool> > >&, std::piecewise_construct_t const&, std::tuple<unsigned long const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 106686672 0x1147FA: std::_Rb_tree_iterator<std::pair<unsigned long const, bool> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, bool>, std::_Select1st<std::pair<unsigned long const, bool> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, bool> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<unsigned long const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<unsigned long const, bool> >, std::piecewise_construct_t const&, std::tuple<unsigned long const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 106686672 0x111E23: std::map<unsigned long, bool, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, bool> > >::operator[](unsigned long const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 106686672 0x10BEA6: Sample::calculate_unique_final_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 106686672 0x10BAA1: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 106686672 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n0: 270832 in 22 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=968969166757
+mem_heap_B=156330927
+mem_heap_extra_B=26011265
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=1011626691732
+mem_heap_B=218356768
+mem_heap_extra_B=36348920
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=1065509901560
+mem_heap_B=295973343
+mem_heap_extra_B=49285001
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=1119241654072
+mem_heap_B=372610527
+mem_heap_extra_B=62057865
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=1172973338623
+mem_heap_B=448576751
+mem_heap_extra_B=74718897
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=1213605632576
+mem_heap_B=40009501
+mem_heap_extra_B=6624363
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=1251112419407
+mem_heap_B=100267215
+mem_heap_extra_B=16667313
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=1292256029190
+mem_heap_B=165688111
+mem_heap_extra_B=27570793
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=1338885431246
+mem_heap_B=239178177
+mem_heap_extra_B=39819119
+mem_stacks_B=0
+heap_tree=detailed
+n2: 239178177 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 238906944 0x124422: std::__new_allocator<std::_Rb_tree_node<std::pair<unsigned long const, int> > >::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 238906944 0x122C92: std::allocator_traits<std::allocator<std::_Rb_tree_node<std::pair<unsigned long const, int> > > >::allocate(std::allocator<std::_Rb_tree_node<std::pair<unsigned long const, int> > >&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 238906944 0x120C1A: std::_Rb_tree<unsigned long, std::pair<unsigned long const, int>, std::_Select1st<std::pair<unsigned long const, int> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, int> > >::_M_get_node() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 238906944 0x11E302: std::_Rb_tree_node<std::pair<unsigned long const, int> >* std::_Rb_tree<unsigned long, std::pair<unsigned long const, int>, std::_Select1st<std::pair<unsigned long const, int> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, int> > >::_M_create_node<std::piecewise_construct_t const&, std::tuple<unsigned long const&>, std::tuple<> >(std::piecewise_construct_t const&, std::tuple<unsigned long const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 238906944 0x119C4C: std::_Rb_tree<unsigned long, std::pair<unsigned long const, int>, std::_Select1st<std::pair<unsigned long const, int> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, int> > >::_Auto_node::_Auto_node<std::piecewise_construct_t const&, std::tuple<unsigned long const&>, std::tuple<> >(std::_Rb_tree<unsigned long, std::pair<unsigned long const, int>, std::_Select1st<std::pair<unsigned long const, int> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, int> > >&, std::piecewise_construct_t const&, std::tuple<unsigned long const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 238906944 0x114E4C: std::_Rb_tree_iterator<std::pair<unsigned long const, int> > std::_Rb_tree<unsigned long, std::pair<unsigned long const, int>, std::_Select1st<std::pair<unsigned long const, int> >, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, int> > >::_M_emplace_hint_unique<std::piecewise_construct_t const&, std::tuple<unsigned long const&>, std::tuple<> >(std::_Rb_tree_const_iterator<std::pair<unsigned long const, int> >, std::piecewise_construct_t const&, std::tuple<unsigned long const&>&&, std::tuple<>&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 238906944 0x112279: std::map<unsigned long, int, std::less<unsigned long>, std::allocator<std::pair<unsigned long const, int> > >::operator[](unsigned long const&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 238906944 0x10C244: Sample::calculate_ehits_final_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n1: 238906944 0x10BAEB: Sample::evaluate_hashes() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+          n0: 238906944 0x10FCAA: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n0: 271233 in 23 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=1388257757623
+mem_heap_B=316263567
+mem_heap_extra_B=52666705
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=1416286945615
+mem_heap_B=359698638
+mem_heap_extra_B=59905882
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=1458330732078
+mem_heap_B=424467087
+mem_heap_extra_B=70700625
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=1493367222294
+mem_heap_B=67379672
+mem_heap_extra_B=5296
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=1535410998893
+mem_heap_B=67379674
+mem_heap_extra_B=5294
+mem_stacks_B=0
+heap_tree=detailed
+n2: 67379674 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 67108864 0x122917: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 67108864 0x120651: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 67108864 0x11D46D: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 67108864 0x118B1A: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 67108864 0x11458F: void std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 67108864 0x111C6F: std::vector<int, std::allocator<int> >::push_back(int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 67108864 0x10CC76: Sample::calculate_ehits_kmers(int) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 67108864 0x10BBB4: Sample::evaluate_kmers() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n0: 67108864 0x10FCD0: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n0: 270810 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=1581525822148
+mem_heap_B=67379674
+mem_heap_extra_B=5294
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=1613175709678
+mem_heap_B=67379674
+mem_heap_extra_B=5294
+mem_stacks_B=0
+heap_tree=detailed
+n2: 67379674 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 67108864 0x122917: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 67108864 0x120651: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 67108864 0x11D46D: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 67108864 0x118B1A: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 67108864 0x11458F: void std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n1: 67108864 0x111C6F: std::vector<int, std::allocator<int> >::push_back(int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 67108864 0x10CC76: Sample::calculate_ehits_kmers(int) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 67108864 0x10BBB4: Sample::evaluate_kmers() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n0: 67108864 0x10FCD0: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+ n0: 270810 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=1651607731372
+mem_heap_B=67379675
+mem_heap_extra_B=5293
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=1701343293808
+mem_heap_B=67379675
+mem_heap_extra_B=5293
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=1730835065285
+mem_heap_B=67380103
+mem_heap_extra_B=5321
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=1755702835763
+mem_heap_B=67379683
+mem_heap_extra_B=5309
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=1789613448054
+mem_heap_B=67379684
+mem_heap_extra_B=5324
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=1828045473040
+mem_heap_B=67380101
+mem_heap_extra_B=5323
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=1859695400952
+mem_heap_B=67379683
+mem_heap_extra_B=5309
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=1902648817593
+mem_heap_B=67379847
+mem_heap_extra_B=5313
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=1905675162849
+mem_heap_B=67379671
+mem_heap_extra_B=5297
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=1908701512392
+mem_heap_B=67379684
+mem_heap_extra_B=5324
+mem_stacks_B=0
+heap_tree=detailed
+n2: 67379684 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 67108864 0x122917: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+  n1: 67108864 0x120651: std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+   n1: 67108864 0x11D46D: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+    n1: 67108864 0x118B1A: void std::vector<int, std::allocator<int> >::_M_realloc_insert<int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+     n1: 67108864 0x11458F: void std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+      n2: 67108864 0x111C6F: std::vector<int, std::allocator<int> >::push_back(int&&) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n1: 67108864 0x10CA34: Sample::calculate_ehits_distance(int, int) (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+        n1: 67108864 0x10BC55: Sample::evaluate_kmers() (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+         n0: 67108864 0x10FCD0: main (in /home/aryan/Desktop/Researches/Sahlin/RandStrobes/metric.out)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 270820 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=1911727858204
+mem_heap_B=67380103
+mem_heap_extra_B=5321
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=1914754204363
+mem_heap_B=67379683
+mem_heap_extra_B=5309
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=1918193178899
+mem_heap_B=270759
+mem_heap_extra_B=1249
+mem_stacks_B=0
+heap_tree=empty
