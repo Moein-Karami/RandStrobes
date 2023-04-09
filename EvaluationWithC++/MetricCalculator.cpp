@@ -52,7 +52,7 @@ class CsvWriter
 class Sample 
 {
     public:
-        Sample(int inp_id, CsvFile* inp_csv_file);
+        Sample(int inp_id, vector<CsvFile*> inp_csv_file);
         ~Sample();
         void print();
         void evaluate_sample();
@@ -80,7 +80,7 @@ class Sample
         int calculate_unique_hashes();
         double calculate_conflicts();
         double calculate_ehits_hashes();
-        string get_hash(int indx);
+        string get_hash(Hashes* hash_now);
         int cal_conf_two(int index1, int index2);
         vector<Kmers*> kmers;
         vector<Hashes*> hashes;
@@ -104,7 +104,8 @@ class Sample
         double ehits_final_hash;
         double ratio_final_hash;
         int unique_final_hash;
-        CsvFile* csv_file;
+        vector<CsvFile*> csv_file;
+        int pnt_files;
 };
 
 
@@ -209,13 +210,13 @@ uint32_t to_int_32(string inp)
     return now;
 }
 
-string Sample::get_hash(int indx)
+string Sample::get_hash(Hashes* hash_now)
 {
     string ans = "";
     for(int i = 0; i < n; i++)
     {
         stringstream stream_temp;
-        stream_temp << hashes[indx]->hashes[i];
+        stream_temp << hash_now->hashes[i];
         string now;
         stream_temp >> now;
         ans += now;
@@ -279,12 +280,7 @@ Kmers* CsvFile::get_new_kmer()
 
 void Sample::evaluate_hashes()
 {
-    cout << "Evaluation started..." << endl;
-
-    hashes = csv_file->input_hashes(number_seeds);
-
-    cout << "Input new hashes seeds" << endl;
-  
+    cout << "Evaluation started..." << endl;  
 
     unique_hashes = calculate_unique_hashes();
     cout << "Calculate Unique Hashes" << endl;
@@ -301,11 +297,6 @@ void Sample::evaluate_hashes()
 
 void Sample::evaluate_kmers()
 {
-
-    kmers = csv_file->input_kmers(number_seeds);
-
-    cout << "Input new kmers seeds" << endl;
-
     ehits_kmers.push_back(calculate_ehits_kmers(1));
     if(n == 3)
     {
@@ -334,52 +325,61 @@ void Sample::evaluate_kmers()
 
 int Sample::calculate_unique_final_hashes()
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     map<uint64_t, bool> mark_strobe;
     int ans = 0;
-    for(int i = 0; i < hashes.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        uint64_t now_strobe = hashes[i]->final_hash;
+        Hashes* hash_now = file_now->get_new_hash();
+        uint64_t now_strobe = hash_now->final_hash;
         if(!mark_strobe[now_strobe])
         {
             mark_strobe[now_strobe] = 1;
             ans++;
         }
+        delete hash_now;
     }
     return ans;
 }
 
 double Sample::calculate_ehits_hashes()
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     map<string, int> cnt_strobe;
     uint64_t ans = 0;
-    for(int i = 0; i < hashes.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        string now_strobe = get_hash(i);
+        Hashes* hash_now = file_now->get_new_hash();
+        string now_strobe = get_hash(hash_now);
         cnt_strobe[now_strobe]++;
+        delete hash_now;
     }
     for(auto i = cnt_strobe.begin(); i != cnt_strobe.end(); i++)
     {
         ans += (uint64_t)i->second * (uint64_t)i->second;
     }
-    int sz = hashes.size();
+    int sz = number_seeds;
     return (double)ans / (double)sz;
 }
 
 
 double Sample::calculate_ehits_final_hashes()
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     map<uint64_t, int> cnt_strobe;
     uint64_t ans = 0;
-    for(int i = 0; i < hashes.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        uint64_t now_strobe = hashes[i]->final_hash;
+        Hashes* hash_now = file_now->get_new_hash();
+        uint64_t now_strobe = hash_now->final_hash;
         cnt_strobe[now_strobe]++;
+        delete hash_now;
     }
     for(auto i = cnt_strobe.begin(); i != cnt_strobe.end(); i++)
     {
         ans += (uint64_t)i->second * (uint64_t)i->second;
     }
-    int sz = hashes.size();
+    int sz = number_seeds;
     return (double)ans / (double)sz;
 }
 
@@ -404,10 +404,12 @@ int Sample::cal_conf_two(int index1, int index2)
 double Sample::calculate_conflicts()
 {
     uint64_t sum = 0;
-    for(int i = 0; i < kmers.size(); i++)
+    CsvFile* file_now = csv_file[pnt_files++];
+    kmers = file_now->input_kmers(number_seeds);
+    for(int i = 0; i < number_seeds; i++)
     {
         int mx = 0;
-        for(int j = i + 1; j < min(i + kmer_len, (int)kmers.size()); j++)
+        for(int j = i + 1; j < min(i + kmer_len, number_seeds); j++)
         {
             int conf_now = cal_conf_two(i, j);
             mx = max(mx, conf_now);
@@ -415,35 +417,44 @@ double Sample::calculate_conflicts()
         sum += (uint64_t)mx;
     }
     int sz = kmers.size();
+    for(int i = 0; i < number_seeds; i++)
+        delete kmers[i];
+    kmers.clear();
     return (double)sum / (double)sz;
 }
 
 int Sample::calculate_unique_hashes()
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     map<string, bool> mark_strobe;
     int ans = 0;
-    for(int i = 0; i < hashes.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        string now_strobe = get_hash(i);
+        Hashes* hash_now = file_now->get_new_hash();
+        string now_strobe = get_hash(hash_now);
         if(!mark_strobe[now_strobe])
         {
             mark_strobe[now_strobe] = 1;
             ans++;
         }
+        delete hash_now;
     }
     return ans;
 }
 
 int Sample::calculate_unique_kmers(int num_kmer)
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     vector<bool>cnt_repeat;
     for(int i = 0; i < seq_len; i++)
     {
         cnt_repeat.push_back(0);
     }
-    for(int i = 0; i < kmers.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        cnt_repeat[kmers[i]->kmer[num_kmer]] = 1;
+        Kmers* kmer_now = file_now->get_new_kmer();
+        cnt_repeat[kmer_now->kmer[num_kmer]] = 1;
+        delete kmer_now;
     }
     int ans = 0;
     for(int i = 0; i < seq_len; i++)
@@ -457,26 +468,31 @@ int Sample::calculate_unique_kmers(int num_kmer)
 
 double Sample::calculate_ehits_distance(int num_kmer1, int num_kmer2)
 {
+    CsvFile* file_now = csv_file[pnt_files++];
+
     uint64_t sum = 0;
     vector<int>cnt_repeat;
     for(int i = 0; i < seq_len; i++)
     {
         cnt_repeat.push_back(0);
     }
-    for(int i = 0; i < kmers.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        cnt_repeat[kmers[i]->kmer[num_kmer2] - kmers[i]->kmer[num_kmer1]]++;
+        Kmers* kmer_now = file_now->get_new_kmer();
+        cnt_repeat[kmer_now->kmer[num_kmer2] - kmer_now->kmer[num_kmer1]]++;
+        delete kmer_now;
     }
     for(int i = 0; i < seq_len; i++)
     {
         sum += (uint64_t)cnt_repeat[i] * (uint64_t)cnt_repeat[i];
     }
-    int num_seeds = kmers.size();
+    int num_seeds = number_seeds;
     return (double)sum / (double)num_seeds;
 }
 
 double Sample::calculate_ehits_kmers(int num_kmer)
 {
+    CsvFile* file_now = csv_file[pnt_files++];
     uint64_t sum = 0;
     vector<int>cnt_repeat;
     std::cout <<"seq len: " << seq_len << std::endl;
@@ -485,11 +501,13 @@ double Sample::calculate_ehits_kmers(int num_kmer)
         cnt_repeat.push_back(0);
     }
     std::cout << "cnt_repeat initialized and it's size is:" << cnt_repeat.size() << std::endl;
-    for(int i = 0; i < kmers.size(); i++)
+    for(int i = 0; i < number_seeds; i++)
     {
-        if (kmers[i]->kmer[num_kmer] >= cnt_repeat.size())
+        Kmers* kmer_now = file_now->get_new_kmer();
+        if (kmer_now->kmer[num_kmer] >= cnt_repeat.size())
             std::cout << "seeds[i]->get_kmer(num_kmer) = " << kmers[i]->kmer[num_kmer] << std::endl;
-        cnt_repeat[kmers[i]->kmer[num_kmer]]++;
+        cnt_repeat[kmer_now->kmer[num_kmer]]++;
+        delete kmer_now;
     }
     std::cout << "cnt_repeat calculated" << std::endl;
     for(int i = 0; i < seq_len; i++)
@@ -497,7 +515,7 @@ double Sample::calculate_ehits_kmers(int num_kmer)
         sum += (uint64_t)cnt_repeat[i] * (uint64_t)cnt_repeat[i];
     }
     std::cout << "sum calculated" << std::endl;
-    int num_seeds = kmers.size();
+    int num_seeds = number_seeds;
     std::cout << "num_seeds calculated" << std::endl;
     return (double)sum / (double)num_seeds;
 }
@@ -512,10 +530,11 @@ void Sample::add_kmer(Kmers* new_kmer)
     kmers.push_back(new_kmer);
 }
 
-Sample::Sample(int inp_id, CsvFile* inp_csv_file)
+Sample::Sample(int inp_id, vector<CsvFile*> inp_csv_file)
 {
     sample_id = inp_id;
     csv_file = inp_csv_file;
+    pnt_files = 0;
 }
 
 void Sample::print()
@@ -585,7 +604,7 @@ vector< vector<string> > CsvFile::get_cols(vector<string> needed_cols)
 //     return ans;
 // }
 
-vector<Sample*> build_samples(CsvFile* csv_result, CsvFile* csv_header)
+vector<Sample*> build_samples(vector<CsvFile*> csv_result, CsvFile* csv_header)
 {
     vector<string> needed_cols{"Sample"};
     vector< vector<string> > col_samples = csv_header -> get_cols(needed_cols);
@@ -770,7 +789,7 @@ void Sample::add_all_data(vector< vector<double> >& all_data)
 
 void Sample::change_csv_file(CsvFile* csv_result2)
 {
-    csv_file = csv_result2;
+    // csv_file = csv_result2;
 }
 
 double find_median(vector<double>& vec_inp)
@@ -791,9 +810,13 @@ int main(int argc, char** argv)
     string path_header = add_suffix("BenchMarkResults/Headers/", argv[1]);
     string path_output = add_suffix("EvaluationResults/AllSamples/", argv[1]);
     string path_median = add_suffix("EvaluationResults/MedianSamples/", argv[1]);
-
-    CsvFile* csv_result1 = new CsvFile(path_result, 1);
-    CsvFile* csv_result2 = new CsvFile(path_result, 1);
+    
+    vector<CsvFile*> csv_results;
+    
+    for(int i = 0; i < 18; i++)
+    {
+        csv_results.push_back(new CsvFile(path_result, 1));
+    }
 
     CsvFile* csv_header = new CsvFile(path_header, 0);
     CsvWriter* csv_all_sample = new CsvWriter(path_output);
@@ -803,7 +826,7 @@ int main(int argc, char** argv)
 
     cout << "Read Header" << endl;
 
-    vector<Sample*> samples = build_samples(csv_result1, csv_header);
+    vector<Sample*> samples = build_samples(csv_results, csv_header);
 
     cout << "Build Samples" << endl;
 
@@ -823,7 +846,6 @@ int main(int argc, char** argv)
     for(int i = 0; i < samples.size(); i++)
     {
         samples[i] -> evaluate_hashes();
-        samples[i] -> change_csv_file(csv_result2);
         samples[i] -> evaluate_kmers();
         samples[i] -> write_in_file(csv_all_sample, 0);
         samples[i] -> add_all_data(all_data);
@@ -852,8 +874,9 @@ int main(int argc, char** argv)
     csv_median_sample->new_line();
 
 
-    delete csv_result1;
-    delete csv_result2;
+    for(int i = 0; i < csv_results.size(); i++)
+        delete csv_results[i];
+    csv_results.clear();
     delete csv_header;
     delete csv_all_sample;
     delete csv_median_sample;
