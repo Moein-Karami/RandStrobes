@@ -46,18 +46,36 @@ We suggest to set this to "./ChosenConfigs/" and delete unwanted configs.
 
 - $DataGenerator:$ Write "FromFile" or "Random"
 
-comment: In this input, if you select "Random", the sequences that are used for creating randomstrobes will be generated randomly, and you must set their length in the next input.
+comment: In this input, if you select "Random", the sequences that are used for creating randstrobes will be generated randomly, and you must set their length in the next input.
 
-This input will be read from a file named "data" in the "Data" folder if you write "FromFile" for this input. You must place your data in that directory and rename it to 'data'.
+In other case, if you choose "FromFile", the sequences that are used for creating randstrobes will be retrieved from a file which you should put in "Data" folder and write its fullname as input for the next field.
 
-Each line from the file will be used to create randstrobes, so please don't add any characters to your input. If you set "number of samples" to 3 and you have 5 lines in your file, only the first 3 lines will be seeded.
+The 'datafile' must have sequences separated by '>' symbols. This allows you to split your input into multiple lines, with each sequence ending with a '>'. For instance, the following input:
 
-If you have three lines in your file and set "number of samples" equal to 5, after creating randstrobes for all three lines, the code will read the data from the beginning and create strobes for the first two lines again.
+ATTCG
+
+ATT
+
+CCG
+
+\>
+
+AAT
+
+will be considered as two sequences: 'ATTCGATTCCG' and 'AAT'.
+It is important to note that any line starting with the '>' symbol will be disregarded.
+
+If you have three sequences in your file and set "number of samples" equal to 5, after creating randstrobes for all three sequences, the code will read the data from the beginning and create strobes for the first two sequences again.
 
 ### Create and evaluate randstrobes
 
+For sequential execution run:
 ```
-./Scripts/CreateAndEvaluate.sh
+./Scripts/SequentialCreateAndEvaluate.sh
+```
+For parallel execution run:
+```
+./Scripts/ParallelCreateAndEvaluate.sh
 ```
 
 You can see the figures in "EvaluationResults/Figures".
