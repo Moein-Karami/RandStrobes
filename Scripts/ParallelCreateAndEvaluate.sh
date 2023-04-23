@@ -14,3 +14,4 @@ done
 
 wait
 R -e "rmarkdown::render('EvaluationWithR/PlotMaker.Rmd')"
+rm metric.out
