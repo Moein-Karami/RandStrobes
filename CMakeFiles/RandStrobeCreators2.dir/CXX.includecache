@@ -26,10 +26,6 @@ RandStrobeCreator.hpp
 RandStrobeCreatorLiuPatroLi.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorLiuPatroLi.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
-
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
 Includes/Comparators/LibrariesAndDefines.hpp
