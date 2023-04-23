@@ -19,7 +19,7 @@ class Strobemer : public Seed
 	protected:
 		// std::vector<uint64_t> kmers_hash;
 		// uint64_t kmers_hash[2];
-		// uint64_t final_hash;
+		uint64_t final_hash;
 		uint8_t last;
 };
 
