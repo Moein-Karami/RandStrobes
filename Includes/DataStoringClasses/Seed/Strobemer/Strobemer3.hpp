@@ -19,7 +19,6 @@ class Strobemer3 : public Strobemer
 	protected:
 		// std::vector<uint64_t> kmers_hash;
 		uint64_t kmers_hash[3];
-		uint64_t final_hash;
 		uint32_t positions[3];
 };
 

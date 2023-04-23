@@ -6,3 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/ResultPrinter.cpp
+ResultPrinter.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/ResultPrinter.hpp
+
+Includes/DataStoringClasses/Seed/Seed.hpp
+LibrariesAndDefines.hpp
+Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
+
+Includes/LibrariesAndDefines.hpp
+bits/stdc++.h
+-
+chrono
+-
+functional
+-
+
+Includes/ResultPrinter.hpp
+LibrariesAndDefines.hpp
+Includes/LibrariesAndDefines.hpp
+Seed.hpp
+Includes/Seed.hpp
+
