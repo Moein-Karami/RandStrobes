@@ -13,12 +13,16 @@ RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* comparator, siz
 	uint64_t tmp_mask = -1;
 	tmp_mask = tmp_mask >> (64 - kmer_len * 2);
 	this->mask &= tmp_mask;
+	wy_hasher = new WyHash();
+	xx_hasher = new XXHash();
 }
 
 RandStrobeCreator::~RandStrobeCreator()
 {
 	delete(hasher);
 	delete(comparator);
+	delete(wy_hasher);
+	delete(xx_hasher);
 }
 
 uint32_t RandStrobeCreator::get_char_code(char c)
@@ -127,8 +131,15 @@ uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
 	std::vector<uint32_t> positions = strobemer->get_positions();
-	for (auto pos : positions)
-		final_hash ^= hasher->hash(hashes[pos]);
+	// for (auto pos : positions)
+	// 	final_hash ^= hasher->hash(hashes[pos]);
+	for (int i = 0; i < positions.size(); i++)
+	{
+		if (i % 2 == 0)
+			final_hash ^= wy_hasher->hash(xx_hasher->hash(kmers[positions[i]]));
+		else
+			final_hash ^= xx_hasher->hash(wy_hasher->hash(kmers[positions[i]]));
+	}
 	// for (int i = 0; i < strobemer->last; i++)
 	// 	final_hash ^= hasher->hash(hashes[strobemer->positions[i]]);
 
