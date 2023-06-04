@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
-Strobemer.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp
-Strobemer2.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp
-Strobemer3.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.hpp
-
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp

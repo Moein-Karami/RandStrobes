@@ -34,6 +34,8 @@ class RandStrobeCreator : public SeedCreator
 		virtual uint64_t get_first_hash(size_t ind);
 		virtual uint64_t get_final_hash(const Strobemer* strobemer);
 		virtual uint64_t get_new_curr_hash(const Strobemer* strobemer);
+		Hasher* wy_hasher;
+		Hasher* xx_hasher;
 };
 
 #endif
