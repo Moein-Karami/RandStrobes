@@ -133,15 +133,26 @@ uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 	std::vector<uint32_t> positions = strobemer->get_positions();
 	// for (auto pos : positions)
 	// 	final_hash ^= hasher->hash(hashes[pos]);
-	for (int i = 0; i < positions.size(); i++)
-	{
-		if (i % 2 == 0)
-			final_hash ^= wy_hasher->hash(xx_hasher->hash(kmers[positions[i]]));
-		else
-			final_hash ^= xx_hasher->hash(wy_hasher->hash(kmers[positions[i]]));
-	}
+
+	// for (int i = 0; i < positions.size(); i++)
+	// {
+	// 	if (i % 2 == 0)
+	// 		final_hash ^= wy_hasher->hash(xx_hasher->hash(kmers[positions[i]]));
+	// 	else
+	// 		final_hash ^= xx_hasher->hash(wy_hasher->hash(kmers[positions[i]]));
+	// }
+
 	// for (int i = 0; i < strobemer->last; i++)
 	// 	final_hash ^= hasher->hash(hashes[strobemer->positions[i]]);
+
+	final_hash = xx_hasher->hash(kmers[positions[0]]);
+	Int128 tmp;
+	for (int i = 1; i < positions.size(); i++)
+	{
+		tmp.low = final_hash;
+		tmp.high = xx_hasher->hash(kmers[positions[i]]);
+		final_hash = wy_hasher->hash(&tmp, sizeof(tmp));
+	}
 
 	return final_hash;
 }
