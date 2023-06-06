@@ -19,3 +19,4 @@ build/*
 CreatedSequences/*
 *.out
 Tmp/*
+massif*

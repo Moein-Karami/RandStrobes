@@ -19,3 +19,7 @@ done
 
 wait
 R -e "rmarkdown::render('EvaluationWithR/PlotMaker.Rmd')"
+
+rm EvaluationResults/Figures/*.pdf
+
+rm metric.out
