@@ -62,6 +62,7 @@ class Sample
         void add_all_data(vector< vector<double> >& all_data);
         string get_hash();
         string get_seed_method();
+        string get_comperator();
         void write_seeds(string path);
         void evaluate_hashes();
         void evaluate_kmers();
@@ -106,6 +107,7 @@ class Sample
         int unique_final_hash;
         vector<CsvFile*> csv_file;
         int pnt_files;
+        string comperator;
 };
 
 
@@ -185,6 +187,11 @@ string Sample::get_hash()
 string Sample::get_seed_method()
 {
     return seed_generator_method;
+}
+
+string Sample::get_comperator()
+{
+    return comperator;
 }
 
 int Sample::get_n()
@@ -554,6 +561,7 @@ void Sample::init_header(vector< vector<string> > & col_seeds)
     seed_generator_method = col_seeds[7][sample_id - 1];
     hash_method = col_seeds[8][sample_id - 1];
     seq_len = stoi(col_seeds[9][sample_id - 1]);
+    comperator = col_seeds[10][sample_id - 1];
 }
 
 CsvWriter::CsvWriter(string output_path)
@@ -636,7 +644,7 @@ string add_suffix(string prefix, char* suffix)
 void fill_header_samples(vector<Sample*> &samples, CsvFile* csv_header)
 {
     vector<string> needed_cols{"TimeExecution","NumberofSeeds","n","kmer_len","w_min"
-    ,"w_max","mask","SeedGeneratorMethod","HashMethod", "seq_len"};
+    ,"w_max","mask","SeedGeneratorMethod","HashMethod", "seq_len", "Comperator"};
     vector< vector<string> > col_seeds = csv_header -> get_cols(needed_cols);
     // cout << col_seeds.size() << "*********" << endl;
     for(int i = 0; i < samples.size(); i++)
@@ -649,6 +657,7 @@ void Sample::write_in_file(CsvWriter* csv_all_sample, bool is_median)
 {
     csv_all_sample->write_word(hash_method, 1);
     csv_all_sample->write_word(seed_generator_method, 1);
+    csv_all_sample->write_word(comperator, 1);;
     csv_all_sample->write_word(time_execution, 1);
     for(int i = 0; i < ehits_kmers.size(); i++)
     {
@@ -679,7 +688,7 @@ void Sample::write_in_file(CsvWriter* csv_all_sample, bool is_median)
 
 vector<string> build_name_cols(int num_kmer, bool is_median)
 {
-    vector<string> name_cols{"HashMethod","RandStrobeMethod", "TimeofExecution"};
+    vector<string> name_cols{"HashMethod","RandStrobeMethod", "Comperator", "TimeofExecution"};
 
     name_cols.push_back("E-hits of strobe2 positions");
     if(num_kmer == 3)
@@ -863,6 +872,7 @@ int main(int argc, char** argv)
     csv_median_sample -> write_row(name_cols);
     csv_median_sample -> write_word(samples[0]->get_hash(), 1);
     csv_median_sample -> write_word(samples[0]->get_seed_method(), 1);
+    csv_median_sample -> write_word(samples[0]->get_comperator(), 1);
     for(int i = 0; i < median.size(); i++)
     {
         bool is_comma = 1;
