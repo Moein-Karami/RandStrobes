@@ -72,7 +72,7 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 		if (!config["SeedCreatorConfig"]["mask"].isNull())
 			mask = config["SeedCreatorConfig"]["mask"].asUInt64();
 		
-		if (config["SeedCreatorConfig"]["method"].asString() == "FullyRandom")
+		if (config["SeedCreatorConfig"]["method"].asString() == "Uniform")
 			return new RandStrobeCreatorFullyRandom(NULL, NULL, kmer_len, w_min, w_max, n, mask);
 
 		Hasher* hasher = create_hasher(config);

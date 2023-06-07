@@ -50,8 +50,8 @@ void ConfigGenerator::add_hasher_config(std::string output_path, Json::Value con
 	std::vector<std::string> seed_based_hashers = {"WyHash", "XXHash"};
 	Json::Value hasher_config;
 
-	config["Hasher"] = "FullyRandom";
-	add_comparator_config(output_path + "_FullyRandom", config);
+	config["Hasher"] = "Uniform";
+	add_comparator_config(output_path + "_Uniform", config);
 
 	config["Hasher"] = "SimpleHasher";
 	for (auto method : simple_hashers)
@@ -74,11 +74,11 @@ void ConfigGenerator::add_comparator_config(std::string output_path, Json::Value
 {
 	std::vector<std::string> comparators = {"min", "max"};
 
-	if (config["Hasher"] == "FullyRandom")
-	{
-		add_seed_creator_config(output_path, config);
-		return ;
-	}
+	// if (config["Hasher"] == "FullyRandom")
+	// {
+	// 	add_seed_creator_config(output_path, config);
+	// 	return ;
+	// }
 
 	for (auto comparator : comparators)
 	{
@@ -101,9 +101,9 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	seed_creator_config["n"] = (int32_t) n;
 	seed_creator_config["mask"] = mask;
 
-	if (config["Hasher"] == "FullyRandom")
+	if (config["Hasher"] == "Uniform")
 	{
-		seed_creator_config["method"] = "FullyRandom";
+		seed_creator_config["method"] = "Uniform";
 		config["SeedCreatorConfig"] = seed_creator_config;
 		add_number_of_samples_config(output_path + "_" + std::to_string(n), config);
 		return ;
