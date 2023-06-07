@@ -38,12 +38,14 @@ void ResultPrinter::print(std::vector<uint64_t> construction_times, std::vector<
 				uint64_t seq_len)
 {
 	
-	output_csv2 << "TimeExecution,NumberofSeeds,n,kmer_len,w_min,w_max,mask,SeedGeneratorMethod,HashMethod,seq_len,Sample" << std::endl;
+	output_csv2 << "TimeExecution,NumberofSeeds,n,kmer_len,w_min,w_max,mask,SeedGeneratorMethod,HashMethod,seq_len,Sample,Comperator" << std::endl;
 	for (int i = 0; i < construction_times.size(); i++)
 	{
+		if(comperator == "")
+			comperator = "max";
 		output_csv2 << construction_times[i] << "," << seeds_size[i] << "," << n << "," <<
 			kmer_len << "," << w_min << "," << w_max << "," << mask << "," << seed_method << 
-			"," << hash_method + "-" + comperator << "," <<  seq_len << "," <<  i + 1 << std::endl;
+			"," << hash_method << "," <<  seq_len << "," <<  i + 1 << "," << comperator << std::endl;
 	}
 	
 	output_csv.close();
