@@ -78,7 +78,7 @@ theme(legend.text.align = 0) +   facet_wrap(~Comperator, ncol=1) + theme(plot.ma
 ```{r}
 library(ggplot2)
 library(latex2exp)
-library(cowplot)
+#library(cowplot)
 
 all_files <- list.files(path = "../EvaluationResults/MedianSamples")
 cnt <- 1
@@ -146,7 +146,7 @@ data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"]
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MAMD")
 data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "\u2113_{MAMD}"
 
-data_all_methods2 <- data_all_methods[!grepl('FullyRandom', data_all_methods$RandStrobeMethod),]
+data_all_methods2 <- data_all_methods[!grepl('Uniform', data_all_methods$RandStrobeMethod),]
 
 deleted <- c('HashMethod', 'RandStrobeMethod', 'Comperator')
 new_data <- data_all_methods
