@@ -116,7 +116,8 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 			continue;
 		if (seed_creator == "MAXor" && config["HasherConfig"]["method"] == "NoHash")
 			continue;
-		
+		if (seed_creator == "Traditional" && config["HasherConfig"]["method"] != "NoHash")
+			continue;
 
 		seed_creator_config["method"] = seed_creator;
 		config["SeedCreatorConfig"] = seed_creator_config;

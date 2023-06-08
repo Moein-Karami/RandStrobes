@@ -6,7 +6,7 @@ Traditional::Traditional(Hasher* hasher, Comparator* comparator, size_t kmer_len
 {
 }
 
-std::vector<Seed*> RandStrobeCreator::create_seeds()
+std::vector<Seed*> Traditional::create_seeds()
 {
 	// prepare_data();
 
