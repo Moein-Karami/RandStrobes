@@ -65,6 +65,8 @@ RandStrobeCreatorFullyRandom.hpp
 Includes/RandStrobeCreatorFullyRandom.hpp
 RandStrobeCreatorMAXorVar.hpp
 Includes/RandStrobeCreatorMAXorVar.hpp
+Traditional.hpp
+Includes/Traditional.hpp
 json-forwards.h
 Includes/json-forwards.h
 json.h
@@ -375,6 +377,10 @@ RandStrobeCreatorShen.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
 
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+Includes/SeedCreators/RandStrobeCreators/Traditional.hpp
 RandStrobeCreator.hpp
 Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 

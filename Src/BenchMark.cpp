@@ -104,7 +104,8 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 			return new RandStrobeCreatorRandomMAMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "MAXorVar")
 			return new RandStrobeCreatorMAXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
-
+		else if (config["SeedCreatorConfig"]["method"].asString() == "Traditional")
+			return new Traditional(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 	}
 	return NULL;
 }

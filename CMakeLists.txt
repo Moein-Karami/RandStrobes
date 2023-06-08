@@ -56,6 +56,7 @@ target_link_libraries( config.out
     RandStrobeCreators12
     RandStrobeCreators13
     RandStrobeCreators14
+    RandStrobeCreators15
     Json
     Hashers 
     HashersMet1
@@ -95,6 +96,7 @@ target_link_libraries(${NAME_PROJECT}
     RandStrobeCreators12
     RandStrobeCreators13
     RandStrobeCreators14
+    RandStrobeCreators15
     Json
     Hashers 
     HashersMet1
@@ -206,6 +208,12 @@ add_library(RandStrobeCreators13 STATIC ./Src/SeedCreators/RandStrobeCreators/Ra
 
 add_library(RandStrobeCreators14 STATIC ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.cpp
     ./Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorMAXorVar.hpp 
+    ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
+    ./Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp ./Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp 
+    ./Src/SeedCreators/SeedCreator.cpp)
+
+    add_library(RandStrobeCreators15 STATIC ./Src/SeedCreators/RandStrobeCreators/Traditional.cpp
+    ./Includes/SeedCreators/RandStrobeCreators/Traditional.hpp 
     ./Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp ./Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
     ./Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp ./Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp 
     ./Src/SeedCreators/SeedCreator.cpp)
