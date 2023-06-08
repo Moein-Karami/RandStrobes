@@ -33,6 +33,7 @@
 #include "RandStrobeCreatorRandomMAMod.hpp"
 #include "RandStrobeCreatorFullyRandom.hpp"
 #include "RandStrobeCreatorMAXorVar.hpp"
+#include "Traditional.hpp"
 
 #include "json-forwards.h"
 #include "json.h"
