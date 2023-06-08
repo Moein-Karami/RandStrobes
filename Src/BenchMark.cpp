@@ -62,16 +62,17 @@ Comparator* BenchMark::create_comparator(Json::Value config)
 
 SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 {
+	size_t kmer_len = config["SeedCreatorConfig"]["kmer_len"].asUInt64();
+	uint64_t w_min = config["SeedCreatorConfig"]["w_min"].asUInt64();
+	uint64_t w_max = config["SeedCreatorConfig"]["w_max"].asUInt64();
+	uint32_t n = config["SeedCreatorConfig"]["n"].asUInt();
+	uint64_t mask = -1;
+	if (!config["SeedCreatorConfig"]["mask"].isNull())
+		mask = config["SeedCreatorConfig"]["mask"].asUInt64();
+
+	
 	if (config["SeedCreator"].asString() == "RandStrobeCreator")
-	{
-		size_t kmer_len = config["SeedCreatorConfig"]["kmer_len"].asUInt64();
-		uint64_t w_min = config["SeedCreatorConfig"]["w_min"].asUInt64();
-		uint64_t w_max = config["SeedCreatorConfig"]["w_max"].asUInt64();
-		uint32_t n = config["SeedCreatorConfig"]["n"].asUInt();
-		uint64_t mask = -1;
-		if (!config["SeedCreatorConfig"]["mask"].isNull())
-			mask = config["SeedCreatorConfig"]["mask"].asUInt64();
-		
+	{	
 		if (config["SeedCreatorConfig"]["method"].asString() == "Uniform")
 			return new RandStrobeCreatorFullyRandom(NULL, NULL, kmer_len, w_min, w_max, n, mask);
 
@@ -104,8 +105,8 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 			return new RandStrobeCreatorRandomMAMod(hasher, comparator, kmer_len, w_min, w_max, n, mask);
 		else if (config["SeedCreatorConfig"]["method"].asString() == "MAXorVar")
 			return new RandStrobeCreatorMAXorVar(hasher, comparator, kmer_len, w_min, w_max, n, mask);
-
 	}
+	else if
 	return NULL;
 }
 
