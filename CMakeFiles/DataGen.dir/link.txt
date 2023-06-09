@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libDataGen.a CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o
+/usr/bin/ar qc build/libDataGen.a  CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o
 /usr/bin/ranlib build/libDataGen.a
