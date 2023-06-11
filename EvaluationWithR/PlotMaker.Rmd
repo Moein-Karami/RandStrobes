@@ -43,33 +43,30 @@ to_latex <- function(input_str)
 ```
 
 ```{r}
-draw_normalized_plot <- function(data_all_methods, new_data, name_now, i)
+draw_normalized_plot <- function(data_all_methods, new_data, name_now, i, font_y)
 {
   plot_now <- ggplot(data_all_methods,
          aes(fill = HashMethod , y = new_data[, i], x = RandStrobeMethod)
-         ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 120), 
+         ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 320), 
                                                                   
                                                                   plot.title = element_text( margin = margin(t = 120, b = 120)),
-                                                                  axis.title=element_text(size = 140),
-                                                                  axis.title.x = element_text(size = 140, margin = margin(300, 300, 300, 300)),
-                                                                                                                                                                                                           axis.title.y = element_text(size = 140, margin = margin(360, 360, 360, 360)),
-
-                                                                  legend.text = element_text(size = 140),
-                                                                  legend.title = element_text(size = 140),
-                                                                  axis.text = element_text(size = 120),
+                                                                  axis.title=element_text(size = 200),
+                                                                  axis.title.x = element_text(size = font_y, margin = margin(300, 300, 300, 300)),
+                                                                                                                                                                                                           axis.title.y = element_text(size = font_y, margin = margin(360, 360, 360, 360)),
                                                                   axis.text.x = element_text(margin = margin(100, 100, 100, 100)),
+
+                                                                  legend.text = element_text(size = 340),
+                                                                  legend.title = element_text(size = 340),
+                                                                  axis.text = element_text(size = 320, margin = margin(t = 60, b = 60)),
                                                                  legend.margin = margin(60, 60, 60, 60)) + 
-    guides(fill=guide_legend(title="Hashes")) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
-theme(legend.text.align = 0) +   facet_wrap(~Comperator, ncol=1) + theme(plot.margin = unit(c(60,60,60,60), "lines"), strip.text = element_text(size = 140)) + 
+    guides(fill=guide_legend(title="Hashes Function", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
+theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 480),    panel.spacing.x = unit(6, "cm")) + 
   theme(legend.text.align = 0) + coord_cartesian(ylim = c(min(new_data[, i]), NA))
    plot_now <- plot_now + labs(title = paste(name_now, added_str),
               x = "RandStrobe Method", y =  name_now)
-  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=8000, height= 8000)
+  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=30000, height= 12000)
   print(plot_now)
   dev.off()
-  ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
-    plot = plot_now, width = 45, height = 30
-  )
 }
 ```
 
@@ -110,20 +107,12 @@ data_all_methods <- data_all_methods[!grepl('SpecialCaseFixedShen', data_all_met
 
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "None")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "NoHash"] <- "None"
-#levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "None-min")
-#data_all_methods$HashMethod[data_all_methods$HashMethod == "NoHash-min"] <- "None-min"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "TW")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "ThomasWangHash"] <- "TW"
-#levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "TW-min")
-#data_all_methods$HashMethod[data_all_methods$HashMethod == "ThomasWangHash-min"] <- "TW-min"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "Wy")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash"] <- "WY"
-#levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "Wy-min")
-#data_all_methods$HashMethod[data_all_methods$HashMethod == "WyHash-min"] <- "WY-min"
 levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX")
 data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash"] <- "XX"
-#levels(data_all_methods$HashMethod) <- c(levels(data_all_methods$HashMethod), "XX-min")
-#data_all_methods$HashMethod[data_all_methods$HashMethod == "XXHash-min"] <- "XX-min"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "XOR")
 data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "GuoPibri"] <- "\u2113_{XOR}"
@@ -146,6 +135,9 @@ data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "XorVar"]
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "MAMD")
 data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "\u2113_{MAMD}"
 
+levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "Traditional")
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Traditional"] <- "Traditional"
+
 data_all_methods2 <- data_all_methods[!grepl('Uniform', data_all_methods$RandStrobeMethod),]
 
 deleted <- c('HashMethod', 'RandStrobeMethod', 'Comperator')
@@ -163,7 +155,6 @@ for(i in 1:ncol(new_data))
 {
   temp <- data_all_methods
   temp2 <- new_data
-  #print(data_all_methods$Comperator)
   print(names(new_data)[i])
         if(names(new_data)[i] == "TimeofExecution" || names(new_data)[i] == "Number.of.unique.Strobmers" ||
      names(new_data)[i] == "Number.of.unique.final.seed.hash.values"||
@@ -171,6 +162,27 @@ for(i in 1:ncol(new_data))
   {
     data_all_methods <- data_all_methods2
     new_data <- new_data2
+        }
+  if(names(new_data)[i] != "E.hits.of.final.seed.hash.values" && names(new_data)[i] != "E.hits.of.Strobmers" && 
+     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" && names(new_data)[i] !=  "Number.of.unique.Strobmers" && 
+     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers")
+  {
+    data_all_methods <- data_all_methods[!grepl('Traditional', data_all_methods$RandStrobeMethod),]
+    new_data <- data_all_methods
+    new_data$Sample <- NULL
+    new_data$RandStrobeMethod <- NULL
+    new_data$HashMethod <- NULL
+    new_data$Comperator <- NULL
+  }
+
+  font_y = 0
+  if(names(new_data)[i] == "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers")
+  {
+     font_y = 240 
+  }
+  else 
+  {
+      font_y = 340
   }
   col_now <- data_all_methods[, names(new_data)[i]]
   sorted_data <- data_all_methods[order(col_now), ]
@@ -183,57 +195,37 @@ for(i in 1:ncol(new_data))
   normalized_by = min(new_data[ , i])
   new_data_normalized <- new_data
   new_data_normalized[, i] <- new_data_normalized[, i] - normalized_by
-#  if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers" &&
-#     names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
-#     names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
-  #{
-  #    new_data[, i] <- new_data[, i] / normalized_by
-  #}
-  #print(names(new_data)[i])
   layout(matrix(c(1,2), nrow = 1))
   plot_now <- ggplot(data_all_methods,
          aes(fill =  HashMethod, y = new_data[, i], x = RandStrobeMethod)
-         ) + geom_bar(position="dodge", stat="identity") + theme(title = element_text(size = 120), 
+         ) + geom_bar(stat="identity", position = "dodge") + theme(title = element_text(size = 320), 
                                                                   
                                                                   plot.title = element_text( margin = margin(t = 120, b = 120)),
-                                                                  axis.title=element_text(size = 140),
-                                                                  axis.title.x = element_text(size = 140, margin = margin(300, 300, 300, 300)),
-                                                                                                                                                                                                           axis.title.y = element_text(size = 140, margin = margin(360, 360, 360, 360)),
+                                                                  axis.title=element_text(size = 200),
+                                                                  axis.title.x = element_text(size = font_y, margin = margin(300, 300, 300, 300)),
+                                                                                                                                                                                                           axis.title.y = element_text(size = font_y, margin = margin(360, 360, 360, 360)),
                                                                   axis.text.x = element_text(margin = margin(100, 100, 100, 100)),
 
-                                                                  legend.text = element_text(size = 140),
-                                                                  legend.title = element_text(size = 140),
-                                                                  axis.text = element_text(size = 120, margin = margin(t = 60, b = 60)),
+                                                                  legend.text = element_text(size = 340),
+                                                                  legend.title = element_text(size = 340),
+                                                                  axis.text = element_text(size = 320, margin = margin(t = 60, b = 60)),
                                                                  legend.margin = margin(60, 60, 60, 60)) + 
-    guides(fill=guide_legend(title="Hashes")) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
-theme(legend.text.align = 0) +   facet_wrap(~Comperator, ncol=1) + theme(plot.margin = unit(c(60,60,60,60), "lines"), strip.text = element_text(size = 140))
+    guides(fill=guide_legend(title="Hashes Function", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
+theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 480),    panel.spacing.x = unit(6, "cm"))
   
   added_str <- ""
- # added_str <- "based on hashes and linkings"
- #   if(names(new_data)[i] == "E.hits.Unique.Strobmers" || names(new_data)[i]  == "Unique.Strobmers" || names(new_data)[i] == "E.hits.Unique.Strobmers")
-#    added_str <- "based on final seed hash values"
-  
   
   name_now <- names(new_data)[i]
   name_now <- create_name_file(name_now)
 
- # if(names(new_data)[i] != "TimeofExecution" && names(new_data)[i] != "Number.of.unique.Strobmers" &&
- #    names(new_data)[i] != "Number.of.unique.final.seed.hash.values" &&
- #    names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers" &&   names(new_data)[i] != "E.hits.of.Strobmers" &&  names(new_data)[i] != "E.hits.of.final.seed.hash.values")
- #   plot_now <- plot_now + labs(title = paste(name_now, added_str),
-  #            x = "Hashes", y =  paste("Normalized ", name_now, sep = ""))
-  #else 
-      plot_now <- plot_now + labs(title = paste(name_now, added_str),
+      plot_now <- plot_now + labs(title = "",
               x = "RandStrobes Method", y =  name_now)
   
-  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=8000, height= 8000)
+  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=30000, height= 12000)
   print(plot_now)
   dev.off()
-  ggsave( filename = paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), 
-          plot = plot_now, width = 45, height = 30
-)
 
-  draw_normalized_plot(data_all_methods, new_data, name_now, i)
+  draw_normalized_plot(data_all_methods, new_data, name_now, i, font_y)
   data_all_methods <- temp
   new_data <- temp2
 }
