@@ -1,34 +1,18 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Json/jsoncpp.cpp" "/home/c/University/Advanced/Sahlin Projects/RandStrobes/CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "Includes"
-  "Includes/Comparators"
-  "Includes/DataGenerators"
-  "Includes/DataStoringClasses"
-  "Includes/Hashers"
-  "Includes/Json"
-  "Includes/SeedCreators"
-  "Includes/Hashers/HashMethodes"
-  "Includes/Hashers/SeedBasedHashers"
-  "Includes/Hashers/SimpleHashers"
-  "Includes/SeedCreators/RandStrobeCreators"
-  "Includes/DataStoringClasses/Seed"
-  "Includes/DataStoringClasses/Seed/Strobemer"
-  "Includes/ConfigGenerator"
-  "Includes/Tools"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/aryan/Desktop/Researches/Sahlin/RandStrobes/Src/Json/jsoncpp.cpp" "CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o" "gcc" "CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o"
+  "CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o.d"
   "build/libResultPrinter.a"
   "build/libResultPrinter.pdb"
 )
