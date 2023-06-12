@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libHashers.a  CMakeFiles/Hashers.dir/Src/Hashers/Hasher.cpp.o
+/usr/bin/ar qc build/libHashers.a CMakeFiles/Hashers.dir/Src/Hashers/Hasher.cpp.o
 /usr/bin/ranlib build/libHashers.a
