@@ -59,10 +59,10 @@ draw_normalized_plot <- function(data_all_methods, new_data, name_now, i, font_y
                                                                   legend.title = element_text(size = 340),
                                                                   axis.text = element_text(size = 320, margin = margin(t = 60, b = 60)),
                                                                  legend.margin = margin(60, 60, 60, 60)) + 
-    guides(fill=guide_legend(title="Hashes Function", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
+    guides(fill=guide_legend(title="Hash Functions", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
 theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 480),    panel.spacing.x = unit(6, "cm")) + 
   theme(legend.text.align = 0) + coord_cartesian(ylim = c(min(new_data[, i]), NA))
-   plot_now <- plot_now + labs(title = paste(name_now, added_str),
+   plot_now <- plot_now + labs(title = "",
               x = "RandStrobe Method", y =  name_now)
   png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=30000, height= 12000)
   print(plot_now)
@@ -210,7 +210,7 @@ for(i in 1:ncol(new_data))
                                                                   legend.title = element_text(size = 340),
                                                                   axis.text = element_text(size = 320, margin = margin(t = 60, b = 60)),
                                                                  legend.margin = margin(60, 60, 60, 60)) + 
-    guides(fill=guide_legend(title="Hashes Function", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
+    guides(fill=guide_legend(title="Hash Functions", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
 theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 480),    panel.spacing.x = unit(6, "cm"))
   
   added_str <- ""
