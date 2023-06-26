@@ -136,7 +136,7 @@ levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrob
 data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "MAMod"] <- "\u2113_{MAMD}"
 
 levels(data_all_methods$RandStrobeMethod) <- c(levels(data_all_methods$RandStrobeMethod), "Traditional")
-data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Traditional"] <- "Traditional"
+data_all_methods$RandStrobeMethod[data_all_methods$RandStrobeMethod == "Traditional"] <- "k-mers"
 
 data_all_methods2 <- data_all_methods[!grepl('Uniform', data_all_methods$RandStrobeMethod),]
 
