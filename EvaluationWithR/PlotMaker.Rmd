@@ -47,24 +47,25 @@ draw_normalized_plot <- function(data_all_methods, new_data, name_now, i, font_y
 {
   plot_now <- ggplot(data_all_methods,
          aes(fill = HashMethod , y = new_data[, i], x = RandStrobeMethod)
-         ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 320), 
+         ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 100), 
                                                                   
-                                                                  plot.title = element_text( margin = margin(t = 120, b = 120)),
-                                                                  axis.title=element_text(size = 200),
-                                                                  axis.title.x = element_text(size = font_y, margin = margin(300, 300, 300, 300)),
-                                                                                                                                                                                                           axis.title.y = element_text(size = font_y, margin = margin(360, 360, 360, 360)),
-                                                                  axis.text.x = element_text(margin = margin(100, 100, 100, 100)),
+                                                                  plot.title = element_text( margin = margin(t = 2, b = 2)),
+                                                                  axis.title=element_text(size = 80),
+                                                                  axis.title.x = element_text(size = font_y, margin = margin(70, 70, 70, 70)),
+                                                                                                                                                                                                           axis.title.y = element_text(size = font_y, margin = margin(70, 70, 70, 70)),
+                                                                  axis.text.x = element_text(size = 120, margin = margin(100, 100, 100, 100), angle = 90, hjust = 1, vjust = 0.5),
+                                                                  axis.text.y = element_text(size = 100, margin = margin(20, 20, 20, 20)),
 
-                                                                  legend.text = element_text(size = 340),
-                                                                  legend.title = element_text(size = 340),
-                                                                  axis.text = element_text(size = 320, margin = margin(t = 60, b = 60)),
-                                                                 legend.margin = margin(60, 60, 60, 60)) + 
-    guides(fill=guide_legend(title="Hash Functions", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
-theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 480),    panel.spacing.x = unit(6, "cm")) + 
+                                                                  legend.text = element_text(size = 120),
+                                                                  legend.title = element_text(size = 120),
+                                                                  axis.text = element_text(margin = margin(t = 1, b = 1)),
+                                                                  legend.margin = margin(30, 30, 30, 30)) + 
+    guides(fill=guide_legend(title="Hash Functions", override.aes = list(size = 2))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
+theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 140),    panel.spacing.x = unit(2, "cm")) + 
   theme(legend.text.align = 0) + coord_cartesian(ylim = c(min(new_data[, i]), NA))
    plot_now <- plot_now + labs(title = "",
               x = "RandStrobe Method", y =  name_now)
-  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=30000, height= 12000)
+  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=6000, height= 3000)
   print(plot_now)
   dev.off()
 }
@@ -178,11 +179,11 @@ for(i in 1:ncol(new_data))
   font_y = 0
   if(names(new_data)[i] == "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers")
   {
-     font_y = 240 
+     font_y = 67 
   }
   else 
   {
-      font_y = 340
+      font_y = 100
   }
   col_now <- data_all_methods[, names(new_data)[i]]
   sorted_data <- data_all_methods[order(col_now), ]
@@ -198,20 +199,21 @@ for(i in 1:ncol(new_data))
   layout(matrix(c(1,2), nrow = 1))
   plot_now <- ggplot(data_all_methods,
          aes(fill =  HashMethod, y = new_data[, i], x = RandStrobeMethod)
-         ) + geom_bar(stat="identity", position = "dodge") + theme(title = element_text(size = 320), 
+         ) + geom_bar(stat="identity", position = "dodge") + theme(title = element_text(size = 100), 
                                                                   
-                                                                  plot.title = element_text( margin = margin(t = 120, b = 120)),
-                                                                  axis.title=element_text(size = 200),
-                                                                  axis.title.x = element_text(size = font_y, margin = margin(300, 300, 300, 300)),
-                                                                                                                                                                                                           axis.title.y = element_text(size = font_y, margin = margin(360, 360, 360, 360)),
-                                                                  axis.text.x = element_text(margin = margin(100, 100, 100, 100)),
+                                                                  plot.title = element_text( margin = margin(t = 2, b = 2)),
+                                                                  axis.title=element_text(size = 80),
+                                                                  axis.title.x = element_text(size = font_y, margin = margin(70, 70, 70, 70)),
+                                                                                                                                                                                                           axis.title.y = element_text(size = font_y, margin = margin(70, 70, 70, 70)),
+                                                                  axis.text.x = element_text(size = 120, margin = margin(100, 100, 100, 100), angle = 90, hjust = 1, vjust = 0.5),
+                                                                  axis.text.y = element_text(size = 100, margin = margin(20, 20, 20, 20)),
 
-                                                                  legend.text = element_text(size = 340),
-                                                                  legend.title = element_text(size = 340),
-                                                                  axis.text = element_text(size = 320, margin = margin(t = 60, b = 60)),
-                                                                 legend.margin = margin(60, 60, 60, 60)) + 
-    guides(fill=guide_legend(title="Hash Functions", override.aes = list(size = 100))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
-theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 480),    panel.spacing.x = unit(6, "cm"))
+                                                                  legend.text = element_text(size = 120),
+                                                                  legend.title = element_text(size = 120),
+                                                                  axis.text = element_text(margin = margin(t = 1, b = 1)),
+                                                                  legend.margin = margin(30, 30, 30, 30)) + 
+    guides(fill=guide_legend(title="Hash Functions", override.aes = list(size = 2))) + scale_fill_discrete(labels = to_latex) + scale_x_discrete(labels = to_latex) +
+theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 140),    panel.spacing.x = unit(2, "cm"))
   
   added_str <- ""
   
@@ -221,7 +223,7 @@ theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.ma
       plot_now <- plot_now + labs(title = "",
               x = "RandStrobes Method", y =  name_now)
   
-  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=30000, height= 12000)
+  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=6000, height= 3000)
   print(plot_now)
   dev.off()
 
