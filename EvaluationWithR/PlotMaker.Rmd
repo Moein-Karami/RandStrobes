@@ -168,7 +168,7 @@ for(i in 1:ncol(new_data))
      names(new_data)[i] != "Number.of.unique.final.seed.hash.values" && names(new_data)[i] !=  "Number.of.unique.Strobmers" && 
      names(new_data)[i] != "Ratio.of.number.of.unique.final.seed.hash.value.to.number.of.unique.strobmers")
   {
-    data_all_methods <- data_all_methods[!grepl('Traditional', data_all_methods$RandStrobeMethod),]
+    data_all_methods <- data_all_methods[!grepl('k-mers', data_all_methods$RandStrobeMethod),]
     new_data <- data_all_methods
     new_data$Sample <- NULL
     new_data$RandStrobeMethod <- NULL
