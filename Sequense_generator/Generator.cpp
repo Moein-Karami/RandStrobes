@@ -79,13 +79,13 @@ int main()
 	int l, n;
 	float p;
 	cout << "L: ";
-	// cin >> l;
-	l = 25;
+	cin >> l;
+	// l = 25;
 	cout << "N: ";
-	// cin >> n;
-	n = 40000;
+	cin >> n;
+	// n = 40000;
 	cout << "P: ";
-	// cin >> p;
-	p = 0.02;
+	cin >> p;
+	// p = 0.02;
 	generate_seq(l, n, p);
 }
