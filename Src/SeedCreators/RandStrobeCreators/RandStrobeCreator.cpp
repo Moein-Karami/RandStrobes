@@ -73,7 +73,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 std::vector<Seed*> RandStrobeCreator::create_seeds()
 {
 	prepare_data();
-
+	std::set<uint64_t> final_hashes;
 	std::vector<Seed*> seeds;
 	seeds.reserve(seq.size());
 	Strobemer* strobemer;
@@ -105,9 +105,12 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 			strobemer->add_kmer(best_choose, kmers[best_choose]);
 			curr_hash = get_new_curr_hash(strobemer);
 		}
-		strobemer->set_final_hash(get_final_hash(strobemer));
-		seeds.push_back(strobemer);
+		// strobemer->set_final_hash(get_final_hash(strobemer));
+		// seeds.push_back(strobemer);
+		final_hashes.insert(get_final_hash(strobemer));
 	}
+	std::cout << "Number of different final seed hash values: " << final_hashes.size() << std::endl;
+
 	return seeds;
 	// for (int i = 0; i < seeds.size(); i++)
 	// 	delete(seeds[i]);

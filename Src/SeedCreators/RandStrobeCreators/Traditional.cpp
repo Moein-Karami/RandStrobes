@@ -10,6 +10,8 @@ std::vector<Seed*> Traditional::create_seeds()
 {
 	// prepare_data();
 
+	std::set<uint64_t> final_hashes;
+
 	std::vector<Seed*> seeds;
 	seeds.reserve(seq.size());
 	Strobemer* strobemer;
@@ -32,10 +34,12 @@ std::vector<Seed*> Traditional::create_seeds()
 			curr_hash = get_new_curr_hash(strobemer);
 		}
 		strobemer->set_final_hash(get_final_hash(strobemer));
-		seeds.push_back(strobemer);
+		// strobemer->set_final_hash(get_final_hash(strobemer));
+		// seeds.push_back(strobemer);
+		final_hashes.insert(get_final_hash(strobemer));
 	}
+	std::cout << "Number of different final seed hash values: " << final_hashes.size() << std::endl;
 	return seeds;
-
 }
 
 uint64_t Traditional::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)

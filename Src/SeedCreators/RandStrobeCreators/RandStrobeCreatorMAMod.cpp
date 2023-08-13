@@ -20,6 +20,8 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 
 std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 {
+	std::set<uint64_t> final_hashes;
+
 	std::set<pii> hash_values[n];
 	for (size_t i = 1; i < n; i++)
 		for (size_t j = w_min + (i - 1) * w_max ; j < std::min(i * w_max + 1, hashes.size()); j++)
@@ -59,14 +61,18 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], i + j * w_max + 1));
 		}
-		strobemer->set_final_hash(get_final_hash(strobemer));
-		seeds.push_back(strobemer);
+		// strobemer->set_final_hash(get_final_hash(strobemer));
+		// seeds.push_back(strobemer);
+		final_hashes.insert(get_final_hash(strobemer));
 	}
+	std::cout << "Number of different final seed hash values: " << final_hashes.size() << std::endl;
 	return seeds;
 }
 
 std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 {
+	std::set<uint64_t> final_hashes;
+
 	uint64_t maximal_uint = std::numeric_limits<uint64_t>::max();
 
 	std::set<pii, std::greater<pii>> hash_values[n];
@@ -108,9 +114,11 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));
 		}
-		strobemer->set_final_hash(get_final_hash(strobemer));
-		seeds.push_back(strobemer);
+		// strobemer->set_final_hash(get_final_hash(strobemer));
+		// seeds.push_back(strobemer);
+		final_hashes.insert(get_final_hash(strobemer));
 	}
+	std::cout << "Number of different final seed hash values: " << final_hashes.size() << std::endl;
 	return seeds;
 }
 
