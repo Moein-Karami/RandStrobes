@@ -80,6 +80,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
+	std::map<uint64_t, long double> appearances;
 	
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
@@ -108,8 +109,16 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
 		final_hashes.insert(get_final_hash(strobemer));
+		appearances[get_final_hash(strobemer)]++;
+		delete(strobemer);
 	}
 	std::cout << "Number of different final seed hash values: " << final_hashes.size() << std::endl;
+	
+	long double sum = 0;
+	for (auto it = appearances.begin(); it != appearances.end(); it++)
+		sum += it->second * it->second;
+	long double diff = final_hashes.size();	
+	std::cout << std::fixed << std::setprecision(6) << "ehits: " << sum / diff << std::endl;
 
 	return seeds;
 	// for (int i = 0; i < seeds.size(); i++)

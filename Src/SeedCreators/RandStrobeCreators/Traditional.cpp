@@ -11,6 +11,7 @@ std::vector<Seed*> Traditional::create_seeds()
 	// prepare_data();
 
 	std::set<uint64_t> final_hashes;
+	std::map<uint64_t, long double> appearances;
 
 	std::vector<Seed*> seeds;
 	seeds.reserve(seq.size());
@@ -37,8 +38,17 @@ std::vector<Seed*> Traditional::create_seeds()
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
 		final_hashes.insert(get_final_hash(strobemer));
+		appearances[get_final_hash(strobemer)]++;
+		delete(strobemer);
 	}
 	std::cout << "Number of different final seed hash values: " << final_hashes.size() << std::endl;
+	
+	long double sum = 0;
+	for (auto it = appearances.begin(); it != appearances.end(); it++)
+		sum += it->second * it->second;
+	long double diff = final_hashes.size();	
+	std::cout << std::fixed << std::setprecision(6) << "ehits: " << sum / diff << std::endl;
+
 	return seeds;
 }
 
