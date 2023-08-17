@@ -166,12 +166,12 @@ uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
 	// 	final_hash ^= hasher->hash(hasher->hash(kmers[strobemer->positions[i]]));
 
 	// final_hash = xx_hasher->hash(kmers[positions[0]]);
-	final_hash = kmers[positions[0]];
+	final_hash = hashes[positions[0]];
 	Int128 tmp;
 	for (int i = 1; i < positions.size(); i++)
 	{
 		tmp.low = xx_hasher->hash(final_hash);
-		tmp.high = xx_hasher->hash(kmers[positions[i]]);
+		tmp.high = xx_hasher->hash(hashes[positions[i]]);
 		final_hash = wy_hasher->hash(&tmp, sizeof(tmp));
 	}
 

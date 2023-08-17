@@ -63,9 +63,11 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 	{
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 		tmp = curr_kmer & mask;
-		hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
+		// hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
 		kmers.push_back(tmp);
 	}
+	for (int i = 0; i <= seq.size() - kmer_len; i++)
+		hashes.push_back(hasher->hash(&kmers[i], sizeof(kmers[i]) * kmer_len));
 
 	return create_seeds();
 }
@@ -158,12 +160,12 @@ uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 	// 	final_hash ^= hasher->hash(hashes[strobemer->positions[i]]);
 
 	// final_hash = xx_hasher->hash(kmers[positions[0]]);
-	final_hash = kmers[positions[0]];
+	final_hash = hashes[positions[0]];
 	Int128 tmp;
 	for (int i = 1; i < positions.size(); i++)
 	{
 		tmp.low = xx_hasher->hash(final_hash);
-		tmp.high = xx_hasher->hash(kmers[positions[i]]);
+		tmp.high = xx_hasher->hash(hashes[positions[i]]);
 		final_hash = wy_hasher->hash(&tmp, sizeof(tmp));
 	}
 
