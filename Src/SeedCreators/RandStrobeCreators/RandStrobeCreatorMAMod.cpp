@@ -119,6 +119,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 				if ((tmp.first + curr_hash) % p < (candidate.first + curr_hash) % p)
 					tmp = candidate;
 			}
+			// std::cout << "done" << std::endl;
 			strobemer->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
 			curr_hash = get_new_curr_hash(strobemer) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], maximal_uint - (i + w_min + (j - 1) * w_max)));
@@ -127,6 +128,10 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 		}
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
+		std::vector<uint32_t> positions = strobemer->get_positions();
+		for (auto pos : positions)
+			std::cout << pos << " ";
+		std::cout<< std::endl << std::endl;
 		final_hashes.insert(get_final_hash(strobemer));
 		appearances[get_final_hash(strobemer)]++;
 		delete(strobemer);
