@@ -1,7 +1,7 @@
 #include "RandStrobeCreatorMAMod.hpp"
 
-RandStrobeCreatorMAMod::RandStrobeCreatorMAMod(Hasher* hasher, Comparator* comparator, size_t kmer_len,
-		size_t w_min, size_t w_max, uint32_t n, uint64_t mask, uint64_t p)
+RandStrobeCreatorMAMod::RandStrobeCreatorMAMod(Hasher* hasher, Comparator* comparator, uint64_t kmer_len,
+		uint64_t w_min, uint64_t w_max, uint64_t n, uint64_t mask, uint64_t p)
 : RandStrobeCreator(hasher, comparator, kmer_len, w_min, w_max, n, mask)
 , p(p)
 {
@@ -9,7 +9,7 @@ RandStrobeCreatorMAMod::RandStrobeCreatorMAMod(Hasher* hasher, Comparator* compa
 
 std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 {
-	for (size_t i = 0; i < hashes.size(); i++)
+	for (uint64_t i = 0; i < hashes.size(); i++)
 		hashes[i] %= p;
 
 	if (comparator->is_first_better(1, 2))
@@ -23,14 +23,14 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	std::set<uint64_t> final_hashes;
 
 	std::set<pii> hash_values[n];
-	for (size_t i = 1; i < n; i++)
-		for (size_t j = w_min + (i - 1) * w_max ; j < std::min(i * w_max + 1, hashes.size()); j++)
+	for (uint64_t i = 1; i < n; i++)
+		for (uint64_t j = w_min + (i - 1) * w_max ; j < std::min(i * w_max + 1, hashes.size()); j++)
 			hash_values[i].insert(pii(hashes[j], j));
 	
 	
 	std::vector<Seed*> seeds;
 	Strobemer* strobemer;
-	size_t best_choose;
+	uint64_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
 	pii tmp;
@@ -38,7 +38,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	std::set<pii>::iterator it;
 	std::map<uint64_t, long double> appearances;
 
-	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	for (uint64_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		if (n == 2)
 			strobemer = new Strobemer2();
@@ -46,7 +46,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 			strobemer = new Strobemer3();
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
-		for (int j = 1; j < n; j++)
+		for (uint64_t j = 1; j < n; j++)
 		{
 			tmp = *(hash_values[j].begin());
 			it = hash_values[j].lower_bound({p - curr_hash, std::numeric_limits<uint64_t>::min()});
@@ -86,14 +86,14 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 	uint64_t maximal_uint = std::numeric_limits<uint64_t>::max();
 
 	std::set<pii, std::greater<pii>> hash_values[n];
-	for (size_t i = 1; i < n; i++)
-		for (size_t j = w_min + (i - 1) * w_max ; j < std::min(i * w_max + 1, hashes.size()); j++)
+	for (uint64_t i = 1; i < n; i++)
+		for (uint64_t j = w_min + (i - 1) * w_max ; j < std::min(i * w_max + 1, hashes.size()); j++)
 			hash_values[i].insert(pii(hashes[j], maximal_uint - j));
 	
 	
 	std::vector<Seed*> seeds;
 	Strobemer* strobemer;
-	size_t best_choose;
+	uint64_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
 	pii tmp;
@@ -101,7 +101,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 	std::set<pii>::iterator it;
 	std::map<uint64_t, long double> appearances;
 
-	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	for (uint64_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		if (n == 2)
 			strobemer = new Strobemer2();
@@ -109,7 +109,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 			strobemer = new Strobemer3();
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
-		for (int j = 1; j < n; j++)
+		for (uint64_t j = 1; j < n; j++)
 		{
 			tmp = *(hash_values[j].begin());
 			it = hash_values[j].lower_bound({p - curr_hash - 1, maximal_uint});
@@ -128,10 +128,13 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 		}
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
-		std::vector<uint32_t> positions = strobemer->get_positions();
-		for (auto pos : positions)
-			std::cout << pos << " ";
-		std::cout<< std::endl << std::endl;
+		if (i % 10000000000LL == 0)
+		{
+			std::vector<uint64_t> positions = strobemer->get_positions();
+			for (auto pos : positions)
+				std::cout << pos << " ";
+			std::cout<< std::endl << std::endl;
+		}
 		final_hashes.insert(get_final_hash(strobemer));
 		appearances[get_final_hash(strobemer)]++;
 		delete(strobemer);
@@ -155,11 +158,11 @@ uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t new_stro
 uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
-	std::vector<uint32_t> positions = strobemer->get_positions();
+	std::vector<uint64_t> positions = strobemer->get_positions();
 	// for (auto pos : positions)
 	// 	final_hash ^= hasher->hash(hasher->hash(kmers[pos]));
 
-	// for (int i = 0; i < positions.size(); i++)
+	// for (uint64_t i = 0; i < positions.size(); i++)
 	// {
 	// 	if (i % 2 == 0)
 	// 		final_hash ^= wy_hasher->hash(xx_hasher->hash(kmers[positions[i]]));
@@ -167,13 +170,13 @@ uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
 	// 		final_hash ^= xx_hasher->hash(wy_hasher->hash(kmers[positions[i]]));
 	// }
 
-	// for (int i = 0; i < strobemer->last; i++)
+	// for (uint64_t i = 0; i < strobemer->last; i++)
 	// 	final_hash ^= hasher->hash(hasher->hash(kmers[strobemer->positions[i]]));
 
 	// final_hash = xx_hasher->hash(kmers[positions[0]]);
 	final_hash = hashes[positions[0]];
 	Int128 tmp;
-	for (int i = 1; i < positions.size(); i++)
+	for (uint64_t i = 1; i < positions.size(); i++)
 	{
 		tmp.low = xx_hasher->hash(final_hash);
 		tmp.high = xx_hasher->hash(hashes[positions[i]]);

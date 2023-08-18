@@ -1,7 +1,7 @@
 #include "RandStrobeCreatorFullyRandom.hpp"
 
-RandStrobeCreatorFullyRandom::RandStrobeCreatorFullyRandom(Hasher* hasher, Comparator* comparator, size_t kmer_len,
-		size_t w_min, size_t w_max, uint32_t n, uint64_t mask)
+RandStrobeCreatorFullyRandom::RandStrobeCreatorFullyRandom(Hasher* hasher, Comparator* comparator, uint64_t kmer_len,
+		uint64_t w_min, uint64_t w_max, uint64_t n, uint64_t mask)
 : RandStrobeCreator(hasher, comparator, kmer_len, w_min, w_max, n, mask)
 {
 }
@@ -15,10 +15,10 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 	
-	for (int i = 0; i < kmer_len - 1; i++)
+	for (uint64_t i = 0; i < kmer_len - 1; i++)
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 
-	for (int i = kmer_len - 1; i < seq.size(); i++)
+	for (uint64_t i = kmer_len - 1; i < seq.size(); i++)
 	{
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 		tmp = curr_kmer & mask;
@@ -33,7 +33,7 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 	uint64_t best_choose;
 	uint64_t offset;
 
-	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	for (uint64_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		if (n == 2)
 			strobemer = new Strobemer2();
@@ -41,7 +41,7 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 			strobemer = new Strobemer3();
 		strobemer->add_kmer(i, kmers[i]);
 		
-		for (int j = 1; j < n; j++)
+		for (uint64_t j = 1; j < n; j++)
 		{
 			best_choose = i + w_min + (j - 1) * w_max;
 			offset = rand() % (std::min(i + j * w_max + 1, hashes.size()) - (i + w_min + (j - 1) * w_max));

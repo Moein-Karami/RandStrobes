@@ -4,7 +4,7 @@ DataGenerator* BenchMark::create_data_generator(Json::Value config)
 {
 	if (config["DataGenerator"].asString() == "RandomDataGenerator")
 	{
-		size_t seq_len = std::stoull(config["DataGeneratorConfig"]["seq_len"].asString());
+		uint64_t seq_len = std::stoull(config["DataGeneratorConfig"]["seq_len"].asString());
 		uint64_t seed = DEFAULT_SEED;
 		if (!config["DataGeneratorConfig"]["seed"].isNull())
 			seed = config["DataGeneratorConfig"]["seed"].asUInt64();
@@ -64,10 +64,10 @@ SeedCreator* BenchMark::create_seed_creator(Json::Value config)
 {
 	if (config["SeedCreator"].asString() == "RandStrobeCreator")
 	{
-		size_t kmer_len = config["SeedCreatorConfig"]["kmer_len"].asUInt64();
+		uint64_t kmer_len = config["SeedCreatorConfig"]["kmer_len"].asUInt64();
 		uint64_t w_min = config["SeedCreatorConfig"]["w_min"].asUInt64();
 		uint64_t w_max = config["SeedCreatorConfig"]["w_max"].asUInt64();
-		uint32_t n = config["SeedCreatorConfig"]["n"].asUInt();
+		uint64_t n = config["SeedCreatorConfig"]["n"].asUInt();
 		uint64_t mask = -1;
 		if (!config["SeedCreatorConfig"]["mask"].isNull())
 			mask = config["SeedCreatorConfig"]["mask"].asUInt64();
@@ -118,9 +118,9 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	std::vector<uint64_t> durations;
 	std::vector<int> seeds_size;
 
-	size_t length_of_sequence;
+	uint64_t length_of_sequence;
 
-	for (int i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
+	for (uint64_t i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
 	{
 		std::string seq = data_generator->get_data();
 		length_of_sequence = seq.size();
@@ -132,7 +132,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		// durations.push_back(duration.count());
 		// seeds_size.push_back(seeds.size());
 		
-		// for(int j = 0; j < seeds.size(); j++)
+		// for(uint64_t j = 0; j < seeds.size(); j++)
 		// {
 		// 	result_printer->add_seed(seeds[j], i);
 		// 	delete(seeds[j]);
@@ -152,7 +152,7 @@ void BenchMark::run(Json::Value config, std::string output_path)
 	delete(result_printer);
 }
 
-int32_t main(int argc, char* argv[])
+int main(uint64_t argc, char* argv[])
 {
 	if (argc != 3)
 	{

@@ -1,7 +1,7 @@
 #include "RandStrobeCreator.hpp"
 
-RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
-		uint32_t n, uint64_t mask)
+RandStrobeCreator::RandStrobeCreator(Hasher* hasher, Comparator* comparator, uint64_t kmer_len, uint64_t w_min, uint64_t w_max,
+		uint64_t n, uint64_t mask)
 : SeedCreator(hasher)
 , comparator(comparator)
 , kmer_len(kmer_len)
@@ -25,7 +25,7 @@ RandStrobeCreator::~RandStrobeCreator()
 	delete(xx_hasher);
 }
 
-uint32_t RandStrobeCreator::get_char_code(char c)
+uint64_t RandStrobeCreator::get_char_code(char c)
 {
 	switch (c)
 	{
@@ -56,17 +56,17 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 	uint64_t curr_kmer = 0;
 	uint64_t tmp;
 	
-	for (int i = 0; i < kmer_len - 1; i++)
+	for (uint64_t i = 0; i < kmer_len - 1; i++)
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 
-	for (int i = kmer_len - 1; i < seq.size(); i++)
+	for (uint64_t i = kmer_len - 1; i < seq.size(); i++)
 	{
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 		tmp = curr_kmer & mask;
 		// hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
 		kmers.push_back(tmp);
 	}
-	for (int i = 0; i <= seq.size() - kmer_len; i++)
+	for (uint64_t i = 0; i <= seq.size() - kmer_len; i++)
 		hashes.push_back(hasher->hash(&kmers[i], sizeof(kmers[i]) * kmer_len));
 
 	return create_seeds();
@@ -79,12 +79,12 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	std::vector<Seed*> seeds;
 	seeds.reserve(seq.size());
 	Strobemer* strobemer;
-	size_t best_choose;
+	uint64_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
 	std::map<uint64_t, long double> appearances;
 	
-	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	for (uint64_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		if (n == 2)
 			strobemer = new Strobemer2();
@@ -93,11 +93,11 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
-		for (int j = 1; j < n; j++)
+		for (uint64_t j = 1; j < n; j++)
 		{
 			best_choose = i + w_min + (j - 1) * w_max;
 			best_value = get_score(curr_hash, best_choose);
-			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
+			for (uint64_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
 				if (comparator->is_first_better(get_score(curr_hash, q), best_value))
 				{
@@ -123,7 +123,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 	std::cout << std::fixed << std::setprecision(6) << "ehits: " << sum / diff << std::endl;
 
 	return seeds;
-	// for (int i = 0; i < seeds.size(); i++)
+	// for (uint64_t i = 0; i < seeds.size(); i++)
 	// 	delete(seeds[i]);
 	// seeds.clear();
 	// std::vector<Seed*> tmp;
@@ -131,7 +131,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 
 }
 
-uint64_t RandStrobeCreator::get_first_hash(size_t ind)
+uint64_t RandStrobeCreator::get_first_hash(uint64_t ind)
 {
 	return hashes[ind];
 }
@@ -144,11 +144,11 @@ void RandStrobeCreator::prepare_data()
 uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
-	std::vector<uint32_t> positions = strobemer->get_positions();
+	std::vector<uint64_t> positions = strobemer->get_positions();
 	// for (auto pos : positions)
 	// 	final_hash ^= hasher->hash(hashes[pos]);
 
-	// for (int i = 0; i < positions.size(); i++)
+	// for (uint64_t i = 0; i < positions.size(); i++)
 	// {
 	// 	if (i % 2 == 0)
 	// 		final_hash ^= wy_hasher->hash(xx_hasher->hash(kmers[positions[i]]));
@@ -156,13 +156,13 @@ uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 	// 		final_hash ^= xx_hasher->hash(wy_hasher->hash(kmers[positions[i]]));
 	// }
 
-	// for (int i = 0; i < strobemer->last; i++)
+	// for (uint64_t i = 0; i < strobemer->last; i++)
 	// 	final_hash ^= hasher->hash(hashes[strobemer->positions[i]]);
 
 	// final_hash = xx_hasher->hash(kmers[positions[0]]);
 	final_hash = hashes[positions[0]];
 	Int128 tmp;
-	for (int i = 1; i < positions.size(); i++)
+	for (uint64_t i = 1; i < positions.size(); i++)
 	{
 		tmp.low = xx_hasher->hash(final_hash);
 		tmp.high = xx_hasher->hash(hashes[positions[i]]);

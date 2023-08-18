@@ -12,8 +12,8 @@
 class RandStrobeCreator : public SeedCreator
 {
 	public:
-		RandStrobeCreator(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
-				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
+		RandStrobeCreator(Hasher* hasher, Comparator* comparator, uint64_t kmer_len, uint64_t w_min, uint64_t w_max,
+				uint64_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 		~RandStrobeCreator();
 		virtual std::vector<Seed*> create_seeds(const std::string& sequence);
 	
@@ -21,17 +21,17 @@ class RandStrobeCreator : public SeedCreator
 		std::string seq;
 		std::vector<uint64_t> kmers;
 		std::vector<uint64_t> hashes;
-		size_t kmer_len;
-		size_t w_min;
-		size_t w_max;
+		uint64_t kmer_len;
+		uint64_t w_min;
+		uint64_t w_max;
 		uint64_t mask;
-		uint32_t n;
+		uint64_t n;
 		Comparator* comparator;
 		virtual uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos) = 0;
 		virtual void prepare_data();
-		uint32_t get_char_code(char c);
+		uint64_t get_char_code(char c);
 		virtual std::vector<Seed*> create_seeds();
-		virtual uint64_t get_first_hash(size_t ind);
+		virtual uint64_t get_first_hash(uint64_t ind);
 		virtual uint64_t get_final_hash(const Strobemer* strobemer);
 		virtual uint64_t get_new_curr_hash(const Strobemer* strobemer);
 		Hasher* wy_hasher;

@@ -6,8 +6,8 @@
 class Traditional : public RandStrobeCreator
 {
 	public:
-		Traditional(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
-				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
+		Traditional(Hasher* hasher, Comparator* comparator, uint64_t kmer_len, uint64_t w_min, uint64_t w_max,
+				uint64_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK);
 		std::vector<Seed*> create_seeds();
 
 	protected:

@@ -9,25 +9,25 @@ MAXorNode::MAXorNode(int64_t bit_ind)
 
 MAXorNode::~MAXorNode()
 {
-	for (int i = 0; i < 2; i++)
+	for (uint64_t i = 0; i < 2; i++)
 		if (childs[i] != NULL)
 			delete childs[i];
 }
 
-void MAXorNode::add(size_t ind, uint64_t val)
+void MAXorNode::add(uint64_t ind, uint64_t val)
 {
 	inds.insert(ind);
 	if (bit_ind < 0)
 		return;
 
-	for (int i = 0; i < 2; i++)
+	for (uint64_t i = 0; i < 2; i++)
 		if (childs[i] == NULL)
 			childs[i] = new MAXorNode(bit_ind - 1);
 
 	childs[(val & (1LL << bit_ind)) != 0]->add(ind, val);
 }
 
-void MAXorNode::remove(size_t ind, uint64_t val)
+void MAXorNode::remove(uint64_t ind, uint64_t val)
 {
 	inds.erase(ind);
 	if (bit_ind < 0)
@@ -36,7 +36,7 @@ void MAXorNode::remove(size_t ind, uint64_t val)
 	childs[(val & (1LL << bit_ind)) != 0]->remove(ind, val);
 }
 
-size_t MAXorNode::get_best_ind(uint64_t val, bool cmp)
+uint64_t MAXorNode::get_best_ind(uint64_t val, bool cmp)
 {
 	if (bit_ind < 0 || inds.size() == 1)
 		return *inds.begin();
@@ -61,7 +61,7 @@ bool MAXorNode::is_empty()
 
 void MAXorNode::print_all(std::string until_now)
 {
-	for (int i = 0; i < 2; i++)
+	for (uint64_t i = 0; i < 2; i++)
 		if (childs[i] != NULL)
 			childs[i]->print_all(until_now + std::to_string(i));
 }

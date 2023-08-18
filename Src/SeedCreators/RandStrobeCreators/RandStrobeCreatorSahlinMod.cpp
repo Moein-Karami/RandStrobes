@@ -1,7 +1,7 @@
 #include "RandStrobeCreatorSahlinMod.hpp"
 
-RandStrobeCreatorSahlinMod::RandStrobeCreatorSahlinMod(Hasher* hasher, Comparator* comparator, size_t kmer_len,
-		size_t w_min, size_t w_max, uint32_t n, uint64_t mask, uint64_t p)
+RandStrobeCreatorSahlinMod::RandStrobeCreatorSahlinMod(Hasher* hasher, Comparator* comparator, uint64_t kmer_len,
+		uint64_t w_min, uint64_t w_max, uint64_t n, uint64_t mask, uint64_t p)
 : RandStrobeCreator(hasher, comparator, kmer_len, w_min, w_max, n, mask)
 , p(p)
 {

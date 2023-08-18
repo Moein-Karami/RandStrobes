@@ -6,8 +6,8 @@
 class RandStrobeCreatorShen : public RandStrobeCreator
 {
 	public :
-		RandStrobeCreatorShen(Hasher* hasher, Comparator* comparator, size_t kmer_len, size_t w_min, size_t w_max,
-				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK, uint64_t q = DEFAULT_Q);
+		RandStrobeCreatorShen(Hasher* hasher, Comparator* comparator, uint64_t kmer_len, uint64_t w_min, uint64_t w_max,
+				uint64_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK, uint64_t q = DEFAULT_Q);
 	
 	protected:
 		uint64_t q;

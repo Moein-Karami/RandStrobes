@@ -16,7 +16,7 @@ std::string RandomDataGenerator::get_data()
 	char c[] = {'A', 'C', 'T', 'G'};
 	std::string res;
 
-	for (size_t i = 0; i < seq_len; i++)
+	for (uint64_t i = 0; i < seq_len; i++)
 		res += c[rand() % 4];
 
 	std::fstream file;

@@ -10,7 +10,7 @@
 const uint64_t DEFAULT_P = 100001;
 const uint64_t DEFAULT_Q = pow (2, 16) - 1;
 const uint64_t DEFAULT_MASK = -1;
-const uint32_t DEFAULT_N = 2;
+const uint64_t DEFAULT_N = 2;
 const uint64_t TYPE_NORMAL = 1;
 
 typedef struct { uint64_t high; uint64_t low; } Int128;

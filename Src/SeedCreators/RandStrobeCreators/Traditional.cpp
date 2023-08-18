@@ -1,7 +1,7 @@
 #include "Traditional.hpp"
 
-Traditional::Traditional(Hasher* hasher, Comparator* comparator, size_t kmer_len,
-		size_t w_min, size_t w_max, uint32_t n, uint64_t mask)
+Traditional::Traditional(Hasher* hasher, Comparator* comparator, uint64_t kmer_len,
+		uint64_t w_min, uint64_t w_max, uint64_t n, uint64_t mask)
 : RandStrobeCreator(hasher, comparator, kmer_len, w_min, w_max, n, mask)
 {
 }
@@ -16,10 +16,10 @@ std::vector<Seed*> Traditional::create_seeds()
 	std::vector<Seed*> seeds;
 	seeds.reserve(seq.size());
 	Strobemer* strobemer;
-	size_t best_choose;
+	uint64_t best_choose;
 	uint64_t curr_hash;
 	
-	for (size_t i = 0; i < seq.size() - n * kmer_len; i++)
+	for (uint64_t i = 0; i < seq.size() - n * kmer_len; i++)
 	{
 		if (n == 2)
 			strobemer = new Strobemer2();
@@ -28,7 +28,7 @@ std::vector<Seed*> Traditional::create_seeds()
 
 		strobemer->add_kmer(i, kmers[i]);
 		curr_hash = get_first_hash(i);
-		for (int j = 1; j < n; j++)
+		for (uint64_t j = 1; j < n; j++)
 		{
 			best_choose = i + j * kmer_len;
 			strobemer->add_kmer(best_choose, kmers[best_choose]);

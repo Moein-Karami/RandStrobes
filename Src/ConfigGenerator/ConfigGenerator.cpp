@@ -1,6 +1,6 @@
 #include "ConfigGenerator.hpp"
 
-ConfigGenerator::ConfigGenerator(size_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask,
+ConfigGenerator::ConfigGenerator(uint64_t kmer_len, uint64_t w_min, uint64_t w_max, uint32_t n, uint64_t mask,
 		uint64_t number_of_samples, uint64_t seq_len, std::string data_generator, std::string data_file_name)
 : kmer_len(kmer_len)
 , w_min(w_min)
@@ -98,7 +98,7 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	seed_creator_config["kmer_len"] = kmer_len;
 	seed_creator_config["w_min"] = w_min;
 	seed_creator_config["w_max"] = w_max;
-	seed_creator_config["n"] = (int32_t) n;
+	seed_creator_config["n"] = (uint64_t) n;
 	seed_creator_config["mask"] = mask;
 
 	if (config["Hasher"] == "Uniform")
@@ -140,7 +140,7 @@ int32_t main()
 {
 
 	std::string output_path;
-	size_t kmer_len;
+	uint64_t kmer_len;
 	uint64_t w_min;
 	uint64_t w_max;
 	uint32_t n;
