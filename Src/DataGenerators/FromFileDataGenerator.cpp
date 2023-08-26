@@ -17,9 +17,11 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 			for (uint64_t i = 0; i < line.size(); i++)
 				if (line[i] >= 'a' && line[i] <= 'z')
 					line[i] = line[i] - 'a' + 'A';
+			std::cout <<  "Line size: " << line.size() << std::endl;
 			seq += line;
 		}
 	}
+	std::cout << "Seq size: " << seq.size() << std::endl;
 	if (seq.size() > 0)
 		data.push(seq);
 

@@ -67,8 +67,11 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 		kmers.push_back(tmp);
 	}
 	for (uint64_t i = 0; i <= seq.size() - kmer_len; i++)
-		hashes.push_back(hasher->hash(&kmers[i], sizeof(kmers[i]) * kmer_len));
-
+	{
+		hashes.push_back(xx_hasher->hash(&seq[i], sizeof(seq[i]) * kmer_len));
+		// if (i <= 10)
+		// 	std::cout << "hashes : " << i << " " << hashes[i] << std::endl;
+	}
 	return create_seeds();
 }
 

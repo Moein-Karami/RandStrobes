@@ -37,6 +37,15 @@ std::vector<Seed*> Traditional::create_seeds()
 		strobemer->set_final_hash(get_final_hash(strobemer));
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
+		// if (i <= 10)
+		// {
+		// 	std::vector<uint64_t> positions = strobemer->get_positions();
+		// 	for (auto pos : positions)
+		// 		std::cout << pos << " " << hashes[pos] << std::endl;
+		// 	std::cout<< std::endl << get_final_hash(strobemer) << std::endl << "______________" << std::endl;
+		// }
+		// else
+		// break;
 		final_hashes.insert(get_final_hash(strobemer));
 		appearances[get_final_hash(strobemer)]++;
 		delete(strobemer);

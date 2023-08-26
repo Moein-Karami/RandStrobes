@@ -15,6 +15,7 @@ Strobemer2::Strobemer2()
 
 void Strobemer2::add_kmer(uint64_t position, uint64_t kmer_hash)
 {
+	// std::cout << "begin ok" << std::endl;
 	positions[last] = position;
 	kmers_hash[last] = kmer_hash;
 	last++;
