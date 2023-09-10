@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libSeedCreators.a  CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
-/usr/bin/ranlib build/libSeedCreators.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libSeedCreators.a CMakeFiles/SeedCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libSeedCreators.a

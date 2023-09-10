@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libDataGen.a  CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o
-/usr/bin/ranlib build/libDataGen.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libDataGen.a CMakeFiles/DataGen.dir/Src/DataGenerators/RandomDataGenerator.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libDataGen.a
