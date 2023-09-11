@@ -6,7 +6,7 @@ RandStrobeCreatorFullyRandom::RandStrobeCreatorFullyRandom(Hasher* hasher, Compa
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string& sequence)
+inline std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string& sequence)
 {
 	seq = sequence;
 	hashes.clear();
@@ -54,7 +54,7 @@ std::vector<Seed*> RandStrobeCreatorFullyRandom::create_seeds(const std::string&
 	return seeds;
 }
 
-uint64_t RandStrobeCreatorFullyRandom::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
+inline uint64_t RandStrobeCreatorFullyRandom::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
 	return 0;
 }

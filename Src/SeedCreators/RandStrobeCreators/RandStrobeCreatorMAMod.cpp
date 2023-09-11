@@ -7,7 +7,7 @@ RandStrobeCreatorMAMod::RandStrobeCreatorMAMod(Hasher* hasher, Comparator* compa
 {
 }
 
-std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
+inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 {
 	for (size_t i = 0; i < hashes.size(); i++)
 		hashes[i] %= p;
@@ -18,7 +18,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 		return create_seeds_max();
 }
 
-std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
+inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 {
 	std::set<pii> hash_values[n];
 	for (size_t i = 1; i < n; i++)
@@ -65,7 +65,7 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	return seeds;
 }
 
-std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
+inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 {
 	uint64_t maximal_uint = std::numeric_limits<uint64_t>::max();
 
@@ -114,12 +114,12 @@ std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 	return seeds;
 }
 
-uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
+inline uint64_t RandStrobeCreatorMAMod::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
 	return -1;
 }
 
-uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
+inline uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
 	std::vector<uint32_t> positions = strobemer->get_positions();
@@ -150,7 +150,7 @@ uint64_t RandStrobeCreatorMAMod::get_final_hash(const Strobemer* strobemer)
 	return final_hash;
 }
 
-uint64_t RandStrobeCreatorMAMod::get_new_curr_hash(const Strobemer* strobemer)
+inline uint64_t RandStrobeCreatorMAMod::get_new_curr_hash(const Strobemer* strobemer)
 {
 	return get_final_hash(strobemer);
 }

@@ -11,7 +11,7 @@ class RandStrobeCreatorShen : public RandStrobeCreator
 	
 	protected:
 		uint64_t q;
-		uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
+		inline uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
 };
 
 #endif

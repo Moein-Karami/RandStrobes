@@ -25,7 +25,7 @@ RandStrobeCreator::~RandStrobeCreator()
 	delete(xx_hasher);
 }
 
-uint32_t RandStrobeCreator::get_char_code(char c)
+inline uint32_t RandStrobeCreator::get_char_code(char c)
 {
 	switch (c)
 	{
@@ -45,7 +45,7 @@ uint32_t RandStrobeCreator::get_char_code(char c)
 	return 0;
 }
 
-std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
+inline std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 {
 	seq = sequence;
 	hashes.clear();
@@ -70,7 +70,7 @@ std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 	return create_seeds();
 }
 
-std::vector<Seed*> RandStrobeCreator::create_seeds()
+inline std::vector<Seed*> RandStrobeCreator::create_seeds()
 {
 	prepare_data();
 
@@ -117,17 +117,17 @@ std::vector<Seed*> RandStrobeCreator::create_seeds()
 
 }
 
-uint64_t RandStrobeCreator::get_first_hash(size_t ind)
+inline uint64_t RandStrobeCreator::get_first_hash(size_t ind)
 {
 	return hashes[ind];
 }
 
-void RandStrobeCreator::prepare_data()
+inline void RandStrobeCreator::prepare_data()
 {
 	/* Do nothing */
 }
 
-uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
+inline uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 {
 	uint64_t final_hash = 0;
 	std::vector<uint32_t> positions = strobemer->get_positions();
@@ -158,7 +158,7 @@ uint64_t RandStrobeCreator::get_final_hash(const Strobemer* strobemer)
 	return final_hash;
 }
 
-uint64_t RandStrobeCreator::get_new_curr_hash(const Strobemer* strobemer)
+inline uint64_t RandStrobeCreator::get_new_curr_hash(const Strobemer* strobemer)
 {
 	return get_final_hash(strobemer);
 }

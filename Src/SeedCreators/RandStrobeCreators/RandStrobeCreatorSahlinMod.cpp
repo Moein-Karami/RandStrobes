@@ -7,7 +7,7 @@ RandStrobeCreatorSahlinMod::RandStrobeCreatorSahlinMod(Hasher* hasher, Comparato
 {
 }
 
-uint64_t RandStrobeCreatorSahlinMod::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
+inline uint64_t RandStrobeCreatorSahlinMod::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
 	return (curr_hash + hashes[new_strobe_pos]) % p;
 }
