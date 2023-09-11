@@ -11,12 +11,12 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 				uint32_t n = DEFAULT_N, uint64_t mask = DEFAULT_MASK, uint64_t p = DEFAULT_P);
 		
 	protected:
-		uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
-		std::vector<Seed*> create_seeds();
-		std::vector<Seed*> create_seeds_min();
-		std::vector<Seed*> create_seeds_max();
-		uint64_t get_final_hash(const Strobemer* strobemer);
-		uint64_t get_new_curr_hash(const Strobemer* strobemer);
+		inline uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
+		inline std::vector<Seed*> create_seeds();
+		inline std::vector<Seed*> create_seeds_min();
+		inline std::vector<Seed*> create_seeds_max();
+		inline uint64_t get_final_hash(const Strobemer* strobemer);
+		inline uint64_t get_new_curr_hash(const Strobemer* strobemer);
 		uint64_t p;
 };
 

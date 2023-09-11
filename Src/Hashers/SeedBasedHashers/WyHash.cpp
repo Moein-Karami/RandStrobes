@@ -8,7 +8,7 @@ WyHash::WyHash(uint64_t seed)
 		_wyp[i] = rand();
 }
 
-uint64_t WyHash::hash(const void* key, size_t len)
-{
-		return wyhash(key, len, seed, _wyp);
-}
+// inline uint64_t WyHash::hash(const void* key, size_t len)
+// {
+// 		return wyhash(key, len, seed, _wyp);
+// }

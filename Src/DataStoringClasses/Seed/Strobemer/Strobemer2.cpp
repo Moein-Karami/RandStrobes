@@ -13,7 +13,7 @@ Strobemer2::Strobemer2()
 	// kmers_hash.clear();
 // }
 
-void Strobemer2::add_kmer(size_t position, uint64_t kmer_hash)
+inline void Strobemer2::add_kmer(size_t position, uint64_t kmer_hash)
 {
 	positions[last] = position;
 	kmers_hash[last] = kmer_hash;
@@ -52,12 +52,12 @@ std::string Strobemer2::to_string()
 	return res;
 }
 
-void Strobemer2::set_final_hash(uint64_t hash)
+inline void Strobemer2::set_final_hash(uint64_t hash)
 {
 	final_hash = hash;
 }
 
-std::vector<uint32_t> Strobemer2::get_positions() const
+inline std::vector<uint32_t> Strobemer2::get_positions() const
 {
 	std::vector<uint32_t> res;
 	for (int i = 0; i < last; i++)

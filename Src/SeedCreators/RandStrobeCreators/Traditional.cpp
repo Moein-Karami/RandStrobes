@@ -6,7 +6,7 @@ Traditional::Traditional(Hasher* hasher, Comparator* comparator, size_t kmer_len
 {
 }
 
-std::vector<Seed*> Traditional::create_seeds()
+inline std::vector<Seed*> Traditional::create_seeds()
 {
 	// prepare_data();
 
@@ -38,7 +38,7 @@ std::vector<Seed*> Traditional::create_seeds()
 
 }
 
-uint64_t Traditional::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
+inline uint64_t Traditional::get_score(uint64_t curr_hash, uint64_t new_strobe_pos)
 {
 	return 0;
 }

@@ -95,7 +95,8 @@ void ConfigGenerator::add_seed_creator_config(std::string output_path, Json::Val
 	config["SeedCreator"] = "RandStrobeCreator";
 	
 	Json::Value seed_creator_config;
-	seed_creator_config["kmer_len"] = kmer_len;
+	int int_kmer_len = (int) kmer_len;
+	seed_creator_config["kmer_len"] = int_kmer_len;
 	seed_creator_config["w_min"] = w_min;
 	seed_creator_config["w_max"] = w_max;
 	seed_creator_config["n"] = (int32_t) n;

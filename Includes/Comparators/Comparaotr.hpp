@@ -6,7 +6,10 @@
 class Comparator
 {
 	public:
-		virtual bool is_first_better(uint64_t first, uint64_t second) = 0;
+		inline virtual bool is_first_better(uint64_t first, uint64_t second)
+		{
+			// This is a pure virtual function, so it must be overriden by the child class.
+		}
 };
 
 #endif

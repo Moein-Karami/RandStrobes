@@ -1,2 +1,2 @@
-/usr/bin/ar qc build/libMinimizer.a  CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o
-/usr/bin/ranlib build/libMinimizer.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libMinimizer.a CMakeFiles/Minimizer.dir/Src/Comparators/Minimizer.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libMinimizer.a
