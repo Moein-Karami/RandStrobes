@@ -105,7 +105,7 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds()
 				}
 			}
 			strobemer->add_kmer(best_choose, kmers[best_choose]);
-			curr_hash = get_new_curr_hash(strobemer);
+			// curr_hash = get_new_curr_hash(strobemer);
 		}
 		strobemer->set_final_hash(get_final_hash(strobemer));
 		seeds.push_back(strobemer);

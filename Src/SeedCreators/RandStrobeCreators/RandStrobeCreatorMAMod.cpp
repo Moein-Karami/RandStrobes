@@ -54,7 +54,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 					tmp = candidate;
 			}
 			strobemer->add_kmer(tmp.second, kmers[tmp.second]);
-			curr_hash = get_new_curr_hash(strobemer) % p;
+			// curr_hash = get_new_curr_hash(strobemer) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], i + w_min + (j - 1) * w_max));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], i + j * w_max + 1));
@@ -103,7 +103,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 					tmp = candidate;
 			}
 			strobemer->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);
-			curr_hash = get_new_curr_hash(strobemer) % p;
+			// curr_hash = get_new_curr_hash(strobemer) % p;
 			hash_values[j].erase(pii(hashes[i + w_min + (j - 1) * w_max], maximal_uint - (i + w_min + (j - 1) * w_max)));
 			if (i + j * w_max + 1 < hashes.size())
 				hash_values[j].insert(pii(hashes[i + j * w_max + 1], maximal_uint - (i + j * w_max + 1)));
