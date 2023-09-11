@@ -80,7 +80,8 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds()
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
-	
+	uint64_t new_score;
+
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		if (n == 2)
@@ -96,10 +97,11 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds()
 			best_value = get_score(curr_hash, best_choose);
 			for (size_t q = i + w_min + (j - 1) * w_max + 1; q < std::min(i + j * w_max + 1, hashes.size()); q++)
 			{
-				if (comparator->is_first_better(get_score(curr_hash, q), best_value))
+				new_score = get_score(curr_hash, q);
+				if (comparator->is_first_better(new_score, best_value))
 				{
 					best_choose = q;
-					best_value = get_score(curr_hash, q);
+					best_value = new_score;
 				}
 			}
 			strobemer->add_kmer(best_choose, kmers[best_choose]);
