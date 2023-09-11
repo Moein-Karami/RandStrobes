@@ -5,7 +5,11 @@
 class NoHash : public Hasher
 {
 	public:
-		uint64_t hash(const void* key, size_t len);
+		inline uint64_t hash(const void* key, size_t len)
+		{
+			uint64_t res = *((uint64_t*) key);
+			return res;
+		}
 };
 
 #endif

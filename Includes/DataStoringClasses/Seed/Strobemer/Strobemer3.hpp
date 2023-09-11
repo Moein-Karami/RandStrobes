@@ -10,11 +10,11 @@ class Strobemer3 : public Strobemer
 		Strobemer3();
 		std::string get_seed();
 		std::string to_string();
-		void add_kmer(size_t position, uint64_t kmer_hash);
+		inline void add_kmer(size_t position, uint64_t kmer_hash);
 		// std::vector<size_t> positions;
-		void set_final_hash(uint64_t hash);
+		inline void set_final_hash(uint64_t hash);
 		// uint8_t last;
-		virtual std::vector<uint32_t> get_positions() const;
+		inline virtual std::vector<uint32_t> get_positions() const;
 
 	protected:
 		// std::vector<uint64_t> kmers_hash;

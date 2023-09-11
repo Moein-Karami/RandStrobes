@@ -9,7 +9,10 @@ class XXHash : public SeedBasedHasher
 {
 	public:
 		XXHash(uint64_t seed = DEFAULT_SEED);
-		uint64_t hash(const void* key, size_t len);
+		inline uint64_t hash(const void* key, size_t len)
+		{
+			return XXH3_64bits_withSeed(key, len, seed);
+		}
 };
 
 #endif
