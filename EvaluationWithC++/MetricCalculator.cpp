@@ -885,8 +885,8 @@ int main(int argc, char** argv)
 
     for(int i = 0; i < samples.size(); i++)
     {
-        samples[i] -> evaluate_hashes();
-        samples[i] -> evaluate_kmers();
+        // samples[i] -> evaluate_hashes();
+        // samples[i] -> evaluate_kmers();
         samples[i] -> write_in_file(csv_all_sample, 0);
         samples[i] -> add_all_data(all_data);
         cout << "A sample evaluation finished" << endl;
