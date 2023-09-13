@@ -7,13 +7,19 @@ FromFileDataGenerator::FromFileDataGenerator(std::string file_name)
 	std::string line;
 	while (file >> line)
 	{
-		if (line[0] == '>' && seq.size() > 0)
+		if (line[0] == '>')
 		{
-			data.push(seq);
+			if (seq.size() > 0)
+				data.push(seq);
 			seq = "";
 		}
 		else if (line.size() > 0)
+		{
+			for (int i = 0; i < line.size(); i++)
+				line[i] = toupper(line[i]);
 			seq += line;
+		}
+			
 	}
 	if (seq.size() > 0)
 		data.push(seq);
