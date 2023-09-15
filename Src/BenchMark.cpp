@@ -120,6 +120,8 @@ void BenchMark::run(Json::Value config, std::string output_path)
 
 	size_t length_of_sequence;
 
+	std::vector<double> times;
+
 	for (int i = 0; i < config["NumberOfSamples"].asUInt64(); i++)
 	{
 		std::string seq = data_generator->get_data();
@@ -134,13 +136,20 @@ void BenchMark::run(Json::Value config, std::string output_path)
 
 		double time = (double)duration.count() / 1000000.0;
 		std::cout << "Execution Time: " << time << " seconds" << std::endl;
-		
+		times.push_back(time);
+
 		for(int j = 0; j < seeds.size(); j++)
 		{
 			result_printer->add_seed(seeds[j], i);
 			delete(seeds[j]);
 		}
 	}
+	
+	sort(times.begin(), times.end());
+	if (times.size() % 2)
+		std::cout << "Median Execution Time: " << times[times.size() / 2] << " seconds" << std::endl;
+	else
+		std::cout << "Median Execution Time: " << (times[times.size() / 2] + times[times.size() / 2 - 1]) / 2 << " seconds" << std::endl;
 
 	result_printer->print(durations, seeds_size, output_path, 
 		config["SeedCreatorConfig"]["n"].asUInt(), config["SeedCreatorConfig"]["kmer_len"].asUInt64()

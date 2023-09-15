@@ -89,7 +89,7 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds()
 	uint64_t best_value;
 	uint64_t new_score;
 
-	std::map<uint64_t, double> seen;
+	// std::map<uint64_t, double> seen;
 
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
@@ -119,17 +119,17 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds()
 		}
 		// strobemer->set_final_hash(get_final_hash(strobemer))
 		final_hash_values.push_back(get_final_hash(strobemer));
-		seen[final_hash_values.back()] += 1;
+		// seen[final_hash_values.back()] += 1;
 		delete(strobemer);
 		// seeds.push_back(strobemer);
 	}
-	double sum_squeared = 0;
-	for (auto i : seen)
-		sum_squeared += i.second * i.second;
-	double number_of_different_seeds = seen.size();
-	double number_of_seeds = final_hash_values.size();
-	std::cout << std::fixed << std::setprecision(6) << "Number of different seeds: " << number_of_different_seeds << std::endl;
-	std::cout << std::fixed << std::setprecision(6) << "Ehits: " << sum_squeared/number_of_seeds << std::endl;
+	// double sum_squeared = 0;
+	// for (auto i : seen)
+	// 	sum_squeared += i.second * i.second;
+	// double number_of_different_seeds = seen.size();
+	// double number_of_seeds = final_hash_values.size();
+	// std::cout << std::fixed << std::setprecision(6) << "Number of different seeds: " << number_of_different_seeds << std::endl;
+	// std::cout << std::fixed << std::setprecision(6) << "Ehits: " << sum_squeared/number_of_seeds << std::endl;
 
 	return seeds;
 	// for (int i = 0; i < seeds.size(); i++)
