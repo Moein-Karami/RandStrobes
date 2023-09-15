@@ -131,6 +131,9 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
 		durations.push_back(duration.count());
 		seeds_size.push_back(seeds.size());
+
+		double time = (double)duration.count() / 1000000.0;
+		std::cout << "Execution Time: " << time << " seconds" << std::endl;
 		
 		for(int j = 0; j < seeds.size(); j++)
 		{

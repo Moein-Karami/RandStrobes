@@ -45,10 +45,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.3/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.4/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.27.3/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.27.4/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -150,6 +150,20 @@ clean: CMakeFiles/ConfigGen.dir/clean
 # Target rules for target CMakeFiles/config.out.dir
 
 # All Build rule for target.
+CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators12.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators13.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators14.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators15.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/Json.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/Hashers.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HashersMet1.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HashersMet2.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HashersSeed1.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HashersSeed2.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HashersSeed3.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple1.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple2.dir/all
+CMakeFiles/config.out.dir/all: CMakeFiles/ResultPrinter.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/Maximizer.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/Minimizer.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/DataGen.dir/all
@@ -170,20 +184,6 @@ CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators8.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators9.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators10.dir/all
 CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators11.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators12.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators13.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators14.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/RandStrobeCreators15.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/Json.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/Hashers.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HashersMet1.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HashersMet2.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HashersSeed1.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HashersSeed2.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HashersSeed3.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple1.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/HasherSimple2.dir/all
-CMakeFiles/config.out.dir/all: CMakeFiles/ResultPrinter.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/config.out.dir/build.make CMakeFiles/config.out.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/config.out.dir/build.make CMakeFiles/config.out.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/C/codes/Moein-RandStrobes/RandStrobes/CMakeFiles --progress-num=99,100 "Built target config.out"
@@ -209,6 +209,21 @@ CMakeFiles/config.out.dir/clean:
 # Target rules for target CMakeFiles/RandStrobes.out.dir
 
 # All Build rule for target.
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators12.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators13.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators14.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators15.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Json.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Hashers.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersMet1.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersMet2.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersSeed1.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersSeed2.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersSeed3.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple1.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple2.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ResultPrinter.dir/all
+CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ConfigGen.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Maximizer.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Minimizer.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/DataGen.dir/all
@@ -229,21 +244,6 @@ CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators8.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators9.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators10.dir/all
 CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators11.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators12.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators13.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators14.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/RandStrobeCreators15.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Json.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/Hashers.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersMet1.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersMet2.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersSeed1.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersSeed2.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HashersSeed3.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple1.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/HasherSimple2.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ResultPrinter.dir/all
-CMakeFiles/RandStrobes.out.dir/all: CMakeFiles/ConfigGen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RandStrobes.out.dir/build.make CMakeFiles/RandStrobes.out.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RandStrobes.out.dir/build.make CMakeFiles/RandStrobes.out.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/C/codes/Moein-RandStrobes/RandStrobes/CMakeFiles --progress-num=95,96 "Built target RandStrobes.out"

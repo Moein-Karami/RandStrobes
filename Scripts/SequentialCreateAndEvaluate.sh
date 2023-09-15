@@ -13,13 +13,13 @@ do
 	echo "RandStrobes are created"
 	# sleep 1
 	# R -e "path_kmer_file='$name'; path_output_file='$name'; rmarkdown::render('EvaluationWithR/MetricsEvaluation.Rmd')"
-	./metric.out "$name"
-	echo "Metrics are created"
+	# ./metric.out "$name"
+	# echo "Metrics are created"
 done
 
 wait
-R -e "rmarkdown::render('EvaluationWithR/PlotMaker.Rmd')"
+# R -e "rmarkdown::render('EvaluationWithR/PlotMaker.Rmd')"
 
-rm EvaluationResults/Figures/*.pdf
+# rm EvaluationResults/Figures/*.pdf
 
 rm metric.out
