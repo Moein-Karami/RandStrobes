@@ -16,7 +16,7 @@ ChosenConfigs/*
 *.zip
 *.html
 build/*
-CreatedSequences/*
+./CreatedSequences/*
 *.out
 Tmp/*
 massif*
