@@ -12,6 +12,7 @@ class RandStrobeCreatorXorVar : public RandStrobeCreator
 	protected:
 		inline uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
 		inline uint64_t get_first_hash(size_t ind);
+		inline std::vector<Seed*> create_seeds();
 };
 
 #endif
