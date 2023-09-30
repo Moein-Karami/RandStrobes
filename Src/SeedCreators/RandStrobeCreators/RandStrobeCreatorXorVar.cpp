@@ -57,7 +57,7 @@ inline std::vector<Seed*> RandStrobeCreatorXorVar::create_seeds()
 				best_value = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
 				break;
 			case 2:
-				best_value = (wyhash(&tmp_xor, sizeof(tmp_xor), 0, _wyp));
+				best_value = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
 				break;
 			case 3:
 				best_value = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
@@ -79,7 +79,7 @@ inline std::vector<Seed*> RandStrobeCreatorXorVar::create_seeds()
 					new_score = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
 					break;
 				case 2:
-					new_score = (wyhash(&tmp_xor, sizeof(tmp_xor), 0, _wyp));
+					new_score = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
 					break;
 				case 3:
 					new_score = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));

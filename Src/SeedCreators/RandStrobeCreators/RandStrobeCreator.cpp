@@ -80,7 +80,7 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq
 			hashes.push_back(tw_hasher.hash(&tmp, sizeof(tmp)));
 			break;
 		case 2:
-			hashes.push_back(wyhash(&tmp, sizeof(tmp), 0, _wyp));
+			hashes.push_back(wyhash(&tmp, sizeof(tmp), tmp, _wyp));
 			break;
 		case 3:
 			hashes.push_back(XXH3_64bits_withSeed(&tmp, sizeof(tmp), 0));

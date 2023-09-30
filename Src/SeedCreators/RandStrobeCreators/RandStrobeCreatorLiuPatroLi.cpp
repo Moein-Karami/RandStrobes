@@ -64,7 +64,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 			switch (hasher_code)
 			{
 				case 2:
-					best_value = (wyhash(&concated, sizeof(concated), 0, _wyp));
+					best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
 					break;
 				case 3:
 					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
@@ -84,7 +84,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 				switch (hasher_code)
 				{
 					case 2:
-						new_score = (wyhash(&concated, sizeof(concated), 0, _wyp));
+						new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
 						break;
 					case 3:
 						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
