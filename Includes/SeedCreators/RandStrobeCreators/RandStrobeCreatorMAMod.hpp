@@ -18,6 +18,7 @@ class RandStrobeCreatorMAMod : public RandStrobeCreator
 		inline uint64_t get_final_hash(const Strobemer* strobemer);
 		inline uint64_t get_new_curr_hash(const Strobemer* strobemer);
 		uint64_t p;
+		std::vector<uint64_t> real_hashes;
 };
 
 #endif
