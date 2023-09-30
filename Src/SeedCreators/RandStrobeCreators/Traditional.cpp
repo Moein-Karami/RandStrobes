@@ -35,18 +35,18 @@ inline std::vector<Seed*> Traditional::create_seeds(const std::string& sequence)
 	// 	seeds.push_back(strobemer);
 	// }
 	std::vector<uint64_t> final_hashes;
-	final_hashes.reserve(seq.size());
+	final_hashes.reserve(sequence.size());
 	hasher_code = hasher->get_type();
 
-	for (size_t i = 0; i < seq.size() - n * kmer_len; i++)
+	for (size_t i = 0; i < sequence.size() - n * kmer_len; i++)
 	{
 		switch (hasher_code)
 		{
 		case 2:
-			hashes.push_back(wyhash(&seq[i], sizeof(seq[i]) * kmer_len * n, 0, _wyp));
+			hashes.push_back(wyhash(&sequence[i], sizeof(sequence[i]) * kmer_len * n, 0, _wyp));
 			break;
 		case 3:
-			hashes.push_back(XXH3_64bits_withSeed(&seq[i], sizeof(seq[i]) * kmer_len * n, 0));
+			hashes.push_back(XXH3_64bits_withSeed(&sequence[i], sizeof(sequence[i]) * kmer_len * n, 0));
 			break;
 		default:
 			break;
