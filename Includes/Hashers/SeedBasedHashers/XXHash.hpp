@@ -13,6 +13,10 @@ class XXHash : public SeedBasedHasher
 		{
 			return XXH3_64bits_withSeed(key, len, seed);
 		}
+		inline int get_type()
+		{
+			return 3;
+		}
 };
 
 #endif

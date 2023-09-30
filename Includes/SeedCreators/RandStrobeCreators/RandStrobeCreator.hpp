@@ -18,7 +18,7 @@ class RandStrobeCreator : public SeedCreator
 		inline virtual std::vector<Seed*> create_seeds(const std::string& sequence);
 	
 	protected:
-		std::string seq;
+		std::string& seq;
 		std::vector<uint64_t> kmers;
 		std::vector<uint64_t> hashes;
 		size_t kmer_len;
@@ -36,6 +36,9 @@ class RandStrobeCreator : public SeedCreator
 		inline virtual uint64_t get_new_curr_hash(const Strobemer* strobemer);
 		Hasher* wy_hasher;
 		Hasher* xx_hasher;
+		ThomasWangHash tw_hasher;
+		int hasher_code;
+		uint64_t _wyp[4];
 };
 
 #endif

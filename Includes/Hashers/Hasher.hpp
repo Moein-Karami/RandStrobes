@@ -11,6 +11,7 @@ class Hasher
 		{
 			return hash(&key, sizeof(key));
 		}
+		inline virtual int get_type() = 0;
 };
 
 #endif

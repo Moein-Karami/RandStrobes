@@ -19,6 +19,10 @@ class ThomasWangHash : public Hasher
 			key_val = (key_val + (key_val << 31)) & mask;
 			return key_val;
 		}
+		inline int get_type()
+		{
+			return 1;
+		}
 	protected:
 		uint64_t mask;
 };

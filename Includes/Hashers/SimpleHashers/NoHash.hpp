@@ -10,6 +10,10 @@ class NoHash : public Hasher
 			uint64_t res = *((uint64_t*) key);
 			return res;
 		}
+		inline int get_type()
+		{
+			return 0;
+		}
 };
 
 #endif

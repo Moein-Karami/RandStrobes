@@ -13,6 +13,10 @@ class WyHash : public SeedBasedHasher
 		{
 			return wyhash(key, len, seed, _wyp);
 		}
+		inline int get_type()
+		{
+			return 2;
+		}
 	protected:
 		uint64_t _wyp[4];
 };

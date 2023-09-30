@@ -47,6 +47,10 @@ inline uint32_t RandStrobeCreator::get_char_code(char c)
 
 inline std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& sequence)
 {
+	srand(0);
+	for (int i = 0; i < 4; i++)
+		_wyp[i] = rand();
+
 	seq = sequence;
 	hashes.clear();
 	kmers.clear();
@@ -59,11 +63,31 @@ inline std::vector<Seed*> RandStrobeCreator::create_seeds(const std::string& seq
 	for (int i = 0; i < kmer_len - 1; i++)
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 
+	hasher_code = hasher->get_type();
+	
+
 	for (int i = kmer_len - 1; i < seq.size(); i++)
 	{
 		curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 		tmp = curr_kmer & mask;
-		hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
+		// hashes.push_back(hasher->hash(&tmp, sizeof(tmp)));
+		switch (hasher_code)
+		{
+		case 0:
+			hashes.push_back(tmp);
+			break;
+		case 1:
+			hashes.push_back(tw_hasher.hash(&tmp, sizeof(tmp)));
+			break;
+		case 2:
+			hashes.push_back(wyhash(&tmp, sizeof(tmp), 0, _wyp));
+			break;
+		case 3:
+			hashes.push_back(XXH3_64bits_withSeed(&tmp, sizeof(tmp), 0));
+			break;
+		default:
+			break;
+		}
 		kmers.push_back(tmp);
 	}
 
