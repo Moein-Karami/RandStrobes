@@ -41,7 +41,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 
     Int128 concated;
 
-    auto start_time = std::chrono::high_resolution_clock::now();
+    // auto start_time = std::chrono::high_resolution_clock::now();
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		// if (n == 2)
@@ -115,8 +115,8 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
 	}
-    auto finish_time = std::chrono::high_resolution_clock::now();
-		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
-    std::cout << "TIME: " << duration.count() << std::endl;
+    // auto finish_time = std::chrono::high_resolution_clock::now();
+	// 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
+    // std::cout << "TIME: " << duration.count() << std::endl;
 	return seeds;
 }

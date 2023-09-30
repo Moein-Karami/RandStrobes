@@ -13,7 +13,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 	for (size_t i = 0; i < hashes.size(); i++)
 	{
 		real_hashes.push_back(hashes[i]);
-		hashes[i] %= p;
+		hashes[i] %= 100001;
 	}
 		
 
