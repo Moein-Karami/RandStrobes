@@ -40,10 +40,6 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 	bool min_comparator = comparator->is_first_better(1, 2);
 
     Int128 concated;
-    uint64_t _wyp[4];
-    srand(0);
-    for (int i = 0; i < 4; i++)
-        _wyp[i] = rand();
 
     auto start_time = std::chrono::high_resolution_clock::now();
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
@@ -64,7 +60,18 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 			// best_value = hasher->hash(&concated, sizeof(concated));
             // best_value = wy_hasher->hash(&concated, sizeof(concated));
             // best_value = wyhash(&concated, sizeof(concated), 0, _wyp);
-            best_value = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
+            // best_value = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
+			switch (hasher_code)
+			{
+				case 2:
+					best_value = (wyhash(&concated, sizeof(concated), 0, _wyp));
+					break;
+				case 3:
+					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+					break;
+				default:
+					break;
+			}
 			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
 			{
 				// new_score = get_score(curr_hash, q);
@@ -73,7 +80,18 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
                 // new_score = hasher->hash(&concated, sizeof(concated));
                 // new_score = wy_hasher->hash(&concated, sizeof(concated));
                 // new_score = wyhash(&concated, sizeof(concated), 0, _wyp);
-                best_value = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
+                // new_score = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
+				switch (hasher_code)
+				{
+					case 2:
+						new_score = (wyhash(&concated, sizeof(concated), 0, _wyp));
+						break;
+					case 3:
+						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+						break;
+					default:
+						break;
+				}
 				// if (comparator->is_first_better(new_score, best_value))
 				// {
 				// 	best_choose = q;
