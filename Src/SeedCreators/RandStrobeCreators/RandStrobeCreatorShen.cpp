@@ -11,3 +11,64 @@ inline uint64_t RandStrobeCreatorShen::get_score(uint64_t curr_hash, uint64_t ne
 {
 	return (curr_hash + hashes[new_strobe_pos]) & q;
 }
+
+inline std::vector<Seed*> RandStrobeCreatorShen::create_seeds()
+{
+	std::vector<Seed*> seeds;
+	// seeds.reserve(seq.size());
+	// Strobemer* strobemer;
+	size_t best_choose;
+	uint64_t curr_hash;
+	uint64_t best_value;
+	uint64_t new_score;
+	std::vector<uint64_t> final_hashes;
+	final_hashes.reserve(seq.size());
+
+	bool min_comparator = comparator->is_first_better(1, 2);
+
+	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	{
+		// if (n == 2)
+		// 	strobemer = new Strobemer2();
+		// else if (n == 3)
+		// 	strobemer = new Strobemer3();
+
+		// strobemer->add_kmer(i, kmers[i]);
+		// curr_hash = get_first_hash(i);
+		curr_hash = hashes[i];
+
+		// for (int j = 1; j < n; j++)
+		// {
+			best_choose = i + w_min;
+			// best_value = get_score(curr_hash, best_choose);
+			best_value = (curr_hash + hashes[best_choose]) & q;
+
+			for (size_t q2 = i + w_min + 1; q2 < std::min(i + w_max + 1, hashes.size()); q2++)
+			{
+				// new_score = get_score(curr_hash, q);
+				new_score = (curr_hash + hashes[q2]) & q;
+				// if (comparator->is_first_better(new_score, best_value))
+				// {
+				// 	best_choose = q;
+				// 	best_value = new_score;
+				// }
+				if (min_comparator && new_score < best_value)
+				{
+					best_choose = q2;
+					best_value = new_score;
+				}
+				else if (!min_comparator && new_score > best_value)
+				{
+					best_choose = q2;
+					best_value = new_score;
+				}
+			}
+			final_hashes.push_back((curr_hash << 1) - hashes[best_choose]);
+			// strobemer->add_kmer(best_choose, kmers[best_choose]);
+			// curr_hash = get_new_curr_hash(strobemer);
+		// }
+		// strobemer->set_final_hash(get_final_hash(strobemer));
+		// seeds.push_back(strobemer);
+	}
+	return seeds;
+}
