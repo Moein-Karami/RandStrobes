@@ -11,6 +11,7 @@ class RandStrobeCreatorSahlinMod : public RandStrobeCreator
 	protected:
 		uint64_t p;
 		inline uint64_t get_score(uint64_t curr_hash, uint64_t new_strobe_pos);
+		inline std::vector<Seed*> create_seeds();
 };
 
 #endif
