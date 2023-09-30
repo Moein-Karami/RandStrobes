@@ -35,18 +35,18 @@ inline std::vector<Seed*> RandStrobeCreatorGuoPibri::create_seeds()
 
 		// strobemer->add_kmer(i, kmers[i]);
 		// curr_hash = get_first_hash(i);
-		curr_hash = hashes[i];
+		// curr_hash = hashes[i];
 
 		// for (int j = 1; j < n; j++)
 		// {
 			best_choose = i + w_min;
 			// best_value = get_score(curr_hash, best_choose);
-			best_value = curr_hash ^ hashes[best_choose];
+			best_value = hashes[i] ^ hashes[best_choose];
 
 			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
 			{
 				// new_score = get_score(curr_hash, q);
-				new_score = curr_hash ^ hashes[q];
+				new_score = hashes[i] ^ hashes[q];
 				// if (comparator->is_first_better(new_score, best_value))
 				// {
 				// 	best_choose = q;
@@ -63,7 +63,7 @@ inline std::vector<Seed*> RandStrobeCreatorGuoPibri::create_seeds()
 					best_value = new_score;
 				}
 			}
-			final_hashes.push_back((curr_hash << 1) - hashes[best_choose]);
+			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 			// strobemer->add_kmer(best_choose, kmers[best_choose]);
 			// curr_hash = get_new_curr_hash(strobemer);
 		// }
