@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libJson.a CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libJson.a
+/usr/bin/ar qc build/libJson.a  CMakeFiles/Json.dir/Src/Json/jsoncpp.cpp.o
+/usr/bin/ranlib build/libJson.a

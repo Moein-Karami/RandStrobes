@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libHashersSeed2.a CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libHashersSeed2.a
+/usr/bin/ar qc build/libHashersSeed2.a  CMakeFiles/HashersSeed2.dir/Src/Hashers/SeedBasedHashers/WyHash.cpp.o
+/usr/bin/ranlib build/libHashersSeed2.a
