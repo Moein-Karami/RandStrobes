@@ -56,7 +56,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds(const std::string
 
 	//create seeds()
 
-	for (size_t i = 0; i < hashes.size(); i++)
+	for (size_t i = 0; i < real_hashes.size(); i++)
 	{
 		hashes.push_back(real_hashes[i] % 100001);
 	}
@@ -71,7 +71,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds(const std::string
 			hash_values.insert(pii(hashes[j], maximal_uint - j));
 	
 	std::vector<uint64_t> final_hashes;
-	final_hashes.reserve(seq.size());
+	final_hashes.reserve(sequence.size());
 	std::vector<Seed*> seeds;
 	// Strobemer* strobemer;
 	size_t best_choose;
@@ -81,7 +81,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds(const std::string
 	pii candidate;
 	std::set<pii>::iterator it;
 
-	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	for (size_t i = 0; i < sequence.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		// if (n == 2)
 		// 	strobemer = new Strobemer2();
