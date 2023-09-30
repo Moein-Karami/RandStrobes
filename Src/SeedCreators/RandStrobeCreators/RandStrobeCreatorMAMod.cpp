@@ -58,7 +58,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds(const std::string
 
 	for (size_t i = 0; i < real_hashes.size(); i++)
 	{
-		hashes.push_back(real_hashes[i] % 100001);
+		hashes.push_back(real_hashes[i] % 19019684767739993LL);
 	}
 
 
@@ -93,11 +93,11 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds(const std::string
 		// for (int j = 1; j < n; j++)
 		// {
 			tmp = *(hash_values.begin());
-			it = hash_values.lower_bound({p - hashes[i] - 1, maximal_uint});
+			it = hash_values.lower_bound({19019684767739993LL - hashes[i] - 1, maximal_uint});
 			if (it != hash_values.end())
 			{
 				candidate = *it;
-				if ((tmp.first + hashes[i]) % p < (candidate.first + hashes[i]) % p)
+				if ((tmp.first + hashes[i]) % 19019684767739993LL < (candidate.first + hashes[i]) % 19019684767739993LL)
 					tmp = candidate;
 			}
 			// strobemer->add_kmer(maximal_uint - tmp.second, kmers[maximal_uint - tmp.second]);

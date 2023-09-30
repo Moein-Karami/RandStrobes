@@ -8,6 +8,14 @@ Traditional::Traditional(Hasher* hasher, Comparator* comparator, size_t kmer_len
 
 inline std::vector<Seed*> Traditional::create_seeds(const std::string& sequence)
 {
+	srand(0);
+	for (int i = 0; i < 4; i++)
+		_wyp[i] = rand();
+
+	// seq = sequence;
+	hashes.clear();
+	kmers.clear();
+	hashes.reserve(sequence.size() + 1);
 	// prepare_data();
 
 	std::vector<Seed*> seeds;
