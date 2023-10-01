@@ -29,7 +29,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds(const std::string
 	hasher_code = hasher->get_type();
 	
 
-	for (int i = kmer_len - 1; i < sequence.size(); i++)
+	for (int i = 0; i < sequence.size() - kmer_len; i++)
 	{
 		// curr_kmer = (curr_kmer << 2) | get_char_code(seq[i]);
 		// tmp = curr_kmer & mask;
