@@ -86,6 +86,7 @@ for(file_now in all_files)
   path_now = paste("../EvaluationResults/MedianSamples/", file_now, sep = "")
   print(path_now)
   new_csv <- read.csv(path_now)
+  new_csv[1, 4] = new_csv[1, 4] / 1000000
   print(ncol(new_csv))
   if(cnt == 1)
   {
