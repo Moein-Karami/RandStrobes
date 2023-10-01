@@ -46,7 +46,7 @@ inline std::vector<Seed*> Traditional::create_seeds(const std::string& sequence)
 	final_hashes.reserve(sequence.size());
 	hasher_code = hasher->get_type();
 	hasher_code = 2;
-	std::map<uint64_t, double> seen;
+	// std::map<uint64_t, double> seen;
 	for (size_t i = 0; i < sequence.size() - n * kmer_len; i++)
 	{
 		hashes.push_back(wyhash(&sequence[i], sizeof(sequence[i]) * kmer_len * n, 0, _wyp));
@@ -61,15 +61,15 @@ inline std::vector<Seed*> Traditional::create_seeds(const std::string& sequence)
 		// default:
 		// 	break;
 		// }
-		seen[hashes.back()] += 1;
+		// seen[hashes.back()] += 1;
 	}
-	double sum_squeared = 0;
-	for (auto i : seen)
-		sum_squeared += i.second * i.second;
-	double number_of_different_seeds = seen.size();
-	double number_of_seeds = hashes.size();
-	std::cout << std::fixed << std::setprecision(6) << "Number of different seeds: " << number_of_different_seeds << std::endl;
-	std::cout << std::fixed << std::setprecision(6) << "Ehits: " << sum_squeared/number_of_seeds << std::endl;
+	// double sum_squeared = 0;
+	// for (auto i : seen)
+	// 	sum_squeared += i.second * i.second;
+	// double number_of_different_seeds = seen.size();
+	// double number_of_seeds = hashes.size();
+	// std::cout << std::fixed << std::setprecision(6) << "Number of different seeds: " << number_of_different_seeds << std::endl;
+	// std::cout << std::fixed << std::setprecision(6) << "Ehits: " << sum_squeared/number_of_seeds << std::endl;
 
 	return seeds;
 
