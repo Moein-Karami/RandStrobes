@@ -130,7 +130,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds(const std::s
 
 	// seq = sequence;
 	hashes.clear();
-	kmers.clear();
+	// kmers.clear();
 	hashes.reserve(sequence.size() + 1);
 	// real_hashes.reserve(sequence.size());
 	// kmers.reserve(seq.size() + 1);
@@ -184,7 +184,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds(const std::s
 	bool min_comparator = comparator->is_first_better(1, 2);
 
     Int128 concated;
-
+	std::map<uint64_t, double> seen;
     // auto start_time = std::chrono::high_resolution_clock::now();
 	for (size_t i = 0; i < sequence.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
@@ -208,7 +208,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds(const std::s
 			switch (hasher_code)
 			{
 				case 2:
-					best_value = (wyhash(&concated, sizeof(concated), 0, _wyp));
+					best_value = (wyhash(&concated, sizeof(concated), hashes[i], _wyp));
 					break;
 				case 3:
 					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
@@ -228,7 +228,7 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds(const std::s
 				switch (hasher_code)
 				{
 					case 2:
-						new_score = (wyhash(&concated, sizeof(concated), 0, _wyp));
+						new_score = (wyhash(&concated, sizeof(concated), hashes[i], _wyp));
 						break;
 					case 3:
 						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
@@ -253,12 +253,20 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds(const std::s
 				}
 			}
 			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			seen[final_hashes.back()] += 1;
 			// strobemer->add_kmer(best_choose, kmers[best_choose]);
 			// curr_hash = get_new_curr_hash(strobemer);
 		// }
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
 	}
+	double sum_squeared = 0;
+	for (auto i : seen)
+		sum_squeared += i.second * i.second;
+	double number_of_different_seeds = seen.size();
+	double number_of_seeds = final_hashes.size();
+	std::cout << std::fixed << std::setprecision(6) << "Number of different seeds: " << number_of_different_seeds << std::endl;
+	std::cout << std::fixed << std::setprecision(6) << "Ehits: " << sum_squeared/number_of_seeds << std::endl;
     // auto finish_time = std::chrono::high_resolution_clock::now();
 	// 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
     // std::cout << "TIME: " << duration.count() << std::endl;
