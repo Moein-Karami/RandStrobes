@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libRandStrobeCreators.a CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libRandStrobeCreators.a
+/usr/bin/ar qc build/libRandStrobeCreators.a  CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp.o CMakeFiles/RandStrobeCreators.dir/Src/SeedCreators/SeedCreator.cpp.o
+/usr/bin/ranlib build/libRandStrobeCreators.a

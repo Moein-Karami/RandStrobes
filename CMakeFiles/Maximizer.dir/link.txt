@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libMaximizer.a CMakeFiles/Maximizer.dir/Src/Comparators/Maximizer.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libMaximizer.a
+/usr/bin/ar qc build/libMaximizer.a  CMakeFiles/Maximizer.dir/Src/Comparators/Maximizer.cpp.o
+/usr/bin/ranlib build/libMaximizer.a

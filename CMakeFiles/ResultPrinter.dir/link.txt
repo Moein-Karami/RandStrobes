@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libResultPrinter.a CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libResultPrinter.a
+/usr/bin/ar qc build/libResultPrinter.a  CMakeFiles/ResultPrinter.dir/Src/ResultPrinter.cpp.o
+/usr/bin/ranlib build/libResultPrinter.a

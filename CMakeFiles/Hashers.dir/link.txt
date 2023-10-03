@@ -1,2 +1,2 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc build/libHashers.a CMakeFiles/Hashers.dir/Src/Hashers/Hasher.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib build/libHashers.a
+/usr/bin/ar qc build/libHashers.a  CMakeFiles/Hashers.dir/Src/Hashers/Hasher.cpp.o
+/usr/bin/ranlib build/libHashers.a
