@@ -71,7 +71,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 		// }
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		final_tmp.low = xx_hasher->hash(kmers[i]);
-		final_tmp.high = xx_hasher->hash(kmers[best_choose]);
+		final_tmp.high = xx_hasher->hash(kmers[tmp.second]);
 		strobemer->set_final_hash(wy_hasher->hash(&final_tmp, sizeof(final_tmp)));
 		seeds.push_back(strobemer);
 		final_hashes.push_back((real_hashes[i] << 1) - real_hashes[tmp.second]);
@@ -128,7 +128,7 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 		// }
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		final_tmp.low = xx_hasher->hash(kmers[i]);
-		final_tmp.high = xx_hasher->hash(kmers[best_choose]);
+		final_tmp.high = xx_hasher->hash(kmers[maximal_uint - tmp.second]);
 		strobemer->set_final_hash(wy_hasher->hash(&final_tmp, sizeof(final_tmp)));
 		seeds.push_back(strobemer);
 		final_hashes.push_back((real_hashes[i] << 1) - real_hashes[maximal_uint - tmp.second]);
