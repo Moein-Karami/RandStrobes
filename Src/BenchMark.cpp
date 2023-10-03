@@ -31,7 +31,7 @@ Hasher* BenchMark::create_hasher(Json::Value config)
 			return new NoHash();
 		else if (config["HasherConfig"]["method"].asString() == "ThomasWangHash")
 		{
-			uint64_t mask = (1LL <<2*config["SeedCreatorConfig"]["kmer_len"].asUInt()) - 1;
+			uint64_t mask = -1;
 			if (!config["HasherConfig"]["mask"].isNull())
 				mask = config["HasherConfig"]["mask"].asUInt64();
 			return new ThomasWangHash(mask);
