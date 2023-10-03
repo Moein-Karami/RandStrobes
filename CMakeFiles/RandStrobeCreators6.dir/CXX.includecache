@@ -10,6 +10,10 @@
 RandStrobeCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.cpp
+RandStrobeCreatorXorVar.hpp
+/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
+
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
 Includes/Comparators/LibrariesAndDefines.hpp
@@ -141,6 +145,10 @@ Maximizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
+
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorXorVar.hpp
+RandStrobeCreator.hpp
+Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp

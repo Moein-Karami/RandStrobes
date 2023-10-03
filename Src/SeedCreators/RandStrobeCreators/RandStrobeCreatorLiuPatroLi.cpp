@@ -28,8 +28,8 @@ inline uint64_t RandStrobeCreatorLiuPatroLi::get_first_hash(size_t ind)
 inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 {
 	std::vector<Seed*> seeds;
-	// seeds.reserve(seq.size());
-	// Strobemer* strobemer;
+	seeds.reserve(seq.size());
+	Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
@@ -40,16 +40,17 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 	bool min_comparator = comparator->is_first_better(1, 2);
 
     Int128 concated;
+	Int128 tmp;
 
     // auto start_time = std::chrono::high_resolution_clock::now();
 	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 	{
 		// if (n == 2)
-		// 	strobemer = new Strobemer2();
+			strobemer = new Strobemer2();
 		// else if (n == 3)
 		// 	strobemer = new Strobemer3();
 
-		// strobemer->add_kmer(i, kmers[i]);
+		strobemer->add_kmer(i, kmers[i]);
 		// curr_hash = get_first_hash(i);
 		concated.low = kmers[i];
 		// for (int j = 1; j < n; j++)
@@ -109,11 +110,14 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 				}
 			}
 			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
-			// strobemer->add_kmer(best_choose, kmers[best_choose]);
+			strobemer->add_kmer(best_choose, kmers[best_choose]);
 			// curr_hash = get_new_curr_hash(strobemer);
 		// }
 		// strobemer->set_final_hash(get_final_hash(strobemer));
-		// seeds.push_back(strobemer);
+		tmp.low = xx_hasher->hash(kmers[i]);
+		tmp.high = xx_hasher->hash(kmers[best_choose]);
+		strobemer->set_final_hash(wy_hasher->hash(&tmp, sizeof(tmp)));
+		seeds.push_back(strobemer);
 	}
     // auto finish_time = std::chrono::high_resolution_clock::now();
 	// 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
