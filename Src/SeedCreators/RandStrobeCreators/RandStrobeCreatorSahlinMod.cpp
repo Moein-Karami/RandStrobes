@@ -43,12 +43,12 @@ inline std::vector<Seed*> RandStrobeCreatorSahlinMod::create_seeds()
 		// {
 			best_choose = i + w_min;
 			// best_value = get_score(curr_hash, best_choose);
-			best_value = (hashes[i] + hashes[best_choose]) % 100001;
+			best_value = (hashes[i] + hashes[best_choose]) % 100001LL;
 
 			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
 			{
 				// new_score = get_score(curr_hash, q);
-				new_score = (hashes[i] + hashes[q]) % 100001;
+				new_score = (hashes[i] + hashes[q]) % 100001LL;
 				// if (comparator->is_first_better(new_score, best_value))
 				// {
 				// 	best_choose = q;

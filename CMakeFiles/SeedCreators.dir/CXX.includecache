@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
@@ -95,7 +95,69 @@ Hasher.hpp
 Includes/Hashers/SimpleHashers/Hasher.hpp
 
 Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
+algorithm
+-
+bitset
+-
+complex
+-
+deque
+-
+exception
+-
+fstream
+-
+functional
+-
+iomanip
+-
+ios
+-
+iosfwd
+-
+iostream
+-
+istream
+-
+iterator
+-
+limits
+-
+list
+-
+locale
+-
+map
+-
+memory
+-
+new
+-
+numeric
+-
+ostream
+-
+queue
+-
+set
+-
+sstream
+-
+stack
+-
+stdexcept
+-
+streambuf
+-
+string
+-
+typeinfo
+-
+utility
+-
+valarray
+-
+vector
 -
 chrono
 -

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.cpp
 WyHash.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/Hashers/SeedBasedHashers/WyHash.hpp
 
 Includes/Hashers/HashMethodes/wyhash.h
 stdint.h
@@ -33,7 +33,69 @@ wyhash.h
 Includes/Hashers/SeedBasedHashers/wyhash.h
 
 Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
+algorithm
+-
+bitset
+-
+complex
+-
+deque
+-
+exception
+-
+fstream
+-
+functional
+-
+iomanip
+-
+ios
+-
+iosfwd
+-
+iostream
+-
+istream
+-
+iterator
+-
+limits
+-
+list
+-
+locale
+-
+map
+-
+memory
+-
+new
+-
+numeric
+-
+ostream
+-
+queue
+-
+set
+-
+sstream
+-
+stack
+-
+stdexcept
+-
+streambuf
+-
+string
+-
+typeinfo
+-
+utility
+-
+valarray
+-
+vector
 -
 chrono
 -

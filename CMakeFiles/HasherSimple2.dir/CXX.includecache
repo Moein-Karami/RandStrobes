@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.cpp
 ThomasWangHash.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/Hashers/SimpleHashers/ThomasWangHash.hpp
 
 Includes/Hashers/Hasher.hpp
 LibrariesAndDefines.hpp
@@ -19,7 +19,69 @@ Hasher.hpp
 Includes/Hashers/SimpleHashers/Hasher.hpp
 
 Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
+algorithm
+-
+bitset
+-
+complex
+-
+deque
+-
+exception
+-
+fstream
+-
+functional
+-
+iomanip
+-
+ios
+-
+iosfwd
+-
+iostream
+-
+istream
+-
+iterator
+-
+limits
+-
+list
+-
+locale
+-
+map
+-
+memory
+-
+new
+-
+numeric
+-
+ostream
+-
+queue
+-
+set
+-
+sstream
+-
+stack
+-
+stdexcept
+-
+streambuf
+-
+string
+-
+typeinfo
+-
+utility
+-
+valarray
+-
+vector
 -
 chrono
 -

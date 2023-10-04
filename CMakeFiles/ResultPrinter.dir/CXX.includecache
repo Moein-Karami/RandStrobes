@@ -6,16 +6,78 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/ResultPrinter.cpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/ResultPrinter.cpp
 ResultPrinter.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/ResultPrinter.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/ResultPrinter.hpp
 
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
 
 Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
+algorithm
+-
+bitset
+-
+complex
+-
+deque
+-
+exception
+-
+fstream
+-
+functional
+-
+iomanip
+-
+ios
+-
+iosfwd
+-
+iostream
+-
+istream
+-
+iterator
+-
+limits
+-
+list
+-
+locale
+-
+map
+-
+memory
+-
+new
+-
+numeric
+-
+ostream
+-
+queue
+-
+set
+-
+sstream
+-
+stack
+-
+stdexcept
+-
+streambuf
+-
+string
+-
+typeinfo
+-
+utility
+-
+valarray
+-
+vector
 -
 chrono
 -

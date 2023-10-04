@@ -6,13 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
-RandStrobeCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
+Strobemer.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp
+Strobemer2.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.hpp
+
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp
+Strobemer3.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.hpp
+
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
+RandStrobeCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
+
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.cpp
 RandStrobeCreatorShen.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorShen.hpp
+
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/SeedCreator.cpp
+SeedCreator.hpp
+/home/c/University/Advanced/Sahlin Projects/TMP_Randstrobes/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
@@ -123,7 +139,69 @@ Hasher.hpp
 Includes/Hashers/SimpleHashers/Hasher.hpp
 
 Includes/LibrariesAndDefines.hpp
-bits/stdc++.h
+algorithm
+-
+bitset
+-
+complex
+-
+deque
+-
+exception
+-
+fstream
+-
+functional
+-
+iomanip
+-
+ios
+-
+iosfwd
+-
+iostream
+-
+istream
+-
+iterator
+-
+limits
+-
+list
+-
+locale
+-
+map
+-
+memory
+-
+new
+-
+numeric
+-
+ostream
+-
+queue
+-
+set
+-
+sstream
+-
+stack
+-
+stdexcept
+-
+streambuf
+-
+string
+-
+typeinfo
+-
+utility
+-
+valarray
+-
+vector
 -
 chrono
 -
