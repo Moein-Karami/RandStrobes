@@ -64,8 +64,8 @@ draw_normalized_plot <- function(data_all_methods, new_data, name_now, i, font_y
 theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.margin = unit(c(10,10,10,10), "lines"), strip.text = element_text(size = 140),    panel.spacing.x = unit(2, "cm")) + 
   theme(legend.text.align = 0) + coord_cartesian(ylim = c(min(new_data[, i]), NA))
    plot_now <- plot_now + labs(title = "",
-              x = "RandStrobe Method", y =  name_now)
-  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=6000, height= 3000)
+              x = "", y =  name_now)
+  pdf(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".pdf",sep = ""), width=6000, height= 3000)
   print(plot_now)
   dev.off()
 }
@@ -221,9 +221,9 @@ theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.ma
   name_now <- create_name_file(name_now)
 
       plot_now <- plot_now + labs(title = "",
-              x = "RandStrobes Method", y =  name_now)
+              x = "", y =  name_now)
   
-  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=6000, height= 3000)
+  pdf(filename=paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), width=6000, height= 3000)
   print(plot_now)
   dev.off()
 
