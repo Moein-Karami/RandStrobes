@@ -6,29 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.cpp
-Strobemer.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.cpp
-Strobemer2.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer2.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.cpp
-Strobemer3.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/DataStoringClasses/Seed/Strobemer/Strobemer3.hpp
-
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
 RandStrobeCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.cpp
-RandStrobeCreatorSahlinMod.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
-
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
-SeedCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
 Includes/Comparators/Comparaotr.hpp
 LibrariesAndDefines.hpp
@@ -223,10 +203,6 @@ Maximizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
 Minimizer.hpp
 Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreatorSahlinMod.hpp
-RandStrobeCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp

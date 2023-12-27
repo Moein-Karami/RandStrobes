@@ -65,7 +65,7 @@ theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.ma
   theme(legend.text.align = 0) + coord_cartesian(ylim = c(min(new_data[, i]), NA))
    plot_now <- plot_now + labs(title = "",
               x = "", y =  name_now)
-  pdf(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".pdf",sep = ""), width=6000, height= 3000)
+  png(filename=paste("../EvaluationResults/Figures/", paste("Normalized", name_now), ".png",sep = ""), width=6000, height= 3000)
   print(plot_now)
   dev.off()
 }
@@ -223,7 +223,7 @@ theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.ma
       plot_now <- plot_now + labs(title = "",
               x = "", y =  name_now)
   
-  pdf(filename=paste("../EvaluationResults/Figures/", name_now, ".pdf",sep = ""), width=6000, height= 3000)
+  png(filename=paste("../EvaluationResults/Figures/", name_now, ".png",sep = ""), width=6000, height= 3000)
   print(plot_now)
   dev.off()
 
