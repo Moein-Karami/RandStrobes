@@ -26,49 +26,89 @@ inline std::vector<Seed*> RandStrobeCreatorShen::create_seeds()
 
 	bool min_comparator = comparator->is_first_better(1, 2);
 
-	for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+	if (min_comparator)
 	{
-		// if (n == 2)
-		// 	strobemer = new Strobemer2();
-		// else if (n == 3)
-		// 	strobemer = new Strobemer3();
+		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+		{
+			// if (n == 2)
+			// 	strobemer = new Strobemer2();
+			// else if (n == 3)
+			// 	strobemer = new Strobemer3();
 
-		// strobemer->add_kmer(i, kmers[i]);
-		// curr_hash = get_first_hash(i);
-		// curr_hash = hashes[i];
+			// strobemer->add_kmer(i, kmers[i]);
+			// curr_hash = get_first_hash(i);
+			// curr_hash = hashes[i];
 
-		// for (int j = 1; j < n; j++)
-		// {
-			best_choose = i + w_min;
-			// best_value = get_score(curr_hash, best_choose);
-			best_value = (hashes[i] + hashes[best_choose]) & q;
+			// for (int j = 1; j < n; j++)
+			// {
+				best_choose = i + w_min;
+				// best_value = get_score(curr_hash, best_choose);
+				best_value = (hashes[i] + hashes[best_choose]) & q;
 
-			for (size_t q2 = i + w_min + 1; q2 < std::min(i + w_max + 1, hashes.size()); q2++)
-			{
-				// new_score = get_score(curr_hash, q);
-				new_score = (hashes[i] + hashes[q2]) & q;
-				// if (comparator->is_first_better(new_score, best_value))
-				// {
-				// 	best_choose = q;
-				// 	best_value = new_score;
-				// }
-				if (min_comparator && new_score < best_value)
+				for (size_t q2 = i + w_min + 1; q2 < std::min(i + w_max + 1, hashes.size()); q2++)
 				{
-					best_choose = q2;
-					best_value = new_score;
+					// new_score = get_score(curr_hash, q);
+					new_score = (hashes[i] + hashes[q2]) & q;
+					// if (comparator->is_first_better(new_score, best_value))
+					// {
+					// 	best_choose = q;
+					// 	best_value = new_score;
+					// }
+					if (new_score < best_value)
+					{
+						best_choose = q2;
+						best_value = new_score;
+					}
 				}
-				else if (!min_comparator && new_score > best_value)
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+				// strobemer->add_kmer(best_choose, kmers[best_choose]);
+				// curr_hash = get_new_curr_hash(strobemer);
+			// }
+			// strobemer->set_final_hash(get_final_hash(strobemer));
+			// seeds.push_back(strobemer);
+		}
+	}
+	else
+	{
+		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+		{
+			// if (n == 2)
+			// 	strobemer = new Strobemer2();
+			// else if (n == 3)
+			// 	strobemer = new Strobemer3();
+
+			// strobemer->add_kmer(i, kmers[i]);
+			// curr_hash = get_first_hash(i);
+			// curr_hash = hashes[i];
+
+			// for (int j = 1; j < n; j++)
+			// {
+				best_choose = i + w_min;
+				// best_value = get_score(curr_hash, best_choose);
+				best_value = (hashes[i] + hashes[best_choose]) & q;
+
+				for (size_t q2 = i + w_min + 1; q2 < std::min(i + w_max + 1, hashes.size()); q2++)
 				{
-					best_choose = q2;
-					best_value = new_score;
+					// new_score = get_score(curr_hash, q);
+					new_score = (hashes[i] + hashes[q2]) & q;
+					// if (comparator->is_first_better(new_score, best_value))
+					// {
+					// 	best_choose = q;
+					// 	best_value = new_score;
+					// }
+					if (new_score > best_value)
+					{
+						best_choose = q2;
+						best_value = new_score;
+					}
 				}
-			}
-			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
-			// strobemer->add_kmer(best_choose, kmers[best_choose]);
-			// curr_hash = get_new_curr_hash(strobemer);
-		// }
-		// strobemer->set_final_hash(get_final_hash(strobemer));
-		// seeds.push_back(strobemer);
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+				// strobemer->add_kmer(best_choose, kmers[best_choose]);
+				// curr_hash = get_new_curr_hash(strobemer);
+			// }
+			// strobemer->set_final_hash(get_final_hash(strobemer));
+			// seeds.push_back(strobemer);
+		}
 	}
 	return seeds;
 }
