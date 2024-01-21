@@ -45,6 +45,12 @@ to_latex <- function(input_str)
 ```{r}
 draw_normalized_plot <- function(data_all_methods, new_data, name_now, i, font_y)
 {
+  if (name_now == "E_d")
+    name_now <- TeX(r"($E_d$)")
+  if (name_now == "E_p")
+    name_now <- TeX(r"($E_p$)")
+  if (name_now == "C")
+    name_now <- TeX(r"($C$)")
   plot_now <- ggplot(data_all_methods,
          aes(fill = HashMethod , y = new_data[, i], x = RandStrobeMethod)
          ) + geom_bar(position="dodge", stat="identity") +  theme(title = element_text(size = 100), 
@@ -82,11 +88,14 @@ all_files <- list.files(path = "../EvaluationResults/MedianSamples")
 cnt <- 1
 for(file_now in all_files)
 {
-  print(file_now)
+  #print(file_now)
   path_now = paste("../EvaluationResults/MedianSamples/", file_now, sep = "")
-  print(path_now)
+  #print(path_now)
   new_csv <- read.csv(path_now)
-  print(ncol(new_csv))
+  names(new_csv)[names(new_csv) == "E.hits.of.distance.between.strobe2.and.strobe1"] <- "E_d"
+  names(new_csv)[names(new_csv) == "Conflicts"] <- "C"
+  names(new_csv)[names(new_csv) == "E.hits.of.strobe2.positions"] <- "E_p"
+  #print(ncol(new_csv))
   if(cnt == 1)
   {
     data_all_methods <- new_csv
@@ -95,7 +104,9 @@ for(file_now in all_files)
     data_all_methods <- rbind(data_all_methods, new_csv)
   }
   cnt <- cnt + 1
-  print(cnt)
+  #print(cnt)
+  print(data_all_methods)
+
 }
 
 data_all_methods <- data_all_methods[!grepl('FixedSahlinMod', data_all_methods$RandStrobeMethod),]
@@ -219,7 +230,13 @@ theme(legend.text.align = 0) +   facet_wrap(~Comperator, nrow=1) + theme(plot.ma
   
   name_now <- names(new_data)[i]
   name_now <- create_name_file(name_now)
-
+  if (name_now == "E_d")
+    name_now <- TeX(r"($E_d$)")
+  if (name_now == "E_p")
+    name_now <- TeX(r"($E_p$)")
+  if (name_now == "C")
+    name_now <- TeX(r"($C$)")
+  
       plot_now <- plot_now + labs(title = "",
               x = "", y =  name_now)
   
