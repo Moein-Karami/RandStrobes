@@ -92,6 +92,7 @@ for(file_now in all_files)
   path_now = paste("../EvaluationResults/MedianSamples/", file_now, sep = "")
   #print(path_now)
   new_csv <- read.csv(path_now)
+  new_csv[1, 4] = new_csv[1, 4] / 1000000
   names(new_csv)[names(new_csv) == "E.hits.of.distance.between.strobe2.and.strobe1"] <- "E_d"
   names(new_csv)[names(new_csv) == "Conflicts"] <- "C"
   names(new_csv)[names(new_csv) == "E.hits.of.strobe2.positions"] <- "E_p"
