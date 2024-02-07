@@ -31,110 +31,176 @@ inline std::vector<Seed*> RandStrobeCreatorXorVar::create_seeds()
 
 	if (min_comparator)
 	{
-		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+		switch (hasher_code)
 		{
-			best_choose = i + w_min;
-			tmp_xor = kmers[i] ^ kmers[best_choose];
-			switch (hasher_code)
+		case 0:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 			{
-			case 0:
-				best_value = (tmp_xor);
-				break;
-			case 1:
-				best_value = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
-				break;
-			case 2:
-				best_value = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
-				break;
-			case 3:
-				best_value = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
-				break;
-			default:
-				break;
-			}
+				best_choose = i + w_min;
+				best_value = kmers[i] ^ kmers[best_choose];
 
-			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
-			{
-				tmp_xor = kmers[i] ^ kmers[q];
-				switch (hasher_code)
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
 				{
-				case 0:
-					new_score = (tmp_xor);
-					break;
-				case 1:
-					new_score = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
-					break;
-				case 2:
-					new_score = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
-					break;
-				case 3:
-					new_score = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
-					break;
-				default:
-					break;
+					new_score = kmers[i] ^ kmers[q];
+					if (new_score < best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
 				}
-				if (new_score < best_value)
-				{
-					best_choose = q;
-					best_value = new_score;
-				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 			}
-			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			break;
+		case 1:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+			{
+				best_choose = i + w_min;
+				tmp_xor = kmers[i] ^ kmers[best_choose];
+				best_value = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
+
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				{
+					tmp_xor = kmers[i] ^ kmers[q];
+					new_score = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
+					if (new_score < best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
+				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			}
+			break;
+		case 2:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+			{
+				best_choose = i + w_min;
+				tmp_xor = kmers[i] ^ kmers[best_choose];
+				best_value = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
+
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				{
+					tmp_xor = kmers[i] ^ kmers[q];
+					new_score = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
+
+					if (new_score < best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
+				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			}
+			break;
+		case 3:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+			{
+				best_choose = i + w_min;
+				tmp_xor = kmers[i] ^ kmers[best_choose];
+				best_value = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
+
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				{
+					tmp_xor = kmers[i] ^ kmers[q];
+					new_score = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
+					if (new_score < best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
+				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			}
+			break;
+		default:
+			break;
 		}
 	}
 	else
 	{
-		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+		switch (hasher_code)
 		{
-
-			best_choose = i + w_min;
-			tmp_xor = kmers[i] ^ kmers[best_choose];
-			switch (hasher_code)
+		case 0:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 			{
-			case 0:
-				best_value = (tmp_xor);
-				break;
-			case 1:
+				best_choose = i + w_min;
+				best_value = kmers[i] ^ kmers[best_choose];
+
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				{
+					new_score = kmers[i] ^ kmers[q];
+					if (new_score > best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
+				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			}
+			break;
+		case 1:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+			{
+				best_choose = i + w_min;
+				tmp_xor = kmers[i] ^ kmers[best_choose];
 				best_value = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
-				break;
-			case 2:
-				best_value = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
-				break;
-			case 3:
-				best_value = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
-				break;
-			default:
-				break;
-			}
 
-			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
-			{
-				tmp_xor = kmers[i] ^ kmers[q];
-				switch (hasher_code)
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
 				{
-				case 0:
-					new_score = (tmp_xor);
-					break;
-				case 1:
+					tmp_xor = kmers[i] ^ kmers[q];
 					new_score = (tw_hasher.hash(&tmp_xor, sizeof(tmp_xor)));
-					break;
-				case 2:
-					new_score = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
-					break;
-				case 3:
-					new_score = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
-					break;
-				default:
-					break;
+					if (new_score > best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
 				}
-
-				if (new_score > best_value)
-				{
-					best_choose = q;
-					best_value = new_score;
-				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 			}
-			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			break;
+		case 2:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+			{
+				best_choose = i + w_min;
+				tmp_xor = kmers[i] ^ kmers[best_choose];
+				best_value = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
+
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				{
+					tmp_xor = kmers[i] ^ kmers[q];
+					new_score = (wyhash(&tmp_xor, sizeof(tmp_xor), kmers[i], _wyp));
+
+					if (new_score > best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
+				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			}
+			break;
+		case 3:
+			for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+			{
+				best_choose = i + w_min;
+				tmp_xor = kmers[i] ^ kmers[best_choose];
+				best_value = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
+
+				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				{
+					tmp_xor = kmers[i] ^ kmers[q];
+					new_score = (XXH3_64bits_withSeed(&tmp_xor, sizeof(tmp_xor), 0));
+					if (new_score > best_value)
+					{
+						best_choose = q;
+						best_value = new_score;
+					}
+				}
+				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+			}
+			break;
+		default:
+			break;
 		}
 	}
 	return seeds;
