@@ -41,84 +41,98 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 
 	if (min_comparator)
 	{
-		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+		switch (hasher_code)
 		{
-			concated.low = kmers[i];
-			best_choose = i + w_min;
-			concated.high = kmers[best_choose];
-			switch (hasher_code)
-			{
-				case 2:
+			case 2:
+				for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+				{
+					concated.low = kmers[i];
+					best_choose = i + w_min;
+					concated.high = kmers[best_choose];
 					best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
-					break;
-				case 3:
-					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
-					break;
-				default:
-					break;
-			}
-			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
-			{
-				concated.high = kmers[q];
-				switch (hasher_code)
-				{
-					case 2:
+					for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+					{
+						concated.high = kmers[q];
 						new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
-						break;
-					case 3:
-						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
-						break;
-					default:
-						break;
+						if (new_score < best_value)
+						{
+							best_choose = q;
+							best_value = new_score;
+						}
+					}
+					final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 				}
-				if (new_score < best_value)
+				break;
+			case 3:
+				for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 				{
-					best_choose = q;
-					best_value = new_score;
+					concated.low = kmers[i];
+					best_choose = i + w_min;
+					concated.high = kmers[best_choose];
+					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+					for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+					{
+						concated.high = kmers[q];
+						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+						if (new_score < best_value)
+						{
+							best_choose = q;
+							best_value = new_score;
+						}
+					}
+					final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 				}
-			}
-			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+				break;
+			default:
+				break;
 		}
 	}
 	else
 	{
-		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+		switch (hasher_code)
 		{
-			concated.low = kmers[i];
-			best_choose = i + w_min;
-			concated.high = kmers[best_choose];
-			switch (hasher_code)
-			{
-				case 2:
+			case 2:
+				for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
+				{
+					concated.low = kmers[i];
+					best_choose = i + w_min;
+					concated.high = kmers[best_choose];
 					best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
-					break;
-				case 3:
-					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
-					break;
-				default:
-					break;
-			}
-			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
-			{
-				concated.high = kmers[q];
-				switch (hasher_code)
-				{
-					case 2:
+					for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+					{
+						concated.high = kmers[q];
 						new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
-						break;
-					case 3:
-						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
-						break;
-					default:
-						break;
+						if (new_score > best_value)
+						{
+							best_choose = q;
+							best_value = new_score;
+						}
+					}
+					final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 				}
-				if (new_score > best_value)
+				break;
+			case 3:
+				for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 				{
-					best_choose = q;
-					best_value = new_score;
+					concated.low = kmers[i];
+					best_choose = i + w_min;
+					concated.high = kmers[best_choose];
+					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+					for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+					{
+						concated.high = kmers[q];
+						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+						if (new_score > best_value)
+						{
+							best_choose = q;
+							best_value = new_score;
+						}
+					}
+					final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 				}
-			}
-			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
+				break;
+			default:
+				break;
 		}
 	}
 	return seeds;
