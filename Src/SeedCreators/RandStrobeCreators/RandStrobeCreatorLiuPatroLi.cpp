@@ -28,8 +28,6 @@ inline uint64_t RandStrobeCreatorLiuPatroLi::get_first_hash(size_t ind)
 inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 {
 	std::vector<Seed*> seeds;
-	// seeds.reserve(seq.size());
-	// Strobemer* strobemer;
 	size_t best_choose;
 	uint64_t curr_hash;
 	uint64_t best_value;
@@ -41,151 +39,87 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 
     Int128 concated;
 
-    // auto start_time = std::chrono::high_resolution_clock::now();
 	if (min_comparator)
 	{
 		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 		{
-			// if (n == 2)
-			// 	strobemer = new Strobemer2();
-			// else if (n == 3)
-			// 	strobemer = new Strobemer3();
-
-			// strobemer->add_kmer(i, kmers[i]);
-			// curr_hash = get_first_hash(i);
 			concated.low = kmers[i];
-			// for (int j = 1; j < n; j++)
-			// {
-				best_choose = i + w_min;
-				// best_value = get_score(curr_hash, best_choose);
-				concated.high = kmers[best_choose];
-				// best_value = hasher->hash(&concated, sizeof(concated));
-				// best_value = wy_hasher->hash(&concated, sizeof(concated));
-				// best_value = wyhash(&concated, sizeof(concated), 0, _wyp);
-				// best_value = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
+			best_choose = i + w_min;
+			concated.high = kmers[best_choose];
+			switch (hasher_code)
+			{
+				case 2:
+					best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
+					break;
+				case 3:
+					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+					break;
+				default:
+					break;
+			}
+			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+			{
+				concated.high = kmers[q];
 				switch (hasher_code)
 				{
 					case 2:
-						best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
+						new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
 						break;
 					case 3:
-						best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
 						break;
 					default:
 						break;
 				}
-				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				if (new_score < best_value)
 				{
-					// new_score = get_score(curr_hash, q);
-					// new_score = curr_hash ^ hashes[q];
-					concated.high = kmers[q];
-					// new_score = hasher->hash(&concated, sizeof(concated));
-					// new_score = wy_hasher->hash(&concated, sizeof(concated));
-					// new_score = wyhash(&concated, sizeof(concated), 0, _wyp);
-					// new_score = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
-					switch (hasher_code)
-					{
-						case 2:
-							new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
-							break;
-						case 3:
-							new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
-							break;
-						default:
-							break;
-					}
-					// if (comparator->is_first_better(new_score, best_value))
-					// {
-					// 	best_choose = q;
-					// 	best_value = new_score;
-					// }
-					if (new_score < best_value)
-					{
-						best_choose = q;
-						best_value = new_score;
-					}
+					best_choose = q;
+					best_value = new_score;
 				}
-				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
-				// strobemer->add_kmer(best_choose, kmers[best_choose]);
-				// curr_hash = get_new_curr_hash(strobemer);
-			// }
-			// strobemer->set_final_hash(get_final_hash(strobemer));
-			// seeds.push_back(strobemer);
+			}
+			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 		}
 	}
 	else
 	{
 		for (size_t i = 0; i < seq.size() - kmer_len - w_min - (n - 2) * w_max; i++)
 		{
-			// if (n == 2)
-			// 	strobemer = new Strobemer2();
-			// else if (n == 3)
-			// 	strobemer = new Strobemer3();
-
-			// strobemer->add_kmer(i, kmers[i]);
-			// curr_hash = get_first_hash(i);
 			concated.low = kmers[i];
-			// for (int j = 1; j < n; j++)
-			// {
-				best_choose = i + w_min;
-				// best_value = get_score(curr_hash, best_choose);
-				concated.high = kmers[best_choose];
-				// best_value = hasher->hash(&concated, sizeof(concated));
-				// best_value = wy_hasher->hash(&concated, sizeof(concated));
-				// best_value = wyhash(&concated, sizeof(concated), 0, _wyp);
-				// best_value = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
+			best_choose = i + w_min;
+			concated.high = kmers[best_choose];
+			switch (hasher_code)
+			{
+				case 2:
+					best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
+					break;
+				case 3:
+					best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+					break;
+				default:
+					break;
+			}
+			for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+			{
+				concated.high = kmers[q];
 				switch (hasher_code)
 				{
 					case 2:
-						best_value = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
+						new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
 						break;
 					case 3:
-						best_value = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
+						new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
 						break;
 					default:
 						break;
 				}
-				for (size_t q = i + w_min + 1; q < std::min(i + w_max + 1, hashes.size()); q++)
+				if (new_score > best_value)
 				{
-					// new_score = get_score(curr_hash, q);
-					// new_score = curr_hash ^ hashes[q];
-					concated.high = kmers[q];
-					// new_score = hasher->hash(&concated, sizeof(concated));
-					// new_score = wy_hasher->hash(&concated, sizeof(concated));
-					// new_score = wyhash(&concated, sizeof(concated), 0, _wyp);
-					// new_score = XXH3_64bits_withSeed(&concated, sizeof(concated), 0);
-					switch (hasher_code)
-					{
-						case 2:
-							new_score = (wyhash(&concated, sizeof(concated), kmers[i], _wyp));
-							break;
-						case 3:
-							new_score = (XXH3_64bits_withSeed(&concated, sizeof(concated), 0));
-							break;
-						default:
-							break;
-					}
-					// if (comparator->is_first_better(new_score, best_value))
-					// {
-					// 	best_choose = q;
-					// 	best_value = new_score;
-					// }
-					if (new_score > best_value)
-					{
-						best_choose = q;
-						best_value = new_score;
-					}
+					best_choose = q;
+					best_value = new_score;
 				}
-				final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
-				// strobemer->add_kmer(best_choose, kmers[best_choose]);
-				// curr_hash = get_new_curr_hash(strobemer);
-			// }
-			// strobemer->set_final_hash(get_final_hash(strobemer));
-			// seeds.push_back(strobemer);
+			}
+			final_hashes.push_back((hashes[i] << 1) - hashes[best_choose]);
 		}
 	}
-    // auto finish_time = std::chrono::high_resolution_clock::now();
-	// 	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
-    // std::cout << "TIME: " << duration.count() << std::endl;
 	return seeds;
 }
