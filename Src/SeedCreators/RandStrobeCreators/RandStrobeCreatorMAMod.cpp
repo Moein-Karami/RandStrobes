@@ -9,7 +9,9 @@ RandStrobeCreatorMAMod::RandStrobeCreatorMAMod(Hasher* hasher, Comparator* compa
 
 inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds()
 {
+	real_hashes.clear();
 	real_hashes.reserve(seq.size());
+	// std::cout << "size: "<<real_hashes.size() << std::endl;
 	for (size_t i = 0; i < hashes.size(); i++)
 	{
 		real_hashes.push_back(hashes[i]);
@@ -75,6 +77,8 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 	}
 	state = final_hashes.back();
 	// std::cout << "Ma\n";
+	// real_hashes.clear();
+	// real_hashes.shrink_to_fit();
 	return seeds;
 }
 
@@ -130,6 +134,8 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 	}
 	state = final_hashes.back();
 	// std::cout << "Ma\n";
+	// real_hashes.clear();
+	// real_hashes.shrink_to_fit();
 	return seeds;
 }
 
