@@ -15,6 +15,7 @@ do
 	# R -e "path_kmer_file='$name'; path_output_file='$name'; rmarkdown::render('EvaluationWithR/MetricsEvaluation.Rmd')"
 	./metric.out "$name"
 	echo "Metrics are created"
+	rm .//BenchMarkResults/Results/*
 done
 
 wait
