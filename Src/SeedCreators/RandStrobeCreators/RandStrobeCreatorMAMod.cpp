@@ -71,7 +71,10 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_min()
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
 		final_hashes.push_back((real_hashes[i] << 1) - real_hashes[tmp.second]);
+		// state += final_hashes.back();
 	}
+	state = final_hashes.back();
+	// std::cout << "Ma\n";
 	return seeds;
 }
 
@@ -123,7 +126,10 @@ inline std::vector<Seed*> RandStrobeCreatorMAMod::create_seeds_max()
 		// strobemer->set_final_hash(get_final_hash(strobemer));
 		// seeds.push_back(strobemer);
 		final_hashes.push_back((real_hashes[i] << 1) - real_hashes[maximal_uint - tmp.second]);
+		// state += final_hashes.back();
 	}
+	state = final_hashes.back();
+	// std::cout << "Ma\n";
 	return seeds;
 }
 

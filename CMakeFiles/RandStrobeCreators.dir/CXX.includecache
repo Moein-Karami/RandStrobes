@@ -6,41 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.cpp
-RandStrobeCreator.hpp
-/home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.cpp
 SeedCreator.hpp
 /home/c/University/Advanced/Sahlin Projects/RandStrobes/Src/SeedCreators/SeedCreator.hpp
 
-Includes/Comparators/Comparaotr.hpp
-LibrariesAndDefines.hpp
-Includes/Comparators/LibrariesAndDefines.hpp
-
-Includes/Comparators/Maximizer.hpp
-Comparaotr.hpp
-Includes/Comparators/Comparaotr.hpp
-
-Includes/Comparators/Minimizer.hpp
-Comparaotr.hpp
-Includes/Comparators/Comparaotr.hpp
-
 Includes/DataStoringClasses/Seed/Seed.hpp
 LibrariesAndDefines.hpp
 Includes/DataStoringClasses/Seed/LibrariesAndDefines.hpp
-
-Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
-Seed.hpp
-Includes/DataStoringClasses/Seed/Strobemer/Seed.hpp
-
-Includes/DataStoringClasses/Seed/Strobemer/Strobemer2.hpp
-Strobemer.hpp
-Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
-
-Includes/DataStoringClasses/Seed/Strobemer/Strobemer3.hpp
-Strobemer.hpp
-Includes/DataStoringClasses/Seed/Strobemer/Strobemer.hpp
 
 Includes/Hashers/HashMethodes/wyhash.h
 stdint.h
@@ -191,22 +163,6 @@ chrono
 -
 functional
 -
-
-Includes/SeedCreators/RandStrobeCreators/RandStrobeCreator.hpp
-LibrariesAndDefines.hpp
-Includes/SeedCreators/RandStrobeCreators/LibrariesAndDefines.hpp
-SeedCreator.hpp
-Includes/SeedCreators/RandStrobeCreators/SeedCreator.hpp
-Strobemer.hpp
-Includes/SeedCreators/RandStrobeCreators/Strobemer.hpp
-Strobemer2.hpp
-Includes/SeedCreators/RandStrobeCreators/Strobemer2.hpp
-Strobemer3.hpp
-Includes/SeedCreators/RandStrobeCreators/Strobemer3.hpp
-Maximizer.hpp
-Includes/SeedCreators/RandStrobeCreators/Maximizer.hpp
-Minimizer.hpp
-Includes/SeedCreators/RandStrobeCreators/Minimizer.hpp
 
 Includes/SeedCreators/SeedCreator.hpp
 LibrariesAndDefines.hpp

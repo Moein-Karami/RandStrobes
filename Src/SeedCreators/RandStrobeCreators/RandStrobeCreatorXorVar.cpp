@@ -203,5 +203,9 @@ inline std::vector<Seed*> RandStrobeCreatorXorVar::create_seeds()
 			break;
 		}
 	}
+	state = final_hashes.back();
+	// for (auto i : final_hashes)
+	// 	state+=i;
+	// std::cout << "XV\n";
 	return seeds;
 }

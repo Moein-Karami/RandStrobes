@@ -110,5 +110,9 @@ inline std::vector<Seed*> RandStrobeCreatorGuoPibri::create_seeds()
 			// seeds.push_back(strobemer);
 		}
 	}
+	// std::cout << "GuoPibri\n";
+	// for (auto i : final_hashes)
+	// 	state+=i;
+	state = final_hashes.back();
 	return seeds;
 }

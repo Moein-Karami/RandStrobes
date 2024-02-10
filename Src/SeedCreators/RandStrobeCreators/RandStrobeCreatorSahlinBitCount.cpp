@@ -109,5 +109,9 @@ inline std::vector<Seed*> RandStrobeCreatorSahlinBitCount::create_seeds()
 			// seeds.push_back(strobemer);
 		}
 	}
+	state = final_hashes.back();
+	// for (auto i : final_hashes)
+	// 	state+=i;
+	// std::cout << "BTC\n";
 	return seeds;
 }

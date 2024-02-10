@@ -135,5 +135,9 @@ inline std::vector<Seed*> RandStrobeCreatorLiuPatroLi::create_seeds()
 				break;
 		}
 	}
+	// std::cout << "Li\n";
+	// for (auto i : final_hashes)
+	// 	state+=i;
+	state = final_hashes.back();
 	return seeds;
 }

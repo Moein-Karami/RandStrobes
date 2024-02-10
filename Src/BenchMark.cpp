@@ -125,18 +125,20 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		std::string seq = data_generator->get_data();
 		length_of_sequence = seq.size();
 		std::vector<Seed*> seeds;
+		seed_creator = create_seed_creator(config);
 		auto start_time = std::chrono::high_resolution_clock::now();
 		seeds = seed_creator->create_seeds(seq);
 		auto finish_time = std::chrono::high_resolution_clock::now();
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
 		durations.push_back(duration.count());
 		seeds_size.push_back(seeds.size());
-		
+		std::cout << "state : " << seed_creator->state << std::endl;
 		for(int j = 0; j < seeds.size(); j++)
 		{
 			result_printer->add_seed(seeds[j], i);
 			delete(seeds[j]);
 		}
+		delete(seed_creator);
 	}
 
 	result_printer->print(durations, seeds_size, output_path, 
@@ -147,7 +149,6 @@ void BenchMark::run(Json::Value config, std::string output_path)
 		, length_of_sequence);
 
 	delete(data_generator);
-	delete(seed_creator);
 	delete(result_printer);
 }
 

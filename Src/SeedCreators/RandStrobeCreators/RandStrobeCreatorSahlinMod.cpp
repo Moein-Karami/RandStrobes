@@ -110,5 +110,9 @@ inline std::vector<Seed*> RandStrobeCreatorSahlinMod::create_seeds()
 			// seeds.push_back(strobemer);
 		}
 	}
+	state = final_hashes.back();
+	// for (auto i : final_hashes)
+	// 	state+=i;
+	// std::cout << "Mod\n";
 	return seeds;
 }

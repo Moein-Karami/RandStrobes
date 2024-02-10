@@ -2,5 +2,6 @@
 
 SeedCreator::SeedCreator(Hasher* hasher)
 : hasher(hasher)
+, state(2)
 {
 }
